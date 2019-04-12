@@ -1,0 +1,10 @@
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Comm\bin\Debug\NLog.config
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Comm\bin\Debug\Wolf.Vecc.Comm.dll
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Comm\bin\Debug\Wolf.Vecc.Comm.pdb
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Comm\bin\Debug\NLog.dll
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Comm\bin\Debug\NLog.xml
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Comm\obj\Debug\Wolf.Vecc.Comm.csprojAssemblyReference.cache
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Comm\obj\Debug\Wolf.Vecc.Comm.csproj.CoreCompileInputs.cache
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Comm\obj\Debug\Wolf.Vecc.Comm.csproj.CopyComplete
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Comm\obj\Debug\Wolf.Vecc.Comm.dll
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Comm\obj\Debug\Wolf.Vecc.Comm.pdb

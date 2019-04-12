@@ -1,0 +1,9 @@
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.IService\bin\Debug\Wolf.Vecc.IService.dll
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.IService\bin\Debug\Wolf.Vecc.IService.pdb
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.IService\bin\Debug\Wolf.Vecc.Model.dll
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.IService\bin\Debug\Wolf.Vecc.Model.pdb
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.IService\obj\Debug\Wolf.Vecc.IService.csprojAssemblyReference.cache
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.IService\obj\Debug\Wolf.Vecc.IService.csproj.CoreCompileInputs.cache
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.IService\obj\Debug\Wolf.Vecc.IService.csproj.CopyComplete
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.IService\obj\Debug\Wolf.Vecc.IService.dll
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.IService\obj\Debug\Wolf.Vecc.IService.pdb

@@ -1,0 +1,10 @@
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Core\bin\Debug\Wolf.Vecc.Core.dll
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Core\bin\Debug\Wolf.Vecc.Core.pdb
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Core\bin\Debug\Autofac.dll
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Core\bin\Debug\Autofac.pdb
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Core\bin\Debug\Autofac.xml
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Core\obj\Debug\Wolf.Vecc.Core.csprojAssemblyReference.cache
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Core\obj\Debug\Wolf.Vecc.Core.csproj.CoreCompileInputs.cache
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Core\obj\Debug\Wolf.Vecc.Core.csproj.CopyComplete
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Core\obj\Debug\Wolf.Vecc.Core.dll
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Core\obj\Debug\Wolf.Vecc.Core.pdb

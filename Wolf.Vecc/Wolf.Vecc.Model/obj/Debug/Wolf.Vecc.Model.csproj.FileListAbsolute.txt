@@ -1,0 +1,5 @@
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Model\bin\Debug\Wolf.Vecc.Model.dll
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Model\bin\Debug\Wolf.Vecc.Model.pdb
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Model\obj\Debug\Wolf.Vecc.Model.csproj.CoreCompileInputs.cache
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Model\obj\Debug\Wolf.Vecc.Model.dll
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Model\obj\Debug\Wolf.Vecc.Model.pdb
