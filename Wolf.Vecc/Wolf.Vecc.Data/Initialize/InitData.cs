@@ -13,8 +13,30 @@ namespace Wolf.Vecc.Data.Initialize
     {
         protected override void Seed(VeccContext context)
         {
-            SysUser user = new SysUser { Name = "admin", CreateDate = DateTime.Now, IsDel = 0, Operator = 1, PassWord = "123456" };
+            //初始化用户数据 没有数据库时执行一次
+            SysUsers user = new SysUsers { UserName = "veccadmin", RoleId = 1, AccountStatus = 3, UserType = 0, CreateDate = DateTime.Now, IsDel = 0, Password = "123456", ConfirmPassword = "123456" };
+
+            //角色基础数据
+            List<SysRole> sysRoles = new List<SysRole> {
+                new SysRole { RoleDescribe = "vecc管理员", RoleName = "admin", IsDel = 0 },
+                new SysRole { RoleDescribe = "sgs检测机构", RoleName = "sgs", IsDel = 0 },
+                new SysRole { RoleDescribe = "engineer工程师", RoleName = "engineer", IsDel = 0 }
+            };
+
+            //基础参数设置
+            List<SysParams> sysParams = new List<SysParams> {
+                new SysParams { ParamNumber = "001", ParamName = "数据审批状态", ParamType="pending", ParamValue=1 ,IsDel = 0 },
+                new SysParams { ParamNumber = "001", ParamName = "数据审批状态", ParamType="fail", ParamValue=2 ,IsDel = 0 },
+                new SysParams { ParamNumber = "001", ParamName = "数据审批状态", ParamType="passed", ParamValue=3 ,IsDel = 0 },
+                new SysParams { ParamNumber = "002", ParamName = "用户审批状态", ParamType="pending", ParamValue=1 ,IsDel = 0 },
+                new SysParams { ParamNumber = "002", ParamName = "用户审批状态", ParamType="fail", ParamValue=2 ,IsDel = 0 },
+                new SysParams { ParamNumber = "002", ParamName = "用户审批状态", ParamType="passed", ParamValue=3 ,IsDel = 0 }
+            };
+
+            //保存
             context.SysUser.Add(user);
+            context.SysRole.AddRange(sysRoles);
+            context.SysParams.AddRange(sysParams);
             context.SaveChanges();
         }
     }

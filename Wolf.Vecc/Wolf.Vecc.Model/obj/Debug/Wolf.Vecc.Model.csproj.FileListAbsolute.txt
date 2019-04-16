@@ -3,3 +3,10 @@ F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Model\bin\Debug\Wolf.Vecc.Model.pdb
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Model\obj\Debug\Wolf.Vecc.Model.csproj.CoreCompileInputs.cache
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Model\obj\Debug\Wolf.Vecc.Model.dll
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Model\obj\Debug\Wolf.Vecc.Model.pdb
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Model\obj\Debug\Wolf.Vecc.Model.csprojAssemblyReference.cache
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Model\bin\Debug\Wolf.Vecc.Core.dll
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Model\bin\Debug\Autofac.dll
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Model\bin\Debug\Wolf.Vecc.Core.pdb
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Model\bin\Debug\Autofac.pdb
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Model\bin\Debug\Autofac.xml
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Model\obj\Debug\Wolf.Vecc.Model.csproj.CopyComplete

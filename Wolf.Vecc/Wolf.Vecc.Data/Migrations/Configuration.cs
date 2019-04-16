@@ -9,9 +9,11 @@ namespace Wolf.Vecc.Data.Migrations
     {
         public Configuration()
         {
+            //Enable-Migrations -Force -ContextTypeName "DbServiceContext" -ProjectName "MVC.Core" -StartUpProjectName "MVC.APP" -ConnectionStringName "DefaultContext" -Verbose
             //Add-Migration Initial
             //Update-Database -Verbose
             AutomaticMigrationsEnabled = true;
+            AutomaticMigrationDataLossAllowed = true;//ÔÊÐíÊý¾Ý¶ªÊ§Ç¨ÒÆ
         }
 
         protected override void Seed(Wolf.Vecc.Data.DataContext.VeccContext context)

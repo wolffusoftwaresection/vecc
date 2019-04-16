@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using Wolf.Vecc.Data.DataContext;
@@ -20,6 +21,27 @@ namespace Wolf.Vecc.Data.DataService
 
         public int Add<T>(T t) where T : class
         {
+            PropertyInfo createDate = typeof(T).GetProperty("CreateDate");
+            PropertyInfo approvalDate = typeof(T).GetProperty("ApprovalDate");
+            PropertyInfo uploadDate = typeof(T).GetProperty("UploadDate");
+            PropertyInfo isDeleted = typeof(T).GetProperty("IsDel");
+            //默认数据
+            if (createDate != null)
+            {
+                createDate.SetValue(t, DateTime.Now);
+            }
+            if (approvalDate != null)
+            {
+                approvalDate.SetValue(t, DateTime.Now);
+            }
+            if (uploadDate != null)
+            {
+                uploadDate.SetValue(t, DateTime.Now);
+            }
+            if (isDeleted != null)
+            {
+                isDeleted.SetValue(t, 0);//添加时默认设置为未删除
+            }
             _dbContext.Set<T>().Add(t);
             return SaveChanges();
         }

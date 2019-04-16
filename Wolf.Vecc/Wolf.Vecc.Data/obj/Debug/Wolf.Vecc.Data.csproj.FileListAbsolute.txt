@@ -21,5 +21,3 @@ F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Data\obj\Debug\Wolf.Vecc.Data.pdb
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Data\bin\Debug\EntityFramework.Extended.dll
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Data\bin\Debug\EntityFramework.Extended.xml
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Data\bin\Debug\EntityFramework.Extended.dll.config
-F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Data\obj\Debug\Wolf.Vecc.Data.Migrations.Initial.resources
-F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Data\obj\Debug\Wolf.Vecc.Data.csproj.GenerateResource.cache

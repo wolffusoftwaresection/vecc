@@ -17,17 +17,17 @@ namespace Wolf.Vecc.Service.SysService
             _dbServiceReposity = dbServiceReposity;
         }
 
-        public List<SysUser> All()
+        public List<SysUsers> All()
         {
-            return _dbServiceReposity.All<SysUser>().Where(d => d.IsDel == 0).ToList();
+            return _dbServiceReposity.All<SysUsers>().Where(d => d.IsDel == 0).ToList();
         }
 
-        public int Insert(SysUser sysUser)
+        public int Insert(SysUsers sysUser)
         {
             return _dbServiceReposity.Add(sysUser);
         }
 
-        public int Update(SysUser sysUser)
+        public int Update(SysUsers sysUser)
         {
             return _dbServiceReposity.Update(sysUser);
         }

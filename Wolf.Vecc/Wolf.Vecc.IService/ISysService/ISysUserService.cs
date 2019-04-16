@@ -9,10 +9,10 @@ namespace Wolf.Vecc.IService.ISysService
 {
     public interface ISysUserService
     {
-        int Insert(SysUser sysUser);
+        int Insert(SysUsers sysUser);
 
-        int Update(SysUser sysUser);
+        int Update(SysUsers sysUser);
 
-        List<SysUser> All();
+        List<SysUsers> All();
     }
 }

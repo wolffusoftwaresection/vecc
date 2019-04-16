@@ -181,17 +181,6 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\css\c3.css" />
-    <Content Include="Content\css\cal-heatmap.css" />
-    <Content Include="Content\css\chart.css" />
-    <Content Include="Content\css\circliful.css" />
-    <Content Include="Content\css\icomoon.css" />
-    <Content Include="Content\css\main.css" />
-    <Content Include="Content\css\odometer.css" />
-    <Content Include="Content\img\logo.png" />
-    <Content Include="Content\img\thumbs\user1.png" />
-    <Content Include="Content\img\thumbs\user3.png" />
-    <Content Include="Content\img\thumbs\user2.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -201,8 +190,6 @@
     <Content Include="NLog.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\css\main.less" />
-    <Content Include="Content\css\nv.d3.css" />
     <None Include="NLog.xsd">
       <SubType>Designer</SubType>
     </None>

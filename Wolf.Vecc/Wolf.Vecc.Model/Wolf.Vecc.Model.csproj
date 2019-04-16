@@ -44,10 +44,22 @@
   <ItemGroup>
     <Compile Include="BaseModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SysModel\SysUser.cs" />
+    <Compile Include="SysModel\SysApprovaData.cs" />
+    <Compile Include="SysModel\SysApprovaUser.cs" />
+    <Compile Include="SysModel\SysData.cs" />
+    <Compile Include="SysModel\SysLog.cs" />
+    <Compile Include="SysModel\SysParams.cs" />
+    <Compile Include="SysModel\SysRole.cs" />
+    <Compile Include="SysModel\SysUsers.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="ViewModel\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Wolf.Vecc.Core\Wolf.Vecc.Core.csproj">
+      <Project>{1B0C8013-E5E1-4EB5-AC8E-B8DE5EAF742D}</Project>
+      <Name>Wolf.Vecc.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
