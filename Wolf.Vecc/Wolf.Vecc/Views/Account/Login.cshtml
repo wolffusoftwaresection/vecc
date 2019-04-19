@@ -1,0 +1,85 @@
+﻿@model Wolf.Vecc.Model.ViewModel.UserViewModel
+<script>
+    function LoginSuccess(data) {
+        if (data.Success){
+            location.replace(path + "Index/Index");
+        }
+        else
+            msg.info(data.Msg);
+    }
+</script>
+<!--[if lt IE 9]>
+<script src="~/AdminLTE/bootstrap/js/ie/html5shiv.js"></script>
+<script src="~/AdminLTE/bootstrap/js/ie/respond.min.js"></script>
+<script src="~/AdminLTE/bootstrap/js/ie/excanvas.js"></script>
+<![endif]-->
+
+<div class="login-custom">
+    <div class="mask">
+        <img src="~/AdminLTE/dist/img/login-bg1.png" id="login-mask" class="img-mask" />
+        <img src="~/AdminLTE/dist/img/bg@1x.png" id="login-img" class="login-img" />
+    </div>
+    <div class="col-7" id="col-7">
+        <div class="table">
+            <div class="table-cell">
+                @*<div class="logo fmc-logo"></div>*@
+            </div>
+        </div>
+    </div>
+    <div class="col-5" id="col-5">
+        <div class="login-right">
+            <div class="table-cell">
+                <div class="login-tslogo">
+                    @*<img src="~/AdminLTE/dist/img/logo-ts.png" />*@
+                </div>
+                <div class="login-box-body">
+                    @using (Ajax.BeginForm("SignIn", "Account", new AjaxOptions { OnSuccess= "LoginSuccess", OnBegin = "ajax.loading", OnComplete = "ajax.loadingClose", OnFailure = "msg.info(data);" }, new { @class = "" }))
+                    {
+                        @*@Html.AntiForgeryToken()login-tslogo*@
+                        <div class="form-group">
+                            <i class="fa fa-user"></i>
+                            @*<input type="text" class="form-control" id="name" placeholder="用户名">*@
+                            @Html.TextBoxFor(m => Model.UserName, new { placeholder = "帐号", @class = "form-control" })
+
+                        </div>
+                        <div class="form-group">
+                            <i class="fa fa-unlock-alt"></i>
+                            @*<input type="text" class="form-control" id="name" placeholder="密    码">*@
+                            @Html.PasswordFor(m => Model.Password, new { placeholder = "密码", autocomplete = "off", @class = "form-control" })
+                        </div>
+                        <div class="form-group form-inline">
+                            <i class="fa fa-unlock-alt"></i>
+                            <input id="userNum" class="form-control" placeholder="验证码" />
+                            <button type="button" class="btn btn-flat" id="screeningBtn" onclick="screeningSearch()">发送验证码</button>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="margintop-30"><button type="submit" class="btn btn-block btn-flat btn-login">Login</button></div>
+                        </div>
+
+                        <div class="form-group form-inline">
+                            <div class="form-inline margintop-10">
+                                <a class="help col-sm-8" target="_blank">没有账号？注册一个</a>
+                                <a class="help col-sm-4" target="_blank">忘记密码</a>
+                            </div>
+                        </div>
+                        @Html.ValidationSummary("", new { @class = "text-danger" })
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $("#login-mask").height($(window).height());
+    $("#login-img").height($(window).height());
+    $("#col-7").height($(window).height());
+    $("#col-5").height($(window).height());
+    window.onresize = function () {
+        $("#login-mask").height($(window).height());
+        $("#login-img").height($(window).height());
+        $("#col-7").height($(window).height());
+        $("#col-5").height($(window).height());
+    }
+</script>

@@ -14,5 +14,9 @@ namespace Wolf.Vecc.IService.ISysService
         int Update(SysUsers sysUser);
 
         List<SysUsers> All();
+
+        SysUsers GetUserByUserName(string userName);
+
+        List<int> GetRoleIdByUserId(int uId);
     }
 }

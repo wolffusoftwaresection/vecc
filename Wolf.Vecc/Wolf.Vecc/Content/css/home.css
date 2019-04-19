@@ -1,0 +1,64 @@
+@charset "utf-8";
+/* CSS Document */
+body,dd,dt,dl{margin: 0;}
+/*div{border:solid 1px black}*/
+img{display: block;}
+a{text-decoration: none;color:white;display: block;font-family:"思源黑体 CN Normal"," 思源黑体 CN Regular";}
+ul{list-style-type: none; margin: 0;padding: 0;}	
+span,dl{font-family:"思源黑体 CN Normal"," 思源黑体 CN Regular";}	
+
+
+p{font-family: "庞门正道标题体";line-height:100px; font-size: 36px;text-align: center;color:white;}
+
+
+.bg{width:100%; overflow: hidden;}
+
+.title{width: 100%;height: 200px;overflow: hidden;background-image: url(image/bg2.png);}
+
+.top{float: right;margin-right: 100px;margin-top: 20px;}
+.remind{float: left;margin-right: 5px;position: relative;}
+.remind img{margin: 0 auto;}
+.remind a {display: none;font-size: 12px;font-family: "思源黑体 CN Normal"," 思源黑体 CN Regular";color: white;padding: 5px;padding-right: 0;padding-bottom: 0; background-color:rgba(238,238,238,0.45);position: absolute;right: 0; width: 60px;z-index: 2}
+.a1{top:57px;}
+.remind a:hover{background-color: rgba(45,45,45,1.00)}
+
+.accountsetting{float: left;margin-right: 5px;position: relative;}
+.accountsetting img{margin: 0 auto}
+.accountsetting a{display: none;font-size: 12px;font-family: "思源黑体 CN Normal"," 思源黑体 CN Regular";color: white;padding: 5px;padding-right: 0;padding-bottom: 0; background-color:rgba(238,238,238,0.45);position: absolute;right: 0; width: 60px;z-index: 2}
+.a2{top:60px;}
+.accountsetting a:hover{background-color: rgba(45,45,45,1.00)}
+
+.fengge{float: left;margin-right: 10px;}
+.quit{float: left;}
+
+
+
+.clearfix{clear: both;}
+
+/*//.search{width:770px; height: 80px;overflow: hidden;position: relative;margin: 0 auto;}
+//.search_bg{width:100%;overflow: hidden}
+//.search_bg_img{margin: 0 auto;}
+//
+//.chaxun{overflow: hidden}
+//.xiala{overflow: hidden;position: absolute;margin-top: -45px;margin-left: 25px;float: left;}
+//.choose{color: #0e0c72;font-family: "思源黑体 CN Normal"," 思源黑体 CN Regular";font-size: 26px;background-color: rgba(0,0,0,0.00);border-color: rgba(0,0,0,0.00)}
+///*.xiala a{overflow: hidden;color: #0e0c72;font-family: "思源黑体 CN Normal"," 思源黑体 CN Regular";font-size: 26px;float: left}
+//.xiala img{float:left;margin: 7px;}
+//.xiala dd{clear: both;display: none;background-color:rgba(238,238,238,0.45);padding: 10px;font-family: "思源黑体 CN Normal"," 思源黑体 CN Regular";font-size: 26px;color:white;height: 30px;}*/
+/*//.inputtext{height: 60px;width:300px;font-family: "思源黑体 CN Normal"," 思源黑体 CN Regular";font-size: 20px;background-color:rgba(0,0,0,0.00);border-color: rgba(0,0,0,0.00);position: absolute;margin-top: -60px;margin-left: 220px;background: url(image/find@1x.png) no-repeat left}
+// */
+.neirong{width: 95%; margin: 0 auto;background: url(image/map.png) no-repeat center;overflow: hidden;}
+.gongneng{overflow: hidden;box-sizing: border-box;width: 80%;margin: 0 auto;padding-top: 40px;}/*解决父级塌陷问题*/
+.chanpin{float: left;width: calc((100% - 160px) / 3 );box-sizing: border-box;margin: 0 20px}
+.chanpin img{width: 80%;transition: 0.5s;margin: 0 auto;margin-top: 20%;margin-bottom: 40%}/*过渡动画*/
+.chanpin:hover img{transform: scale(1.2);}
+.copyright a{margin: 0 auto;font-size: 14px;color: grey;width: 300px;line-height: 22px;text-align:center}
+.copyright{margin: 40px}
+
+
+
+
+
+
+
+

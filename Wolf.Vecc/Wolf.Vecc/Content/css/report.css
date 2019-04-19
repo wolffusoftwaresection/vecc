@@ -1,0 +1,23 @@
+@charset "utf-8";
+/* CSS Document */
+
+body,dd,dt,dl{margin: 0;}
+/*div{border:solid 1px black}*/
+img{display: block;}
+a{text-decoration: none;color:white;display: block;font-family:"思源黑体 CN Normal"," 思源黑体 CN Regular";}
+ul{list-style-type: none; margin: 0;padding: 0;}	
+span,dl,p{font-family:"思源黑体 CN Normal"," 思源黑体 CN Regular";}	
+
+.bg{width:100%;}
+.all{margin-top: 60px;width: calc(100% - 320px);float: right;margin-right: 100px;}
+.tab_tiele p{color: white;font-size: 26px;margin-top: 60px;}
+.tab_tiele{width: 100%;height: 120px;overflow: hidden;background-image: url(image/bg3.png);}		
+
+h1,h2,h3{font-size: 16px;margin: 0;font-family:"思源黑体 CN Normal"," 思源黑体 CN Regular";line-height: 24px;}
+.menu{width: 180px;background-color:cornflowerblue;color:ghostwhite;padding: 20px;float: left;}
+.menu h1,.menu h2{padding-left: 20px;cursor: pointer/*光标属性*/ ;background-image: url(image/plus.png);background-repeat: no-repeat;background-position: left center;position: relative;}
+.menu h1 img,.menu h2 img{position: absolute;right: 20px;top:calc(50% - 8px);}
+.arrow_current{transform: rotate(90deg);}
+.sub2,.sub3{margin-left: 20px;display:none;} 
+.jian{background-image: url(image/jian.png);background-repeat: no-repeat;background-position: left center;}	
+		

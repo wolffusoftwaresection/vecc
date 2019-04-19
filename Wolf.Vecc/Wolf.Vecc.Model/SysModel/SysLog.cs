@@ -64,9 +64,5 @@ namespace Wolf.Vecc.Model.SysModel
         [Display(Name = "异常跟踪")]
         [DataType(DataType.Text)]
         public string stacktrace { set; get; }
-
-        [Display(Name = "异常详细")]
-        [DataType(DataType.Text)]
-        public string detail { set; get; }
     }
 }

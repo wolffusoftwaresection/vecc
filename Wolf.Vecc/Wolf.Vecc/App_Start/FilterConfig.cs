@@ -1,5 +1,6 @@
 ﻿using System.Web;
 using System.Web.Mvc;
+using Wolf.Vecc.Filters;
 
 namespace Wolf.Vecc
 {
@@ -7,7 +8,8 @@ namespace Wolf.Vecc
     {
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
-            filters.Add(new HandleErrorAttribute());
+            filters.Add(new ExceptionFilter());
+            filters.Add(new UserTrackerLogAttribute());
         }
     }
 }

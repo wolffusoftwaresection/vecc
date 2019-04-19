@@ -18,3 +18,16 @@ F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Service\obj\Debug\Wolf.Vecc.Service.csproj.
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Service\obj\Debug\Wolf.Vecc.Service.csproj.CopyComplete
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Service\obj\Debug\Wolf.Vecc.Service.dll
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Service\obj\Debug\Wolf.Vecc.Service.pdb
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Service\bin\Debug\System.Web.Mvc.dll
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Service\bin\Debug\System.Web.Razor.dll
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Service\bin\Debug\System.Web.WebPages.Razor.dll
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Service\bin\Debug\System.Web.WebPages.dll
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Service\bin\Debug\Microsoft.Web.Infrastructure.dll
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Service\bin\Debug\System.Web.WebPages.Deployment.dll
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Service\bin\Debug\NLog.config
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Service\bin\Debug\Wolf.Vecc.Comm.dll
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Service\bin\Debug\NLog.dll
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Service\bin\Debug\Newtonsoft.Json.dll
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Service\bin\Debug\Wolf.Vecc.Comm.pdb
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Service\bin\Debug\NLog.xml
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Service\bin\Debug\Newtonsoft.Json.xml

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Reflection;
 using System.Web;
 using System.Web.Mvc;
+using Wolf.Vecc.Core.Cache;
 using Wolf.Vecc.Data.DataContext;
 using Wolf.Vecc.Data.DataService;
 
@@ -27,6 +28,7 @@ namespace Wolf.Vecc.App_Start
             //注册所有controller
             builder.RegisterControllers(Assembly.GetExecutingAssembly());
             #region 缓存
+            builder.RegisterType<CacheManager>().As<ICacheManager>().SingleInstance();
             #endregion
             #region 自动注入SERVICES
             var interfaces = Assembly.Load("Wolf.Vecc.IService");

@@ -58,6 +58,9 @@
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -66,6 +69,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AuthCore\AuthExt\VeccFormsAuthentication.cs" />
+    <Compile Include="AuthCore\PrincipalExt\VeccFormsPrincipal.cs" />
+    <Compile Include="AuthCore\PrincipalExt\VeccUserDataPrincipal.cs" />
+    <Compile Include="AuthCore\VeccAuthorizeAttribute.cs" />
+    <Compile Include="AuthCore\WorkUser.cs" />
     <Compile Include="DataContext\DatabaseInitializer.cs" />
     <Compile Include="DataContext\DbContextFactory.cs" />
     <Compile Include="DataContext\Model.cs" />
@@ -76,6 +84,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Wolf.Vecc.Comm\Wolf.Vecc.Comm.csproj">
+      <Project>{9FB7F216-385A-4113-B098-B7C6AD481736}</Project>
+      <Name>Wolf.Vecc.Comm</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Wolf.Vecc.IService\Wolf.Vecc.IService.csproj">
+      <Project>{52eb56d1-8e49-422b-bf12-544c5d05c09f}</Project>
+      <Name>Wolf.Vecc.IService</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Wolf.Vecc.Model\Wolf.Vecc.Model.csproj">
       <Project>{5FF7A5FF-F110-47AE-B7C2-A4B1FCB13ECC}</Project>
       <Name>Wolf.Vecc.Model</Name>

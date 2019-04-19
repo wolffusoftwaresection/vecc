@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Wolf.Vecc.Data.AuthCore;
 using Wolf.Vecc.IService.ISysService;
 using Wolf.Vecc.Model.SysModel;
 
@@ -16,10 +17,13 @@ namespace Wolf.Vecc.Controllers
             _userService = userService;
         }
 
-        // GET: Index
+        [VeccAuthorize(Roles = "admin,sgs")]
         public ActionResult Index()
         {
-            //List<SysUser> users = _userService.All();
+            var id = WorkUser.UserId;
+            var name = WorkUser.UserName;
+            ViewData["id"] = id.ToString();
+            ViewData["name"] = name;
             return View();
         }
     }

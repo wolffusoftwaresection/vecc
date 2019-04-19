@@ -19,6 +19,7 @@ namespace Wolf.Vecc.Model.SysModel
         [Column("user_name")]
         [StringLength(120)]
         [Display(Name = "用户名")]
+        [Required]
         public string UserName { get; set; }
 
         /// <summary>

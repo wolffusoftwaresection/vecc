@@ -10,3 +10,9 @@ F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Model\bin\Debug\Wolf.Vecc.Core.pdb
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Model\bin\Debug\Autofac.pdb
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Model\bin\Debug\Autofac.xml
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Model\obj\Debug\Wolf.Vecc.Model.csproj.CopyComplete
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Model\bin\Debug\Wolf.Vecc.Comm.dll
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Model\bin\Debug\NLog.dll
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Model\bin\Debug\Wolf.Vecc.Comm.pdb
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Model\bin\Debug\NLog.xml
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Model\bin\Debug\Newtonsoft.Json.dll
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Model\bin\Debug\Newtonsoft.Json.xml

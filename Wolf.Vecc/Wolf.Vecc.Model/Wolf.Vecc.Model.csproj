@@ -51,10 +51,9 @@
     <Compile Include="SysModel\SysParams.cs" />
     <Compile Include="SysModel\SysRole.cs" />
     <Compile Include="SysModel\SysUsers.cs" />
+    <Compile Include="ViewModel\UserViewModel.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ViewModel\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Wolf.Vecc.Core\Wolf.Vecc.Core.csproj">
       <Project>{1B0C8013-E5E1-4EB5-AC8E-B8DE5EAF742D}</Project>
