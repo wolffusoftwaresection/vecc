@@ -4,6 +4,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Wolf.Vecc.Comm.Helpers;
 using Wolf.Vecc.Data.DataContext;
 using Wolf.Vecc.Model.SysModel;
 
@@ -14,7 +15,9 @@ namespace Wolf.Vecc.Data.Initialize
         protected override void Seed(VeccContext context)
         {
             //初始化用户数据 没有数据库时执行一次
-            SysUsers user = new SysUsers { UserName = "veccadmin", RoleId = 1, AccountStatus = 3, UserType = 0, CreateDate = DateTime.Now, IsDel = 0, Password = "123456", ConfirmPassword = "123456" };
+            string salt;
+            var code = UtilityHelper.CreateHashCodePW(GlobalConfigHelper.GetAdminInitialPassword(), out salt);
+            SysUsers user = new SysUsers { UserName = "veccadmin", RoleId = 1, AccountStatus = 3, UserType = 0, CreateDate = DateTime.Now, IsDel = 0, Password = code, Salt = salt };
 
             //角色基础数据
             List<SysRole> sysRoles = new List<SysRole> {

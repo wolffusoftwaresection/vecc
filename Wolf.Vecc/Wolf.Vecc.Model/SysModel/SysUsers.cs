@@ -31,6 +31,14 @@ namespace Wolf.Vecc.Model.SysModel
         public string Password { get; set; }
 
         /// <summary>
+        /// 密码盐
+        /// </summary>
+        [Column("salt")]
+        [StringLength(255)]
+        [Display(Name = "密码盐")]
+        public string Salt { get; set; }
+
+        /// <summary>
         /// 邮箱
         /// </summary>
         [Column("email")]
@@ -90,8 +98,8 @@ namespace Wolf.Vecc.Model.SysModel
         [Display(Name = "用户类型")]
         public int UserType { get; set; }
 
-        [NotMapped]
-        [Compare("Password", ErrorMessage = "密码和确认密码不匹配。")]
-        public string ConfirmPassword { get; set; }
+        //[NotMapped]
+        //[Compare("Password", ErrorMessage = "密码和确认密码不匹配。")]
+        //public string ConfirmPassword { get; set; }
     }
 }

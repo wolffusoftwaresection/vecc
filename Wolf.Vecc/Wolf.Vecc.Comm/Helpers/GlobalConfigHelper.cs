@@ -12,7 +12,12 @@ namespace Wolf.Vecc.Comm.Helpers
     {
         public static int GetSessionTimeOut()
         {
-            return Convert.ToInt32(ConfigurationManager.AppSettings[EnumGlobalConfig.SessionTimeOut.ToString()].ToString());
+            return Convert.ToInt32(ConfigurationManager.AppSettings[EnumGlobalConfig.SessionTimeOut.ToString()].ToString().Trim());
+        }
+
+        public static string GetAdminInitialPassword()
+        {
+            return ConfigurationManager.AppSettings[EnumGlobalConfig.AdminInitialPassword.ToString()].Trim();
         }
     }
 }

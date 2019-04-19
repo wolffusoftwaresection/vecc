@@ -10,6 +10,8 @@ namespace Wolf.Vecc.Comm.EnumConfigs
     public enum EnumGlobalConfig
     {
         [Description("Session超时")]
-        SessionTimeOut
+        SessionTimeOut,
+        [Description("vecc管理员初始密码设置")]
+        AdminInitialPassword
     }
 }

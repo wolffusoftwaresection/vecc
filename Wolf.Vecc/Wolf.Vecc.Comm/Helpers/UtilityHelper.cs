@@ -29,5 +29,32 @@ namespace Wolf.Vecc.Comm.Helpers
             }
             return realRemoteIP;
         }
+
+        /// <summary>
+        /// 初始化密码
+        /// </summary>
+        /// <param name="password">原始密码</param>
+        /// <param name="guidSalt">盐guid</param>
+        /// <returns>加密过的密码串</returns>
+        public static string CreateHashCodePW(string password, out string guidSalt)
+        {
+            guidSalt = Guid.NewGuid().ToString();
+            byte[] passwordAndSaltBytes = Encoding.UTF8.GetBytes(password + guidSalt);
+            byte[] hashBytes = new System.Security.Cryptography.SHA256Managed().ComputeHash(passwordAndSaltBytes);
+            return Convert.ToBase64String(hashBytes);
+        }
+
+        /// <summary>
+        /// 验证密码
+        /// </summary>
+        /// <param name="password"></param>
+        /// <param name="guidSalt"></param>
+        /// <returns></returns>
+        public static string CreateHashCodePW(string password, string guidSalt)
+        {
+            byte[] passwordAndSaltBytes = Encoding.UTF8.GetBytes(password + guidSalt);
+            byte[] hashBytes = new System.Security.Cryptography.SHA256Managed().ComputeHash(passwordAndSaltBytes);
+            return Convert.ToBase64String(hashBytes);
+        }
     }
 }

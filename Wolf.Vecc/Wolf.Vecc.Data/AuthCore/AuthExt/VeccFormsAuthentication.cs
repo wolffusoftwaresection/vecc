@@ -26,7 +26,7 @@ namespace Wolf.Vecc.Data.AuthCore.AuthExt
 
             //创建ticket
             var ticket = new FormsAuthenticationTicket(
-                2, username, DateTime.Now, DateTime.Now.AddMinutes(CookieSaveHours), rememberMe, data);
+                2, username, DateTime.Now, DateTime.Now.AddHours(CookieSaveHours), rememberMe, data);
 
             //加密ticket
             var cookieValue = FormsAuthentication.Encrypt(ticket);
@@ -40,7 +40,7 @@ namespace Wolf.Vecc.Data.AuthCore.AuthExt
                 Path = FormsAuthentication.FormsCookiePath,
             };
             if (rememberMe)
-                cookie.Expires = DateTime.Now.AddMinutes(CookieSaveHours);
+                cookie.Expires = DateTime.Now.AddHours(CookieSaveHours);
 
             //写入Cookie
             HttpContext.Current.Response.Cookies.Remove(cookie.Name);

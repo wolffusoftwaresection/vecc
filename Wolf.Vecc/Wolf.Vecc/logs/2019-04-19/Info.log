@@ -991,3 +991,786 @@ StatusCode:200
 ClientIp:::1
 
 OnActionExecuted-user:
+2019-04-19 14:03:29.6936 INFO PortName:Login
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:
+2019-04-19 14:03:31.3512 INFO PortName:SignIn
+StatusCode:200
+ClientIp:::1
+params:{
+  "user": {
+    "View_RememberFlag": false,
+    "UserName": "veccadmin",
+    "Password": "123456",
+    "Email": null,
+    "Country": null,
+    "Phone": null,
+    "EnterpriseName": null,
+    "RoleId": 0,
+    "AccountStatus": 0,
+    "CreateDate": null,
+    "UserType": 0,
+    "ConfirmPassword": null,
+    "Id": 0,
+    "IsDel": 0
+  }
+}
+OnActionExecuting-user:
+2019-04-19 14:03:31.4529 INFO PortName:SignIn
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:
+2019-04-19 14:03:31.4758 INFO PortName:Index
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 14:06:55.1578 INFO PortName:Login
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:
+2019-04-19 14:06:56.2469 INFO PortName:SignIn
+StatusCode:200
+ClientIp:::1
+params:{
+  "user": {
+    "View_RememberFlag": false,
+    "UserName": "veccadmin",
+    "Password": "123456",
+    "Email": null,
+    "Country": null,
+    "Phone": null,
+    "EnterpriseName": null,
+    "RoleId": 0,
+    "AccountStatus": 0,
+    "CreateDate": null,
+    "UserType": 0,
+    "ConfirmPassword": null,
+    "Id": 0,
+    "IsDel": 0
+  }
+}
+OnActionExecuting-user:
+2019-04-19 14:06:56.2469 INFO PortName:SignIn
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:
+2019-04-19 14:06:56.2698 INFO PortName:Index
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 14:08:09.6402 INFO PortName:Login
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:
+2019-04-19 14:08:11.1023 INFO PortName:SignIn
+StatusCode:200
+ClientIp:::1
+params:{
+  "user": {
+    "View_RememberFlag": false,
+    "UserName": "veccadmin",
+    "Password": "123456",
+    "Email": null,
+    "Country": null,
+    "Phone": null,
+    "EnterpriseName": null,
+    "RoleId": 0,
+    "AccountStatus": 0,
+    "CreateDate": null,
+    "UserType": 0,
+    "ConfirmPassword": null,
+    "Id": 0,
+    "IsDel": 0
+  }
+}
+OnActionExecuting-user:
+2019-04-19 14:08:11.1023 INFO PortName:SignIn
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:
+2019-04-19 14:08:11.1183 INFO PortName:Index
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 14:09:43.0945 INFO PortName:Login
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:
+2019-04-19 14:09:44.7162 INFO PortName:SignIn
+StatusCode:200
+ClientIp:::1
+params:{
+  "user": {
+    "View_RememberFlag": false,
+    "UserName": "veccadmin",
+    "Password": "123456",
+    "Email": null,
+    "Country": null,
+    "Phone": null,
+    "EnterpriseName": null,
+    "RoleId": 0,
+    "AccountStatus": 0,
+    "CreateDate": null,
+    "UserType": 0,
+    "ConfirmPassword": null,
+    "Id": 0,
+    "IsDel": 0
+  }
+}
+OnActionExecuting-user:
+2019-04-19 14:09:44.7162 INFO PortName:SignIn
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:
+2019-04-19 14:09:44.7551 INFO PortName:Index
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 14:10:26.6800 INFO PortName:Index
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 14:10:30.5836 INFO PortName:Index
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 14:10:31.4852 INFO PortName:Index
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 14:10:31.7315 INFO PortName:Index
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 14:10:31.9310 INFO PortName:Index
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 14:10:32.0956 INFO PortName:Index
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 14:10:32.2591 INFO PortName:Index
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 14:11:04.6067 INFO PortName:Index
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 14:11:08.0595 INFO PortName:Index
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 14:11:09.1805 INFO PortName:Index
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 14:11:09.7450 INFO PortName:Index
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 14:11:52.3362 INFO PortName:Index
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 14:15:50.7102 INFO PortName:Login
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:
+2019-04-19 14:15:52.0786 INFO PortName:SignIn
+StatusCode:200
+ClientIp:::1
+params:{
+  "user": {
+    "View_RememberFlag": false,
+    "UserName": "veccadmin",
+    "Password": "123456",
+    "Email": null,
+    "Country": null,
+    "Phone": null,
+    "EnterpriseName": null,
+    "RoleId": 0,
+    "AccountStatus": 0,
+    "CreateDate": null,
+    "UserType": 0,
+    "ConfirmPassword": null,
+    "Id": 0,
+    "IsDel": 0
+  }
+}
+OnActionExecuting-user:
+2019-04-19 14:15:52.0786 INFO PortName:SignIn
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:
+2019-04-19 14:15:52.1244 INFO PortName:Index
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 14:16:41.1166 INFO PortName:Index
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 14:16:42.6883 INFO PortName:Index
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 14:16:43.8752 INFO PortName:Index
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 14:17:33.7390 INFO PortName:Index
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 14:20:11.8535 INFO PortName:Login
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:
+2019-04-19 14:20:12.9735 INFO PortName:SignIn
+StatusCode:200
+ClientIp:::1
+params:{
+  "user": {
+    "View_RememberFlag": false,
+    "UserName": "veccadmin",
+    "Password": "123456",
+    "Email": null,
+    "Country": null,
+    "Phone": null,
+    "EnterpriseName": null,
+    "RoleId": 0,
+    "AccountStatus": 0,
+    "CreateDate": null,
+    "UserType": 0,
+    "ConfirmPassword": null,
+    "Id": 0,
+    "IsDel": 0
+  }
+}
+OnActionExecuting-user:
+2019-04-19 14:20:12.9765 INFO PortName:SignIn
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:
+2019-04-19 14:20:13.0014 INFO PortName:Index
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 14:20:55.7422 INFO PortName:Index
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 14:20:57.6022 INFO PortName:Index
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 14:21:46.2114 INFO PortName:Index
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 14:21:46.9753 INFO PortName:Index
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 14:21:47.3194 INFO PortName:Index
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 14:21:47.5517 INFO PortName:Index
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 14:21:47.7303 INFO PortName:Index
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 14:21:47.9138 INFO PortName:Index
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 14:21:48.0684 INFO PortName:Index
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 14:21:48.2389 INFO PortName:Index
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 14:21:48.4095 INFO PortName:Index
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 14:21:48.6059 INFO PortName:Index
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 14:21:48.6977 INFO PortName:Index
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 14:21:48.8712 INFO PortName:Index
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 14:21:49.0388 INFO PortName:Index
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 14:21:49.2213 INFO PortName:Index
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 14:21:49.4447 INFO PortName:Index
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 14:21:49.6601 INFO PortName:Index
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 14:21:49.8927 INFO PortName:Index
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 14:21:50.0593 INFO PortName:Index
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 14:21:50.3465 INFO PortName:Index
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 14:23:03.0363 INFO PortName:Login
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:
+2019-04-19 14:23:05.7311 INFO PortName:SignIn
+StatusCode:200
+ClientIp:::1
+params:{
+  "user": {
+    "View_RememberFlag": false,
+    "UserName": "veccadmin",
+    "Password": "123456",
+    "Email": null,
+    "Country": null,
+    "Phone": null,
+    "EnterpriseName": null,
+    "RoleId": 0,
+    "AccountStatus": 0,
+    "CreateDate": null,
+    "UserType": 0,
+    "ConfirmPassword": null,
+    "Id": 0,
+    "IsDel": 0
+  }
+}
+OnActionExecuting-user:
+2019-04-19 14:23:05.7311 INFO PortName:SignIn
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:
+2019-04-19 14:23:05.7680 INFO PortName:Index
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 14:24:02.0476 INFO PortName:Index
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 14:24:02.2461 INFO PortName:Index
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 14:24:04.3365 INFO PortName:Index
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 14:24:29.6847 INFO PortName:Index
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 14:24:32.1681 INFO PortName:Index
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 14:25:17.8850 INFO PortName:Login
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:
+2019-04-19 14:25:20.1050 INFO PortName:SignIn
+StatusCode:200
+ClientIp:::1
+params:{
+  "user": {
+    "View_RememberFlag": false,
+    "UserName": "veccadmin",
+    "Password": "123456",
+    "Email": null,
+    "Country": null,
+    "Phone": null,
+    "EnterpriseName": null,
+    "RoleId": 0,
+    "AccountStatus": 0,
+    "CreateDate": null,
+    "UserType": 0,
+    "ConfirmPassword": null,
+    "Id": 0,
+    "IsDel": 0
+  }
+}
+OnActionExecuting-user:
+2019-04-19 14:25:20.1838 INFO PortName:SignIn
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:
+2019-04-19 14:25:20.2546 INFO PortName:Index
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 14:27:52.5417 INFO PortName:Login
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:
+2019-04-19 14:27:54.0307 INFO PortName:SignIn
+StatusCode:200
+ClientIp:::1
+params:{
+  "user": {
+    "View_RememberFlag": false,
+    "UserName": "veccadmin",
+    "Password": "123456",
+    "Email": null,
+    "Country": null,
+    "Phone": null,
+    "EnterpriseName": null,
+    "RoleId": 0,
+    "AccountStatus": 0,
+    "CreateDate": null,
+    "UserType": 0,
+    "ConfirmPassword": null,
+    "Id": 0,
+    "IsDel": 0
+  }
+}
+OnActionExecuting-user:
+2019-04-19 14:27:54.0307 INFO PortName:SignIn
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:
+2019-04-19 14:27:54.0686 INFO PortName:Index
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 14:28:50.7382 INFO PortName:Index
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 14:28:54.6996 INFO PortName:Index
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 14:28:55.6451 INFO PortName:Index
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 14:28:56.3203 INFO PortName:Index
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 14:28:56.9835 INFO PortName:Index
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 15:07:05.6942 INFO PortName:Login
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:
+2019-04-19 15:07:14.4847 INFO PortName:SignIn
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:
+2019-04-19 15:10:52.3675 INFO PortName:Login
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:
+2019-04-19 15:19:14.2448 INFO PortName:Login
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:
+2019-04-19 15:19:53.8251 INFO PortName:SignIn
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:
+2019-04-19 15:20:18.1315 INFO PortName:SignIn
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:
+2019-04-19 15:22:17.3554 INFO PortName:Login
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:
+2019-04-19 15:22:30.3517 INFO PortName:SignIn
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:
+2019-04-19 15:22:31.9723 INFO PortName:SignIn
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:
+2019-04-19 15:22:40.4547 INFO PortName:SignIn
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:
+2019-04-19 15:22:40.6242 INFO PortName:Index
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 15:22:45.3097 INFO PortName:Index
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 15:22:45.5221 INFO PortName:Index
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 15:22:45.7146 INFO PortName:Index
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 15:22:45.8772 INFO PortName:Index
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 15:22:46.0447 INFO PortName:Index
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 15:22:46.1963 INFO PortName:Index
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 15:23:15.8660 INFO PortName:Index
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 15:23:40.6089 INFO PortName:Index
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 15:23:42.9088 INFO PortName:Index
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 15:23:43.3646 INFO PortName:Index
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 15:23:43.6448 INFO PortName:Index
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 15:23:43.7595 INFO PortName:Index
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 15:23:43.9989 INFO PortName:Index
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 15:23:44.1804 INFO PortName:Index
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 15:23:44.4297 INFO PortName:Index
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 15:23:44.5883 INFO PortName:Index
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 15:23:44.7529 INFO PortName:Index
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 15:23:52.2219 INFO PortName:Index
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 15:24:30.2356 INFO PortName:Index
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 15:24:52.3855 INFO PortName:Login
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:
+2019-04-19 15:25:01.2278 INFO PortName:SignIn
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:
+2019-04-19 15:25:04.7923 INFO PortName:SignIn
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:
+2019-04-19 15:25:15.1935 INFO PortName:SignIn
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:
+2019-04-19 15:25:15.2165 INFO PortName:Index
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 15:25:18.9624 INFO PortName:Index
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 15:25:40.1957 INFO PortName:Index
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 15:26:07.5426 INFO PortName:Login
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 15:26:17.4282 INFO PortName:SignIn
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 15:26:20.0562 INFO PortName:SignIn
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 15:26:26.5190 INFO PortName:SignIn
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 15:26:26.5339 INFO PortName:Index
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin
+2019-04-19 15:26:38.6804 INFO PortName:Index
+StatusCode:200
+ClientIp:::1
+
+OnActionExecuted-user:veccadmin

@@ -34,7 +34,7 @@ namespace Wolf.Vecc.Controllers
             if (veccUser != null)//存在用户
             {
                 //判断密码
-                if (user.Password == veccUser.Password)
+                if (UtilityHelper.CreateHashCodePW(user.Password, veccUser.Salt) == veccUser.Password)
                 {
                     //用户是否已被审批通过方可登陆
                     if (veccUser.AccountStatus == EnumExt.ToInt(UserAccountStatusEnum.PASSED))
