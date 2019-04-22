@@ -18,5 +18,7 @@ namespace Wolf.Vecc.IService.ISysService
         SysUsers GetUserByUserName(string userName);
 
         List<int> GetRoleIdByUserId(int uId);
+
+        bool UserRepeat(string userName);
     }
 }

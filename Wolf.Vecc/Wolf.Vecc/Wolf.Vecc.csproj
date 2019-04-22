@@ -239,6 +239,9 @@
     <Content Include="AdminLTE\dist\css\alt\AdminLTE-select2.min.css" />
     <Content Include="AdminLTE\dist\css\alt\AdminLTE-without-plugins.css" />
     <Content Include="AdminLTE\dist\css\alt\AdminLTE-without-plugins.min.css" />
+    <Content Include="AdminLTE\dist\css\bootstrapValidator.min.css" />
+    <Content Include="AdminLTE\dist\css\bootstrapValidator.min.js" />
+    <Content Include="AdminLTE\dist\css\form-elements.css" />
     <Content Include="AdminLTE\dist\css\index.css" />
     <Content Include="AdminLTE\dist\css\skins\skin-black-light.css" />
     <Content Include="AdminLTE\dist\css\skins\skin-black-light.min.css" />
@@ -266,6 +269,7 @@
     <Content Include="AdminLTE\dist\css\skins\skin-yellow.min.css" />
     <Content Include="AdminLTE\dist\css\skins\_all-skins.css" />
     <Content Include="AdminLTE\dist\css\skins\_all-skins.min.css" />
+    <Content Include="AdminLTE\dist\css\style.css" />
     <Content Include="AdminLTE\dist\img\accountsetting%401x.png" />
     <Content Include="AdminLTE\dist\img\accountsetting%403x.png" />
     <Content Include="AdminLTE\dist\img\avatar.png" />
@@ -305,6 +309,7 @@
     <Content Include="AdminLTE\dist\img\fengge%403x.png" />
     <Content Include="AdminLTE\dist\img\find%401x.png" />
     <Content Include="AdminLTE\dist\img\find%403x.png" />
+    <Content Include="AdminLTE\dist\img\hearimg.png" />
     <Content Include="AdminLTE\dist\img\icons.png" />
     <Content Include="AdminLTE\dist\img\jian.png" />
     <Content Include="AdminLTE\dist\img\login-bg.jpg" />
@@ -359,6 +364,7 @@
     <Content Include="AdminLTE\dist\img\yanzheng%401x.png" />
     <Content Include="AdminLTE\dist\img\yanzheng%403x.png" />
     <Content Include="AdminLTE\dist\img\单机版下载%401x.png" />
+    <Content Include="AdminLTE\dist\index.css" />
     <Content Include="AdminLTE\dist\js\app.js" />
     <Content Include="AdminLTE\dist\js\app.min.js" />
     <Content Include="AdminLTE\dist\js\demo.js" />
@@ -1572,6 +1578,10 @@
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Error\HttpError.cshtml" />
     <Content Include="Views\Error\NotFound.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\UpdatePw.cshtml" />
+    <Content Include="Views\Index\OtherIndex.cshtml" />
+    <Content Include="Views\Index\VeccIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AdminLTE\bootstrap\js\ie\" />

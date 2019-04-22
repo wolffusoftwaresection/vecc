@@ -32,5 +32,19 @@ namespace Wolf.Vecc.IService.ISysService
         /// </summary>
         /// <returns></returns>
         SysUsers GetUserByUserName(string userName);
+
+        /// <summary>
+        /// 注册用户 user_type 1为工程师 2为企业工程师 3为vecc后台添加的检测机构账户
+        /// </summary>
+        /// <param name="sysUsers"></param>
+        /// <returns></returns>
+        int InsertSysUser(SysUsers sysUsers);
+
+        /// <summary>
+        /// 用户名称是否存在
+        /// </summary>
+        /// <param name="userName"></param>
+        /// <returns></returns>
+        bool UserRepeat(string userName);
     }
 }

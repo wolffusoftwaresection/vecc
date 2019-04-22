@@ -51,6 +51,7 @@
     <Compile Include="SysModel\SysParams.cs" />
     <Compile Include="SysModel\SysRole.cs" />
     <Compile Include="SysModel\SysUsers.cs" />
+    <Compile Include="ViewModel\RegisterViewModel.cs" />
     <Compile Include="ViewModel\UserViewModel.cs" />
   </ItemGroup>
   <ItemGroup />

@@ -17,14 +17,35 @@ namespace Wolf.Vecc.Controllers
             _userService = userService;
         }
 
-        [VeccAuthorize(Roles = "admin,sgs")]
-        public ActionResult Index()
+        [VeccAuthorize(Roles = "admin")]
+        public ActionResult VeccIndex()
         {
             var id = WorkUser.UserId;
             var name = WorkUser.UserName;
             ViewData["id"] = id.ToString();
             ViewData["name"] = name;
             return View();
+        }
+
+        [VeccAuthorize(Roles = "sgs,engineer")]
+        public ActionResult OtherIndex()
+        {
+            var id = WorkUser.UserId;
+            var name = WorkUser.UserName;
+            ViewData["id"] = id.ToString();
+            ViewData["name"] = name;
+            return View();
+        }
+
+        public ActionResult Index()
+        {
+            if (WorkUser.RoleId == 1) {//获取缓存
+                return RedirectToAction("VeccIndex", "Index");
+            }
+            else
+            {
+                return RedirectToAction("OtherIndex", "Index");
+            }
         }
     }
 }

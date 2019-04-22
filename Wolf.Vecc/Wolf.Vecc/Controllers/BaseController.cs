@@ -52,7 +52,7 @@ namespace Wolf.Vecc.Controllers
                 AaccountStatus = veccFormsPrincipal.UserData.AccountStatus,
                 UserId = veccFormsPrincipal.UserData.UserId,
                 UserName = veccFormsPrincipal.UserData.UserName,
-                RoleId = veccFormsPrincipal.UserData.RoleId
+                RoleId = veccFormsPrincipal.UserData.RoleId,
             };
         }
     }

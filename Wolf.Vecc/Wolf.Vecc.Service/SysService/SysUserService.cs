@@ -41,5 +41,15 @@ namespace Wolf.Vecc.Service.SysService
         {
             return _dbServiceReposity.Update(sysUser);
         }
+
+        /// <summary>
+        /// 如果为true表示不存在
+        /// </summary>
+        /// <param name="userName"></param>
+        /// <returns></returns>
+        public bool UserRepeat(string userName)
+        {
+            return _dbServiceReposity.FirstOrDefault<SysUsers>(d => d.UserName == userName) == null;
+        }
     }
 }

@@ -9,6 +9,7 @@ using Wolf.Vecc.Comm.Helpers;
 using Wolf.Vecc.Data.AuthCore.AuthExt;
 using Wolf.Vecc.Data.AuthCore.PrincipalExt;
 using Wolf.Vecc.IService.ISysService;
+using Wolf.Vecc.Model.SysModel;
 using Wolf.Vecc.Model.ViewModel;
 
 namespace Wolf.Vecc.Controllers
@@ -73,6 +74,69 @@ namespace Wolf.Vecc.Controllers
                 }
             }
             return Failure("用户不存在");
+        }
+
+        /// <summary>
+        /// 工程师注册
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult Register()
+        {
+            return View();
+        }
+
+        /// <summary>
+        /// 注册时用户是否存在
+        /// </summary>
+        /// <param name="userName"></param>
+        /// <returns></returns>
+        public JsonResult UserRepeat(string userName)
+        {
+            if (_accountService.UserRepeat(userName))
+            {
+                return Json(new { valid = true });
+            }
+            return Json(new { valid = false });
+        }
+
+        /// <summary>
+        /// 注册用户信息
+        /// </summary>
+        /// <param name="registerModel"></param>
+        /// <returns></returns>
+        public ActionResult RegisterModel(RegisterViewModel registerModel)
+        {
+            //判断验证码
+
+            string salt;
+            var code = UtilityHelper.CreateHashCodePW(registerModel.Password, out salt);
+            SysUsers sysUsers = new SysUsers
+            {
+                UserName = registerModel.UserName,
+                UserType = registerModel.UserType,
+                Email = registerModel.Email,
+                EnterpriseName = registerModel.EnterpriseName,
+                Password = code,
+                Phone = registerModel.Phone,
+                RoleId = 3,
+                Salt = salt,
+                AccountStatus = 1,
+                Country = registerModel.Country,
+            };
+            if (_accountService.InsertSysUser(sysUsers) > 0)
+            {
+                return Success("注册成功");
+            }
+            return Failure("注册失败");
+        }
+
+        /// <summary>
+        /// 忘记密码
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult UpdatePw()
+        {
+            return View();
         }
 
         public ActionResult SignOut()

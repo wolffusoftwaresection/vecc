@@ -1,0 +1,79 @@
+﻿
+<link href="~/AdminLTE/dist/index.css" rel="stylesheet" />
+<div class="bg">
+    <div class="title">
+        <div class="top">
+            <div class="remind">
+                <img onClick="show2();" src="~/AdminLTE/dist/img/remind@1x.png">
+                <div><a>账户审批</a><a class="a1">报告审批</a></div>
+            </div>
+            <div class="accountsetting">
+                <img onClick="show3();" src="~/AdminLTE/dist/img/accountsetting@1x.png">
+                <div class=""><a>修改密码</a><a class="a2">添加账户</a></div>
+            </div>
+            <div class="fengge"><img src="~/AdminLTE/dist/img/fengge@1x.png"></div>
+            <div class="quit"><img src="~/AdminLTE/dist/img/quit@1x.png" onclick="javascript:location.href='index.html'"></div>
+        </div>
+        <div class="clearfix"></div>
+        <p>PEMS云计算</p>
+    </div>
+    <!-- <div class="search" >
+     <div class="search_bg" ><img class="search_bg_img" src="image/search@1x.png">
+
+     <dl class="xiala">
+     <select id="sel" onChange="selChange();" class="choose">
+        <option>
+            用户查询
+        </option>
+        <option>
+            结果查询
+        </option>
+     </select>
+    <!--
+     <dt  onClick="show();"><a>用户查询</a><img class="anniu"   src="image/xiala@1x.png"></dt>
+     <dd>结果查询</dd>
+    -->
+    <!--</dl>
+     <input class="inputtext" placeholder="        根据姓名或手机号查询" >
+    </div>
+
+     </div>-->
+    <div class="neirong">
+        <div class="gongneng">
+            <div class="chanpin"><img src="~/AdminLTE/dist/img/shenpi@1x.png" onclick="javascript:location.href='shenpi.html'"></div>
+            <div class="chanpin"><img src="~/AdminLTE/dist/img/count@1x.png" onclick="javascript:location.href='jisuan.html'"></div>
+            <div class="chanpin"><img src="~/AdminLTE/dist/img/report@1x.png" onclick="javascript:location.href='VeccReport.html'"></div>
+        </div>
+        <div class="copyright">
+            <a>关于我们 丨  联系我们  丨  在线客服  </a><a>Copyright©2018-2022 http://fu_pems.com</a><a>上海沃开汽车技术有限公司</a>
+        </div>
+    </div>
+</div>
+
+<script>
+	var n=true;
+	function show2(){
+			if(n){
+		$(".remind a").hide();
+		n=false;/*等待下一次点击，执行false分支*/
+
+	}else{
+		$(".remind a").show();
+	n=true;/*再等待下一次点击，达到循环*/}
+	}
+
+</script>
+
+
+<script>
+	var n=true;
+	function show3(){
+			if(n){
+		$(".accountsetting a").hide();
+		n=false;/*等待下一次点击，执行false分支*/
+
+	}else{
+		$(".accountsetting a").show();
+	n=true;/*再等待下一次点击，达到循环*/}
+	}
+</script>

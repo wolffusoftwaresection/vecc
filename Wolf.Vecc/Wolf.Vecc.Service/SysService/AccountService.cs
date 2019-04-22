@@ -47,5 +47,15 @@ namespace Wolf.Vecc.Service.SysService
         {
             return _userService.All();
         }
+
+        public int InsertSysUser(SysUsers sysUsers)
+        {
+            return _userService.Insert(sysUsers);
+        }
+
+        public bool UserRepeat(string userName)
+        {
+            return _userService.UserRepeat(userName.Trim());
+        }
     }
 }
