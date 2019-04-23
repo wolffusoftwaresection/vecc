@@ -1,0 +1,109 @@
+﻿       .bootstrap-table .fixed-table-container {
+        border: 0px solid #dddddd;
+    }
+
+    .bootstrap-table .table-striped > tbody > tr:nth-of-type(odd) {
+        background-color: #ffffff;
+    }
+
+    .bootstrap-table .table-striped > tbody > tr:nth-of-type(even) {
+        background-color: #ffffff;
+    }
+
+
+    .bootstrap-table .table:not(.table-condensed), .bootstrap-table .table:not(.table-condensed) > tbody > tr > th, .bootstrap-table .table:not(.table-condensed) > tfoot > tr > th, .bootstrap-table .table:not(.table-condensed) > thead > tr > td, .bootstrap-table .table:not(.table-condensed) > tbody > tr > td, .bootstrap-table .table:not(.table-condensed) > tfoot > tr > td {
+        padding: 12px !important;
+    }
+
+    .bootstrap-table .table.table-no-bordered > thead > tr > th {
+        background: #f7f7f7;
+    }
+
+    .bootstrap-table .fixed-table-container thead th:first-child {
+        border-top-left-radius: 0px;
+        -webkit-border-top-left-radius: 0px;
+        -moz-border-radius-topleft: 0px;
+    }
+
+    .bootstrap-table {
+        padding-top: 10px;
+        background: #e8eff8;
+    }
+
+        .bootstrap-table .fixed-table-toolbar .bars, .fixed-table-toolbar .search, .fixed-table-toolbar .columns {
+            padding-right: 10px;
+        }
+
+        .bootstrap-table .table.table-no-bordered > thead > tr > th, .bootstrap-table .table.table-no-bordered > tbody > tr > td {
+            border-right: 0px solid transparent;
+            border-left: 0px solid transparent;
+        }
+
+        .netcaretable .btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle), .bootstrap-table .btn-group > .btn:first-child:not(:last-child):not(.dropdown-toggle) {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            margin-right: 3px;
+        }
+
+        .netcaretable .btn-group > .btn-group:last-child > .btn, .bootstrap-table .fixed-table-toolbar .btn-group > .btn-group:last-child > .btn {
+            border-top-right-radius: 0px;
+            border-bottom-right-radius: 0px;
+            margin-left: 3px;
+        }
+
+    /*.netcaretable .btn-default, .bootstrap-table .btn-default {
+            background: #fff;
+        }*/
+
+    .setgroup > .fa {
+        color: #619be2;
+    }
+
+    .bootstrap-table .switchshow1 .checkbox input {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 5;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    .bootstrap-table .switch1 .checkbox label {
+        width: 45px;
+        height: 18px;
+        position: relative;
+        display: inline-block;
+        -webkit-transition: 0.2s;
+        transition: 0.2s;
+        background: #fff;
+        border: 1px solid #bbb;
+    }
+
+    .bootstrap-table .switch1 .checkbox input:checked + label:after {
+        background: #357fda;
+        left: 20px;
+    }
+
+    .bootstrap-table .switch1 .checkbox label:after {
+        content: '';
+        position: absolute;
+        width: 24px;
+        height: 18px;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        -webkit-transition: 0.2s;
+        transition: 0.2s;
+        background: #bbb;
+    }
+
+    .bootstrap-table .switch1 .checkbox input:checked + label:after {
+        background: #357fda;
+        left: 20px;
+    }
+
+    .bootstrap-table .fixed-table-container {
+        background: #fff;
+    }

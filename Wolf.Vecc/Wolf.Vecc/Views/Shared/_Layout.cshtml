@@ -85,7 +85,8 @@
     <!-- jQuery Knob Chart -->
     <script src="~/AdminLTE/plugins/knob/jquery.knob.js"></script>
     <!-- daterangepicker -->
-
+    <script src="~/AdminLTE/dateConvert.js"></script>
+    <script src="~/Scripts/veccjs/veccTool.js"></script>
     <script src="~/AdminLTE/moment.min.js"></script>
     <script src="~/AdminLTE/plugins/daterangepicker/daterangepicker.js"></script>
     <!-- datepicker -->
@@ -106,11 +107,7 @@
     <!-- DataTables -->
     <script src="~/AdminLTE/plugins/bootstraptable/dist/bootstrap-table.js"></script>
     <script src="~/AdminLTE/plugins/bootstraptable/dist/locale/bootstrap-table-zh-CN.js"></script>
-    <script src="~/AdminLTE/TableOperation.js"></script>
-    <script src="~/AdminLTE/TablePlugins.js"></script>
-    @*<script src="~/AdminLTE/LanguagePlugins.js"></script>*@
-    <script src="~/AdminLTE/CommonListPlugins.js"></script>
-    <script src="~/AdminLTE/CommonMethod.js"></script>
+
     <script src="~/AdminLTE/plugins/ionslider/ion.rangeSlider.min.js"></script>
     <!-- Bootstrap slider -->
     <script src="~/AdminLTE/plugins/bootstrap-slider/bootstrap-slider.js"></script>
@@ -137,7 +134,7 @@
         @*overflow-y: hidden;*@
     @RenderBody()
     <script>
-            table.initial();
+            //table.initial();
             //languagePlugin.GetLanguage(languagePlugin.AllLanguageUrl);
     </script>
 </div>

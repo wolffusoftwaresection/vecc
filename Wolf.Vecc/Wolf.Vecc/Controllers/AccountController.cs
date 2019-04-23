@@ -139,6 +139,30 @@ namespace Wolf.Vecc.Controllers
             return View();
         }
 
+        public ActionResult VeccAddUser(RegisterViewModel registerModel)
+        {
+            string salt;
+            var code = UtilityHelper.CreateHashCodePW(registerModel.Password, out salt);
+            SysUsers sysUsers = new SysUsers
+            {
+                UserName = registerModel.UserName,
+                UserType = registerModel.UserType,
+                Email = registerModel.Email,
+                EnterpriseName = registerModel.EnterpriseName,
+                Password = code,
+                Phone = registerModel.Phone,
+                RoleId = 2,
+                Salt = salt,
+                AccountStatus = 3,//vecc后台添加的检测机构账号默认通过验证
+                Country = registerModel.Country,
+            };
+            if (_accountService.InsertSysUser(sysUsers) > 0)
+            {
+                return Success("注册成功");
+            }
+            return Failure("注册失败");
+        }
+
         public ActionResult SignOut()
         {
             FormsAuthentication.SignOut();

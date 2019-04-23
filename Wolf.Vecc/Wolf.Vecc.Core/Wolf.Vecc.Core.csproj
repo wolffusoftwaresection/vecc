@@ -54,6 +54,7 @@
     <Compile Include="Cache\CacheManager.cs" />
     <Compile Include="Cache\ICacheManager.cs" />
     <Compile Include="Context\ConnectionString.cs" />
+    <Compile Include="LambdaExt\PredicateExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

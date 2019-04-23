@@ -1,4 +1,5 @@
 ﻿using EntityFramework.Extensions;
+using LinqKit;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -138,6 +139,14 @@ namespace Wolf.Vecc.Data.DataService
         public IQueryable<T> Where<T>(Expression<Func<T, bool>> whereLambada) where T : class
         {
             return _dbContext.Set<T>().Where(whereLambada);
+        }
+
+
+        public IEnumerable<T> GetWhereSearch<T>(Expression<Func<T, bool>> where) where T : class
+        {
+            if (where == null)
+                return _dbContext.Set<T>().AsExpandable();//.AsExpandable();//这个最重要.否则会出如题的错误.
+            return _dbContext.Set<T>().AsExpandable().Where(where);
         }
 
         public IEnumerable<T> Where<T>(string sql, params object[] paramseters) where T : class

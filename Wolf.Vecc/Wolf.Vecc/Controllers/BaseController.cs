@@ -32,7 +32,7 @@ namespace Wolf.Vecc.Controllers
         }
         public JsonResult Failure(string _msg = "操作失败")
         {
-            return Json(new { Success = false, Msg = string.IsNullOrEmpty(_errorMsg) ? _msg : _errorMsg });
+            return Json(new { Success = false, Msg = string.IsNullOrEmpty(_errorMsg) ? _msg : _errorMsg});
         }
         #endregion
 
@@ -41,7 +41,10 @@ namespace Wolf.Vecc.Controllers
             get
             {
                 var user = HttpContext.User as VeccFormsPrincipal<VeccUserDataPrincipal>;
-                return SetWorkUser(user);
+                if (user != null) {
+                    return SetWorkUser(user);
+                }
+                return null;
             }
         }
 

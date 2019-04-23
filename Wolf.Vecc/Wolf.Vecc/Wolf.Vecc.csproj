@@ -63,6 +63,9 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="LinqKit, Version=1.1.16.0, Culture=neutral, PublicKeyToken=bc217f8844052a91, processorArchitecture=MSIL">
+      <HintPath>..\packages\LinqKit.1.1.16\lib\net45\LinqKit.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Extensions.Configuration, Version=1.0.2.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Extensions.Configuration.1.0.2\lib\netstandard1.1\Microsoft.Extensions.Configuration.dll</HintPath>
@@ -148,6 +151,9 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="Webdiyer.MvcPager, Version=3.0.2015.802, Culture=neutral, PublicKeyToken=f6872c5a09aed72c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Webdiyer.MvcPager.3.0.1.1\lib\Webdiyer.MvcPager.dll</HintPath>
+    </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
       <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
@@ -168,6 +174,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ApprovalController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\IndexController.cs" />
@@ -181,11 +188,15 @@
   <ItemGroup>
     <Content Include="AdminLTE\ai.0.15.0-build58334.js" />
     <Content Include="AdminLTE\ai.0.15.0-build58334.min.js" />
-    <Content Include="AdminLTE\AirFunction.js" />
     <Content Include="AdminLTE\ajaxfileupload.js" />
     <Content Include="AdminLTE\baseE.css" />
-    <Content Include="AdminLTE\BaseList.js" />
     <Content Include="AdminLTE\bootstrap\css\bootstrap-switch.css" />
+    <Content Include="AdminLTE\bootstrap\css\bootstrap-table-locale-all.js" />
+    <Content Include="AdminLTE\bootstrap\css\bootstrap-table-locale-all.min.js" />
+    <Content Include="AdminLTE\bootstrap\css\bootstrap-table.css" />
+    <Content Include="AdminLTE\bootstrap\css\bootstrap-table.js" />
+    <Content Include="AdminLTE\bootstrap\css\bootstrap-table.min.css" />
+    <Content Include="AdminLTE\bootstrap\css\bootstrap-table.min.js" />
     <Content Include="AdminLTE\bootstrap\css\bootstrap-theme.css" />
     <Content Include="AdminLTE\bootstrap\css\bootstrap-theme.min.css" />
     <Content Include="AdminLTE\bootstrap\css\bootstrap.css" />
@@ -209,8 +220,6 @@
     <Content Include="AdminLTE\bootstrap\js\iCheck\moment.min.js" />
     <Content Include="AdminLTE\bootstrap\js\iCheck\select2.full.min.js" />
     <Content Include="AdminLTE\bootstrap\js\npm.js" />
-    <Content Include="AdminLTE\CollectFunction.js" />
-    <Content Include="AdminLTE\CommonListPlugins.js" />
     <Content Include="AdminLTE\CommonMethod.js" />
     <Content Include="AdminLTE\comm\comm.js" />
     <Content Include="AdminLTE\comm\comm2.js" />
@@ -220,15 +229,7 @@
     <Content Include="AdminLTE\comm\_ajax.js" />
     <Content Include="AdminLTE\comm\_message.js" />
     <Content Include="AdminLTE\comm\_table.js" />
-    <Content Include="AdminLTE\CreateAnalysisExaminationFunction.js" />
-    <Content Include="AdminLTE\CreateCheckBoxOption.js" />
-    <Content Include="AdminLTE\CreateExaminationFunction.js" />
-    <Content Include="AdminLTE\CreateOptionFunction.js" />
-    <Content Include="AdminLTE\CreateQ.js" />
-    <Content Include="AdminLTE\CreateQuestion.js" />
-    <Content Include="AdminLTE\CreateRedioOption.js" />
     <Content Include="AdminLTE\dateConvert.js" />
-    <Content Include="AdminLTE\demo.css" />
     <Content Include="AdminLTE\dist\css\AdminLTE.css" />
     <Content Include="AdminLTE\dist\css\AdminLTE.min.css" />
     <Content Include="AdminLTE\dist\css\alt\AdminLTE-bootstrap-social.css" />
@@ -378,10 +379,7 @@
     <Content Include="AdminLTE\jquery-1.8.2.min.js" />
     <Content Include="AdminLTE\jquery-ui.min.js" />
     <Content Include="AdminLTE\LanguagePlugins.js" />
-    <Content Include="AdminLTE\MessageClass.js" />
-    <Content Include="AdminLTE\MessageFunction.js" />
     <Content Include="AdminLTE\moment.min.js" />
-    <Content Include="AdminLTE\NoticeClass.js" />
     <Content Include="AdminLTE\plugins\bootstrap-fileinput\css\fileinput.css" />
     <Content Include="AdminLTE\plugins\bootstrap-fileinput\css\fileinput.min.css" />
     <Content Include="AdminLTE\plugins\bootstrap-fileinput\img\loading-sm.gif" />
@@ -1470,9 +1468,6 @@
     <Content Include="AdminLTE\SweetAlert\src\utils\default.js" />
     <Content Include="AdminLTE\SweetAlert\src\utils\dom.js" />
     <Content Include="AdminLTE\SweetAlert\src\utils\utils.js" />
-    <Content Include="AdminLTE\tableDetailed.js" />
-    <Content Include="AdminLTE\TableOperation.js" />
-    <Content Include="AdminLTE\TablePlugins.js" />
     <Content Include="AdminLTE\Uploader.swf" />
     <Content Include="AdminLTE\webuploader.css" />
     <Content Include="AdminLTE\webuploader.js" />
@@ -1485,6 +1480,7 @@
     <Content Include="Content\css\jisuan.css" />
     <Content Include="Content\css\report.css" />
     <Content Include="Content\css\shenpi.css" />
+    <Content Include="Content\TableStyle.css" />
     <Content Include="Error\NotFound.html" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -1561,6 +1557,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\veccjs\veccTool.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -1582,6 +1579,9 @@
     <Content Include="Views\Account\UpdatePw.cshtml" />
     <Content Include="Views\Index\OtherIndex.cshtml" />
     <Content Include="Views\Index\VeccIndex.cshtml" />
+    <Content Include="Views\Approval\Index.cshtml" />
+    <Content Include="Views\Approval\RefuseUser.cshtml" />
+    <Content Include="Views\Approval\AddUser.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AdminLTE\bootstrap\js\ie\" />

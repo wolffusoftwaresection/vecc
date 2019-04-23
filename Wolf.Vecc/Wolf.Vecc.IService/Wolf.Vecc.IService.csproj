@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ISysService\IAccountService.cs" />
+    <Compile Include="ISysService\ISysApprovalUserService.cs" />
     <Compile Include="ISysService\ISysRoleService.cs" />
     <Compile Include="ISysService\ISysUserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

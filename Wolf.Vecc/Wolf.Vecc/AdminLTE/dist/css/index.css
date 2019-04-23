@@ -1218,7 +1218,7 @@ tbody tr td .setgroup > .fa:hover {
 
 }
 /*弹窗*/
-@media (min-width:1200px) {
+/*@media (min-width:1200px) {
     .layui-layer {
         width:1000px!important
     }
@@ -1227,7 +1227,7 @@ tbody tr td .setgroup > .fa:hover {
     .layui-layer {
         width:90%!important
     }
-}
+}*/
 /*三级菜单*/
 .three-menu.small-box {
 	margin-bottom: 10px;

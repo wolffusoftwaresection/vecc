@@ -36,3 +36,5 @@ F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Data\bin\Debug\Newtonsoft.Json.dll
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Data\bin\Debug\Wolf.Vecc.Comm.pdb
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Data\bin\Debug\NLog.xml
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Data\bin\Debug\Newtonsoft.Json.xml
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Data\bin\Debug\LinqKit.dll
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Data\bin\Debug\LinqKit.xml

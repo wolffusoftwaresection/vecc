@@ -18,6 +18,8 @@ namespace Wolf.Vecc.Data.DataService
         #endregion
 
         #region where条件操作
+        IEnumerable<T> GetWhereSearch<T>(Expression<Func<T, bool>> where) where T : class;
+
         IQueryable<T> Where<T>(Expression<Func<T, bool>> whereLambada) where T : class;
 
         T FirstOrDefault<T>(Expression<Func<T, bool>> whereLamdaba) where T : class;

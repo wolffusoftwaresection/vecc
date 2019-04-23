@@ -1,0 +1,293 @@
+﻿<div class="content" id="pageSection" style="background: white; min-height: 10px;">
+    <div class="row">
+        <div class="col-lg-12">
+            @*<label class="type" for="exampleInputPassword2">审批类型:</label>
+                <select onchange="selShow();" id="select1" name="select" class="selectpicker show-tick form-control" data-actions-box="true">
+                    <option value="0">数据审批</option>
+                    <option value="1">人员审批</option>
+                </select>*@
+            <button type="button" class="btn btn-default btn-flat" data-toggle="collapse" data-parent="#accordion" href="#collapseToolSearch">筛选项</button>
+            <button type="button" id="addUser" class="btn btn-dropbox btn-flat" onclick="addUser();">新增</button>
+        </div>
+        <div class="col-lg-12">
+            <div id="collapseToolSearch" class="panel-collapse collapse">
+                <div class="border-dashed">
+                    <form class="">
+                        <div class="box-body">
+                            <div class="row" id="SearchList">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="col-sm-3 control-label">状态</label>
+                                        <div class="col-sm-6">
+                                            <select id="state" name="select" class="selectpicker show-tick form-control" data-actions-box="true">
+                                                <option value="0">请选择</option>
+                                                <option value="1">待审核</option>
+                                                <option value="2">未通过</option>
+                                                <option value="3">已通过</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="">姓名</label>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="username" placeholder="请输入名称">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box-footer pull-right">
+                            <button type="button" class="btn btn-dropbox btn-flat" id="screeningBtn" onclick="screeningSearch()">筛选</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="box-body" style="padding-left:15px;">
+    <table id="tb_UserApproval" class="table-bordered"></table>
+    <table id="tb_DataApproval" class="table-no-bordered"></table>
+</div>
+
+
+@*<div style="text-align:right;padding: 5px;" class="form-inline">
+        <div class="form-group">
+            <label class="type" for="exampleInputPassword2">审批类型:</label>
+            <select onchange="selShow();" id="select1" name="select" class="selectpicker show-tick form-control" data-actions-box="true">
+                <option value="0">数据审批</option>
+                <option value="1">人员审批</option>
+
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="" for="exampleInputEmail2">姓名:</label>
+            <input type="text" class="form-control" id="username" placeholder="请输入名称">
+        </div>
+        <div class="form-group">
+            <label class="" for="exampleInputPassword2">状态:</label>
+            <select id="state" name="select" class="selectpicker show-tick form-control" data-actions-box="true">
+                <option value="0">请选择</option>
+                <option value="1">待审核</option>
+                <option value="2">未通过</option>
+                <option value="3">已通过</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-group-sm btn-info">查询</button>
+    </div>
+    <div class="box-body">
+        <table id="tb_UserApproval" class="table-no-bordered"></table>
+        <table id="tb_DataApproval" class="table-no-bordered"></table>
+    </div>*@
+<script>
+    $(function () {
+        initUserApproval();
+    });
+
+    function initUserApproval() {
+        $("#tb_UserApproval").bootstrapTable({
+            url: "/Approval/UserApprovalList",         //请求后台的URL（*）
+            method: 'post',                      //请求方式（*）
+            //toolbar: toolbar,                //工具按钮用哪个容器
+            striped: true,                      //是否显示行间隔色
+            cache: false,                       //是否使用缓存，默认为true，所以一般情况下需要设置一下这个属性（*）
+            pagination: true,                   //是否显示分页（*）
+            sortable: false,                     //是否启用排序
+            sortOrder: "asc",                   //排序方式
+            queryParams: function (params) {
+                var temp = {   //这里的键的名字和控制器的变量名必须一致，这边改动，控制器也需要改成一样的
+                    PageSize: params.limit,   //页面显示行数
+                    PageIndex: params.offset / params.limit + 1,//页码*页面显示行数=offset
+                    UserName: $("#username").val(),
+                    State: $("#state").val()
+                };
+                return temp;
+            },//传递参数（*）
+            sidePagination: "server",           //分页方式：client客户端分页，server服务端分页（*）
+            pageNumber: 1,                                              //初始化加载第一页，默认第一页
+            pageSize: 15,                                               //每页的记录行数（*）
+            pageList: [10, 25, 50, 100],
+            search: false,                       //是否显示表格搜索，此搜索是客户端搜索，不会进服务端，所以，个人感觉意义不大
+            strictSearch: false,
+            showColumns: false,                  //是否显示所有的列
+            showRefresh: true,                  //是否显示刷新按钮
+            minimumCountColumns: 2,             //最少允许的列数
+            clickToSelect: true,                //是否启用点击选中行
+            // height: 500,                        //行高，如果没有设置height属性，表格自动根据记录条数觉得表格高度
+            uniqueId: "Id",                     //每一行的唯一标识，一般为主键列
+            //showToggle: true,                    //是否显示详细视图和列表视图的切换按钮
+            //cardView: false,                    //是否显示详细视图
+            columns: [
+
+                {
+                    field: 'UserName',
+                    align: 'left',
+                    title: '申请账号',
+                    visible: 1
+                },
+                {
+                    field: 'Email',
+                    align: 'center',
+                    title: '邮箱',
+                    visible: 1
+                },
+                {
+                    field: 'EnterpriseName',
+                    align: 'center',
+                    title: '所属企业',
+                    visible: 1
+                },
+                {
+                    field: 'Phone',
+                    align: 'center',
+                    title: '手机号',
+                    visible: 1
+                }, {
+                    field: 'Country',
+                    align: 'center',
+                    title: '国家',
+                    visible: 1
+                },
+                {
+                    field: 'UserType',
+                    align: 'center',
+                    title: '用户类型',
+                    visible: 1,
+                    formatter: function (value) {
+                        return vecc.veccUserTypeToStr(value);
+                    }
+                }, {
+                    field: 'AccountStatus',
+                    align: 'center',
+                    title: '账号状态',
+                    visible: 1,
+                    formatter: function (value) {
+                        return vecc.veccStatusToStr(value);
+                    }
+                },
+                {
+                    field: 'CreateDate',
+                    align: 'center',
+                    title: '发起时间',
+                    visible: 1,
+                    formatter: function (value, row, index) {
+                        return formatDateBoxFull(value);
+                    }
+                },
+                {
+                    field: 'operate',
+                    align: 'center',
+                    title: '操作',
+                    visible: 1,
+                    formatter: function (value, row, index) {
+                        var button = "";
+                        if (row.AccountStatus == 1) {
+                            button = '<a class="btn btn-info" href="#" onclick="onAgree(' + row.Id + ');"><i class="glyphicon"></i>同意</a><a class="btn btn-danger" href="#" onclick="onRefuseUser(' + row.Id + ');"><i class="glyphicon"></i>拒绝</a>';
+                        }
+                        else {
+                            button = '<a class="btn btn-success" href="#"><i class="glyphicon"></i>查看</a><a class="btn btn-danger" href="#" onclick="onDel(' + row.Id + ',\'' + row.UserName + '\');"><i class="glyphicon"></i>删除</a>';
+                        }
+                        return button;
+                    }
+                }
+            ],
+            onPageChange: function (number, size) {
+
+            },
+            onClickRow: function (row, element, field) {
+
+            },
+            onDblClickRow: function (row, obj) {
+
+            }
+        });
+    }
+
+    function screeningSearch() {
+        $("#tb_UserApproval").bootstrapTable('refresh');
+    }
+
+    //同意
+    function onAgree(id) {
+        $.ajax({
+            url: "/Approval/AgreeUser",
+            data: {
+                Id: id
+            },
+            type: "POST",
+            async: false,
+            success: function (data) {
+                if (data.Success) {
+                    $("#tb_UserApproval").bootstrapTable("refresh");
+                    //parent.layer.close(thisLayer);
+                }
+            },
+            error: function (data) {
+            }
+        });
+    }
+
+    function onRefuseUser(id) {
+        layer.open({
+            type: 2,
+            title: ['拒绝-备注'],
+            shadeClose: false,
+            btn: ['确定', '取消'],
+            skin: '',
+            area: ['30%', '45%'],
+            //maxmin: true,
+            content: ['/Approval/RefuseUser?id=' + id, "yes"],
+            yes: function (index, layor) {
+                $(layor).find("iframe")[0].contentWindow.DoRefuseUser();
+                layer.close(index);
+            },
+            no: function (index, layor) {
+
+            }
+        });
+    }
+
+    function onDel(id, username) {
+        var _msg = msg;
+        _msg.confirm("账号: " + username + " 将被删除", function () {
+            $.ajax({
+                url: "/Approval/DeleteUser",
+                type: "POST",
+                data: {
+                    Id: id
+                },
+                success: function (data) {
+                    if (data.Success) {
+                        $("#tb_UserApproval").bootstrapTable('refresh');
+                        msg.info("删除成功");
+                    } else {
+                        msg.error("删除失败");
+                    }
+                },
+                error: function (error) {
+
+                }
+            });
+        });
+    }
+
+    function addUser() {
+        layer.open({
+            type: 2,
+            title: ['新增-检测机构'],
+            shadeClose: false,
+            btn: ['确定', '取消'],
+            skin: '',
+            area: ['80%', '80%'],
+            maxmin: true,
+            content: ['/Approval/AddUser', "yes"],
+            yes: function (index, layor) {
+                $(layor).find("iframe")[0].contentWindow.VeccAddUser();
+                //layer.close(index);
+            },
+            no: function (index, layor) {
+
+            }
+        });
+    }
+</script>

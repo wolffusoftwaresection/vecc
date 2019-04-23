@@ -1,0 +1,199 @@
+﻿@model Wolf.Vecc.Model.ViewModel.RegisterViewModel
+@*<link href="~/AdminLTE/dist/css/form-elements.css" rel="stylesheet" />*@
+<link href="~/AdminLTE/dist/css/style.css" rel="stylesheet" />
+<div class="container" id="pageSection" style="background: white; min-height: 10px;margin-top: 15px;">
+    <form id="defaultForm" role="form" action="/Account/VeccAddUser" method="post" class="">
+        <div class="form-group">
+            <label for="username">用户名：</label>
+            @*<input name="username" class="form-control" type="text">*@
+            @Html.TextBoxFor(m => Model.UserName, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <label for="country">国家：</label>
+            @Html.TextBoxFor(m => Model.Country, new { @class = "form-control" })
+            @*<input name="country" class="form-control" type="text">*@
+        </div>
+        <div class="form-group">
+            <label for="phone">手机号：</label>
+            @Html.TextBoxFor(m => Model.Phone, new { @class = "form-control" })
+            @*<input name="phone" class="form-control" type="text">*@
+        </div>
+        <div class="form-group">
+            <label for="enterpriseName">企业名称：</label>
+            @Html.TextBoxFor(m => Model.EnterpriseName, new { @class = "form-control" })
+            @*<input name="enterpriseName" class="form-control" type="text">*@
+        </div>
+        <div class="form-group">
+            <label for="email">邮箱：</label>
+            @Html.TextBoxFor(m => Model.Email, new { @class = "form-control" })
+            @*<input name="email" class="form-control" type="text" />*@
+        </div>
+        <div class="form-group">
+            <label for="password">密码：</label>
+            @Html.PasswordFor(m => Model.Password, new { @class = "form-control" })
+            @*<input name="password" class="form-control" type="text" />*@
+        </div>
+        <div class="form-group">
+            <label for="confirmPassword">确认密码：</label>
+            <input name="confirmPassword" class="form-control" type="password" />
+        </div>
+        <div class="form-group" style="display:none;">
+            <input class="form-control" id="submit" type="submit">
+            <input type="reset" id="reset" value="" />
+        </div>
+        <div class="form-group" style="display:none;">
+            <label for="UserType">用户类型：</label>
+            <div class="form-inline">
+                <label class="col-sm-2">检测机构</label> @Html.RadioButtonFor(m => Model.UserType, 3, new { @class = "col-sm-1", @checked = true })
+            </div>
+        </div>
+    </form>
+</div>
+    <script>
+        $(function () {
+            $('#defaultForm')
+                .bootstrapValidator({
+                    message: '验证错误',
+                    feedbackIcons: {
+                        valid: 'glyphicon glyphicon-ok',
+                        invalid: 'glyphicon glyphicon-remove',
+                        validating: 'glyphicon glyphicon-refresh'
+                    },
+                    fields: {//    password
+                        UserName: {
+                            validators: {
+                                notEmpty: {
+                                    message: '用户名不能为空'
+                                }, remote: {
+                                    url: '/Account/UserRepeat',//验证地址
+                                    message: '用户已存在',//提示消息
+                                    delay: 2000,//每输入一个字符，就发ajax请求，服务器压力还是太大，设置2秒发送一次ajax（默认输入一个字符，提交一次，服务器压力太大）
+                                    type: 'POST'//请求方式
+                                }
+                            }
+                        },
+                        Email: {
+                            validators: {
+                                notEmpty: {
+                                    message: '邮箱地址不能为空'
+                                },
+                                emailAddress: {
+                                    message: '请输入正确的邮件地址如：123@qq.com'
+                                }
+                            }
+                        },
+                        Password: {
+                            message: '密码无效',
+                            validators: {
+                                notEmpty: {
+                                    message: '密码不能为空'
+                                },
+                                stringLength: {
+                                    min: 6,
+                                    max: 30,
+                                    message: '用户名长度必须在6到30之间'
+                                },
+                                identical: {//相同
+                                    field: 'password', //需要进行比较的input name值
+                                    message: '两次密码不一致'
+                                },
+                                different: {//不能和用户名相同
+                                    field: 'username',//需要进行比较的input name值
+                                    message: '不能和用户名相同'
+                                },
+                                regexp: {
+                                    regexp: /^[a-zA-Z0-9_\.]+$/,
+                                    message: 'The username can only consist of alphabetical, number, dot and underscore'
+                                }
+                            }
+                        },
+                        confirmPassword: {
+                            message: '密码无效',
+                            validators: {
+                                notEmpty: {
+                                    message: '用户名不能为空'
+                                },
+                                stringLength: {
+                                    min: 6,
+                                    max: 30,
+                                    message: '用户名长度必须在6到30之间'
+                                },
+                                identical: {//相同
+                                    field: 'password',
+                                    message: '两次密码不一致'
+                                },
+                                different: {//不能和用户名相同
+                                    field: 'username',
+                                    message: '不能和用户名相同'
+                                },
+                                regexp: {//匹配规则
+                                    regexp: /^[a-zA-Z0-9_\.]+$/,
+                                    message: 'The username can only consist of alphabetical, number, dot and underscore'
+                                }
+                            }
+                        },
+                        Country: {
+                            validators: {
+                                notEmpty: {
+                                    message: '国家不能为空'
+                                }
+                            }
+                        },
+                        EnterpriseName: {
+                            validators: {
+                                notEmpty: {
+                                    message: '企业名称不能为空'
+                                }
+                            }
+                        },
+                        VerificationCode: {
+                            validators: {
+                                notEmpty: {
+                                    message: '验证码不能为空'
+                                }
+                            }
+                        },
+                        Phone: {
+                            message: '手机号验证不通过',
+                            validators: {
+                                notEmpty: {
+                                    message: '手机号码不能为空'
+                                },
+                                stringLength: {
+                                    min: 11,
+                                    max: 11,
+                                    message: '请输入11位手机号码'
+                                },
+                                regexp: {
+                                    regexp: /^1[3|5|8]{1}[0-9]{9}$/,
+                                    message: '请输入正确的手机号码'
+                                }
+                            }
+                        }
+                    }
+                }).on('success.form.bv', function (e, data) {//点击提交之后
+                    // Prevent form submission
+                    e.preventDefault();
+
+                    // Get the form instance
+                    var $form = $(e.target);
+
+                    // Get the BootstrapValidator instance
+                    var bv = $form.data('bootstrapValidator');
+                    //$("#defaultForm").data('bootstrapValidator').destroy();
+                    //$('#defaultForm').data('bootstrapValidator', null);
+                    $("#defaultForm").data('bootstrapValidator').resetForm();//清除当前验证的关键之处
+                    //$("#defaultForm").modal("hide");
+                    // Use Ajax to submit form data 提交至form标签中的action，result自定义
+                    $.post($form.attr('action'), $form.serialize(), function (result) {
+                        $('#reset').click();
+                        alert(result.Success);
+                    });
+                });
+        });
+
+        function VeccAddUser() {
+            $('#submit').click();
+            //$('#defaultForm').bootstrapValidator('resetForm');
+        }
+    </script>

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Wolf.Vecc.Model.SysModel;
+using Wolf.Vecc.Model.ViewModel;
 
 namespace Wolf.Vecc.IService.ISysService
 {
@@ -20,5 +21,9 @@ namespace Wolf.Vecc.IService.ISysService
         List<int> GetRoleIdByUserId(int uId);
 
         bool UserRepeat(string userName);
+
+        List<SysUsers> GetUserList(UserApprovalViewModel userApprovalViewModel);
+
+        SysUsers GetUserById(int Id);
     }
 }
