@@ -1,0 +1,82 @@
+﻿@model Wolf.Vecc.Model.SysModel.SysUsers
+<script type="text/javascript" src="~/AdminLTE/htmlCode.js"></script>
+<script src="~/AdminLTE/bootstrap/js/iCheck/bootstrap-datepicker.js"></script>
+<script src="~/AdminLTE/bootstrap/js/iCheck/daterangepicker.js"></script>
+<div class="content tsmodal-content" style="background: white">
+    <div id="localDiv" class="row">
+        <div class="col-lg-12">
+            <div class="marginbottom-10">
+                <div class="form-horizontal">
+                    @*@Html.ValidationSummary(true, "", new { @class = "text-danger" })*@
+                    @Html.HiddenFor(model => model.Id)
+                    @*@Html.HiddenFor(model => model.AccountStatus)*@
+                    @Html.HiddenFor(model => model.CreateDate)
+                    @*@Html.HiddenFor(model => model.UserType)*@
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="username" class="col-sm-4">用户名：</label>
+                                <div class="col-sm-8">
+                                    @Html.TextBoxFor(m => Model.UserName, new { @class = "form-control" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="country" class="col-sm-4">国家：</label>
+                                <div class="col-sm-8">
+                                    @Html.TextBoxFor(m => Model.Country, new { @class = "form-control" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="country" class="col-sm-4">手机号：</label>
+                                <div class="col-sm-8">
+                                    @Html.TextBoxFor(m => Model.Phone, new { @class = "form-control" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="country" class="col-sm-4">企业名称：</label>
+                                <div class="col-sm-8">
+                                    @Html.TextBoxFor(m => Model.EnterpriseName, new { @class = "form-control" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="country" class="col-sm-4">邮箱：</label>
+                                <div class="col-sm-8">
+                                    @Html.TextBoxFor(m => Model.Email, new { @class = "form-control" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="country" class="col-sm-4">用户类型：</label>
+                                <div class="col-sm-8">
+                                    @Html.TextBoxFor(m => Model.UserType, new { @class = "form-control" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="country" class="col-sm-4">账号状态：</label>
+                                <div class="col-sm-8">
+                                    @Html.TextBoxFor(m => Model.AccountStatus, new { @class = "form-control" })
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

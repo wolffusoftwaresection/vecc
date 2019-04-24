@@ -147,7 +147,8 @@ namespace Wolf.Vecc.Controllers
         /// <returns></returns>
         public ActionResult UserInFo(int Id)
         {
-            return View();
+            var user = _userService.GetUserById(Id);
+            return View(user);
         }
 
         public ActionResult AddUser()

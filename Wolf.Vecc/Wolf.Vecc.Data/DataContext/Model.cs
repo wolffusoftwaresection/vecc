@@ -28,7 +28,8 @@
         public virtual DbSet<SysApprovaUser> SysApprovaUser { get; set; }
         public virtual DbSet<SysParams> SysParams { get; set; }
         public virtual DbSet<SysUsers> SysUser { get; set; }
-
+        public virtual DbSet<SysPemsTask> SysPemsTask { get; set; }
+        public virtual DbSet<SysTask> SysTask { get; set; }
     }
 
     //public class MyEntity

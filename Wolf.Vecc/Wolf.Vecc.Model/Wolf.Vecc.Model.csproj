@@ -50,7 +50,9 @@
     <Compile Include="SysModel\SysData.cs" />
     <Compile Include="SysModel\SysLog.cs" />
     <Compile Include="SysModel\SysParams.cs" />
+    <Compile Include="SysModel\SysPemsTask.cs" />
     <Compile Include="SysModel\SysRole.cs" />
+    <Compile Include="SysModel\SysTask.cs" />
     <Compile Include="SysModel\SysUsers.cs" />
     <Compile Include="ViewModel\RegisterViewModel.cs" />
     <Compile Include="ViewModel\UserApprovalViewModel.cs" />

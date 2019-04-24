@@ -105,7 +105,7 @@
             },//传递参数（*）
             sidePagination: "server",           //分页方式：client客户端分页，server服务端分页（*）
             pageNumber: 1,                                              //初始化加载第一页，默认第一页
-            pageSize: 15,                                               //每页的记录行数（*）
+            pageSize: 10,                                               //每页的记录行数（*）
             pageList: [10, 25, 50, 100],
             search: false,                       //是否显示表格搜索，此搜索是客户端搜索，不会进服务端，所以，个人感觉意义不大
             strictSearch: false,
@@ -185,7 +185,7 @@
                             button = '<a class="btn btn-info" href="#" onclick="onAgree(' + row.Id + ');"><i class="glyphicon"></i>同意</a><a class="btn btn-danger" href="#" onclick="onRefuseUser(' + row.Id + ');"><i class="glyphicon"></i>拒绝</a>';
                         }
                         else {
-                            button = '<a class="btn btn-success" href="#"><i class="glyphicon"></i>查看</a><a class="btn btn-danger" href="#" onclick="onDel(' + row.Id + ',\'' + row.UserName + '\');"><i class="glyphicon"></i>删除</a>';
+                            button = '<a class="btn btn-success" href="#" onclick="UserInFo(' + row.Id + ');"><i class="glyphicon"></i>查看</a><a class="btn btn-danger" href="#" onclick="onDel(' + row.Id + ',\'' + row.UserName + '\');"><i class="glyphicon"></i>删除</a>';
                         }
                         return button;
                     }
@@ -284,6 +284,25 @@
             yes: function (index, layor) {
                 $(layor).find("iframe")[0].contentWindow.VeccAddUser();
                 //layer.close(index);
+            },
+            no: function (index, layor) {
+
+            }
+        });
+    }
+
+    function UserInFo(id) {
+        layer.open({
+            type: 2,
+            title: ['查看-用户信息'],
+            shadeClose: false,
+            btn: ['关闭'],
+            skin: '',
+            area: ['60%', '60%'],
+            maxmin: true,
+            content: ['/Approval/UserInFo?Id='+id, "yes"],
+            yes: function (index, layor) {
+                layer.close(index);
             },
             no: function (index, layor) {
 
