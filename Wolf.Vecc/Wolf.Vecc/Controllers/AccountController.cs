@@ -168,5 +168,10 @@ namespace Wolf.Vecc.Controllers
             FormsAuthentication.SignOut();
             return Redirect("~/Login");
         }
+
+        public ActionResult TestRegister()
+        {
+            return View();
+        }
     }
 }
