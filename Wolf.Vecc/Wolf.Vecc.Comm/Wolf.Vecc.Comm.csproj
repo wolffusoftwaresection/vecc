@@ -66,6 +66,7 @@
     <Compile Include="Helpers\JsonHelper.cs" />
     <Compile Include="Helpers\LogHelper.cs" />
     <Compile Include="Helpers\UtilityHelper.cs" />
+    <Compile Include="Helpers\VeccModelHelp.cs" />
     <Compile Include="NlogExtent\LogUtil.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

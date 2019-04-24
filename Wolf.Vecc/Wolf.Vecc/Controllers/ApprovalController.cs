@@ -6,6 +6,7 @@ using System.Transactions;
 using System.Web;
 using System.Web.Mvc;
 using Webdiyer.WebControls.Mvc;
+using Wolf.Vecc.Comm.Helpers;
 using Wolf.Vecc.Data.AuthCore;
 using Wolf.Vecc.IService.ISysService;
 using Wolf.Vecc.Model.SysModel;
@@ -148,6 +149,8 @@ namespace Wolf.Vecc.Controllers
         public ActionResult UserInFo(int Id)
         {
             var user = _userService.GetUserById(Id);
+            ViewBag.userType = VeccModelHelp.GetUserType(user.UserType);
+            ViewBag.accountStatus = VeccModelHelp.GetAccountStatus(user.AccountStatus);
             return View(user);
         }
 
