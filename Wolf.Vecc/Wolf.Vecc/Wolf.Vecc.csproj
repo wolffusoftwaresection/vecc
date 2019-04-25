@@ -1472,11 +1472,6 @@
     <Content Include="AdminLTE\Uploader.swf" />
     <Content Include="AdminLTE\webuploader.css" />
     <Content Include="AdminLTE\webuploader.js" />
-    <Content Include="assetc\css\bootstrap-theme.css" />
-    <Content Include="assetc\css\bootstrap.min.css" />
-    <Content Include="assetc\css\font-awesome.min.css" />
-    <Content Include="assetc\css\style.css" />
-    <Content Include="assetc\images\logo.png" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -1486,6 +1481,7 @@
     <Content Include="Content\css\jisuan.css" />
     <Content Include="Content\css\report.css" />
     <Content Include="Content\css\shenpi.css" />
+    <Content Include="Content\style.css" />
     <Content Include="Content\TableStyle.css" />
     <Content Include="Error\NotFound.html" />
     <Content Include="favicon.ico" />
@@ -1591,11 +1587,11 @@
     <Content Include="Views\Approval\UserInFo.cshtml" />
     <Content Include="Views\Calculation\Index.cshtml" />
     <Content Include="Views\Account\TestRegister.cshtml" />
+    <Content Include="Views\Account\RegisterEngineer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AdminLTE\bootstrap\js\ie\" />
     <Folder Include="App_Data\" />
-    <Folder Include="assetc\js\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

@@ -85,6 +85,11 @@ namespace Wolf.Vecc.Controllers
             return View();
         }
 
+        public ActionResult RegisterEngineer()
+        {
+            return View();
+        }
+
         /// <summary>
         /// 注册时用户是否存在
         /// </summary>

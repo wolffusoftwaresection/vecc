@@ -1,6 +1,7 @@
-﻿<link href="~/assetc/css/bootstrap-theme.css" rel="stylesheet" />
+﻿@model Wolf.Vecc.Model.ViewModel.RegisterViewModel
+<link href="~/assetc/css/bootstrap-theme.css" rel="stylesheet" />
 <link href="~/assetc/css/bootstrap.min.css" rel="stylesheet" />
-<link href="~/assetc/css/font-awesome.min.css" rel="stylesheet" />
+
 <link href="~/assetc/css/style.css" rel="stylesheet" />
 <header id="head" class="secondary">
     <div class="container">
@@ -15,76 +16,36 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6">
-            <h3 class="section-title">Vecc平台工程师注册</h3>
+            <h3 class="section-title">Vecc平台注册</h3>
             <p>
-                注册完成后请耐心等待后台管理员审核,如有特殊情况可请致电平台客服
+                注册完成后请耐心等待后台管理员审核,如有特殊需求可请致电平台客服
             </p>
-            <!--NOTE: Update your email Id in "contact_me.php" file in order to receive emails from your contact form-->
-            <form name="sentMessage" id="contactForm" novalidate>
-                <div class="control-group">
-                    <div class="controls">
-                        <input type="text" class="form-control" placeholder="用户名" id="name"
-                               data-validation-required-message="用户名" />
-                        <p class="help-block"></p>
-                    </div>
-                </div>
-                <div class="control-group">
-                    <div class="controls">
-                        <input type="text" class="form-control" placeholder="国家" id="name"
-                               data-validation-required-message="国家" />
-                        <p class="help-block"></p>
-                    </div>
-                </div>
-
-                <div class="control-group">
-                    <div class="controls">
-                        <input type="text" class="form-control" placeholder="手机号" id="name"
-                               data-validation-required-message="手机号" />
-                        <p class="help-block"></p>
-                    </div>
-                </div>
-                <div class="control-group">
-                    <div class="controls">
-                        <input type="text" class="form-control" placeholder="企业名称" id="name"
-                               data-validation-required-message="企业名称" />
-                        <p class="help-block"></p>
-                    </div>
-                </div>
-                <div class="control-group">
-                    <div class="controls">
-                        <input type="text" class="form-control" placeholder="邮箱" id="name"
-                               data-validation-required-message="邮箱" />
-                        <p class="help-block"></p>
-                    </div>
-                </div>
-                <div class="control-group">
-                    <div class="controls">
-                        <input type="text" class="form-control" placeholder="密码" id="name"
-                               data-validation-required-message="密码" />
-                        <p class="help-block"></p>
-                    </div>
-                </div>
-                <div class="control-group">
-                    <div class="controls">
-                        <input type="text" class="form-control" placeholder="确认密码" id="name"
-                               data-validation-required-message="确认密码" />
-                        <p class="help-block"></p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-7">
-                        <div class="form-group">
-                            <div class="input-group">
-                                <span class="input-group-addon"><span class="glyphicon glyphicon-qrcode"></span></span>
-                                <input id="idcode-btn" class="form-control" placeholder="请输入校验码" maxlength="6" type="text">
-                            </div>
+            <form action="#" method="post" class="form-horizontal">
+                <div class="row form-group">
+                    <div class="col col-md-12">
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="fa fa-user"></i></div>
+                            <input type="text" id="input1-group1" name="input1-group1" placeholder="Username" class="form-control">
                         </div>
                     </div>
-                    <div class="col-xs-5 text-center">
-                        <button type="button" id="loadingButton" class="btn btn-primary" autocomplete="off">获取短信校验码</button>
+                </div>
+                <div class="row form-group">
+                    <div class="col col-md-12">
+                        <div class="input-group">
+                            <input type="email" id="input2-group1" name="input2-group1" placeholder="Email" class="form-control">
+                            <div class="input-group-addon"><i class="fa fa-envelope-o"></i></div>
+                        </div>
                     </div>
                 </div>
-                <input class="form-control btn btn-primary" id="submit" value="立&nbsp;&nbsp;即&nbsp;&nbsp;注&nbsp;&nbsp;册" type="submit">
+                <div class="row form-group">
+                    <div class="col col-md-12">
+                        <div class="input-group">
+                            <div class="input-group-addon"><i class="fa fa-euro"></i></div>
+                            <input type="text" id="input3-group1" name="input3-group1" placeholder=".." class="form-control">
+                            <div class="input-group-addon">.00</div>
+                        </div>
+                    </div>
+                </div>
             </form>
         </div>
         <div class="col-md-6">

@@ -7,7 +7,6 @@ F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.IService\obj\Debug\Wolf.Vecc.IService.cspro
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.IService\obj\Debug\Wolf.Vecc.IService.csproj.CopyComplete
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.IService\obj\Debug\Wolf.Vecc.IService.dll
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.IService\obj\Debug\Wolf.Vecc.IService.pdb
-F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.IService\bin\Debug\NLog.config
 D:\工作资料\PEMS\VECC Program\Wolf.Vecc\Wolf.Vecc.IService\bin\Debug\NLog.config
 D:\工作资料\PEMS\VECC Program\Wolf.Vecc\Wolf.Vecc.IService\bin\Debug\Wolf.Vecc.IService.dll
 D:\工作资料\PEMS\VECC Program\Wolf.Vecc\Wolf.Vecc.IService\bin\Debug\Wolf.Vecc.IService.pdb
