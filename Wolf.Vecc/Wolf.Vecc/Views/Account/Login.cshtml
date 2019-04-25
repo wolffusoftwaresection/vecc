@@ -1,13 +1,104 @@
 ﻿@model Wolf.Vecc.Model.ViewModel.UserViewModel
-<script>
-    function LoginSuccess(data) {
-        if (data.Success){
-            location.replace(path + "Index/Index");
-        }
-        else
-            msg.info(data.Msg);
-    }
-</script>
+@{
+    Layout = null;
+}
+<link href="~/AdminLTE/bootstrap/css/font-awesome.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="~/AdminLTE/bootstrap/css/bootstrap.min.css">
+
+<!-- DataTables -->
+<link rel="stylesheet" href="~/AdminLTE/plugins/bootstraptable/dist/bootstrap-table.css">
+<!-- Theme style -->
+<link rel="stylesheet" href="~/AdminLTE/dist/css/AdminLTE.min.css">
+<link rel="stylesheet" href="~/AdminLTE/bootstrap/css/bootstrap-switch.css">
+<link href="~/AdminLTE/dist/css/bootstrapValidator.min.css" rel="stylesheet" />
+
+<!-- global stylesheets -->
+<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+<link rel="stylesheet" href="~/AdminLTE/dist/css//bootstrap.min.css">
+<link rel="stylesheet" href="~/AdminLTE/dist/font-awesome-4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="~/AdminLTE/dist/css/font-icon-style.css">
+<link rel="stylesheet" href="~/AdminLTE/dist/css/style.default.css" id="theme-stylesheet">
+
+
+<!-- AdminLTE Skins. Choose a skin from the css/skins
+     folder instead of downloading all of them to reduce the load. -->
+<!--  <link rel="stylesheet" href="~/AdminLTE/dist/css/skins/_all-skins.min.css">-->
+<!-- iCheck -->
+@*<link rel="stylesheet" href="~/AdminLTE/plugins/iCheck/flat/blue.css">*@
+<!-- bootstrap wysihtml5 - text editor -->
+@*<link rel="stylesheet" href="~/AdminLTE/plugins/summernote-master/dist/summernote.css">*@
+<!-- Morris chart -->
+<link rel="stylesheet" href="~/AdminLTE/plugins/morris/morris.css">
+<!-- jvectormap -->
+<link rel="stylesheet" href="~/AdminLTE/plugins/jvectormap/jquery-jvectormap-1.2.2.css">
+<!-- Date Picker -->
+<link rel="stylesheet" href="~/AdminLTE/plugins/datepicker/datepicker3.css">
+<link rel="stylesheet" href="~/AdminLTE/plugins/timepicker/bootstrap-timepicker.min.css">
+<link href="~/AdminLTE/bootstrap/css/font-awesome.min.css" rel="stylesheet" />
+<!-- iCheck for checkboxes and radio inputs -->
+@*<link rel="stylesheet" href="~/AdminLTE/plugins/iCheck/all.css">*@
+<!-- Daterange picker -->
+<link rel="stylesheet" href="~/AdminLTE/plugins/daterangepicker/daterangepicker.css">
+@*<link rel="stylesheet" href="~/AdminLTE/plugins/datetimepicker/bootstrap-datetimepicker.min.css">*@
+<!-- bootstrap wysihtml5 - text editor -->
+<link rel="stylesheet" href="~/AdminLTE/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+<link rel="stylesheet" href="~/AdminLTE/plugins/datatables/dataTables.bootstrap.css">
+
+<link rel="stylesheet" href="~/AdminLTE/plugins/ionslider/ion.rangeSlider.css">
+<!-- ion slider Nice -->
+<link rel="stylesheet" href="~/AdminLTE/plugins/ionslider/ion.rangeSlider.skinNice.css">
+<link rel="stylesheet" href="~/AdminLTE/dist/css/index.css">
+
+<link href="~/AdminLTE/SweetAlert/dist/sweetalert2.css" rel="stylesheet" />
+
+
+
+<!-- jQuery 2.2.3 -->
+
+
+
+<script src="~/AdminLTE/plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script src="~/AdminLTE/plugins/jQuery/jquery.unobtrusive-ajax.js"></script>
+@*<script src="~/AdminLTE/plugins/jQuery/jquery.media.js"></script>*@
+<script src="~/AdminLTE/plugins/layer/layer.js"></script>
+
+<script src="~/AdminLTE/comm/_ajax.js"></script>
+<script src="~/AdminLTE/comm/_table.js"></script>
+<script src="~/AdminLTE/comm/_message.js"></script>
+<script src="~/AdminLTE/comm/comm.js"></script>
+<script src="~/AdminLTE/comm/controllist.js"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="~/AdminLTE/plugins/jQueryUI/jquery-ui.min.js"></script>
+<!-- Bootstrap 3.3.6 -->
+
+<script src="~/AdminLTE/bootstrap/js/bootstrap.min.js"></script>
+<!-- bootstrap-treeview 1.2.0 -->
+<!-- 弃用 -->
+@*<script src="~/AdminLTE/bootstrap/fuelux-tree/tree.min.js"></script>
+    <script src="~/AdminLTE/bootstrap/fuelux-tree/fuelux.tree-sampledata.js"></script>
+    <link rel="stylesheet" href="~/AdminLTE/bootstrap/fuelux-tree/fuelux.min.css">*@
+
+
+<!-- Sparkline -->
+<!-- jvectormap -->
+<!-- jQuery Knob Chart -->
+<!-- daterangepicker -->
+<!-- datepicker -->
+<!-- datepicker -->
+<!--
+<script src="~/AdminLTE/plugins/laydate/laydate.js"></script>-->
+<!-- Bootstrap WYSIHTML5 -->
+@*<script src="~/AdminLTE/plugins/summernote-master/dist/summernote.min.js"></script>*@
+<!-- Slimscroll -->
+<!-- FastClick -->
+<!-- AdminLTE App -->
+<!-- DataTables -->
+<!-- Bootstrap slider -->
+@*<script src="~/AdminLTE/plugins/datetimepicker/bootstrap-datetimepicker.min.js"></script>
+    <script src="~/AdminLTE/plugins/datetimepicker/locales/bootstrap-datetimepicker.zh-CN.js"></script>*@
+
+
+<!--Global Javascript -->
 <!--[if lt IE 9]>
 <script src="~/AdminLTE/bootstrap/js/ie/html5shiv.js"></script>
 <script src="~/AdminLTE/bootstrap/js/ie/respond.min.js"></script>
@@ -33,7 +124,7 @@
                     @*<img src="~/AdminLTE/dist/img/logo-ts.png" />*@
                 </div>
                 <div class="login-box-body">
-                    @using (Ajax.BeginForm("SignIn", "Account", new AjaxOptions { OnSuccess= "LoginSuccess", OnBegin = "ajax.loading", OnComplete = "ajax.loadingClose", OnFailure = "msg.info(data);" }, new { @class = "" }))
+                    @using (Ajax.BeginForm("SignIn", "Account", new AjaxOptions { OnSuccess = "LoginSuccess", OnBegin = "ajax.loading", OnComplete = "ajax.loadingClose", OnFailure = "msg.info(data);" }, new { @class = "" }))
                     {
                         @*@Html.AntiForgeryToken()login-tslogo*@
                         <div class="form-group">
@@ -62,7 +153,7 @@
                                 @Html.ActionLink("没有账号？注册一个", "RegisterEngineer", "Account", new { @class = "help col-sm-8" })
                                 @Html.ActionLink("忘记密码", "UpdatePw", "Account", new { @class = "help col-sm-4" })
                                 @*<a class="" target="_blank">没有账号？注册一个</a>
-                                <a class="help col-sm-4" target="_blank">忘记密码</a>*@
+                                    <a class="help col-sm-4" target="_blank">忘记密码</a>*@
                             </div>
                         </div>
                         @Html.ValidationSummary("", new { @class = "text-danger" })
@@ -83,5 +174,14 @@
         $("#login-img").height($(window).height());
         $("#col-7").height($(window).height());
         $("#col-5").height($(window).height());
+    }
+
+    function LoginSuccess(data) {
+         var path = '@Url.Content("~/")';
+        if (data.Success) {
+            location.replace(path + "Index/Index");
+        }
+        else
+            msg.info(data.Msg);
     }
 </script>
