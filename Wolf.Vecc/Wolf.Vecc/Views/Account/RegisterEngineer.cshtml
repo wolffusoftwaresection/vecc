@@ -19,11 +19,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-8">
-                    <h1>Contact us</h1>
+                    <h1>Vecc平台注册</h1>
                 </div>
-                <div class="col-sm-4">
-                    <h1>Contact us</h1>
-                </div>
+                @*<div class="col-sm-4">
+                        <h1>Contact us</h1>
+                    </div>*@
             </div>
         </div>
     </header>
@@ -31,70 +31,20 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <h3 class="section-title">Vecc平台注册</h3>
+                <h3 class="section-title"></h3>
                 <p>
                     注册完成后请耐心等待后台管理员审核,如有特殊需求可请致电平台客服
                 </p>
                 <form id="defaultForm" role="form" action="/Account/RegisterModel" method="post" class="form-horizontal">
-                        <div class="row form-group">
-                            <div class="col col-md-12">
-                                <div class="input-group">
-                                    <div class="input-group-addon"><i class="glyphicon glyphicon-user"></i></div>
-                                    @Html.TextBoxFor(m => Model.UserName, new { @class = "form-control", @placeholder = "用户名" })
-                                </div>
+                    <div class="row form-group">
+                        <div class="col col-md-8">
+                            <div class="input-group">
+                                <div class="input-group-addon"><i class="glyphicon glyphicon-user"></i></div>
+                                @Html.TextBoxFor(m => Model.UserName, new { @class = "form-control", @placeholder = "用户名" })
                             </div>
                         </div>
-                        <div class="row form-group">
-                            <div class="col col-md-12">
-                                <div class="input-group">
-                                    <div class="input-group-addon"><i class="glyphicon glyphicon-flag"></i></div>
-                                    @Html.TextBoxFor(m => Model.Country, new { @class = "form-control", @placeholder = "国家" })
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row form-group">
-                            <div class="col col-md-12">
-                                <div class="input-group">
-                                    <div class="input-group-addon"><i class="glyphicon glyphicon-phone-alt"></i></div>
-                                    @Html.TextBoxFor(m => Model.Phone, new { @class = "form-control", @placeholder = "手机号" })
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row form-group">
-                            <div class="col col-md-12">
-                                <div class="input-group">
-                                    <div class="input-group-addon"><i class="glyphicon glyphicon-home"></i></div>
-                                    @Html.TextBoxFor(m => Model.EnterpriseName, new { @class = "form-control", @placeholder = "企业名称" })
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row form-group">
-                            <div class="col col-md-12">
-                                <div class="input-group">
-                                    <div class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></div>
-                                    @Html.TextBoxFor(m => Model.Email, new { @class = "form-control", @placeholder = "邮箱" })
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row form-group">
-                            <div class="col col-md-12">
-                                <div class="input-group">
-                                    <div class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></div>
-                                    @Html.PasswordFor(m => Model.Password, new { @class = "form-control", @placeholder = "密码" })
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row form-group">
-                            <div class="col col-md-12">
-                                <div class="input-group">
-                                    <div class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></div>
-                                    <input name="confirmPassword" class="form-control" type="password" placeholder="确认密码" />
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row form-group">
-                            <div class="col col-md-3"><label class=" form-control-label">注册用户类型</label></div>
-                            <div class="col col-md-9">
+                        <div class="col col-md-4">
+                            <div class="input-group">
                                 <div class="form-check-inline form-check">
                                     <label for="inline-radio1" class="form-check-label ">
                                         @Html.RadioButtonFor(m => Model.UserType, 1, new { @class = "form-check-input", @checked = "checked" })工程师
@@ -105,56 +55,118 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row form-group form-inline">
-                            <div class="col col-md-12">
-                                <div class="input-group">
-                                    <div class="input-group-addon"><i class="glyphicon glyphicon-qrcode"></i></div>
-                                    @Html.TextBoxFor(m => Model.VerificationCode, new { @class = "form-control", @placeholder = "验证码" })
-                                </div>
-                                <button type="button" class="btn btn-primary">发送验证码</button>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col col-md-12">
+                            <div class="input-group">
+                                <div class="input-group-addon"><i class="glyphicon glyphicon-flag"></i></div>
+                                @Html.TextBoxFor(m => Model.Country, new { @class = "form-control", @placeholder = "国家" })
                             </div>
                         </div>
-                        <div class="row form-group">
-                            <button class="form-control btn btn-primary" id="submit" type="submit">立&nbsp;&nbsp;即&nbsp;&nbsp;注&nbsp;&nbsp;册</button>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col col-md-12">
+                            <div class="input-group">
+                                <div class="input-group-addon"><i class="glyphicon glyphicon-phone-alt"></i></div>
+                                @Html.TextBoxFor(m => Model.Phone, new { @class = "form-control", @placeholder = "手机号" })
+                            </div>
                         </div>
-                    </form>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col col-md-12">
+                            <div class="input-group">
+                                <div class="input-group-addon"><i class="glyphicon glyphicon-home"></i></div>
+                                @Html.TextBoxFor(m => Model.EnterpriseName, new { @class = "form-control", @placeholder = "企业名称" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col col-md-12">
+                            <div class="input-group">
+                                <div class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></div>
+                                @Html.TextBoxFor(m => Model.Email, new { @class = "form-control", @placeholder = "邮箱" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col col-md-12">
+                            <div class="input-group">
+                                <div class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></div>
+                                @Html.PasswordFor(m => Model.Password, new { @class = "form-control", @placeholder = "密码" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col col-md-12">
+                            <div class="input-group">
+                                <div class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></div>
+                                <input name="confirmPassword" class="form-control" type="password" placeholder="确认密码" />
+                            </div>
+                        </div>
+                    </div>
+                    @*<div class="row form-group">
+                    <div class="col col-md-9">
+                        <div class="form-check-inline form-check">
+                            <label for="inline-radio1" class="form-check-label ">
+                                @Html.RadioButtonFor(m => Model.UserType, 1, new { @class = "form-check-input", @checked = "checked" })工程师
+                            </label>
+                            <label for="inline-radio2" class="form-check-label ">
+                                @Html.RadioButtonFor(m => Model.UserType, 2, new { @class = "form-check-input" })企业工程师
+                            </label>
+                        </div>
+                    </div>
+                </div>*@
+                    <div class="row form-group form-inline">
+                        <div class="col col-md-12">
+                            <div class="input-group">
+                                <div class="input-group-addon"><i class="glyphicon glyphicon-qrcode"></i></div>
+                                @Html.TextBoxFor(m => Model.VerificationCode, new { @class = "form-control", @placeholder = "验证码" })
+                            </div>
+                            <button type="button" class="btn btn-primary">发送验证码</button>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <button class="form-control btn btn-primary" id="submit" type="submit">立&nbsp;&nbsp;即&nbsp;&nbsp;注&nbsp;&nbsp;册</button>
+                    </div>
+                </form>
             </div>
             <div class="col-md-6">
                 <div class="row">
                     <div class="col-md-6">
-                        <h3 class="section-title">Office Address</h3>
+                        <h3 class="section-title">联系我们</h3>
                         <div class="contact-info">
-                            <h5>Address</h5>
-                            <p>5th Street, Carl View - United States</p>
+                            <h5>地址</h5>
+                            <p>无锡惠山经济开发区风电园创惠路1号4009室</p>
 
-                            <h5>Email</h5>
-                            <p>info</p>
+                            <h5>邮箱</h5>
+                            <p>liuxiaoli@wolffu.com</p>
 
-                            <h5>Phone</h5>
+                            <h5>电话</h5>
                             <p>+09 123 1234 123</p>
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <h3 class="section-title">Timings</h3>
+                        <h3 class="section-title">统计</h3>
                         <div class="contact-info">
-                            <h5>Monday - Friday</h5>
-                            <p>09:00 AM - 6:30 PM</p>
+                            <h5>工程师注册人数</h5>
+                            <p>1000+人次</p>
 
-                            <h5>Saturday</h5>
-                            <p>Closed</p>
+                            <h5>企业工程师注册人数</h5>
+                            <p>800+人</p>
 
-                            <h5>Sunday</h5>
-                            <p>Closed</p>
+                            <h5>检测机构</h5>
+                            <p>80+家</p>
                         </div>
                     </div>
                 </div>
-                <h3 class="section-title">Get connected</h3>
-                <p>
-                    Lorem ipsumn qersl ioinm sersoe non urna dolor sit amet, consectetur piesn qersl ioinm sersoe non urna dolor aecena.
-                </p>
+                @*<h3 class="section-title">Get connected</h3>*@
+                <div class="copyright col-md-12 text-center">
+                    <br><a>Copyright©2018-2022 http://fu_pems.com</a><br><a>上海沃开汽车技术有限公司</a>
+                </div>
             </div>
         </div>
     </div>
+   
 </body>
 </html>
 <link href="~/AdminLTE/dist/css/bootstrapValidator.min.css" rel="stylesheet" />
