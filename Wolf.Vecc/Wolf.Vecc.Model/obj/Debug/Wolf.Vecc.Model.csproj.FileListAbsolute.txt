@@ -17,3 +17,22 @@ F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Model\bin\Debug\NLog.xml
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Model\bin\Debug\Newtonsoft.Json.dll
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Model\bin\Debug\Newtonsoft.Json.xml
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Model\bin\Debug\NLog.config
+D:\工作资料\PEMS\VECC Program\Wolf.Vecc\Wolf.Vecc.Model\bin\Debug\NLog.config
+D:\工作资料\PEMS\VECC Program\Wolf.Vecc\Wolf.Vecc.Model\bin\Debug\Wolf.Vecc.Model.dll
+D:\工作资料\PEMS\VECC Program\Wolf.Vecc\Wolf.Vecc.Model\bin\Debug\Wolf.Vecc.Model.pdb
+D:\工作资料\PEMS\VECC Program\Wolf.Vecc\Wolf.Vecc.Model\bin\Debug\Wolf.Vecc.Core.dll
+D:\工作资料\PEMS\VECC Program\Wolf.Vecc\Wolf.Vecc.Model\bin\Debug\Wolf.Vecc.Comm.dll
+D:\工作资料\PEMS\VECC Program\Wolf.Vecc\Wolf.Vecc.Model\bin\Debug\Autofac.dll
+D:\工作资料\PEMS\VECC Program\Wolf.Vecc\Wolf.Vecc.Model\bin\Debug\NLog.dll
+D:\工作资料\PEMS\VECC Program\Wolf.Vecc\Wolf.Vecc.Model\bin\Debug\Newtonsoft.Json.dll
+D:\工作资料\PEMS\VECC Program\Wolf.Vecc\Wolf.Vecc.Model\bin\Debug\Wolf.Vecc.Core.pdb
+D:\工作资料\PEMS\VECC Program\Wolf.Vecc\Wolf.Vecc.Model\bin\Debug\Wolf.Vecc.Comm.pdb
+D:\工作资料\PEMS\VECC Program\Wolf.Vecc\Wolf.Vecc.Model\bin\Debug\Autofac.pdb
+D:\工作资料\PEMS\VECC Program\Wolf.Vecc\Wolf.Vecc.Model\bin\Debug\Autofac.xml
+D:\工作资料\PEMS\VECC Program\Wolf.Vecc\Wolf.Vecc.Model\bin\Debug\NLog.xml
+D:\工作资料\PEMS\VECC Program\Wolf.Vecc\Wolf.Vecc.Model\bin\Debug\Newtonsoft.Json.xml
+D:\工作资料\PEMS\VECC Program\Wolf.Vecc\Wolf.Vecc.Model\obj\Debug\Wolf.Vecc.Model.csprojAssemblyReference.cache
+D:\工作资料\PEMS\VECC Program\Wolf.Vecc\Wolf.Vecc.Model\obj\Debug\Wolf.Vecc.Model.csproj.CoreCompileInputs.cache
+D:\工作资料\PEMS\VECC Program\Wolf.Vecc\Wolf.Vecc.Model\obj\Debug\Wolf.Vecc.Model.csproj.CopyComplete
+D:\工作资料\PEMS\VECC Program\Wolf.Vecc\Wolf.Vecc.Model\obj\Debug\Wolf.Vecc.Model.dll
+D:\工作资料\PEMS\VECC Program\Wolf.Vecc\Wolf.Vecc.Model\obj\Debug\Wolf.Vecc.Model.pdb

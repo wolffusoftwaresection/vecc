@@ -38,3 +38,42 @@ F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Data\bin\Debug\NLog.xml
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Data\bin\Debug\Newtonsoft.Json.xml
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Data\bin\Debug\LinqKit.dll
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Data\bin\Debug\LinqKit.xml
+D:\工作资料\PEMS\VECC Program\Wolf.Vecc\Wolf.Vecc.Data\bin\Debug\NLog.config
+D:\工作资料\PEMS\VECC Program\Wolf.Vecc\Wolf.Vecc.Data\bin\Debug\Wolf.Vecc.Data.dll.config
+D:\工作资料\PEMS\VECC Program\Wolf.Vecc\Wolf.Vecc.Data\bin\Debug\Wolf.Vecc.Data.dll
+D:\工作资料\PEMS\VECC Program\Wolf.Vecc\Wolf.Vecc.Data\bin\Debug\Wolf.Vecc.Data.pdb
+D:\工作资料\PEMS\VECC Program\Wolf.Vecc\Wolf.Vecc.Data\bin\Debug\EntityFramework.dll
+D:\工作资料\PEMS\VECC Program\Wolf.Vecc\Wolf.Vecc.Data\bin\Debug\EntityFramework.Extended.dll
+D:\工作资料\PEMS\VECC Program\Wolf.Vecc\Wolf.Vecc.Data\bin\Debug\EntityFramework.SqlServer.dll
+D:\工作资料\PEMS\VECC Program\Wolf.Vecc\Wolf.Vecc.Data\bin\Debug\LinqKit.dll
+D:\工作资料\PEMS\VECC Program\Wolf.Vecc\Wolf.Vecc.Data\bin\Debug\MySql.Data.dll
+D:\工作资料\PEMS\VECC Program\Wolf.Vecc\Wolf.Vecc.Data\bin\Debug\MySql.Data.Entity.EF6.dll
+D:\工作资料\PEMS\VECC Program\Wolf.Vecc\Wolf.Vecc.Data\bin\Debug\Wolf.Vecc.Comm.dll
+D:\工作资料\PEMS\VECC Program\Wolf.Vecc\Wolf.Vecc.Data\bin\Debug\Wolf.Vecc.IService.dll
+D:\工作资料\PEMS\VECC Program\Wolf.Vecc\Wolf.Vecc.Data\bin\Debug\Wolf.Vecc.Model.dll
+D:\工作资料\PEMS\VECC Program\Wolf.Vecc\Wolf.Vecc.Data\bin\Debug\NLog.dll
+D:\工作资料\PEMS\VECC Program\Wolf.Vecc\Wolf.Vecc.Data\bin\Debug\Newtonsoft.Json.dll
+D:\工作资料\PEMS\VECC Program\Wolf.Vecc\Wolf.Vecc.Data\bin\Debug\System.Web.Razor.dll
+D:\工作资料\PEMS\VECC Program\Wolf.Vecc\Wolf.Vecc.Data\bin\Debug\System.Web.WebPages.Razor.dll
+D:\工作资料\PEMS\VECC Program\Wolf.Vecc\Wolf.Vecc.Data\bin\Debug\System.Web.WebPages.dll
+D:\工作资料\PEMS\VECC Program\Wolf.Vecc\Wolf.Vecc.Data\bin\Debug\Microsoft.Web.Infrastructure.dll
+D:\工作资料\PEMS\VECC Program\Wolf.Vecc\Wolf.Vecc.Data\bin\Debug\System.Web.WebPages.Deployment.dll
+D:\工作资料\PEMS\VECC Program\Wolf.Vecc\Wolf.Vecc.Data\bin\Debug\Wolf.Vecc.Comm.pdb
+D:\工作资料\PEMS\VECC Program\Wolf.Vecc\Wolf.Vecc.Data\bin\Debug\Wolf.Vecc.IService.pdb
+D:\工作资料\PEMS\VECC Program\Wolf.Vecc\Wolf.Vecc.Data\bin\Debug\Wolf.Vecc.Model.pdb
+D:\工作资料\PEMS\VECC Program\Wolf.Vecc\Wolf.Vecc.Data\bin\Debug\EntityFramework.xml
+D:\工作资料\PEMS\VECC Program\Wolf.Vecc\Wolf.Vecc.Data\bin\Debug\EntityFramework.Extended.xml
+D:\工作资料\PEMS\VECC Program\Wolf.Vecc\Wolf.Vecc.Data\bin\Debug\EntityFramework.Extended.dll.config
+D:\工作资料\PEMS\VECC Program\Wolf.Vecc\Wolf.Vecc.Data\bin\Debug\EntityFramework.SqlServer.xml
+D:\工作资料\PEMS\VECC Program\Wolf.Vecc\Wolf.Vecc.Data\bin\Debug\LinqKit.xml
+D:\工作资料\PEMS\VECC Program\Wolf.Vecc\Wolf.Vecc.Data\bin\Debug\MySql.Data.xml
+D:\工作资料\PEMS\VECC Program\Wolf.Vecc\Wolf.Vecc.Data\bin\Debug\MySql.Data.Entity.EF6.xml
+D:\工作资料\PEMS\VECC Program\Wolf.Vecc\Wolf.Vecc.Data\bin\Debug\NLog.xml
+D:\工作资料\PEMS\VECC Program\Wolf.Vecc\Wolf.Vecc.Data\bin\Debug\Newtonsoft.Json.xml
+D:\工作资料\PEMS\VECC Program\Wolf.Vecc\Wolf.Vecc.Data\bin\Debug\zh-Hans\EntityFramework.resources.dll
+D:\工作资料\PEMS\VECC Program\Wolf.Vecc\Wolf.Vecc.Data\bin\Debug\zh-Hans\EntityFramework.SqlServer.resources.dll
+D:\工作资料\PEMS\VECC Program\Wolf.Vecc\Wolf.Vecc.Data\obj\Debug\Wolf.Vecc.Data.csprojAssemblyReference.cache
+D:\工作资料\PEMS\VECC Program\Wolf.Vecc\Wolf.Vecc.Data\obj\Debug\Wolf.Vecc.Data.csproj.CoreCompileInputs.cache
+D:\工作资料\PEMS\VECC Program\Wolf.Vecc\Wolf.Vecc.Data\obj\Debug\Wolf.Vecc.Data.csproj.CopyComplete
+D:\工作资料\PEMS\VECC Program\Wolf.Vecc\Wolf.Vecc.Data\obj\Debug\Wolf.Vecc.Data.dll
+D:\工作资料\PEMS\VECC Program\Wolf.Vecc\Wolf.Vecc.Data\obj\Debug\Wolf.Vecc.Data.pdb
