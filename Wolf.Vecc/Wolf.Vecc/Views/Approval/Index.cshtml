@@ -22,9 +22,9 @@
                         <div class="box-body">
                             <div class="row" id="SearchList">
                                 <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label class="col-sm-3 control-label">状态</label>
-                                        <div class="col-sm-6">
+                                    <div class="form-group form-inline" style="white-space:nowrap">
+                                        <label class="col-sm-1">状态</label>
+                                        <div class="col-sm-3">
                                             <select id="state" name="select" class="selectpicker show-tick form-control" data-actions-box="true">
                                                 <option value="0">请选择</option>
                                                 <option value="1">待审核</option>
@@ -35,9 +35,11 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <label class="">姓名</label>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" id="username" placeholder="请输入名称">
+                                    <div class="form-group form-inline" style="white-space:nowrap">
+                                        <label class="col-sm-1">姓名</label>
+                                        <div class="col-sm-3">
+                                            <input type="text" class="form-control" id="username" placeholder="请输入名称">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -284,7 +286,7 @@
             shadeClose: false,
             btn: ['确定', '取消'],
             skin: '',
-            area: ['80%', '80%'],
+            area: ['50%', '80%'],
             maxmin: true,
             content: ['/Approval/AddUser', "yes"],
             yes: function (index, layor) {

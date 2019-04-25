@@ -1,11 +1,11 @@
 ﻿@model Wolf.Vecc.Model.ViewModel.RegisterViewModel
 @*<link href="~/AdminLTE/dist/css/form-elements.css" rel="stylesheet" />*@
 <link href="~/AdminLTE/dist/css/style.css" rel="stylesheet" />
-<div class="container" id="pageSection" style="background: white; min-height: 10px;margin-top: 15px;">
-    <form id="defaultForm" role="form" action="/Account/VeccAddUser" method="post" class="">
+<div class="container text-left" id="pageSection" style="background: white; min-height: 10px;margin-top: 15px;">
+    <form id="defaultForm " role="form" action="/Account/VeccAddUser" method="post" class="col-md-6">
         <div class="form-group">
             <label for="username">用户名：</label>
-            @*<input name="username" class="form-control" type="text">*@
+            @*<input name="username" class="form-control " type="text" >*@
             @Html.TextBoxFor(m => Model.UserName, new { @class = "form-control" })
         </div>
         <div class="form-group">
