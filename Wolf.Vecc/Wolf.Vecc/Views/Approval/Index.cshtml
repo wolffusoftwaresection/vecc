@@ -48,8 +48,8 @@
     </div>
 </div>
 <div class="box-body" style="padding-left:15px;">
-    <table id="tb_UserApproval" class="table-bordered"></table>
-    <table id="tb_DataApproval" class="table-no-bordered"></table>
+    <table id="tb_UserApproval" class="table-bordered" style="font-size:12px"></table>
+    <table id="tb_DataApproval" class="table-no-bordered" style="font-size:12px"></table>
 </div>
 
 
@@ -79,7 +79,7 @@
     </div>
     <div class="box-body">
         <table id="tb_UserApproval" class="table-no-bordered"></table>
-        <table id="tb_DataApproval" class="table-no-bordered"></table>
+        <table id="tb_DataApproval" class="table-no-bordered" ></table>
     </div>*@
 <script>
     $(function () {
@@ -123,7 +123,7 @@
 
                 {
                     field: 'UserName',
-                    align: 'left',
+                    align: 'center',
                     title: '申请账号',
                     visible: 1
                 },
@@ -302,7 +302,7 @@
             skin: '',
             area: ['60%', '50%'],
             maxmin: true,
-            content: ['/Approval/UserInFo?Id='+id, "yes"],
+            content: ['/Approval/UserInFo?Id=' + id, "yes"],
             yes: function (index, layor) {
                 layer.close(index);
             },

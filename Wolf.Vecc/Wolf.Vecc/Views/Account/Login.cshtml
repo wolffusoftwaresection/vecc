@@ -107,11 +107,8 @@
 
 
 <style>
-    .title-index {
-        color:white;
-        margin-top: 10px;
-        font-size: 45px;
-        font-family: "庞门正道标题体";
+    .header-index {
+       
         position: absolute; 
         top: 50px; 
         left: 5%;
@@ -119,7 +116,16 @@
         
     }
 
-
+    .title-index {
+        color: white;
+        white-space: nowrap;
+        font-size: 45px;
+        font-family: "庞门正道标题体";
+        position: absolute;
+        top: 50px;
+        left: 5%;
+        z-index: 3
+    }
 
 
 </style>
@@ -127,12 +133,15 @@
 
 <div class="login-custom " style="position: relative;">
     <div class="mask">
-       
+
         <img src="~/AdminLTE/dist/img/bg@1x.png" id="login-img" class="login-img" />
     </div>
-    
     <div class="col-md-3 title-index">PEMS云计算</div>
-    <div class="col-md-1 col-md-offset-8"><img class="img-responsive" src="~/AdminLTE/dist/img/danji.png"/></div>
+    <div class=" col-md-1 col-md-offset-10 header-index">
+
+        <img class="img-responsive center-block" src="~/AdminLTE/dist/img/danji.png" />
+    </div>
+
     <div class="col-7" id="col-7">
         <div class="table">
             <div class="table-cell">
@@ -144,54 +153,54 @@
         <div class="login-right">
             <div class="table-cell">
                 <div class="container-fluid">
-                  
-                <div class="login-box-body">
-                    @using (Ajax.BeginForm("SignIn", "Account", new AjaxOptions { OnSuccess = "LoginSuccess", OnBegin = "ajax.loading", OnComplete = "ajax.loadingClose", OnFailure = "msg.info(data);" }, new { @class = "" }))
-                    {
-                        @*@Html.AntiForgeryToken()login-tslogo*@
-                       
-                            <div class="col-md-6" style="font-size:24px;color:black;font-weight:bold;margin-bottom:20px;">用户登录</div>
-                       <div class="clearfix"></div>
-                        
-                        
-                        <div class="form-group" style="margin-bottom:10px;">
-                            <i class="fa fa-user"></i>
-                            @*<input type="text" class="form-control" id="name" placeholder="用户名">*@
-                            @Html.TextBoxFor(m => Model.UserName, new { placeholder = "帐号", @class = "form-control" })
 
-                        </div>
-                        <div class="form-group">
-                            <i class="fa fa-unlock-alt"></i>
-                            @*<input type="text" class="form-control" id="name" placeholder="密    码">*@
-                            @Html.PasswordFor(m => Model.Password, new { placeholder = "密码", autocomplete = "off", @class = "form-control" })
-                        </div>
-                        <div class="form-group form-inline ">
-                            <i class="fa fa-briefcase"></i>
-                            <input id="userNum" class="form-control" placeholder="验证码" />
-                            <button type="button" class="btn btn-flat" id="screeningBtn" onclick="screeningSearch()" style="margin-left:20px;">发送验证码</button>
-                        </div>
+                    <div class="login-box-body">
+                        @using (Ajax.BeginForm("SignIn", "Account", new AjaxOptions { OnSuccess = "LoginSuccess", OnBegin = "ajax.loading", OnComplete = "ajax.loadingClose", OnFailure = "msg.info(data);" }, new { @class = "" }))
+                        {
+                            @*@Html.AntiForgeryToken()login-tslogo*@
 
-                        <div class="form-group">
-                            <div class="margintop-30"><button type="submit" class="btn btn-block btn-flat btn-login">Login</button></div>
-                        </div>
+                            <div class="col-md-6" style="font-size:24px;color:black;font-weight:bold;margin-bottom:20px;white-space:nowrap;">用户登录</div>
+                            <div class="clearfix"></div>
 
-                        <div class="form-group form-inline">
-                            <div class="form-inline margintop-10 " style="white-space:nowrap">
-                                @Html.ActionLink("没有账号？注册一个", "RegisterEngineer", "Account", new { @class = "help col-sm-8" })
-                                @Html.ActionLink("忘记密码", "UpdatePw", "Account", new { @class = "help col-sm-4" })
-                                @*<a target="_blank" class="col-md-6 text-left">没有账号？注册一个</a>
-        <a class="help col-md-6 text-right" target="_blank">忘记密码</a>*@
+
+                            <div class="form-group" style="margin-bottom:10px;">
+                                <i class="fa fa-user fa-fw"></i>
+                                @*<input type="text" class="form-control" id="name" placeholder="用户名">*@
+                                @Html.TextBoxFor(m => Model.UserName, new { placeholder = "帐号", @class = "form-control" })
+
                             </div>
-                        </div>
-                        @Html.ValidationSummary("", new { @class = "text-danger" })
-                    }
+                            <div class="form-group">
+                                <i class="fa fa-unlock-alt fa-fw"></i>
+                                @*<input type="text" class="form-control" id="name" placeholder="密    码">*@
+                                @Html.PasswordFor(m => Model.Password, new { placeholder = "密码", autocomplete = "off", @class = "form-control" })
+                            </div>
+                            <div class="form-group form-inline" style="position:relative;">
+                                <i class="fa fa-chain fa-fw" style="position:absolute;top:0px;"></i>
+                                <input id="userNum" class="form-control" placeholder="验证码" />
+                                <button type="button" class="btn btn-flat" id="screeningBtn" onclick="screeningSearch()" style="margin-left:40px;">发送验证码</button>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="margintop-30"><button type="submit" class="btn btn-block btn-flat btn-login">Login</button></div>
+                            </div>
+
+                            <div class="form-group form-inline">
+                                <div class="form-inline margintop-10 " style="white-space:nowrap">
+                                    @Html.ActionLink("没有账号？注册一个", "RegisterEngineer", "Account", new { @class = "help col-sm-8" })
+                                    @Html.ActionLink("忘记密码", "UpdatePw", "Account", new { @class = "help col-sm-4" })
+                                    @*<a target="_blank" class="col-md-6 text-left">没有账号？注册一个</a>
+                                        <a class="help col-md-6 text-right" target="_blank">忘记密码</a>*@
+                                </div>
+                            </div>
+                            @Html.ValidationSummary("", new { @class = "text-danger" })
+                        }
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-<script>
+    <script>
     $("#login-mask").height($(window).height());
     $("#login-img").height($(window).height());
     $("#col-7").height($(window).height());
@@ -211,4 +220,4 @@
         else
             msg.info(data.Msg);
     }
-</script>
+    </script>
