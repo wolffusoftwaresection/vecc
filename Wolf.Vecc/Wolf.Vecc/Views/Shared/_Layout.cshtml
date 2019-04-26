@@ -157,7 +157,7 @@
     $(function () {
         $("#userName").text(cookie.getCookie("userName"));
         $("#userEmail").text(cookie.getCookie("userEmail"));
-        //$("#doNumber").text(cookie.getCookie("approvalNumber")); 
+        $("#doNumber").text(cookie.getCookie("approvalNumber") == null ? 0 : cookie.getCookie("approvalNumber")); 
         if (cookie.getCookie("userRole") == 1) {
             //显示监听数量
             $("#approvalNumber").show();
@@ -199,6 +199,7 @@
             if (data.d) {
                 if (_num != data.d) {
                     $("#doNumber").text(data.d);
+                    cookie.setCookie("approvalNumber", data.d);
                     toastr.warning('有新注册用户等待审批！');
                     //console.log("您已出发最新一条注册信息");
                 }
