@@ -18,9 +18,11 @@ namespace Wolf.Vecc.Controllers
     public class AccountController : BaseController
     {
         private readonly IAccountService _accountService;
-        public AccountController(IAccountService accountService)
+        private readonly ISysUserService _sysUserService;
+        public AccountController(IAccountService accountService, ISysUserService sysUserService)
         {
             _accountService = accountService;
+            _sysUserService = sysUserService;
         }
         // GET: Account
         public ActionResult Login()
@@ -51,10 +53,17 @@ namespace Wolf.Vecc.Controllers
                             UserType = veccUser.UserType
                         };
                         user.View_RememberFlag = true;
+                        var lauOutUser = new LayOutUserModel
+                        {
+                            //ApprovalNumber = _sysUserService.GetApprovalNumber(),
+                            UserEmail = veccUser.Email,
+                            UserName = veccUser.UserName,
+                            UserRole = veccUser.RoleId
+                        };
                         //保存Cookie
                         VeccFormsAuthentication<VeccUserDataPrincipal>.SetAuthCookie(user.UserName, userData, user.View_RememberFlag);
                         //return RedirectToAction("Index", "Index");
-                        return Success("");
+                        return Success(lauOutUser, "");
                     }
                     else
                     {

@@ -25,5 +25,7 @@ namespace Wolf.Vecc.IService.ISysService
         List<SysUsers> GetUserList(UserApprovalViewModel userApprovalViewModel);
 
         SysUsers GetUserById(int Id);
+
+        int GetApprovalNumber();
     }
 }

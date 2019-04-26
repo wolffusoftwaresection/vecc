@@ -25,6 +25,11 @@ namespace Wolf.Vecc.Service.SysService
             return _dbServiceReposity.All<SysUsers>().Where(d => d.IsDel == 0).ToList();
         }
 
+        public int GetApprovalNumber()
+        {
+            return _dbServiceReposity.Where<SysUsers>(d => d.IsDel == 0 && d.AccountStatus == 1).Count();
+        }
+
         public List<int> GetRoleIdByUserId(int uId)
         {
             return _dbServiceReposity.Where<SysUsers>(d => d.IsDel == 0 && d.Id == uId).Select(d=>d.RoleId).ToList();

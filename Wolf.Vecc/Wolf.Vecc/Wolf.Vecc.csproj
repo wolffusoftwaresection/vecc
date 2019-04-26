@@ -177,6 +177,7 @@
     <Compile Include="Controllers\ApprovalController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CalculationController.cs" />
+    <Compile Include="Controllers\CometController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\IndexController.cs" />
     <Compile Include="Filters\ExceptionFilter.cs" />
@@ -230,6 +231,7 @@
     <Content Include="AdminLTE\comm\_ajax.js" />
     <Content Include="AdminLTE\comm\_message.js" />
     <Content Include="AdminLTE\comm\_table.js" />
+    <Content Include="AdminLTE\Cookie.js" />
     <Content Include="AdminLTE\dateConvert.js" />
     <Content Include="AdminLTE\dist\css\AdminLTE.css" />
     <Content Include="AdminLTE\dist\css\AdminLTE.min.css" />
@@ -241,10 +243,15 @@
     <Content Include="AdminLTE\dist\css\alt\AdminLTE-select2.min.css" />
     <Content Include="AdminLTE\dist\css\alt\AdminLTE-without-plugins.css" />
     <Content Include="AdminLTE\dist\css\alt\AdminLTE-without-plugins.min.css" />
+    <Content Include="AdminLTE\dist\css\bootstrap.min.css" />
     <Content Include="AdminLTE\dist\css\bootstrapValidator.min.css" />
     <Content Include="AdminLTE\dist\css\bootstrapValidator.min.js" />
+    <Content Include="AdminLTE\dist\css\font-awesome.min.css" />
+    <Content Include="AdminLTE\dist\css\font-icon-style.css" />
     <Content Include="AdminLTE\dist\css\form-elements.css" />
+    <Content Include="AdminLTE\dist\css\form.css" />
     <Content Include="AdminLTE\dist\css\index.css" />
+    <Content Include="AdminLTE\dist\css\profile.css" />
     <Content Include="AdminLTE\dist\css\skins\skin-black-light.css" />
     <Content Include="AdminLTE\dist\css\skins\skin-black-light.min.css" />
     <Content Include="AdminLTE\dist\css\skins\skin-black.css" />
@@ -272,8 +279,11 @@
     <Content Include="AdminLTE\dist\css\skins\_all-skins.css" />
     <Content Include="AdminLTE\dist\css\skins\_all-skins.min.css" />
     <Content Include="AdminLTE\dist\css\style.css" />
+    <Content Include="AdminLTE\dist\css\style.default.css" />
+    <Content Include="AdminLTE\dist\css\style2.css" />
     <Content Include="AdminLTE\dist\img\accountsetting%401x.png" />
     <Content Include="AdminLTE\dist\img\accountsetting%403x.png" />
+    <Content Include="AdminLTE\dist\img\avatar-1.jpg" />
     <Content Include="AdminLTE\dist\img\avatar.png" />
     <Content Include="AdminLTE\dist\img\avatar04.png" />
     <Content Include="AdminLTE\dist\img\avatar2.png" />
@@ -300,6 +310,7 @@
     <Content Include="AdminLTE\dist\img\credit\visa.png" />
     <Content Include="AdminLTE\dist\img\danji%401x.png" />
     <Content Include="AdminLTE\dist\img\danji%403x.png" />
+    <Content Include="AdminLTE\dist\img\danji.png" />
     <Content Include="AdminLTE\dist\img\default-50x50.gif" />
     <Content Include="AdminLTE\dist\img\delete.png" />
     <Content Include="AdminLTE\dist\img\denglu%401x.png" />
@@ -325,6 +336,7 @@
     <Content Include="AdminLTE\dist\img\logo-fmc2.png" />
     <Content Include="AdminLTE\dist\img\logo-ts.png" />
     <Content Include="AdminLTE\dist\img\logo-ts12.png" />
+    <Content Include="AdminLTE\dist\img\logo-white.png" />
     <Content Include="AdminLTE\dist\img\map.png" />
     <Content Include="AdminLTE\dist\img\password%401x.png" />
     <Content Include="AdminLTE\dist\img\password%403x.png" />
@@ -375,8 +387,6 @@
     <Content Include="AdminLTE\Exporting.js" />
     <Content Include="AdminLTE\Highcharts-v5.0.11.js" />
     <Content Include="AdminLTE\highcharts-zh_CN.js" />
-    <Content Include="AdminLTE\htmlCode.js" />
-    <Content Include="AdminLTE\htmlConvert.js" />
     <Content Include="AdminLTE\jquery-1.8.2.min.js" />
     <Content Include="AdminLTE\jquery-ui.min.js" />
     <Content Include="AdminLTE\LanguagePlugins.js" />
@@ -1469,6 +1479,8 @@
     <Content Include="AdminLTE\SweetAlert\src\utils\default.js" />
     <Content Include="AdminLTE\SweetAlert\src\utils\dom.js" />
     <Content Include="AdminLTE\SweetAlert\src\utils\utils.js" />
+    <Content Include="AdminLTE\toastr.min.css" />
+    <Content Include="AdminLTE\toastr.min.js" />
     <Content Include="AdminLTE\Uploader.swf" />
     <Content Include="AdminLTE\webuploader.css" />
     <Content Include="AdminLTE\webuploader.js" />
@@ -1578,6 +1590,7 @@
     <Content Include="AdminLTE\SweetAlert\fonts\icomoon.ttf" />
     <Content Include="AdminLTE\SweetAlert\fonts\icomoon.woff" />
     <Content Include="AdminLTE\SweetAlert\src\sweetalert2.scss" />
+    <Content Include="fonts\庞门正道标题体2.0增强版.ttf" />
     <None Include="NLog.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -1627,6 +1640,7 @@
     <Folder Include="AdminLTE\bootstrap\js\ie\" />
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\Comet\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

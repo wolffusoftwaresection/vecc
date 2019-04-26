@@ -18,8 +18,7 @@
 <link rel="stylesheet" href="~/AdminLTE/dist/font-awesome-4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="~/AdminLTE/dist/css/font-icon-style.css">
 <link rel="stylesheet" href="~/AdminLTE/dist/css/style.default.css" id="theme-stylesheet">
-
-
+<script src="~/fonts/庞门正道标题体2.0增强版.ttf"></script>
 <!-- AdminLTE Skins. Choose a skin from the css/skins
      folder instead of downloading all of them to reduce the load. -->
 <!--  <link rel="stylesheet" href="~/AdminLTE/dist/css/skins/_all-skins.min.css">-->
@@ -72,6 +71,7 @@
 <!-- Bootstrap 3.3.6 -->
 
 <script src="~/AdminLTE/bootstrap/js/bootstrap.min.js"></script>
+<script src="~/AdminLTE/Cookie.js"></script>
 <!-- bootstrap-treeview 1.2.0 -->
 <!-- 弃用 -->
 @*<script src="~/AdminLTE/bootstrap/fuelux-tree/tree.min.js"></script>
@@ -127,8 +127,12 @@
 </style>
 <script>
     function LoginSuccess(data) {
-         var path = '@Url.Content("~/")';
+        var path = '@Url.Content("~/")';
         if (data.Success) {
+            cookie.setCookie("userName", data.Data.UserName);
+            cookie.setCookie("userEmail", data.Data.UserEmail);
+            cookie.setCookie("userRole", data.Data.UserRole);
+            //cookie.setCookie("approvalNumber", data.Data.ApprovalNumber); 
             location.replace(path + "Index/Index");
         }
         else

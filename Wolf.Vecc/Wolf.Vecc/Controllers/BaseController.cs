@@ -18,6 +18,7 @@ namespace Wolf.Vecc.Controllers
     public class BaseController : Controller
     {
         protected string _errorMsg = string.Empty;
+        protected static string str = "";
         public readonly IDbServiceReposity _dbServiceReposity = ContainerManager.Resolve<IDbServiceReposity>();
         public BaseController() { }
 
@@ -30,6 +31,12 @@ namespace Wolf.Vecc.Controllers
         {
             return Json(new { Success = true, Msg = string.IsNullOrEmpty(_errorMsg) ? _msg : _errorMsg });
         }
+
+        public JsonResult Success(object data, string _msg = "操作成功")
+        {
+            return Json(new { Success = true, Data = data, Msg = string.IsNullOrEmpty(_errorMsg) ? _msg : _errorMsg });
+        }
+
         public JsonResult Failure(string _msg = "操作失败")
         {
             return Json(new { Success = false, Msg = string.IsNullOrEmpty(_errorMsg) ? _msg : _errorMsg});
@@ -42,6 +49,7 @@ namespace Wolf.Vecc.Controllers
             {
                 var user = HttpContext.User as VeccFormsPrincipal<VeccUserDataPrincipal>;
                 if (user != null) {
+
                     return SetWorkUser(user);
                 }
                 return null;
