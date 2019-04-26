@@ -161,7 +161,7 @@
                     <div class="col-sm-10">
                         <div class="navbar-holder d-flex align-items-center justify-content-between">
                             <div class="navbar-header">
-                                <a href="~/Views/Index/VeccIndex.cshtml" class="navbar-brand">
+                                <a href='@Url.Content("~/Index")'  class="navbar-brand">
                                     <div class="brand-text brand-big hidden-lg-down"><img src="~/AdminLTE/dist/img/logo-white.png" alt="Logo" class="img-fluid" ></div>
 
                                 </a>
@@ -183,8 +183,7 @@
                             <!--                    <li class="nav-item d-flex align-items-center"><a id="search" class="nav-link" href="#"><i class="icon-search"></i></a></li>-->
                             <!-- Notifications-->
                             <li class="nav-item dropdown">
-                                <a id="notifications" class="nav-link" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-bell-o fa-2x"></i><span class="noti-numb-bg"></span><span class="badge" style="background:rgba(0,0,0,0.00)">12</span></a>
-
+                                <a id="notifications" href='#' onclick="javascript:location.href='/Approval/Index'" class="nav-link" rel="nofollow" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-bell-o fa-2x"></i><span class="noti-numb-bg"></span><span class="badge" style="background:rgba(0,0,0,0.00)">12</span></a>
                             </li>
 
                             <li class="nav-item dropdown">
@@ -216,7 +215,7 @@
 
                                 </ul>
                             </li>
-                            <li class="nav-item d-flex align-items-center"><a id="menu-toggle-right" class="nav-link" href="#"><i class="fa fa-power-off fa-2x"></i></a></li>
+                            <li class="nav-item d-flex align-items-center" onclick="loginOut();"><a id="menu-toggle-right" class="nav-link" href="#"><i class="fa fa-power-off fa-2x"></i></a></li>
                          
                         </ul>
                     </div>
@@ -232,7 +231,10 @@
 
     <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
     <script>
-                //$.widget.bridge('uibutton', $.ui.button);
+        //$.widget.bridge('uibutton', $.ui.button);
+        function loginOut() {
+            location.replace(path + "Account/SignOut");
+        }
     </script>
 
     <style>

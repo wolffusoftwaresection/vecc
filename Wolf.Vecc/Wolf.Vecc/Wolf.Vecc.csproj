@@ -1488,6 +1488,39 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="pemsreport\css\pemsreport.css" />
+    <Content Include="pemsreport\image\1.png" />
+    <Content Include="pemsreport\image\2.png" />
+    <Content Include="pemsreport\image\3.png" />
+    <Content Include="pemsreport\image\4.png" />
+    <Content Include="pemsreport\image\5.png" />
+    <Content Include="pemsreport\image\6.png" />
+    <Content Include="pemsreport\image\a.png" />
+    <Content Include="pemsreport\image\b.png" />
+    <Content Include="pemsreport\image\c.png" />
+    <Content Include="pemsreport\image\d.png" />
+    <Content Include="pemsreport\image\e.png" />
+    <Content Include="pemsreport\image\f.png" />
+    <Content Include="pemsreport\image\fail.png" />
+    <Content Include="pemsreport\image\g.png" />
+    <Content Include="pemsreport\image\guideline-little.png" />
+    <Content Include="pemsreport\image\guideline-long.png" />
+    <Content Include="pemsreport\image\guideline-short.png" />
+    <Content Include="pemsreport\image\h.png" />
+    <Content Include="pemsreport\image\line.png" />
+    <Content Include="pemsreport\image\LOGO.png" />
+    <Content Include="pemsreport\image\P6chart1.png" />
+    <Content Include="pemsreport\image\P6chart2.png" />
+    <Content Include="pemsreport\image\P6chart3.png" />
+    <Content Include="pemsreport\image\P7chart1.png" />
+    <Content Include="pemsreport\image\P7chart2.png" />
+    <Content Include="pemsreport\image\P7chart3.png" />
+    <Content Include="pemsreport\image\P8chart.png" />
+    <Content Include="pemsreport\image\P8table.png" />
+    <Content Include="pemsreport\image\pass.png" />
+    <Content Include="pemsreport\image\print.png" />
+    <Content Include="pemsreport\image\table1.png" />
+    <Content Include="pemsreport\image\titlebg.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="NLog.config">
@@ -1588,6 +1621,7 @@
     <Content Include="Views\Calculation\Index.cshtml" />
     <Content Include="Views\Account\TestRegister.cshtml" />
     <Content Include="Views\Account\RegisterEngineer.cshtml" />
+    <Content Include="Views\Calculation\PemsCalculationResults.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AdminLTE\bootstrap\js\ie\" />

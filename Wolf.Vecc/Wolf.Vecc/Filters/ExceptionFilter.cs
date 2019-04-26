@@ -34,9 +34,10 @@ namespace Wolf.Vecc.Filters
             //#endregion
 
             //告诉MVC框架异常被处理
-            filterContext.HttpContext.Response.Redirect("~/Error/NotFound.html");
+            //filterContext.HttpContext.Response.Redirect("~/Error/NotFound.html");
+            filterContext.Result = new RedirectToRouteResult("Default", new RouteValueDictionary(new { controller = "Account", action = "Login" }), true);
             base.OnException(filterContext);
-            //filterContext.Result = new RedirectToRouteResult("Default", new RouteValueDictionary(new { controller = "Error", action = "HttpError" }), true);
+            
             filterContext.ExceptionHandled = true;
         }
     }

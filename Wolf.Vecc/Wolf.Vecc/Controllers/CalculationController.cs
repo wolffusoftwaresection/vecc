@@ -13,5 +13,10 @@ namespace Wolf.Vecc.Controllers
         {
             return View();
         }
+
+        public ActionResult PemsCalculationResults()
+        {
+            return View();
+        }
     }
 }

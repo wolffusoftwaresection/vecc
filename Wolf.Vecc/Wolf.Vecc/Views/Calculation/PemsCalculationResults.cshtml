@@ -1,0 +1,1109 @@
+﻿@{
+    Layout = null;
+}
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>PEMS测试实验报告</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <link href="~/AdminLTE/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/pemsreport/css/pemsreport.css" rel="stylesheet" type="text/css" />
+    <script src="~/AdminLTE/jquery-1.8.2.min.js"></script>
+    <style type="text/css">
+        /*
+         * 说明：
+         * 标注为慎删的属性暂时认定可以删除，即在作者测试的环境下删除暂时没有影响，但不代表所有环境下删除都没有影响
+         * 其他属性一概不可以删除
+         */
+
+        html {
+            height: 100%
+        }
+
+        body {
+            height: 720px;
+        }
+
+
+        ul,
+        li,
+        a,
+        p,
+        div {
+            /*慎删*/
+            padding: 0px;
+            margin: 0px;
+        }
+
+        #wrap {
+            overflow: hidden;
+            width: 100%;
+        }
+
+        #main {
+            top: 0;
+            position: relative;
+        }
+
+        .page {
+            /*谨删*/
+            width: 100%;
+            margin: 0;
+        }
+
+        #pageUl {
+            position: fixed;
+            right: 7%;
+            color: gray;
+        }
+    </style>
+
+
+
+</head>
+
+
+<body>
+    <div id="wrap">
+        <div id="main">
+            <ul id="pageUl" type="circle" class="hidden-print">
+                <li id="pageUlLi1" class="pageUlLi" style="color:rgba(255,30,72,1.00);">&nbsp;1</li>
+                <li id="pageUlLi2" class="pageUlLi">&nbsp;2</li>
+                <li id="pageUlLi3" class="pageUlLi">&nbsp;3</li>
+                <li id="pageUlLi4" class="pageUlLi">&nbsp;4</li>
+                <li id="pageUlLi5" class="pageUlLi">&nbsp;5</li>
+                <li id="pageUlLi6" class="pageUlLi">&nbsp;6</li>
+                <li id="pageUlLi7" class="pageUlLi">&nbsp;7</li>
+                <li id="pageUlLi8" class="pageUlLi">&nbsp;8</li>
+            </ul>
+
+
+
+
+            <!--P1-->
+            <div id="page1" class="page">
+                <!--title-->
+                <div class="header">
+                    <div class="container">
+                        <div class="col-md-3"><img class="logo" src="~/pemsreport/image/LOGO.png"></div>
+                        <p class="head col-md-6">PEMS计算实验报告</p>
+                        <div class="col-md-3"><img class="pr" src="~/pemsreport/image/print.png"></div>
+                        <div class="clearfix"></div>
+                        <img class="line" src="~/pemsreport/image/line.png">
+                    </div>
+                </div>
+
+                <!--（1）信息概况-->
+                <div class="part1">
+                    <div class="container ">
+                        <div class="col-md-3 row"><img class="titlebg img-responsive" src="~/pemsreport/image/1.png" style="margin-top: 10px;margin-bottom: 10px"><!--<p class="title ">(一)&nbsp;测试信息概况</p>--></div>
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-1 text-left">试验日期:</div>
+                            <div class="col-md-1 text-left font-color">11/23/2018</div>
+                            <div class="col-md-2">
+                                <div class="row col-md-8 text-left ">试验时间:</div>
+                                <div class="row col-md-4 text-left font-color">09:18:08.34</div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="row col-md-8 text-left col-md-offset-1">测试人员:</div>
+                                <div class="row  text-left font-color">王启武</div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="row col-md-8 text-left col-md-offset-2">试验地点:</div>
+                                <div class="row col-md-5 text-left font-color ">重庆</div>
+                            </div>
+                            <div class="col-md-2 text-right">PEMS设备型号:</div>
+                            <div class="col-md-1 text-left font-color">SENSORS</div>
+
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-1 text-left">整车型号:</div>
+                            <div class="col-md-1 text-left font-color">JAC</div>
+                            <div class="col-md-2">
+                                <div class="row col-md-8 text-left ">整车类型:</div>
+                                <div class="row col-md-4 text-left font-color">N2,M2,M3</div>
+                            </div>
+                            <div class="col-md-1 text-left"></div>
+                            <div class="col-md-1 text-left font-color"></div>
+                            <div class="col-md-4">
+                                <div class="row col-md-4 text-left col-md-offset-1">路线描述:</div>
+                                <div class="row col-md-8 text-left font-color">重检院-堰塘湾-G319</div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class=" col-md-2">
+                                <div class="row col-md-10 text-left">整备质量(KG):</div>
+                                <div class="row col-md-2 text-left font-color">3300</div>
+                            </div>
+                            <div class=" col-md-2">
+                                <div class="row col-md-12 text-left">最大设计质量(KG):</div>
+                                <div class="row col-md-2 text-left font-color">7790</div>
+                            </div>
+                            <div class=" col-md-2">
+                                <div class="row col-md-10 text-left col-md-offset-1">整车载荷(%)：</div>
+                                <div class="row col-md-2 text-left font-color">12</div>
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+                            <div class=" col-md-2">
+                                <div class="row col-md-10 text-left">最高海拔(M):</div>
+                                <div class="row col-md-2 text-left font-color">33.7</div>
+                            </div>
+                            <div class=" col-md-2">
+                                <div class="row col-md-12 text-left ">平均大气温度(℃):</div>
+                                <div class="row col-md-2 text-left font-color">12.3</div>
+                            </div>
+                            <div class=" col-md-2"><div class="row col-md-offset-12 text-left col-md-offset-2">平均大气压力(kPa)：</div></div>
+                            <div class="row col-md-1 text-left font-color">102.4</div>
+                        </div>
+
+
+                        <div class="row result">
+                            <div class=" col-md-2">
+                                <div class="row col-md-8 text-left">海拔结果:</div>
+                                <img src="~/pemsreport/image/pass.png " class="pass img-responsive center-block">
+                            </div>
+                            <div class=" col-md-2">
+                                <div class="row col-md-8 text-left ">工况结果:</div>
+                                <img src="~/pemsreport/image/pass.png " class="pass img-responsive center-block">
+                            </div>
+                            <div class=" col-md-2">
+                                <div class="row col-md-8 text-left col-md-offset-1">排放结果：</div>
+                                <img src="~/pemsreport/image/fail.png " class="pass img-responsive center-block">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!--（2）工况结果-->
+                <div class="part2">
+                    <div class="container ">
+                        <div class="col-md-3 row"><img class="titlebg img-responsive" src="~/pemsreport/image/2.png" style="margin-top: 10px;margin-bottom: 10px"><!--<p class="title ">(二)&nbsp;工况结果</p>--></div>
+                    </div>
+                    <div class="container">
+                        <div class="chart col-md-5"><img class="img-responsive" src="~/pemsreport/image/a.png"></div>
+                        <div class="chart col-md-5 col-md-offset-1"><img class="img-responsive" src="~/pemsreport/image/b.png"></div>
+                    </div>
+                    <div class="container">
+                        <div class="chart col-md-5"><img class="img-responsive" src="~/pemsreport/image/c.png"></div>
+                        <div class="chart col-md-5 col-md-offset-1"><img class="img-responsive" src="~/pemsreport/image/d.png"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!--P2-->
+            <div id="page2" class="page">
+
+                <div class="container">
+                    <div class="col-md-3"><img class="logo" src="~/pemsreport/image/LOGO.png"></div>
+                    <div class="clearfix"></div>
+                    <img class="line" src="~/pemsreport/image/line.png">
+                </div>
+
+                <div class="container">
+                    <div class="chart col-md-5"><img class="img-responsive" src="~/pemsreport/image/e.png"></div>
+                    <div class="chart col-md-5 col-md-offset-1"><img class="img-responsive" src="~/pemsreport/image/f.png"></div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="chart col-md-6">
+                            <div class="col-md-10"><img class="img-responsive" src="~/pemsreport/image/g.png"></div>
+                            <div class="row">
+
+                                <div class="col-md-6" style="margin-top:30px">
+                                    <div class="row">
+                                        <div class="col-md-8 text-left">
+                                            <p class="normalfont" style="line-height: 20px;">起始点和终点的海拔差 :</p>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <p class="normalfont" style="line-height: 20px;">-9.7 m</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-8">
+                                            <img class="img-responsive" src="~/pemsreport/image/guideline-long.png">
+                                        </div>
+                                        <div class="col-md-4">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <p class="normalfont" style="line-height: 20px;font-size: 12px;color:dimgray">≤100m</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6" style="margin-top:30px">
+                                    <div class="row">
+                                        <div class="col-md-8 text-left">
+                                            <p class="normalfont" style="line-height: 20px;">正式测试持续时间保证 : </p>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <p class="normalfont" style="line-height: 20px;">5.56</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-8 ">
+                                            <img class="img-responsive" src="~/pemsreport/image/guideline-long.png">
+                                        </div>
+                                        <div class="col-md-4">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <p class="normalfont" style="line-height: 20px;font-size: 12px;color:dimgray">累计功达到4-7倍WHTC循环功</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="row" style="margin-top:10px">
+                                        <div class="col-md-6 text-left">
+                                            <p class="normalfont" style="line-height: 20px;">累计正海拔高度 :</p>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p class="normalfont" style="line-height: 20px;">356.63m/100km</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6 ">
+                                            <img class="img-responsive" src="~/pemsreport/image/guideline-short.png">
+                                        </div>
+                                        <div class="col-md-4">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <p class="normalfont" style="line-height: 20px;font-size: 12px;color:dimgray">≤1200m/100km</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="row" style="margin-top:10px">
+                                        <div class="col-md-6 text-left">
+                                            <p class="normalfont" style="line-height: 20px;">总测试持续时间 :</p>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p class="normalfont" style="line-height: 20px;">150.9min</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-8 text-left">
+                                        </div>
+                                        <div class="col-md-4">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="row" style="margin-top:10px">
+                                        <div class="col-md-6 text-left">
+                                            <p class="normalfont" style="line-height: 20px;">冷启动时间 :</p>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p class="normalfont" style="line-height: 20px;">0.02 min</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6 ">
+                                        </div>
+                                        <div class="col-md-4">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="row" style="margin-top:10px">
+                                        <div class="col-md-6 text-left">
+                                            <p class="normalfont" style="line-height: 20px;">总测试里程 :</p>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p class="normalfont" style="line-height: 20px;">120.18 min</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-8 text-left">
+                                        </div>
+                                        <div class="col-md-4">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="row" style="margin-top:10px">
+                                        <div class="col-md-6 text-left">
+                                            <p class="normalfont" style="line-height: 20px;">冷启动里程 :</p>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p class="normalfont" style="line-height: 20px;">0 km</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6 ">
+                                        </div>
+                                        <div class="col-md-4">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <!--
+                                                    <div class="row" style="margin-top:10px">
+                                                            <div class="col-md-6 text-left"><p class="normalfont" style="line-height: 20px;"></p>
+                                                            </div>
+                                                            <div class="col-md-6"><p class="normalfont" style="line-height: 20px;"></p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-8 text-left">
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-md-12">
+                                                            </div>
+                                                        </div>
+                                    -->
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="row" style="margin-top:10px">
+                                        <div class="col-md-5 text-left">
+                                            <p class="normalfont" style="line-height: 20px;">冷启动过程的平均百公里油耗 :    </p>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <p class="normalfont" style="line-height: 20px;">Inf km</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6 ">
+                                        </div>
+                                        <div class="col-md-4">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--
+                                                <div class="col-md-6">
+                                                <div class="row" style="margin-top:10px">
+                                                        <div class="col-md-6 text-left"><p class="normalfont" style="line-height: 20px;"></p>
+                                                        </div>
+                                                        <div class="col-md-6"><p class="normalfont" style="line-height: 20px;"></p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-8 text-left">
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-md-12">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                -->
+                            </div>
+
+
+                        </div>
+                        <div class="col-md-5 col-md-offset-1">
+                            <img class="img-responsive" src="~/pemsreport/image/h.png">
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+
+            <!--P3-->
+            <div id="page3" class="page">
+
+
+                <div class="container">
+                    <div class="col-md-3"><img class="logo" src="~/pemsreport/image/LOGO.png"></div>
+                    <div class="clearfix"></div>
+                    <img class="line" src="~/pemsreport/image/line.png">
+                </div>
+
+                <!--（3）排放结果-->
+                <div class="part3">
+                    <div class="container ">
+                        <div class="col-md-3 row"><img class="titlebg img-responsive" src="~/pemsreport/image/3.png" style="margin-top: 10px;margin-bottom: 10px"><!--<p class="title ">(三)&nbsp;排放结果</p>--></div>
+                    </div>
+                </div>
+
+                <div class="container ">
+                    <table class="table  col-md-12 text-center" style="border:0px;white-space:nowrap">
+                        <!--<caption>边框表格布局</caption>-->
+                        <thead>
+                            <tr>
+                                <th rowspan="2" style="background-color: #294298;color: white;border-top: 0px;border-bottom: 0px;white-space:nowrap">总窗<br>口数</th>
+                                <th rowspan="2" style="background-color: #394f94;color: white;border-top: 0px;border-bottom: 0px;white-space:nowrap">有效窗<br>口数</th>
+                                <th colspan="2" style="background-color: #294298;color: white; border-top: 0px;border-bottom: 0px;">有效功基窗口结果</th>
+                                <th rowspan="2" style="background-color: #394f94;color: white;border-top: 0px;border-bottom: 0px;">NOx&lt; 500ppm的<br>点数比例</th>
+                                <th rowspan="2" style="background-color: #294298;color: white;border-top: 0px;border-bottom: 0px;">BSNOx≤0.69g/kW.h的<br>窗口比例</th>
+                                <th rowspan="2" style="background-color: #394f94;color: white;border-top: 0px;border-bottom: 0px;">BSCO≤0.69g/kW.h的<br>窗口比例</th>
+                                <th rowspan="2" style="background-color: #294298;color: white;border-top: 0px;border-bottom: 0px;">BSPN≤1.2x10^12(#/kW.h)的<br>窗口比例</th>
+                            </tr>
+                            <tr>
+
+                                <th style="background-color: #2d4281;color: white;border-top: 0px;border-bottom: 0px;">窗口比例</th>
+                                <th style="background-color: #1a3381;color: white;border-top: 0px;border-bottom: 0px;">最大功率百分比</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td style="background-color: #edf3fa;">0000</td>
+                                <td style="background-color: #eaeef8;">0000</td>
+                                <td style="background-color: #edf3fa;"><img style="width: 50%;height: 2px;margin: 0 auto;background-color: #edf3fa;" src="~/pemsreport/image/guideline-little.png"><p class="normalfont" style="line-height: 20px;font-size: 12px;color:dimgray">≥50%</p><br>0</td>
+                                <td style="background-color: #eaeef8;"><img style="width: 50%;height: 2px;margin: 0 auto;background-color: #eaeef8" src="~/pemsreport/image/guideline-little.png"><p class="normalfont" style="line-height: 20px;font-size: 12px;color:dimgray">[20%-10%]</p><br>0</td>
+                                <td style="background-color: #edf3fa;"><img style="width: 50%;height: 2px;margin: 0 auto;background-color: #edf3fa;" src="~/pemsreport/image/guideline-little.png"><p class="normalfont" style="line-height: 20px;font-size: 12px;color:dimgray">≥95%</p><br>0</td>
+                                <td style="background-color: #eaeef8;"><img style="width: 50%;height: 2px;margin: 0 auto;background-color: #eaeef8" src="~/pemsreport/image/guideline-little.png"><p class="normalfont" style="line-height: 20px;font-size: 12px;color:dimgray">≥90%</p><br>0</td>
+                                <td style="background-color: #edf3fa;"><img style="width: 50%;height: 2px;margin: 0 auto;background-color: #edf3fa;" src="~/pemsreport/image/guideline-little.png"><p class="normalfont" style="line-height: 20px;font-size: 12px;color:dimgray">≥90%</p><br>0</td>
+                                <td style="background-color: #eaeef8;"><img style="width: 50%;height: 2px;margin: 0 auto;background-color: #eaeef8" src="~/pemsreport/image/guideline-little.png"><p class="normalfont" style="line-height: 20px;font-size: 12px;color:dimgray">≥90%</p><br>0</td>
+
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="container ">
+
+
+                    <img class="img-responsive col-md-12" src="~/pemsreport/image/table1.png" style="padding: : 0">
+
+                </div>
+
+
+            </div>
+
+
+            <!--P4-->
+            <div id="page4" class="page">
+
+
+                <div class="container">
+                    <div class="col-md-3"><img class="logo" src="~/pemsreport/image/LOGO.png"></div>
+                    <div class="clearfix"></div>
+                    <img class="line" src="~/pemsreport/image/line.png">
+                </div>
+
+                <div class="part4">
+                    <div class="container ">
+                        <div class="col-md-3 row"><img class="titlebg img-responsive" src="~/pemsreport/image/4.png" style="margin-top: 10px;"><!--<p class="title ">(四)&nbsp;计算过程结果</p>--></div>
+                    </div>
+                </div>
+
+
+
+                <div class="container " style="margin-top: 10px">
+                    <table class="table  col-md-12 text-center" style="border:0px;white-space:nowrap">
+                        <!--<caption>边框表格布局</caption>-->
+                        <thead>
+                            <tr>
+                                <th colspan="2" style="background-color: #3c7887;color: white;border-top: 0px;border-bottom: 0px;font-size: 15px;white-space:nowrap">数据异常点处理</th>
+                                <th style="background-color: #56909f;color: white;border-top: 0px;border-bottom: 0px;font-size: 14px;">Speed<br>(rpm)</th>
+                                <th style="background-color: #3c7887;color: white;border-top: 0px; border-bottom: 0px;font-size: 14px;">VehV_ECU<br>(km/h)</th>
+                                <th style="background-color: #56909f;color: white;border-top: 0px;border-bottom: 0px;font-size: 14px;">T_coolant<br>(℃)</th>
+                                <th style="background-color: #3c7887;color: white;border-top: 0px;border-bottom: 0px;font-size: 14px;">Qv_fuel<br>(L/h)</th>
+                                <th style="background-color: #56909f;color: white;border-top: 0px;border-bottom: 0px;font-size: 14px;">Qm_exh<br>(kg/h)</th>
+                                <th style="background-color: #3c7887;color: white;border-top: 0px;border-bottom: 0px;font-size: 14px;">VehV_GPS<br>(km/h)</th>
+                                <th style="background-color: #56909f;color: white;border-top: 0px;border-bottom: 0px;font-size: 14px;">P_air<br>(kPa)</th>
+                                <th style="background-color: #3c7887;color: white;border-top: 0px;border-bottom: 0px;font-size: 14px;">T_air<br>(℃)</th>
+                                <th style="background-color: #56909f;color: white;border-top: 0px;border-bottom: 0px;font-size: 14px;">Altitude<br>(℃)</th>
+                                <th style="background-color: #3c7887;color: white;border-top: 0px;border-bottom: 0px;font-size: 14px;">NOx<br>(ppm)</th>
+                                <th style="background-color: #56909f;color: white;border-top: 0px;border-bottom: 0px;font-size: 14px;">THC<br>(ppm)</th>
+                                <th style="background-color: #3c7887;color: white;border-top: 0px;border-bottom: 0px;font-size: 14px;">CO<br>(ppm)</th>
+                                <th style="background-color: #56909f;color: white;border-top: 0px;border-bottom: 0px;font-size: 14px;">CO2<br>(%)</th>
+                                <th style="background-color: #3c7887;color: white;border-top: 0px;border-bottom: 0px;font-size: 14px;">PN<br>(#/s)</th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody>
+                            <tr>
+                                <td colspan="2" style="background-color: #e9f5f8;">超限点数</td>
+                                <td style="background-color: #eff8fe;"><img style="width: 50%;height: 2px;margin: 0 auto;background-color: #eff8fe;" src="~/pemsreport/image/guideline-little.png"><p class="normalfont" style="line-height: 20px;font-size: 12px;color:dimgray">[0,8000]</p><br>0</td>
+                                <td style="background-color: #e9f5f8;"><img style="width: 50%;height: 2px;margin: 0 auto;background-color: #e9f5f8;" src="~/pemsreport/image/guideline-little.png"><p class="normalfont" style="line-height: 20px;font-size: 12px;color:dimgray">[0,150]</p><br>0</td>
+                                <td style="background-color: #eff8fe;"><img style="width: 50%;height: 2px;margin: 0 auto;background-color: #eff8fe" src="~/pemsreport/image/guideline-little.png"><p class="normalfont" style="line-height: 20px;font-size: 12px;color:dimgray">[-10,120]</p><br>0</td>
+                                <td style="background-color: #e9f5f8;"><img style="width: 50%;height: 2px;margin: 0 auto;background-color: #e9f5f8;" src="~/pemsreport/image/guideline-little.png"><p class="normalfont" style="line-height: 20px;font-size: 12px;color:dimgray">[0,150]</p><br>0</td>
+                                <td style="background-color: #eff8fe;"><img style="width: 50%;height: 2px;margin: 0 auto;background-color: #eff8fe" src="~/pemsreport/image/guideline-little.png"><p class="normalfont" style="line-height: 20px;font-size: 12px;color:dimgray">[0,4000]</p><br>0</td>
+                                <td style="background-color: #e9f5f8;"><img style="width: 50%;height: 2px;margin: 0 auto;background-color: #e9f5f8;" src="~/pemsreport/image/guideline-little.png"><p class="normalfont" style="line-height: 20px;font-size: 12px;color:dimgray">[0,150]</p><br>0</td>
+                                <td style="background-color: #eff8fe;"><img style="width: 50%;height: 2px;margin: 0 auto;background-color: #eff8fe" src="~/pemsreport/image/guideline-little.png"><p class="normalfont" style="line-height: 20px;font-size: 12px;color:dimgray">[50,110]</p><br>0</td>
+                                <td style="background-color: #e9f5f8;"><img style="width: 50%;height: 2px;margin: 0 auto;background-color: #e9f5f8;" src="~/pemsreport/image/guideline-little.png"><p class="normalfont" style="line-height: 20px;font-size: 12px;color:dimgray">[-10,70]</p><br>0</td>
+                                <td style="background-color: #eff8fe;"><img style="width: 50%;height: 2px;margin: 0 auto;background-color: #eff8fe" src="~/pemsreport/image/guideline-little.png"><p class="normalfont" style="line-height: 20px;font-size: 12px;color:dimgray">[-50,4000]</p><br>0</td>
+                                <td style="background-color: #e9f5f8;"><img style="width: 50%;height: 2px;margin: 0 auto;background-color: #e9f5f8;" src="~/pemsreport/image/guideline-little.png"><p class="normalfont" style="line-height: 20px;font-size: 12px;color:dimgray">[0,3000]</p><br>0</td>
+                                <td style="background-color: #eff8fe;"><img style="width: 50%;height: 2px;margin: 0 auto;background-color: #eff8fe" src="~/pemsreport/image/guideline-little.png"><p class="normalfont" style="line-height: 20px;font-size: 12px;color:dimgray">[0,3000]</p><br>0</td>
+                                <td style="background-color: #e9f5f8;"><img style="width: 50%;height: 2px;margin: 0 auto;background-color: #e9f5f8;" src="~/pemsreport/image/guideline-little.png"><p class="normalfont" style="line-height: 20px;font-size: 12px;color:dimgray">[0,3000]</p><br>0</td>
+                                <td style="background-color: #eff8fe;"><img style="width: 50%;height: 2px;margin: 0 auto;background-color: #eff8fe" src="~/pemsreport/image/guideline-little.png"><p class="normalfont" style="line-height: 20px;font-size: 12px;color:dimgray">[0,50]</p><br>0</td>
+                                <td style="background-color: #e9f5f8;"><img style="width: 50%;height: 2px;margin: 0 auto;background-color: #e9f5f8;" src="~/pemsreport/image/guideline-little.png"><p class="normalfont" style="line-height: 20px;font-size: 12px;color:dimgray">[0,6*10^13]</p><br>0</td>
+
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+                </div>
+
+
+                <div class="container ">
+                    <table class="table  col-md-12 text-center" style="border:0px;white-space:nowrap">
+                        <!--<caption>边框表格布局</caption>-->
+                        <thead>
+                            <tr>
+
+                                <th colspan="6" style="background-color: #00736d;color: white;border-top: 0px;border-bottom: 0px;"><p class="text-left " style="color: white;font-size: 16px;line-height: 24px">PEMS数据对齐</p></th>
+
+                            </tr>
+                            <tr>
+                                <th style="background-color: #eef6e8;color: #004454;border-top: 0px;border-bottom: 0px;">数据类别</th>
+                                <th style="background-color: #dff0ea;color: #004454;border-top: 0px;border-bottom: 0px;">滞后时间</th>
+                                <th style="background-color: #eef6e8;color: #004454;border-top: 0px; border-bottom: 0px;">气体分析仪(CO2)</th>
+                                <th style="background-color: #dff0ea;color: #004454;border-top: 0px;border-bottom: 0px;">EFM信号(Qm_exh_EFM)</th>
+                                <th style="background-color: #eef6e8;color: #004454;border-top: 0px;border-bottom: 0px;">GPS信号(VehV_GPS)</th>
+                                <th style="background-color: #dff0ea;color: #004454;border-top: 0px;border-bottom: 0px;">ECU信号(VehV_ECU)</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <th style="background-color: #d6ebd9;color: #004454;border-top: 0px;border-bottom: 0px;">I</th>
+                                <th style="background-color: #c8e5da;color: #004454;border-top: 0px;border-bottom: 0px;">气体分析仪(CO2)</th>
+                                <td style="background-color: #d6ebd9;border-top: 0px;border-bottom: 0px;">0</td>
+                                <td style="background-color: #c8e5da;border-top: 0px;border-bottom: 0px;">0</td>
+                                <td style="background-color: #d6ebd9;border-top: 0px;border-bottom: 0px;">0</td>
+                                <td style="background-color: #c8e5da;border-top: 0px;border-bottom: 0px;">0</td>
+
+                            </tr>
+                            <tr>
+                                <th style="background-color: #eef6e8;color: #004454;border-top: 0px;border-bottom: 0px;">II</th>
+                                <th style="background-color: #dff0ea;color: #004454;border-top: 0px;border-bottom: 0px;">EFM信号(Qm_exh_EFM)</th>
+                                <td style="background-color: #eef6e8;border-top: 0px;border-bottom: 0px;">0</td>
+                                <td style="background-color: #dff0ea;border-top: 0px;border-bottom: 0px;">0</td>
+                                <td style="background-color: #eef6e8;border-top: 0px;border-bottom: 0px;">0</td>
+                                <td style="background-color: #dff0ea;border-top: 0px;border-bottom: 0px;">0</td>
+
+                            </tr>
+                            <tr>
+                                <th style="background-color: #d6ebd9;color: #004454;border-top: 0px;border-bottom: 0px;">I+II</th>
+                                <th style="background-color: #c8e5da;color: #004454;border-top: 0px;border-bottom: 0px;">GPS信号(VehV_GPS)</th>
+                                <td style="background-color: #d6ebd9;border-top: 0px;border-bottom: 0px;">0</td>
+                                <td style="background-color: #c8e5da;border-top: 0px;border-bottom: 0px;">0</td>
+                                <td style="background-color: #d6ebd9;border-top: 0px;border-bottom: 0px;">0</td>
+                                <td style="background-color: #c8e5da;border-top: 0px;border-bottom: 0px;">0</td>
+
+                            </tr>
+                            <tr>
+                                <th style="background-color: #eef6e8;color: #004454;border-top: 0px;border-bottom: 0px;">III</th>
+                                <th style="background-color: #dff0ea;color: #004454;border-top: 0px;border-bottom: 0px;">ECU信号(VehV_ECU)</th>
+                                <td style="background-color: #eef6e8;border-top: 0px;border-bottom: 0px;">0</td>
+                                <td style="background-color: #dff0ea;border-top: 0px;border-bottom: 0px;">0</td>
+                                <td style="background-color: #eef6e8;border-top: 0px;border-bottom: 0px;">0</td>
+                                <td style="background-color: #dff0ea;border-top: 0px;border-bottom: 0px;">0</td>
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="container ">
+                    <table class="table  col-md-12 text-center" style="border:0px;white-space:nowrap">
+                        <!--<caption>边框表格布局</caption>-->
+                        <thead>
+                            <tr>
+
+                                <th colspan="6" style="background-color: #3b516b;color: white;border-top: 0px;border-bottom: 0px;"><p class="text-left " style="color: white;font-size: 16px;line-height: 24px">数据一致性检查</p></th>
+
+                            </tr>
+                            <tr>
+                                <th colspan="3" rowspan="2" style="background-color: #e4f3f7;color: #14284b;border-top: 0px;border-bottom: 0px;">分析仪和EFM的数据(EFM测量的排气质量和气体浓度)<p class="text-center " style="color:#14284b;font-size: 12px;line-height: 16px">(基于碳平衡计算的瞬时燃油耗和ECU实测的瞬时燃油耗进行线性回归判断)</p></th>
+                                <th style="background-color: #e9f4fb;color: #14284b;border-top: 0px;border-bottom: 0px;"></th>
+                                <th style="background-color: #ddeff3;color: #14284b;border-top: 0px; border-bottom: 0px;">回归线的斜率(m)</th>
+                                <th style="background-color: #e9f4fb;color: #14284b;border-top: 0px;border-bottom: 0px;">相关系数(r^2))</th>
+
+
+                            </tr>
+                            <tr>
+                                <th style="background-color: #ddeff3;color: #14284b;border-top: 0px;border-bottom: 0px;">实际回归结果</th>
+
+                                <td style="background-color: #e9f4fb;border-top: 0px;border-bottom: 0px;"><img style="width: 50%;height: 2px;margin: 0 auto;background-color: #e9f4fb;" src="~/pemsreport/image/guideline-little.png"><p class="normalfont" style="line-height: 20px;font-size: 12px;color:dimgray">[0.9,1.1]</p><br>0</td>
+                                <td style="background-color: #ddeff3;border-top: 0px;border-bottom: 0px;"><img style="width: 50%;height: 2px;margin: 0 auto;background-color: #ddeff3;" src="~/pemsreport/image/guideline-little.png"><p class="normalfont" style="line-height: 20px;font-size: 12px;color:dimgray">(0.9,1]</p><br>0</td>
+
+                            </tr>
+                        </thead>
+
+
+                    </table>
+                </div>
+
+            </div>
+
+            <!--P5-->
+            <div id="page5" class="page">
+
+                <div class="container">
+                    <div class="col-md-3"><img class="logo" src="~/pemsreport/image/LOGO.png"></div>
+                    <div class="clearfix"></div>
+                    <img class="line" src="~/pemsreport/image/line.png">
+                </div>
+
+                <div class="container ">
+                    <table class="table  col-md-12 text-center" style="border:0px;white-space:nowrap;margin-top: 10px;">
+                        <!--<caption>边框表格布局</caption>-->
+                        <thead>
+                            <tr>
+
+                                <th colspan="6" style="background-color: #492379;color: white;border-top: 0px;border-bottom: 0px;"><p class="text-left " style="color: white;font-size: 16px;line-height: 24px">数据一致性检查</p></th>
+
+                            </tr>
+                            <tr>
+                                <th rowspan="2" style="background-color: #dbe1f2;color: #162244;border-top: 0px;border-bottom: 0px;">行驶车速</th>
+                                <th style="background-color: #edf6fb;color: #162244;border-top: 0px;border-bottom: 0px;">基于ECU车速计算得到的里程(km)</th>
+                                <th style="background-color: #e7ebf6;color: #162244;border-top: 0px; border-bottom: 0px;">基于GPS车速计算得到的里程(km)</th>
+                                <th style="background-color: #edf6fb;color: #162244;border-top: 0px;border-bottom: 0px;">两者的相对误差( 以ECU为基准  ,  %）</th>
+
+
+                            </tr>
+                            <tr>
+                                <td style="background-color: #e7ebf6;border-top: 0px;border-bottom: 0px;">0</td>
+
+                                <td style="background-color: #edf6fb;border-top: 0px;border-bottom: 0px;">0</td>
+                                <td style="background-color: #e7ebf6;border-top: 0px;border-bottom: 0px;"><img style="width: 50%;height: 2px;margin: 0 auto;background-color: #e7ebf6;" src="~/pemsreport/image/guideline-little.png"><p class="normalfont" style="line-height: 20px;font-size: 12px;color:dimgray">± 4</p><br>0</td>
+
+                            </tr>
+                        </thead>
+
+
+                    </table>
+                </div>
+
+                <div class="container ">
+                    <div class=" col-md-5">
+                        <table class="table row text-center" style="border:0px;white-space:nowrap;margin-top: 10px;">
+                            <!--<caption>边框表格布局</caption>-->
+                            <thead>
+                                <tr>
+
+                                    <th colspan="3" style="background-color: #583b6a;color: white;border-top: 0px;border-bottom: 0px;"><p class="text-left " style="color: white;font-size: 16px;line-height: 24px">测试开始的有效性检查</p></th>
+
+                                </tr>
+                                <tr>
+                                    <th style="background-color: #edf1f9;color: #12f274c;border-top: 0px;border-bottom: 0px;"></th>
+                                    <th style="background-color: #f7f8fc;color: #2f274c;border-top: 0px;border-bottom: 0px;">实测结果</th>
+                                    <th rowspan="4" c style="background-color: #8f82bc;color: white;border-top: 0px; border-bottom: 0px;">
+                                        <p style="color: white;font-size: 13px;line-height: 30px;" class="text-left">
+                                            规定:
+                                            当环境温度≤30℃<br>时，冷却液水温≤30℃；<br>当环境温度高于30℃时，<br>
+                                            冷却液水温不高于环境温<br>度2℃。
+                                        </p>
+                                    </th>
+
+
+
+                                </tr>
+                                <tr>
+                                    <th style="background-color: #f7f8fc;color: #2f274c;border-top: 0px;border-bottom: 0px;">开始测试时环境温度(℃)</th>
+
+                                    <td style="background-color: #edf1f9;border-top: 0px;border-bottom: 0px;">0</td>
+
+                                </tr>
+                                <tr>
+                                    <th style="background-color: #edf1f9;color: #2f274c;border-top: 0px;border-bottom: 0px;">开始测试时冷却液温度(℃)</th>
+
+                                    <td style="background-color: #f7f8fc;border-top: 0px;border-bottom: 0px;">0</td>
+
+                                </tr>
+                                <tr>
+                                    <th style="background-color: #f7f8fc;color: #2f274c;border-top: 0px;border-bottom: 0px;">有效性检查</th>
+
+                                    <td style="background-color: #edf1f9;color:red;border-top: 0px;border-bottom: 0px;">Fail</td>
+
+                                </tr>
+                            </thead>
+
+
+                        </table>
+                    </div>
+
+
+                    <div class=" col-md-5  col-md-offset-2">
+                        <table class="table row text-center" style="border:0px;white-space:nowrap;margin-top: 10px;float: right">
+                            <!--<caption>边框表格布局</caption>-->
+                            <thead>
+                                <tr>
+
+                                    <th colspan="3" style="background-color: #583b6a;color: white;border-top: 0px;border-bottom: 0px;"><p class="text-left " style="color: white;font-size: 16px;line-height: 24px">测试正式开始有效数据提取</p></th>
+
+                                </tr>
+                                <tr>
+                                    <th style="background-color: #edf1f9;color: #12f274c;border-top: 0px;border-bottom: 0px;"></th>
+                                    <th style="background-color: #f7f8fc;color: #2f274c;border-top: 0px;border-bottom: 0px;">实测结果</th>
+
+
+
+
+                                </tr>
+                                <tr>
+                                    <th style="background-color: #f7f8fc;color: #2f274c;border-top: 0px;border-bottom: 0px;">冷却液温度到达70℃以上的时间(min)</th>
+
+                                    <td style="background-color: #edf1f9;border-top: 0px;border-bottom: 0px;">0</td>
+
+                                </tr>
+                                <tr>
+                                    <th style="background-color: #edf1f9;color: #2f274c;border-top: 0px;border-bottom: 0px;">冷却液的温度在5min以内<br>变化小于2℃的结束时间(min)</th>
+
+                                    <td style="background-color: #f7f8fc;border-top: 0px;border-bottom: 0px;">0</td>
+
+                                </tr>
+                                <tr>
+                                    <th style="background-color: #f7f8fc;color: #2f274c;border-top: 0px;border-bottom: 0px;">20 min</th>
+
+                                    <td style="background-color: #edf1f9;border-top: 0px;border-bottom: 0px;">0</td>
+
+                                </tr>
+                                <tr>
+                                    <th style="background-color: #edf1f9;color: #2f274c;border-top: 0px;border-bottom: 0px;">正式测试开始时间(min)</th>
+
+                                    <td style="background-color: #f7f8fc;border-top: 0px;border-bottom: 0px;">0</td>
+
+                                </tr>
+                            </thead>
+
+
+                        </table>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+
+
+                <div class="container ">
+                    <table class="table  text-center" style="border:0px;white-space:nowrap;margin-top: 10px;">
+                        <!--<caption>边框表格布局</caption>-->
+                        <thead>
+
+                            <tr>
+                                <th style="background-color: #601986;color:white;border-top: 0px;border-bottom: 0px;line-height: 60px;width: 500px;">有效数据点的数据及排放计算文件</th>
+                                <th style="background-color: #e3edf8;color: #2f274c;border-top: 0px;border-bottom: 0px;"><a href="http://211.149.182.188:8080/wrf/UpLoadFiles/2d9bf5fd-382b-471e-ba2e-849780c8410d/ResultFiles/timebased_data_result.csv" style="color:#294298;font-size: 16px;line-height: 60px">可双击直接打开具体结果</a></th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+
+            </div>
+
+
+
+
+
+
+
+            <!--P6-->
+            <div id="page6" class="page">
+
+                <div class="container">
+                    <div class="col-md-3"><img class="logo" src="~/pemsreport/image/LOGO.png"></div>
+                    <div class="clearfix"></div>
+                    <img class="line" src="~/pemsreport/image/line.png">
+                </div>
+
+                <div class="container ">
+                    <table class="table  text-center" style="border:0px;white-space:nowrap;margin-top: 10px;">
+                        <!--<caption>边框表格布局</caption>-->
+                        <thead>
+
+                            <tr>
+                                <th style="background-color: #294298;color:white;border-top: 0px;border-bottom: 0px;line-height: 60px;width: 500px;">功基窗口计算结果文件</th>
+                                <th style="background-color: #e3edf8;color: #2f274c;border-top: 0px;border-bottom: 0px;"><a href="http://211.149.182.188:8080/wrf/UpLoadFiles/2d9bf5fd-382b-471e-ba2e-849780c8410d/ResultFiles/Work_based_Windows_Results.csv" style="color:#294298;font-size: 16px;line-height: 60px">可双击直接打开具体结果</a></th>
+
+
+
+                            </tr>
+
+                        </thead>
+                    </table>
+                </div>
+
+
+                <div class="container ">
+                    <table class="table  text-center" style="border:0px;white-space:nowrap;margin-top: 10px;">
+                        <!--<caption>边框表格布局</caption>-->
+                        <thead>
+
+                            <tr>
+                                <th style="background-color: #294298;color:white;border-top: 0px;border-bottom: 0px;line-height: 60px;width: 500px;">PEMS报告交互数据</th>
+                                <th style="background-color: #e3edf8;color: #2f274c;border-top: 0px;border-bottom: 0px;"><a href="http://211.149.182.188:8080/wrf/UpLoadFiles/2d9bf5fd-382b-471e-ba2e-849780c8410d/ResultFiles//reportdata.csv" style="color:#294298;font-size: 16px;line-height: 60px">可双击直接打开具体结果</a></th>
+
+
+
+                            </tr>
+
+                        </thead>
+                    </table>
+                </div>
+
+
+                <div class="container ">
+                    <table class="table  col-md-12 text-center" style="border:0px;white-space:nowrap;margin-top: 10px;">
+                        <!--<caption>边框表格布局</caption>-->
+                        <thead>
+                            <tr>
+
+                                <th colspan="12" style="background-color: #253c8a;color: white;border-top: 0px;border-bottom: 0px;"><p class="text-left " style="color: white;font-size: 16px;line-height: 24px">有效功基窗口的结果曲线</p></th>
+
+                            </tr>
+                        </thead>
+                    </table>
+
+                    <div class="col-md-12 row ">
+                        <div class="col-md-4 "><img src="~/pemsreport/image/P6chart1.png" class="img-responsive"></div>
+                        <div class="col-md-4 "><img src="~/pemsreport/image/P6chart2.png" class="img-responsive"></div>
+                        <div class="col-md-4 "><img src="~/pemsreport/image/P6chart3.png" class="img-responsive"></div>
+                    </div>
+
+                </div>
+
+
+
+
+
+            </div>
+
+
+            <!--P7-->
+            <div id="page7" class="page">
+
+                <div class="container">
+                    <div class="col-md-3"><img class="logo" src="~/pemsreport/image/LOGO.png"></div>
+                    <div class="clearfix"></div>
+                    <img class="line" src="~/pemsreport/image/line.png">
+                </div>
+
+                <div class="container ">
+                    <table class="table  col-md-12 text-center" style="border:0px;white-space:nowrap;margin-top: 10px;margin-bottom: 0px;">
+                        <!--<caption>边框表格布局</caption>-->
+                        <thead>
+                            <tr>
+
+                                <th colspan="12" style="background-color: #253c8a;color: white;border-top: 0px;border-bottom: 0px;"><p class="text-left " style="color: white;font-size: 16px;line-height: 24px">NOx曲线结果</p></th>
+
+                            </tr>
+                        </thead>
+                    </table>
+
+                    <div class="col-md-12 row " style="margin-top: 10px">
+                        <div class="col-md-4 "><img src="~/pemsreport/image/P7chart1.png" class="img-responsive"></div>
+
+                    </div>
+
+                </div>
+
+                <div class="part5">
+                    <div class="container ">
+                        <div class="col-md-4 row"><img class="titlebg img-responsive" src="~/pemsreport/image/5.png" style="margin-top: 10px;"><!--<p class="title ">(五)&nbsp;行驶速度和路线结果</p>--></div>
+                    </div>
+
+
+                    <div class="container " style="margin-top: 10px">
+                        <div class="col-md-12 row ">
+                            <div class="col-md-4 "><img src="~/pemsreport/image/P7chart2.png" class="img-responsive"></div>
+                            <div class="col-md-4 col-md-offset-2"><img src="~/pemsreport/image/P7chart2.png" class="img-responsive"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+            <!--P8-->
+            <div id="page8" class="page">
+
+                <div class="container">
+                    <div class="col-md-3"><img class="logo" src="~/pemsreport/image/LOGO.png"></div>
+                    <div class="clearfix"></div>
+                    <img class="line" src="~/pemsreport/image/line.png">
+                </div>
+
+                <div class="part6">
+                    <div class="container ">
+                        <div class="col-md-4 row"><img class="titlebg img-responsive" src="~/pemsreport/image/6.png" style="margin-top: 10px;"><!--<p class="title ">(六)&nbsp;(六)PEMS测 试 工 况 分 布 结 果</p>--></div>
+                    </div>
+
+
+                    <div class="container " style="margin-top: 10px">
+                        <div class="col-md-12 row ">
+                            <div class="col-md-5 "><img src="~/pemsreport/image/P8chart.png" class="img-responsive"></div>
+                            <div class="col-md-5 col-md-offset-1 "><img src="~/pemsreport/image/P8table.png" class="img-responsive"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+
+
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+    //改变窗口大小时调整图片大小
+    window.onload = resizeImages;
+    window.onresize = resizeImages;
+
+    function resizeImages() {
+        $(function (e) {
+            var screenWeight = document.documentElement.clientWidth;
+            var screenHeight = document.documentElement.clientHeight;
+            $("[name=pageImg]").css("width", screenWeight).css("height", screenHeight);
+            $("#pageUl").css("bottom", screenHeight >> 1);
+        });
+    }
+
+    var index = 1;
+    var curIndex = 1;
+    var wrap = document.getElementById("wrap");
+    var main = document.getElementById("main");
+    var hei = document.body.clientHeight;
+    wrap.style.height = hei + "px";
+    var obj = document.getElementsByTagName("div");
+    for (var i = 0; i < obj.length; i++) {
+        if (obj[i].className == 'page') {
+            obj[i].style.height = hei + "px";
+        }
+    }
+    var pageNum = document.querySelectorAll(".page").length;
+    //如果不加时间控制，滚动会过度灵敏，一次翻好几屏
+    var startTime = 0, //翻屏起始时间
+        endTime = 0,
+        now = 0;
+    //浏览器兼容
+    if ((navigator.userAgent.toLowerCase().indexOf("firefox") != -1)) {
+        document.addEventListener("DOMMouseScroll", scrollFun, false);
+    } else if (document.addEventListener) {
+        document.addEventListener("mousewheel", scrollFun, false);
+    } else if (document.attachEvent) {
+        document.attachEvent("onmousewheel", scrollFun);
+    } else {
+        document.onmousewheel = scrollFun;
+    }
+
+    //滚动事件处理函数
+    function scrollFun(event) {
+        startTime = new Date().getTime();
+        var delta = event.detail || (-event.wheelDelta);
+        //mousewheel事件中的 “event.wheelDelta” 属性值：返回的如果是正值说明滚轮是向上滚动
+        //DOMMouseScroll事件中的 “event.detail” 属性值：返回的如果是负值说明滚轮是向上滚动
+        if ((endTime - startTime) < -1000) {
+            if (delta > 0 && parseInt(main.offsetTop) > -(hei * (pageNum - 1))) {
+                //向下滚动
+                index++;
+                toPage(index);
+            }
+            if (delta < 0 && parseInt(main.offsetTop) < 0) {
+                //向上滚动
+                index--;
+                toPage(index);
+            }
+            endTime = new Date().getTime();
+        } else {
+            event.preventDefault();
+        }
+    }
+
+    function toPage(index) {
+        //jquery实现动画效果
+        if(index!=curIndex){
+            var delta=index - curIndex;
+            now = now - delta * hei;
+            $("#main").animate({
+                top: (now + 'px')
+            }, 1000);
+            curIndex = index;
+            //更改列表的选中项
+            $(".pageUlLi").css("color", "gray");
+            $("#pageUlLi" + index).css("color", "rgba(255,30,72,1.00)");
+        }
+    }
+
+    //鼠标悬停翻页
+    document.getElementById("pageUlLi1").onmouseover = function () {
+        toPage(1);
+    }
+    document.getElementById("pageUlLi2").onmouseover = function () {
+        toPage(2);
+    }
+    document.getElementById("pageUlLi3").onmouseover = function () {
+        toPage(3);
+    }
+    document.getElementById("pageUlLi4").onmouseover = function () {
+        toPage(4);
+    }
+    document.getElementById("pageUlLi5").onmouseover = function () {
+        toPage(5);
+    }
+	 document.getElementById("pageUlLi6").onmouseover = function () {
+        toPage(6);
+    }
+    document.getElementById("pageUlLi7").onmouseover = function () {
+        toPage(7);
+    }
+    document.getElementById("pageUlLi8").onmouseover = function () {
+        toPage(8);
+    }
+</script>
+
+
+
+</html>
+

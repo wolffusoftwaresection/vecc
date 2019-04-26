@@ -168,10 +168,12 @@ namespace Wolf.Vecc.Controllers
             return Failure("注册失败");
         }
 
-        public ActionResult SignOut()
+        public void SignOut()
         {
             FormsAuthentication.SignOut();
-            return Redirect("~/Login");
+            FormsAuthentication.RedirectToLoginPage();
+            //FormsAuthentication.SignOut();
+            //return Redirect("~/Login");
         }
 
         public ActionResult TestRegister()
