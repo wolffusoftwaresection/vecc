@@ -155,13 +155,13 @@ var msg = {
             theme: 'white',
             content: msg,
             confirmButton: '确认',
-            cancelButton: '取消',
+            //cancelButton: '取消',
             //autoClose: 'cancel|4000',
             confirm: function () {
                 callback();
-            },
-            cancel: function () {
-            }
+            }//,
+            //cancel: function () {
+            //}
         });
     },
     confirmPayWx: function (msg, callback) {

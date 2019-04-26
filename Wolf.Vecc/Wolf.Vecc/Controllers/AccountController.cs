@@ -89,10 +89,10 @@ namespace Wolf.Vecc.Controllers
         /// 工程师注册
         /// </summary>
         /// <returns></returns>
-        public ActionResult Register()
-        {
-            return View();
-        }
+        //public ActionResult Register()
+        //{
+        //    return View();
+        //}
 
         public ActionResult RegisterEngineer()
         {
@@ -185,9 +185,9 @@ namespace Wolf.Vecc.Controllers
             //return Redirect("~/Login");
         }
 
-        public ActionResult TestRegister()
-        {
-            return View();
-        }
+        //public ActionResult TestRegister()
+        //{
+        //    return View();
+        //}
     }
 }
