@@ -107,11 +107,8 @@
 
 
 <style>
-    .title-index {
-        color:white;
-        margin-top: 10px;
-        font-size: 45px;
-        font-family: "庞门正道标题体";
+    .header-index {
+       
         position: absolute; 
         top: 50px; 
         left: 5%;
@@ -119,26 +116,32 @@
         
     }
 
-</style>
-<script>
-    function LoginSuccess(data) {
-         var path = '@Url.Content("~/")';
-        if (data.Success) {
-            location.replace(path + "Index/Index");
-        }
-        else
-            msg.info(data.Msg);
+    .title-index {
+        color: white;
+        white-space: nowrap;
+        font-size: 45px;
+        font-family: "庞门正道标题体";
+        position: absolute;
+        top: 50px;
+        left: 5%;
+        z-index: 3
     }
-</script>
+
+
+</style>
+
 
 <div class="login-custom " style="position: relative;">
     <div class="mask">
 
         <img src="~/AdminLTE/dist/img/bg@1x.png" id="login-img" class="login-img" />
     </div>
-
     <div class="col-md-3 title-index">PEMS云计算</div>
-    <div class="col-md-1 col-md-offset-8"><img class="img-responsive" src="~/AdminLTE/dist/img/danji.png" /></div>
+    <div class=" col-md-1 col-md-offset-10 header-index">
+
+        <img class="img-responsive center-block" src="~/AdminLTE/dist/img/danji.png" />
+    </div>
+
     <div class="col-7" id="col-7">
         <div class="table">
             <div class="table-cell">
@@ -156,25 +159,25 @@
                         {
                             @*@Html.AntiForgeryToken()login-tslogo*@
 
-                            <div class="col-md-6" style="font-size:24px;color:black;font-weight:bold;margin-bottom:20px;">用户登录</div>
+                            <div class="col-md-6" style="font-size:24px;color:black;font-weight:bold;margin-bottom:20px;white-space:nowrap;">用户登录</div>
                             <div class="clearfix"></div>
 
 
                             <div class="form-group" style="margin-bottom:10px;">
-                                <i class="fa fa-user"></i>
+                                <i class="fa fa-user fa-fw"></i>
                                 @*<input type="text" class="form-control" id="name" placeholder="用户名">*@
                                 @Html.TextBoxFor(m => Model.UserName, new { placeholder = "帐号", @class = "form-control" })
 
                             </div>
                             <div class="form-group">
-                                <i class="fa fa-unlock-alt"></i>
+                                <i class="fa fa-unlock-alt fa-fw"></i>
                                 @*<input type="text" class="form-control" id="name" placeholder="密    码">*@
                                 @Html.PasswordFor(m => Model.Password, new { placeholder = "密码", autocomplete = "off", @class = "form-control" })
                             </div>
-                            <div class="form-group form-inline ">
-                                <i class="fa fa-briefcase"></i>
+                            <div class="form-group form-inline" style="position:relative;">
+                                <i class="fa fa-chain fa-fw" style="position:absolute;top:0px;"></i>
                                 <input id="userNum" class="form-control" placeholder="验证码" />
-                                <button type="button" class="btn btn-flat" id="screeningBtn" onclick="screeningSearch()" style="margin-left:20px;">发送验证码</button>
+                                <button type="button" class="btn btn-flat" id="screeningBtn" onclick="screeningSearch()" style="margin-left:40px;">发送验证码</button>
                             </div>
 
                             <div class="form-group">
@@ -196,8 +199,8 @@
             </div>
         </div>
     </div>
-</div>
-<script>
+
+    <script>
     $("#login-mask").height($(window).height());
     $("#login-img").height($(window).height());
     $("#col-7").height($(window).height());
@@ -209,12 +212,12 @@
         $("#col-5").height($(window).height());
     }
 
-    @*function LoginSuccess(data) {
+    function LoginSuccess(data) {
          var path = '@Url.Content("~/")';
         if (data.Success) {
             location.replace(path + "Index/Index");
         }
         else
             msg.info(data.Msg);
-    }*@
-</script>
+    }
+    </script>
