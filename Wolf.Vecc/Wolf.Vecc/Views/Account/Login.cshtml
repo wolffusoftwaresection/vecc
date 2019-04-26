@@ -108,12 +108,10 @@
 
 <style>
     .header-index {
-       
-        position: absolute; 
-        top: 50px; 
+        position: absolute;
+        top: 50px;
         left: 5%;
-        z-index:3
-        
+        z-index: 3
     }
 
     .title-index {
@@ -126,10 +124,17 @@
         left: 5%;
         z-index: 3
     }
-
-
 </style>
-
+<script>
+    function LoginSuccess(data) {
+         var path = '@Url.Content("~/")';
+        if (data.Success) {
+            location.replace(path + "Index/Index");
+        }
+        else
+            msg.info(data.Msg);
+    }
+</script>
 
 <div class="login-custom " style="position: relative;">
     <div class="mask">
@@ -199,8 +204,8 @@
             </div>
         </div>
     </div>
-
-    <script>
+</div>
+<script>
     $("#login-mask").height($(window).height());
     $("#login-img").height($(window).height());
     $("#col-7").height($(window).height());
@@ -212,12 +217,12 @@
         $("#col-5").height($(window).height());
     }
 
-    function LoginSuccess(data) {
+    @*function LoginSuccess(data) {
          var path = '@Url.Content("~/")';
         if (data.Success) {
             location.replace(path + "Index/Index");
         }
         else
             msg.info(data.Msg);
-    }
-    </script>
+    }*@
+</script>
