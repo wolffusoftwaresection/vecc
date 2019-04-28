@@ -54,6 +54,7 @@
     <Compile Include="SysModel\SysRole.cs" />
     <Compile Include="SysModel\SysTask.cs" />
     <Compile Include="SysModel\SysUsers.cs" />
+    <Compile Include="ViewModel\CalculationModel.cs" />
     <Compile Include="ViewModel\LayOutUserModel.cs" />
     <Compile Include="ViewModel\RegisterViewModel.cs" />
     <Compile Include="ViewModel\UserApprovalViewModel.cs" />

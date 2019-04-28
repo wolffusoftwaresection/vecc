@@ -19,5 +19,10 @@ namespace Wolf.Vecc.Comm.Helpers
         {
             return ConfigurationManager.AppSettings[EnumGlobalConfig.AdminInitialPassword.ToString()].Trim();
         }
+
+        public static string GetFileUrl()
+        {
+            return ConfigurationManager.AppSettings[EnumGlobalConfig.FileUrl.ToString()].Trim();
+        }
     }
 }

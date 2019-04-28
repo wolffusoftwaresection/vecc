@@ -12,6 +12,8 @@ namespace Wolf.Vecc.Comm.EnumConfigs
         [Description("Session超时")]
         SessionTimeOut,
         [Description("vecc管理员初始密码设置")]
-        AdminInitialPassword
+        AdminInitialPassword,
+        [Description("文件上传路径")]
+        FileUrl
     }
 }

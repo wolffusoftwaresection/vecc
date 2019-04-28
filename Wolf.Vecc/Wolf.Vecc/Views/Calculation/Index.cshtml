@@ -2,132 +2,133 @@
     div,label,input{font-size:14px;}
     .col-md-6 {margin-top:10px}
     .title{font-size:26px;margin-top:20px;margin-bottom:20px;}
-
-
-
-
-
 </style>
-
 <div class="container">
-    <div class="row ">
+    <div class="row">
         <div class="col-md-12 text-center title">PEMS计算基本输入</div>
     </div>
 </div>
-
-<div style="text-align:center;">
+<div style="text-align:center;">        
     <div class="row">
         <div class="col-md-12">
             <div class="box service-box">
                 <div class="form-horizontal">
-                    <div class="box-body">
-                        <div class="row top-buffer">
-                            <div class="col-md-6 top-buffer">
-                                <div class="form-group">
-                                    <label class="col-sm-6 control-label"> * 整车型号</label>
-                                    <div class="col-sm-5">
-                                        <input type="text" class="form-control" id="name" placeholder="整车型号">
+                        <div class="box-body">
+                            <div class="row top-buffer">
+                                <div class="col-md-6 top-buffer">
+                                    <input type="hidden" id="txtID" value="@ViewBag.Id" />
+                                    <div class="form-group">
+                                        <label class="col-sm-6 control-label"> * 整车型号</label>
+                                        <div class="col-sm-5">
+                                            <input type="text" class="form-control" id="txtVehicleModel" placeholder="整车型号">
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-md-6 top-buffer">
-                                <div class="form-group">
-                                    <label class="col-sm-2 control-label">整备质量</label>
-                                    <div class="col-sm-5">
-                                        <input type="text" class="form-control" id="name" placeholder="整备质量">
-                                    </div>
-                                    <div class="pull-left"><b>kg</b></div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 top-buffer">
-                                <div class="form-group">
-                                    <label class="col-sm-6 control-label"> * PEMS厂商</label>
-                                    <div class="col-sm-5">
-                                        <select id="select" name="select" class="selectpicker show-tick form-control" data-actions-box="true">
-                                            <option value="SENSORS">SENSORS</option>
-                                            <option value="HORIBA">HORIBA</option>
-                                            <option value="AVL">AVL</option>
-                                            <option value="ECU_BOSCH">ECU_BOSCH</option>
-                                            <option value="ECU_DELPHI">ECU_DELPHI</option>
-                                            <option value="Cali_Pal">Cali_Pal</option>
-                                        </select>
+                                <div class="col-md-6 top-buffer">
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">整备质量</label>
+                                        <div class="col-sm-5">
+                                            <input type="text" class="form-control" id="txtVehicleQuality" placeholder="整备质量">
+                                        </div>
+                                        <div class="pull-left"><b>kg</b></div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-md-6 top-buffer">
-                                <div class="form-group">
-                                    <label class="col-sm-2 control-label">整车类别</label>
-                                    <div class="col-sm-5">
-                                        <select id="select" name="select" class="selectpicker show-tick form-control" data-actions-box="true">
-                                            <option value="N1,M1">N1,M1</option>
-                                            <option value="N2,M2,M3">N2,M2,M3</option>
-                                            <option value="N3">N3</option>
-                                            <option value="City_Veh">City_Veh</option>
-                                        </select>
+                                <div class="col-md-6 top-buffer">
+                                    <div class="form-group">
+                                        <label class="col-sm-6 control-label"> * PEMS厂商</label>
+                                        <div class="col-sm-5">
+                                            <select id="txtPemsFactory" name="txtPemsFactory" class="selectpicker show-tick form-control" data-actions-box="true">
+                                                <option value="SENSORS">SENSORS</option>
+                                                <option value="HORIBA">HORIBA</option>
+                                                <option value="AVL">AVL</option>
+                                                <option value="ECU_BOSCH">ECU_BOSCH</option>
+                                                <option value="ECU_DELPHI">ECU_DELPHI</option>
+                                                <option value="Cali_Pal">Cali_Pal</option>
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-md-6 top-buffer">
-                                <div class="form-group">
-                                    <label class="col-sm-6 control-label"> * WHTC循环功</label>
-                                    <div class="col-sm-5">
-                                        <input type="text" class="form-control" id="name" placeholder="WHTC循环功">
+                                <div class="col-md-6 top-buffer">
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">整车类别</label>
+                                        <div class="col-sm-5">
+                                            <select id="txtVehicleType" name="txtVehicleType" class="selectpicker show-tick form-control" data-actions-box="true">
+                                                <option value="N1,M1">N1,M1</option>
+                                                <option value="N2,M2,M3">N2,M2,M3</option>
+                                                <option value="N3">N3</option>
+                                                <option value="City_Veh">City_Veh</option>
+                                            </select>
+                                        </div>
                                     </div>
-                                    <div class="pull-left"><b>kw.h</b></div>
                                 </div>
-                            </div>
-                            <div class="col-md-6 top-buffer">
-                                <div class="form-group">
-                                    <label class="col-sm-2 control-label">最大质量</label>
-                                    <div class="col-sm-5">
-                                        <input type="text" class="form-control" id="name" placeholder="最大质量">
+                                <div class="col-md-6 top-buffer">
+                                    <div class="form-group">
+                                        <label class="col-sm-6 control-label"> * WHTC循环功</label>
+                                        <div class="col-sm-5">
+                                            <input type="text" class="form-control" id="txtWHTCPower" placeholder="WHTC循环功">
+                                        </div>
+                                        <div class="pull-left"><b>kw.h</b></div>
                                     </div>
-                                    <div class="pull-left"><b>kg</b></div>
                                 </div>
-                            </div>
-                            <div class="col-md-6 top-buffer">
-                                <div class="form-group">
-                                    <label class="col-sm-6 control-label"> * 最大参考扭矩</label>
-                                    <div class="col-sm-5">
-                                        <input type="text" class="form-control" id="name" placeholder="最大参考扭矩">
+                                <div class="col-md-6 top-buffer">
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">最大质量</label>
+                                        <div class="col-sm-5">
+                                            <input type="text" class="form-control" id="txtMaxQuality" placeholder="最大质量">
+                                        </div>
+                                        <div class="pull-left"><b>kg</b></div>
                                     </div>
-                                    <div class="pull-left"><b>N.m</b></div>
                                 </div>
-                            </div>
-
-                            <div class="col-md-6 top-buffer">
-                                <div class="form-group">
-                                    <label class="col-sm-2 control-label">载荷百分比</label>
-                                    <div class="col-sm-5">
-                                        <input type="text" class="form-control" id="name" placeholder="载荷百分比">
+                                <div class="col-md-6 top-buffer">
+                                    <div class="form-group">
+                                        <label class="col-sm-6 control-label"> * 最大参考扭矩</label>
+                                        <div class="col-sm-5">
+                                            @*@Html.TextBoxFor(m => Model.MaxRefTorque, new { @class = "form-control", @placeholder = "最大参考扭矩" })*@
+                                            <input type="text" class="form-control" id="txtMaxRefTorque" placeholder="最大参考扭矩">
+                                        </div>
+                                        <div class="pull-left"><b>N.m</b></div>
                                     </div>
-                                    <div class="pull-left"><b>%</b></div>
                                 </div>
-                            </div>
-                            <div class="col-md-6 top-buffer">
-                                <div class="form-group">
-                                    <label class="col-sm-6 control-label"> * 最大功率</label>
-                                    <div class="col-sm-5">
-                                        <input type="text" class="form-control" id="name" placeholder="最大功率">
+                                <div class="col-md-6 top-buffer">
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label">载荷百分比</label>
+                                        <div class="col-sm-5">
+                                            @*@Html.TextBoxFor(m => Model.PercentageLoad, new { @class = "form-control", @placeholder = "载荷百分比" })*@
+                                            <input type="text" class="form-control" id="txtPercentageLoad" placeholder="载荷百分比">
+                                        </div>
+                                        <div class="pull-left"><b>%</b></div>
                                     </div>
-                                    <div class="pull-left"><b>kw</b></div>
                                 </div>
-                            </div>
-                            <div class="col-md-6 top-buffer">
-                                <div class="form-group">
-                                    <label class="col-sm-2 control-label  pull-left"> * 周期性再生</label>
-                                    <div class="col-sm-2">
-                                        <label class="radio-inline">
-                                            <input type="radio" value="option1" name="sex">是
-                                        </label>
-                                        <label class="radio-inline">
-                                            <input type="radio" checked value="option2" name="sex">否
-                                        </label>
+                                <div class="col-md-6 top-buffer">
+                                    <div class="form-group">
+                                        <label class="col-sm-6 control-label"> * 最大功率</label>
+                                        <div class="col-sm-5">
+                                            <input type="text" class="form-control" id="txtPowerMax" placeholder="最大功率">
+                                        </div>
+                                        <div class="pull-left"><b>kw</b></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 top-buffer">
+                                    <div class="form-group">
+                                        <label class="col-sm-2 control-label  pull-left"> * 周期性再生</label>
+                                        <div class="col-sm-2">
+                                            <label class="radio-inline">
+                                                <input type="radio" value="1" onclick="periodicalclick()" name="periodical">是
+                                            </label>
+                                            <label class="radio-inline">
+                                                <input type="radio" checked value="0" onclick="periodicalclick()" name="periodical">否
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group" id="Nox" style="display:none;">
+                                    <label class="col-sm-6 control-label">NOx再生因子</label>
+                                    <div class="col-sm-5">
+                                        <input type="text" class="form-control" id="txtNOx" placeholder="NOx再生因子">
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
                 </div>
             </div>
             <div class="box service-box">
@@ -135,7 +136,7 @@
                     <div class="box-body">
                         <div class="row top-buffer">
                             <div class="col-md-12 center-block">
-                                <button type="button" class="btn btn-info btn-lg" style="font-size:15px;">导入测试数据</button>
+                                <button type="button" class="btn btn-info btn-lg" style="font-size:15px;" id="importRarData">导入测试数据</button>
                                 <button type="button" style="margin-left:20px;font-size:15px;" class="btn  btn-lg btn-info" onclick="javascript:location.href='@Url.Content("~/Calculation/PemsCalculationResults")'">计算</button>
                             </div>
                         </div>
@@ -145,3 +146,106 @@
         </div>
     </div>
 </div>
+
+<script>
+    $("#importRarData").bind("click", function () {
+        id = document.getElementById("txtID").value;
+        vehicleModel = document.getElementById("txtVehicleModel").value;
+        if (vehicleModel == "") {
+            alert("请填写整车型号！");
+            document.getElementById("txtVehicleModel").focus();
+            return;
+        }
+        pemsFactory = document.getElementById("txtPemsFactory").value;
+
+        vehicleType = document.getElementById("txtVehicleType").value;
+
+        whtcPower = document.getElementById("txtWHTCPower").value;
+        if (whtcPower == "" || isNaN(whtcPower) == true) {
+            alert("请正确填写WHTC循环功！");
+            document.getElementById("txtWHTCPower").focus();
+            return;
+        }
+        vehicleQuality = document.getElementById("txtVehicleQuality").value;
+        if (vehicleQuality == "" || isNaN(vehicleQuality) == true) {
+            alert("请正确填写整备质量！");
+            document.getElementById("txtVehicleQuality").focus();
+            return;
+        }
+        maxRefTorque = document.getElementById("txtMaxRefTorque").value;
+        if (maxRefTorque == "" || isNaN(maxRefTorque) == true) {
+            alert("请正确填写最大参考扭矩！");
+            document.getElementById("txtMaxRefTorque").focus();
+            return;
+        }
+        maxQuality = document.getElementById("txtMaxQuality").value;
+        if (maxQuality == "" || isNaN(maxQuality) == true) {
+            alert("请正确填写最大质量！");
+            document.getElementById("txtMaxQuality").focus();
+            return;
+        }
+        percentageLoad = document.getElementById("txtPercentageLoad").value;
+        if (percentageLoad == "" || isNaN(percentageLoad) == true) {
+            alert("请正确填写载荷百分比！");
+            document.getElementById("txtPercentageLoad").focus();
+            return;
+        }
+        maxPower = document.getElementById("txtPowerMax").value;
+        if (maxPower == "" || isNaN(maxPower) == true) {
+            alert("请正确填写最大功率！");
+            document.getElementById("txtPowerMax").focus();
+            return;
+        }
+        var kr_nox = 1;
+        var radios = document.getElementsByName("periodical");
+        var value = 0;
+        for (var i = 0; i < radios.length; i++) {
+            if (radios[i].checked == true) {
+                value = radios[i].value;
+            }
+        }
+        if (value == "1") {
+            kr_nox = document.getElementById("txtNOx").value;
+        }
+
+        layer.open({
+            type: 2,
+            title: ['导入测试数据'],
+            shadeClose: false,
+            btn: ['关闭'],
+            skin: '',
+            area: ['60%', '85%'],
+            maxmin: true,
+            content: ["/Calculation/ImportRarData?id=" + id + "&vehicleModel=" + vehicleModel + "&pemsFactory=" + pemsFactory + "&vehicleType=" + vehicleType + "&whtcPower=" + whtcPower + "&vehicleQuality=" + vehicleQuality + "&maxRefTorque=" + maxRefTorque + "&maxQuality=" + maxQuality + "&percentageLoad=" + percentageLoad + "&maxPower=" + maxPower + "&nox=" + kr_nox, "yes"],
+            yes: function (index, layor) {
+                layer.close(index);
+            },
+            no: function (index, layor) {
+
+            }
+        });
+
+        //url = "PemsUploadTestData.aspx?id=" + id + "&vehicleModel=" + vehicleModel + "&pemsFactory=" + pemsFactory + "&vehicleType=" + vehicleType + "&whtcPower=" + whtcPower + "&vehicleQuality=" + vehicleQuality + "&maxRefTorque=" + maxRefTorque + "&maxQuality=" + maxQuality + "&percentageLoad=" + percentageLoad + "&maxPower=" + maxPower + "&nox=" + kr_nox;
+        //showMyWindow('导入测试数据', url, 800, 420, true, true, true);
+    });
+
+    function periodicalclick() {
+        var radios = document.getElementsByName("periodical");
+        var value = 0;
+        for (var i = 0; i < radios.length; i++) {
+            if (radios[i].checked == true) {
+                value = radios[i].value;
+            }
+        }
+        if (value == "1") {
+            $("#Nox").show();
+        }
+        else {
+            $("#Nox").hide();
+        }
+    }
+
+    $(function () {
+        
+    });
+</script>

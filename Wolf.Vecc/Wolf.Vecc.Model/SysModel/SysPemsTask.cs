@@ -35,27 +35,27 @@ namespace Wolf.Vecc.Model.SysModel
 
         [Column("whtc_power")]
         [Display(Name = "WHTC循环功")]
-        public float WhtcPower { get; set; }
+        public double WhtcPower { get; set; }
 
         [Column("vehicle_quality")]
         [Display(Name = "整备质量")]
-        public float VehicleQuality { get; set; }
+        public double VehicleQuality { get; set; }
 
         [Column("max_ref_torque")]
         [Display(Name = "最大参考扭矩")]
-        public float MaxRefTorque { get; set; }
+        public double MaxRefTorque { get; set; }
 
         [Column("max_quality")]
         [Display(Name = "最大质量")]
-        public float MaxQuality { get; set; }
+        public double MaxQuality { get; set; }
 
         [Column("max_power")]
         [Display(Name = "最大功率")]
-        public float MaxPower { get; set; }
+        public double MaxPower { get; set; }
 
         [Column("percentage_load")]
         [Display(Name = "载货百分比")]
-        public float PercentageLoad { get; set; }
+        public double PercentageLoad { get; set; }
 
         [Column("data_url")]
         [Display(Name = "数据文件url")]
@@ -65,6 +65,5 @@ namespace Wolf.Vecc.Model.SysModel
         [Column("kr_nox")]
         [StringLength(50)]
         public string KrNox { get; set; }
-        
     }
 }

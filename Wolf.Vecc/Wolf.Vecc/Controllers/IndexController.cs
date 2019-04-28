@@ -39,13 +39,18 @@ namespace Wolf.Vecc.Controllers
 
         public ActionResult Index()
         {
-            if (WorkUser.RoleId == 1) {//获取缓存
-                return RedirectToAction("VeccIndex", "Index");
-            }
-            else
+            if (WorkUser != null)
             {
-                return RedirectToAction("OtherIndex", "Index");
+                if (WorkUser.RoleId == 1)
+                {//获取缓存
+                    return RedirectToAction("VeccIndex", "Index");
+                }
+                else
+                {
+                    return RedirectToAction("OtherIndex", "Index");
+                }
             }
+            return RedirectToAction("Account", "Login");
         }
     }
 }
