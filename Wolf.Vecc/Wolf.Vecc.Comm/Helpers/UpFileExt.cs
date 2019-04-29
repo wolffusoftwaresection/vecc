@@ -18,7 +18,7 @@ namespace Wolf.Vecc.Comm.Helpers
         public static bool CreateFolder(string folder)
         {
             bool status = true;
-            string fileUrl = System.Configuration.ConfigurationSettings.AppSettings["FileUrl"].ToString();
+            string fileUrl = GlobalConfigHelper.GetFileUrl();
             string projectUrl = fileUrl + folder;
             if (Directory.Exists(projectUrl) == false)
             {

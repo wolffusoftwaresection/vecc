@@ -12,7 +12,7 @@ namespace Wolf.Vecc.Model.SysModel
     public class SysPemsTask
     {
         [Column("pems_task_id")]
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Key]
         public Guid PemsTaskId { get;set;}
 
         [Column("task_id")] 

@@ -12,7 +12,7 @@ namespace Wolf.Vecc.Model.SysModel
     public class SysTask
     {
         [Column("task_id")]
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Key]
         public Guid TaskId { get; set; }
 
         [Column("create_time")]

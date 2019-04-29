@@ -77,7 +77,7 @@ namespace Wolf.Vecc.Controllers
                 url = UpFileExt.UpLoadFile(_file, calculationModel.Id + "/OriginalFile");
                 RarOperatorExt.UnRAR(Server.MapPath("../UploadFiles/" + calculationModel.Id + "/OriginalFile/" + url), Server.MapPath("../UploadFiles/" + calculationModel.Id + "/OriginalFile"), "");
                 // rarOperator.UnRAR(Server.MapPath("UploadFile/25314825-f968-4311-94b1-c2b02a8550c2/OriginalFile/test.rar"), Server.MapPath("UploadFile/25314825-f968-4311-94b1-c2b02a8550c2/OriginalFile"), "");
-                System.IO.File.Copy(Server.MapPath("../TemplateFile/reportdata.xlsx"), Server.MapPath("../UpLoadFiles/" + calculationModel.Id + "/ResultFiles/reportdata.xlsx"), true);
+                //System.IO.File.Copy(Server.MapPath("../TemplateFile/reportdata.xlsx"), Server.MapPath("../UpLoadFiles/" + calculationModel.Id + "/ResultFiles/reportdata.xlsx"), true);
             }
             if (url != "")
             {
@@ -115,6 +115,7 @@ namespace Wolf.Vecc.Controllers
                             result = true;
                         }
                     }
+                    transaction.Complete();
                 }
                 if (result == true)
                 {

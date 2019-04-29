@@ -45,7 +45,6 @@ F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Service\bin\Debug\LinqKit.dll
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Service\bin\Debug\EntityFramework.SqlServer.xml
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Service\bin\Debug\LinqKit.xml
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Service\bin\Debug\zh-Hans\EntityFramework.SqlServer.resources.dll
-F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Service\bin\Debug\NLog.config
 D:\工作资料\PEMS\VECC Program\Wolf.Vecc\Wolf.Vecc.Service\bin\Debug\NLog.config
 D:\工作资料\PEMS\VECC Program\Wolf.Vecc\Wolf.Vecc.Service\bin\Debug\Wolf.Vecc.Service.dll.config
 D:\工作资料\PEMS\VECC Program\Wolf.Vecc\Wolf.Vecc.Service\bin\Debug\Wolf.Vecc.Service.dll

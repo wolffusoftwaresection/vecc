@@ -343,7 +343,7 @@
                 $.post($form.attr('action'), $form.serialize(), function (result) {
                     $('#reset').click();
                     if (result.Success) {
-                        alert('登陆成功！');
+                        alert('注册成功！');
                         var path = '@Url.Content("~/")';
                         location.replace(path + "Account/Login");
                     }

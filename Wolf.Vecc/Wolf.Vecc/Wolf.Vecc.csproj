@@ -322,7 +322,6 @@
     <Content Include="AdminLTE\dist\img\denglu%403x.png" />
     <Content Include="AdminLTE\dist\img\dengluanniu%401x.png" />
     <Content Include="AdminLTE\dist\img\dengluanniu%403x.png" />
-    <Content Include="AdminLTE\dist\img\error.png" />
     <Content Include="AdminLTE\dist\img\fengge%401x.png" />
     <Content Include="AdminLTE\dist\img\fengge%403x.png" />
     <Content Include="AdminLTE\dist\img\find%401x.png" />
@@ -330,17 +329,13 @@
     <Content Include="AdminLTE\dist\img\hearimg.png" />
     <Content Include="AdminLTE\dist\img\icons.png" />
     <Content Include="AdminLTE\dist\img\jian.png" />
-    <Content Include="AdminLTE\dist\img\login-bg.jpg" />
-    <Content Include="AdminLTE\dist\img\login-bg1.jpg" />
     <Content Include="AdminLTE\dist\img\login-bg1.png" />
-    <Content Include="AdminLTE\dist\img\login-bg2.jpg" />
     <Content Include="AdminLTE\dist\img\login-logo-fmc.png" />
     <Content Include="AdminLTE\dist\img\login-logo-fmc1.png" />
     <Content Include="AdminLTE\dist\img\logo-fmc-small.png" />
     <Content Include="AdminLTE\dist\img\logo-fmc.png" />
     <Content Include="AdminLTE\dist\img\logo-fmc2.png" />
     <Content Include="AdminLTE\dist\img\logo-ts.png" />
-    <Content Include="AdminLTE\dist\img\logo-ts12.png" />
     <Content Include="AdminLTE\dist\img\logo-white.png" />
     <Content Include="AdminLTE\dist\img\map.png" />
     <Content Include="AdminLTE\dist\img\password%401x.png" />
@@ -356,7 +351,6 @@
     <Content Include="AdminLTE\dist\img\remind%403x.png" />
     <Content Include="AdminLTE\dist\img\report%401x.png" />
     <Content Include="AdminLTE\dist\img\report%403x.png" />
-    <Content Include="AdminLTE\dist\img\right.png" />
     <Content Include="AdminLTE\dist\img\sanjiao.png" />
     <Content Include="AdminLTE\dist\img\search%401x.png" />
     <Content Include="AdminLTE\dist\img\search%403x.png" />
@@ -365,7 +359,6 @@
     <Content Include="AdminLTE\dist\img\shenpi%401x.png" />
     <Content Include="AdminLTE\dist\img\shenpi%403x.png" />
     <Content Include="AdminLTE\dist\img\sprite.png" />
-    <Content Include="AdminLTE\dist\img\test.jpg" />
     <Content Include="AdminLTE\dist\img\underline%401x.png" />
     <Content Include="AdminLTE\dist\img\underline%403x.png" />
     <Content Include="AdminLTE\dist\img\underline2%401x.png" />
@@ -383,8 +376,6 @@
     <Content Include="AdminLTE\dist\img\xiala%401x.png" />
     <Content Include="AdminLTE\dist\img\yanzheng%401x.png" />
     <Content Include="AdminLTE\dist\img\yanzheng%403x.png" />
-    <Content Include="AdminLTE\dist\img\单机版下载%401x.png" />
-    <Content Include="AdminLTE\dist\index.css" />
     <Content Include="AdminLTE\dist\js\app.js" />
     <Content Include="AdminLTE\dist\js\app.min.js" />
     <Content Include="AdminLTE\dist\js\demo.js" />
@@ -1674,6 +1665,7 @@
     <None Include="NLog.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />

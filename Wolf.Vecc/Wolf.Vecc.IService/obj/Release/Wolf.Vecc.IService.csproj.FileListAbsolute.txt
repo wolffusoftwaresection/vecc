@@ -1,0 +1,10 @@
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.IService\bin\Release\NLog.config
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.IService\bin\Release\Wolf.Vecc.IService.dll
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.IService\bin\Release\Wolf.Vecc.IService.pdb
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.IService\bin\Release\Wolf.Vecc.Model.dll
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.IService\bin\Release\Wolf.Vecc.Model.pdb
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.IService\obj\Release\Wolf.Vecc.IService.csprojAssemblyReference.cache
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.IService\obj\Release\Wolf.Vecc.IService.csproj.CoreCompileInputs.cache
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.IService\obj\Release\Wolf.Vecc.IService.csproj.CopyComplete
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.IService\obj\Release\Wolf.Vecc.IService.dll
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.IService\obj\Release\Wolf.Vecc.IService.pdb

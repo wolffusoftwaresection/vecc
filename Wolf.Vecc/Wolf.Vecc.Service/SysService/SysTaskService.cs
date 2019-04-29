@@ -19,7 +19,7 @@ namespace Wolf.Vecc.Service.SysService
 
         public int Insert(SysTask sysTask)
         {
-            return _dbServiceReposity.Add(sysTask);
+            return _dbServiceReposity.Add<SysTask>(sysTask);
         }
     }
 }

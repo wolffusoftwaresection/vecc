@@ -7,6 +7,7 @@
 <!--suppress JSUnresolvedLibraryURL -->
 <html lang="en">
 <head>
+
     <meta charset="UTF-8" />
     <title>Krajee JQuery Plugins - &copy; Kartik</title>
 
@@ -40,7 +41,7 @@
             @Html.HiddenFor(m => Model.WhtcPower)
             <div class="form-group">
                 <div class="file-loading">
-                    <input id="uploadRar" name="FilesInput" type="file" />
+                    <input id="uploadRar" data-show-preview="true" name="FilesInput" type="file" accept=".rar,.zip,.7z" />
                     @*<input type="file" data-show-preview="false" class="file" id="uploadRar" accept=".rar,.zip,.7z" data-theme="fas">*@
                 </div>
                 <div id="errorBlock" class="help-block"></div>
@@ -53,7 +54,7 @@
     $(function () {
         $('#uploadRar').fileinput({
             uploadUrl: '/Calculation/ImportDataing',
-            //allowedFileExtensions: ['rar', 'zip', '7z'],
+            allowedFileExtensions: ['rar', 'zip', '7z'],
             maxFileSize: 800 * 1000, // 500Mb
             uploadExtraData: function () {//向后台传递参数
                 var calculationModel = {
@@ -73,9 +74,12 @@
             }
         }).on('filepreupload', function (event, data, previewId, index) {     //上传中
             console.log('文件正在上传');
-        }).on("fileuploaded", function (event, data, previewId, index) {    //一个文件上传成功
+        });
+        $('#uploadRar').on("fileuploaded", function (event, data, previewId, index) {    //一个文件上传成功
+            $("#uploadRar").fileinput('refresh');
             console.log('文件上传成功！');
-        }).on('fileerror', function (event, data, msg) {  //一个文件上传失败
+        });
+        $('#uploadRar').on('fileerror', function (event, data, msg) {  //一个文件上传失败
             console.log('文件上传失败！');
         });
     });
