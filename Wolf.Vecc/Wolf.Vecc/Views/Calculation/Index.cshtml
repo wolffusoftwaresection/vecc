@@ -137,7 +137,9 @@
                         <div class="row top-buffer">
                             <div class="col-md-12 center-block">
                                 <button type="button" class="btn btn-info btn-lg" style="font-size:15px;" id="importRarData">导入测试数据</button>
-                                <button type="button" style="margin-left:20px;font-size:15px;" class="btn  btn-lg btn-info" onclick="javascript:location.href='@Url.Content("~/Calculation/PemsCalculationResults")'">计算</button>
+                                @*<button type="button" style="margin-left:20px;font-size:15px;" class="btn  btn-lg btn-info" onclick="javascript:location.href='@Url.Content("~/Calculation/PemsCalculationResults")'">计算</button>*@
+
+                                <button type="button" style="margin-left:20px;font-size:15px;" class="btn  btn-lg btn-info" onclick="calculate();">计算</button>
                             </div>
                         </div>
                     </div>
@@ -245,7 +247,24 @@
         }
     }
 
-    $(function () {
-        
-    });
+    function calculate() {
+        var id = document.getElementById("txtID").value;
+        layer.open({
+            type: 2,
+            title: ['计算'],
+            shadeClose: false,
+            btn: [],
+            skin: '',
+            area: ['50%', '70%'],
+            //maxmin: true,
+            content: ['/Calculation/CalculationView?id=' + id, "yes"],
+            yes: function (index, layor) {
+                //$(layor).find("iframe")[0].contentWindow.DoRefuseUser();
+                layer.close(index);
+            },
+            no: function (index, layor) {
+
+            }
+        });
+    }
 </script>

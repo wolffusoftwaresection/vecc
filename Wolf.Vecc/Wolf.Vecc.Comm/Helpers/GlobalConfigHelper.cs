@@ -24,5 +24,11 @@ namespace Wolf.Vecc.Comm.Helpers
         {
             return ConfigurationManager.AppSettings[EnumGlobalConfig.FileUrl.ToString()].Trim();
         }
+
+        public static string GetPostUrl()
+        {
+            return ConfigurationManager.AppSettings[EnumGlobalConfig.PostUrl.ToString()].Trim();
+        }
+        
     }
 }

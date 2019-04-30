@@ -17,6 +17,11 @@ namespace Wolf.Vecc.Service.SysService
             _dbServiceReposity = dbServiceReposity;
         }
 
+        public SysPemsTask GetSysPemsTaskByTaskId(string taskId)
+        {
+            return _dbServiceReposity.FirstOrDefault<SysPemsTask>(d => d.TaskId.ToString() == taskId);
+        }
+
         public int Insert(SysPemsTask sysPemsTask)
         {
             return _dbServiceReposity.Add(sysPemsTask);

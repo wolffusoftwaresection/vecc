@@ -1561,6 +1561,7 @@
     <Content Include="Content\css\jisuan.css" />
     <Content Include="Content\css\report.css" />
     <Content Include="Content\css\shenpi.css" />
+    <Content Include="Content\loading.gif" />
     <Content Include="Content\style.css" />
     <Content Include="Content\TableStyle.css" />
     <Content Include="Error\NotFound.html" />
@@ -1709,6 +1710,7 @@
     <Content Include="Views\Calculation\PemsCalculationResults.cshtml" />
     <Content Include="Views\Calculation\ImportRarData.cshtml" />
     <Content Include="TemplateFile\reportdata.xlsx" />
+    <Content Include="Views\Calculation\CalculationView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AdminLTE\bootstrap\js\ie\" />

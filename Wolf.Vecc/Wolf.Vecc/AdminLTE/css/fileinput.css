@@ -37,9 +37,9 @@
     position: absolute;
 }
 
-.file-caption-icon .kv-caption-icon {
-    line-height: inherit;
-}
+    .file-caption-icon .kv-caption-icon {
+        line-height: inherit;
+    }
 
 .file-input, .file-loading:before, .btn-file, .file-caption, .file-preview, .krajee-default.file-preview-frame, .krajee-default .file-thumbnail-footer, .file-zoom-dialog .modal-dialog {
     position: relative;
@@ -114,23 +114,23 @@
     overflow: hidden;
 }
 
-.btn-file input[type=file] {
-    top: 0;
-    left: 0;
-    min-width: 100%;
-    min-height: 100%;
-    text-align: right;
-    opacity: 0;
-    background: none repeat scroll 0 0 transparent;
-    cursor: inherit;
-    display: block;
-}
+    .btn-file input[type=file] {
+        top: 0;
+        left: 0;
+        min-width: 100%;
+        min-height: 100%;
+        text-align: right;
+        opacity: 0;
+        background: none repeat scroll 0 0 transparent;
+        cursor: inherit;
+        display: block;
+    }
 
-.btn-file ::-ms-browse {
-    font-size: 10000px;
-    width: 100%;
-    height: 100%;
-}
+    .btn-file ::-ms-browse {
+        font-size: 10000px;
+        width: 100%;
+        height: 100%;
+    }
 
 .file-caption .file-caption-name {
     width: 100%;
@@ -163,9 +163,9 @@
     padding: 15px;
 }
 
-.file-error-message pre {
-    margin: 5px 0;
-}
+    .file-error-message pre {
+        margin: 5px 0;
+    }
 
 .file-caption-disabled {
     background-color: #eee;
@@ -181,22 +181,22 @@
     margin-bottom: 5px;
 }
 
-.file-preview .btn-xs {
-    padding: 1px 5px;
-    font-size: 12px;
-    line-height: 1.5;
-    border-radius: 3px;
-}
+    .file-preview .btn-xs {
+        padding: 1px 5px;
+        font-size: 12px;
+        line-height: 1.5;
+        border-radius: 3px;
+    }
 
-.file-preview .fileinput-remove {
-    top: 1px;
-    right: 1px;
-    line-height: 10px;
-}
+    .file-preview .fileinput-remove {
+        top: 1px;
+        right: 1px;
+        line-height: 10px;
+    }
 
-.file-preview .clickable {
-    cursor: pointer;
-}
+    .file-preview .clickable {
+        cursor: pointer;
+    }
 
 .file-preview-image {
     font: 40px Impact, Charcoal, sans-serif;
@@ -212,10 +212,10 @@
     text-align: center;
 }
 
-.krajee-default.file-preview-frame .kv-file-content {
-    width: 213px;
-    height: 160px;
-}
+    .krajee-default.file-preview-frame .kv-file-content {
+        width: 213px;
+        height: 160px;
+    }
 
 .krajee-default .file-preview-other-frame {
     display: flex;
@@ -350,11 +350,11 @@
     color: #1c94c4;
 }
 
-.file-zoom-dialog .btn-navigate:not([disabled]):hover {
-    outline: none;
-    box-shadow: none;
-    opacity: 0.6;
-}
+    .file-zoom-dialog .btn-navigate:not([disabled]):hover {
+        outline: none;
+        box-shadow: none;
+        opacity: 0.6;
+    }
 
 .file-zoom-dialog .floating-buttons {
     top: 5px;
@@ -409,17 +409,17 @@
     padding: 5px;
 }
 
-.file-drop-zone.clickable:hover {
-    border: 2px dashed #999;
-}
+    .file-drop-zone.clickable:hover {
+        border: 2px dashed #999;
+    }
 
-.file-drop-zone.clickable:focus {
-    border: 2px solid #5acde2;
-}
+    .file-drop-zone.clickable:focus {
+        border: 2px solid #5acde2;
+    }
 
-.file-drop-zone .file-preview-thumbnails {
-    cursor: default;
-}
+    .file-drop-zone .file-preview-thumbnails {
+        cursor: default;
+    }
 
 .file-drop-zone-title {
     color: #aaa;
@@ -457,10 +457,10 @@
     z-index: 3000;
 }
 
-.floating-buttons .btn-kv {
-    margin-left: 3px;
-    z-index: 3000;
-}
+    .floating-buttons .btn-kv {
+        margin-left: 3px;
+        z-index: 3000;
+    }
 
 .kv-zoom-actions .btn-kv {
     margin-left: 3px;
@@ -471,23 +471,23 @@
     text-align: center;
 }
 
-.file-zoom-content .file-preview-image {
-    max-height: 100%;
-}
+    .file-zoom-content .file-preview-image {
+        max-height: 100%;
+    }
 
-.file-zoom-content .file-preview-video {
-    max-height: 100%;
-}
+    .file-zoom-content .file-preview-video {
+        max-height: 100%;
+    }
 
-.file-zoom-content > .file-object.type-image {
-    height: auto;
-    min-height: inherit;
-}
+    .file-zoom-content > .file-object.type-image {
+        height: auto;
+        min-height: inherit;
+    }
 
-.file-zoom-content > .file-object.type-audio {
-    width: auto;
-    height: 30px;
-}
+    .file-zoom-content > .file-object.type-audio {
+        width: auto;
+        height: 30px;
+    }
 
 @media (min-width: 576px) {
     .file-zoom-dialog .modal-dialog {
@@ -537,9 +537,9 @@
     opacity: 1;
 }
 
-.file-sortable .file-drag-handle:hover {
-    opacity: 0.7;
-}
+    .file-sortable .file-drag-handle:hover {
+        opacity: 0.7;
+    }
 
 .clickable .file-drop-zone-title {
     cursor: pointer;

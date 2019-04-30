@@ -27,8 +27,9 @@ namespace Wolf.Vecc.Controllers
             return View();
         }
 
-        public ActionResult PemsCalculationResults()
+        public ActionResult PemsCalculationResults(string taskId)
         {
+            var id = taskId;
             return View();
         }
 
@@ -65,6 +66,12 @@ namespace Wolf.Vecc.Controllers
             return View(calculationModel);
         }
 
+        public ActionResult CalculationView(string id)
+        {
+            ViewBag.Id = id;
+            return View();
+        }
+
         [HttpPost]
         public JsonResult ImportDataing(IEnumerable<HttpPostedFileBase> filesInput, CalculationModel calculationModel)
         {
@@ -77,7 +84,7 @@ namespace Wolf.Vecc.Controllers
                 url = UpFileExt.UpLoadFile(_file, calculationModel.Id + "/OriginalFile");
                 RarOperatorExt.UnRAR(Server.MapPath("../UploadFiles/" + calculationModel.Id + "/OriginalFile/" + url), Server.MapPath("../UploadFiles/" + calculationModel.Id + "/OriginalFile"), "");
                 // rarOperator.UnRAR(Server.MapPath("UploadFile/25314825-f968-4311-94b1-c2b02a8550c2/OriginalFile/test.rar"), Server.MapPath("UploadFile/25314825-f968-4311-94b1-c2b02a8550c2/OriginalFile"), "");
-                //System.IO.File.Copy(Server.MapPath("../TemplateFile/reportdata.xlsx"), Server.MapPath("../UpLoadFiles/" + calculationModel.Id + "/ResultFiles/reportdata.xlsx"), true);
+                System.IO.File.Copy(Server.MapPath("../TemplateFile/reportdata.xlsx"), Server.MapPath("../UpLoadFiles/" + calculationModel.Id + "/ResultFiles/reportdata.xlsx"), true);
             }
             if (url != "")
             {

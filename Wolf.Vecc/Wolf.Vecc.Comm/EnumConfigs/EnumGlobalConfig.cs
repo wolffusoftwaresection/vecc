@@ -14,6 +14,8 @@ namespace Wolf.Vecc.Comm.EnumConfigs
         [Description("vecc管理员初始密码设置")]
         AdminInitialPassword,
         [Description("文件上传路径")]
-        FileUrl
+        FileUrl,
+        [Description("后端计算地址")]
+        PostUrl
     }
 }

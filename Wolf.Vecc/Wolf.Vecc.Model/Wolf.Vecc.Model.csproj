@@ -53,6 +53,7 @@
     <Compile Include="SysModel\SysPemsTask.cs" />
     <Compile Include="SysModel\SysRole.cs" />
     <Compile Include="SysModel\SysTask.cs" />
+    <Compile Include="SysModel\SysTaskResult.cs" />
     <Compile Include="SysModel\SysUsers.cs" />
     <Compile Include="ViewModel\CalculationModel.cs" />
     <Compile Include="ViewModel\LayOutUserModel.cs" />

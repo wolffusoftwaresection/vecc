@@ -59,6 +59,7 @@
     <Compile Include="SysService\SysApprovalUserService.cs" />
     <Compile Include="SysService\SysPemsTaskService.cs" />
     <Compile Include="SysService\SysRoleService.cs" />
+    <Compile Include="SysService\SysTaskResultService.cs" />
     <Compile Include="SysService\SysTaskService.cs" />
     <Compile Include="SysService\SysUserService.cs" />
   </ItemGroup>

@@ -10,5 +10,9 @@ namespace Wolf.Vecc.IService.ISysService
     public interface ISysTaskService
     {
         int Insert(SysTask sysUser);
+
+        bool UpdateSysTaskStatus(Guid taskID, int taskStatus);
+
+        SysTask GetSysTaskByTaskId(string taskId);
     }
 }

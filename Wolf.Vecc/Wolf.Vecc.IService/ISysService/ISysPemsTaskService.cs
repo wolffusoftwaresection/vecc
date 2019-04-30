@@ -10,5 +10,7 @@ namespace Wolf.Vecc.IService.ISysService
     public interface ISysPemsTaskService
     {
         int Insert(SysPemsTask sysPemsTask);
+
+        SysPemsTask GetSysPemsTaskByTaskId(string taskId);
     }
 }

@@ -1,0 +1,33 @@
+﻿@{
+    Layout = null;
+}
+<form id="form1" runat="server">
+    <div>
+        <input type="hidden" id="taskId" value="@ViewBag.Id" />
+        <div align="center" id="loadImg">
+            <br />
+            <br />
+            <br />
+            <br />
+            <input type="image" src="~/Content/loading.gif" style="height:200px;width:200px;" />
+            <br />
+            <label id="labload">计算中......</label>
+        </div>
+    </div>
+    @*<div style="width: 522px; margin-left: auto; margin-right: auto;">
+            <img src="../Img/p_logo.jpg" width="522" height="183" />
+        </div>*@
+</form>
+<script src="~/AdminLTE/plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script>
+    $(function () {
+        var taskid = $("#taskId").val();
+        //执行轮询
+        $.getJSON('/Comet/CalculationPolling?id=' + taskid, function (data) {
+            if (data.d) {
+                $("#labload").val(data.d);
+            }
+            approvalPolling();
+        });
+    });
+</script>

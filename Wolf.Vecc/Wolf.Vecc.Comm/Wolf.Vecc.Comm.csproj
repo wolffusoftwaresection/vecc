@@ -65,6 +65,7 @@
     <Compile Include="Helpers\GlobalConfigHelper.cs" />
     <Compile Include="Helpers\JsonHelper.cs" />
     <Compile Include="Helpers\LogHelper.cs" />
+    <Compile Include="Helpers\PubHelp.cs" />
     <Compile Include="Helpers\RarOperatorExt.cs" />
     <Compile Include="Helpers\UpFileExt.cs" />
     <Compile Include="Helpers\UtilityHelper.cs" />
