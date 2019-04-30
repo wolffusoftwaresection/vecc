@@ -267,4 +267,10 @@
             }
         });
     }
+
+    function CalculationResult(taskId, index) {
+        layer.close(index)
+        var path = '@Url.Content("~/")';
+        window.location.href = path + "Calculation/PemsCalculationResults?taskId=" + taskId;
+    }
 </script>

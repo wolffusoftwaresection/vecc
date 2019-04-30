@@ -29,7 +29,7 @@ namespace Wolf.Vecc.Service.SysService
 
         public bool UpdateSysTaskStatus(Guid taskID, int taskStatus)
         {
-            var result = _dbServiceReposity.FirstOrDefault<SysTask>(d => d.TaskId.Equals(taskID));
+            var result = _dbServiceReposity.FirstOrDefault<SysTask>(d => d.TaskId.ToString() == taskID.ToString());
             result.TaskStatus = taskStatus;
             return _dbServiceReposity.Update(result) > 0;
         }

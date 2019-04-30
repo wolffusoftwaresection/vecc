@@ -17,9 +17,20 @@ namespace Wolf.Vecc.Service.SysService
             _dbServiceReposity = dbServiceReposity;
         }
 
-        public SysTaskResult GetTaskResultByTaskId(string guid)
+        public bool DeleteByTaskId(string guid)
         {
-            return _dbServiceReposity.FirstOrDefault<SysTaskResult>(d => d.TaskID.ToString() == guid);
+            var _result = _dbServiceReposity.FirstOrDefault<SysTaskResult>(d => d.TaskID.ToString() == guid);
+            return _dbServiceReposity.Delete(_result) > 0;
+        }
+
+        public SysTaskResult GetTaskResultByTaskId(string taskId)
+        {
+            return _dbServiceReposity.FirstOrDefault<SysTaskResult>(d => d.TaskID.ToString() == taskId);
+        }
+
+        public bool Insert(SysTaskResult sysTaskResult)
+        {
+            return _dbServiceReposity.Add(sysTaskResult) > 0;
         }
 
         public bool UpdateTaskResultTaskId(string testPerson, string placeTest, string routeDescription, string testDate, string testTime, string taskID)

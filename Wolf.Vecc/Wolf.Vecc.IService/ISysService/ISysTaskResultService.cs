@@ -11,6 +11,10 @@ namespace Wolf.Vecc.IService.ISysService
     {
         SysTaskResult GetTaskResultByTaskId(string guid);
 
-        bool UpdateTaskResultTaskId(string testPerson, string placeTest, string routeDescription, string testDate, string testTime, Guid taskID);
+        bool UpdateTaskResultTaskId(string testPerson, string placeTest, string routeDescription, string testDate, string testTime, string taskID);
+
+        bool DeleteByTaskId(string guid);
+
+        bool Insert(SysTaskResult sysTaskResult);
     }
 }

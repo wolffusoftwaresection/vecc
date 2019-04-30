@@ -11,7 +11,7 @@
             <br />
             <input type="image" src="~/Content/loading.gif" style="height:200px;width:200px;" />
             <br />
-            <label id="labload">计算中......</label>
+            <label id="labload"></label>
         </div>
     </div>
     @*<div style="width: 522px; margin-left: auto; margin-right: auto;">
@@ -19,15 +19,34 @@
         </div>*@
 </form>
 <script src="~/AdminLTE/plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script src="~/AdminLTE/plugins/layer/layer.js"></script>
+
 <script>
     $(function () {
+        CalculationPolling();
+    });
+
+    function CalculationPolling() {
         var taskid = $("#taskId").val();
         //执行轮询
         $.getJSON('/Comet/CalculationPolling?id=' + taskid, function (data) {
-            if (data.d) {
-                $("#labload").val(data.d);
+            if (data.result) {
+                $("#labload").text(data.result);
+                if (data.status) {
+                    if (data.status >= 6) {
+                        var index = parent.layer.getFrameIndex(window.name); //获取窗口索引
+                        //parent.layer.close(index);
+                        parent.CalculationResult(taskid, index);
+                    }
+                    if (data.status == -23) {
+                        setTimeout(function () {
+                            var index = parent.layer.getFrameIndex(window.name);
+                            parent.layer.close(index);
+                        }, 4000);
+                    }
+                }
             }
-            approvalPolling();
+            CalculationPolling();
         });
-    });
+    }
 </script>

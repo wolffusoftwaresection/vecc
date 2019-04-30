@@ -195,7 +195,7 @@
 
     function approvalPolling() {
         var _num = $("#doNumber").text();
-        $.getJSON('/Comet/ApprovalPolling', function (data) {
+        $.getJSON('/ApprovalUserAsync/ApprovalPolling', function (data) {
             if (data.d) {
                 if (_num != data.d) {
                     $("#doNumber").text(data.d);
