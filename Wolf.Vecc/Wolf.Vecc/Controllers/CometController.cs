@@ -119,12 +119,13 @@ namespace Wolf.Vecc.Controllers
                                     //删除结果记录 修改task状态为4
                                     //using (TransactionScope transaction = new TransactionScope())
                                     //{
-                                    //    if(_sysTaskService.UpdateSysTaskStatus(task.TaskId, 4))
+                                    //    if (_sysTaskService.UpdateSysTaskStatus(task.TaskId, 4))
                                     //    {
                                     //        _sysTaskResultService.DeleteByTaskId(task.TaskId.ToString());
                                     //    }
                                     //    transaction.Complete();
                                     //}
+                                    timer.Close();
                                 }
                             }
                         }
