@@ -17,6 +17,9 @@
             content: msg
         });
     },
+    info2: function (msg, _confirmCallback) {
+        layer.confirm(msg, _confirmCallback);
+    },
     error: function (msg, title) {
         if (!title) {
             title = "提示";

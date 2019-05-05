@@ -144,15 +144,6 @@ namespace Wolf.Vecc.Controllers
             return Failure("注册失败");
         }
 
-        /// <summary>
-        /// 忘记密码
-        /// </summary>
-        /// <returns></returns>
-        public ActionResult UpdatePw()
-        {
-            return View();
-        }
-
         public ActionResult VeccAddUser(RegisterViewModel registerModel)
         {
             string salt;
@@ -182,7 +173,22 @@ namespace Wolf.Vecc.Controllers
             FormsAuthentication.SignOut();
             FormsAuthentication.RedirectToLoginPage();
             //FormsAuthentication.SignOut();
-            //return Redirect("~/Login");
+            //return Redirect("~//Login");
+        }
+
+        /// <summary>
+        /// 忘记密码
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult UpdatePw()
+        {
+            return View();
+        }
+
+        public ActionResult LoginOutView()
+        {
+            SignOut();
+            return RedirectToAction("Login");
         }
 
         //public ActionResult TestRegister()

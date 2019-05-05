@@ -92,9 +92,9 @@
                 </div>
                 <div class="col-sm-2">
                     <ul class="nav-menu list-unstyled d-flex flex-md-row align-items-md-center">
-                            <li id="approvalNumber" class="nav-item dropdown" style="display:none;">
-                                <a id="notifications" href='#' onclick="javascript:location.href='/Approval/Index'" class="nav-link" rel="nofollow" data-target="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-bell-o fa-2x"></i><span class="noti-numb-bg"></span><span id="doNumber" class="badge" style="background:rgba(0,0,0,0.00)">0</span></a>
-                            </li>
+                        <li id="approvalNumber" class="nav-item dropdown" style="display:none;">
+                            <a id="notifications" href='#' onclick="javascript:location.href='/Approval/Index'" class="nav-link" rel="nofollow" data-target="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-bell-o fa-2x"></i><span class="noti-numb-bg"></span><span id="doNumber" class="badge" style="background:rgba(0,0,0,0.00)">0</span></a>
+                        </li>
                         <li class="nav-item dropdown">
                             <a id="profile" class="nav-link logout" data-target="#" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="~/AdminLTE/dist/img/user.png" alt="..." class="img-fluid rounded-circle" style="height: 30px; width: 30px;"></a>
                             <ul aria-labelledby="profile" class="dropdown-menu profile">
@@ -115,13 +115,12 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a rel="nofollow" href="profile.html" class="dropdown-item">
+                                    <a rel="nofollow" href="#" class="dropdown-item">
                                         <div class="notification">
-                                            <div class="notification-content"><i class="fa fa-lock fa-2x"></i>修改密码</div>
+                                            <div onclick="javascript:location.href='/Account/UpdatePw'" class="notification-content"><i class="fa fa-lock fa-2x"></i>修改密码</div>
                                         </div>
                                     </a>
                                 </li>
-
                             </ul>
                         </li>
                         <li class="nav-item d-flex align-items-center" onclick="loginOut();"><a id="menu-toggle-right" class="nav-link" href="#"><i class="fa fa-power-off fa-2x"></i></a></li>

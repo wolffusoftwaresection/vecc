@@ -1,2 +1,184 @@
-﻿
-修改密码
+﻿@model Wolf.Vecc.Model.ViewModel.UpdatePwModel
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>RegisterEngineer</title>
+    <link href="~/AdminLTE/bootstrap/css/bootstrap-theme.css" rel="stylesheet" />
+    <link href="~/AdminLTE/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/AdminLTE/bootstrap/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/style.css" rel="stylesheet" />
+    <style>
+        .layui-layer-shade {
+            background-color: #333 !important;
+            opacity: 0.5 !important;
+        }
+
+        .layui-layer {
+            box-shadow: 1px 1px 10px rgba(0, 0, 0, .1) !important;
+        }
+
+        .layui-layer {
+            border-radius: 0 !important;
+        }
+
+        .layui-layer-title {
+            border-radius: 0 !important;
+            height: 48px !important;
+            line-height: 48px !important;
+            font-size: 16px !important;
+            background: #008fd3 !important;
+            border-bottom: none !important;
+            color: #fff !important;
+        }
+    </style>
+</head>
+<body>
+    <header id="head" class="secondary">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8">
+                    <h1>Vecc重置密码</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- container -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h3 class="section-title"></h3>
+                <p>
+
+                </p>
+                <form id="defaultForm" role="form" action="/User/UpdatePwModel" method="post" class="form-horizontal">
+                    <div class="row form-group">
+                        <div class="col col-md-12">
+                            <div class="input-group">
+                                <div class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></div>
+                                @Html.PasswordFor(m => Model.OldPassword, new { @class = "form-control", @placeholder = "原始" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col col-md-12">
+                            <div class="input-group">
+                                <div class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></div>
+                                @Html.PasswordFor(m => Model.NewPassword, new { @class = "form-control", @placeholder = "新密码" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col col-md-12">
+                            <div class="input-group">
+                                <div class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></div>
+                                <input name="confirmPassword" class="form-control" type="password" placeholder="确认新密码" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row form-group">
+                        <button class="form-control btn btn-primary" id="submit" type="submit">提&nbsp;&nbsp;交</button>
+                    </div>
+                </form>
+            </div>
+            <div class="copyright col-md-12 text-center">
+                <br><a>Copyright©2018-2022 http://fu_pems.com</a><br><a>上海沃开汽车技术有限公司</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+<link href="~/AdminLTE/dist/css/bootstrapValidator.min.css" rel="stylesheet" />
+<script src="~/AdminLTE/plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script src="~/AdminLTE/dist/css/bootstrapValidator.min.js"></script>
+<script src="~/AdminLTE/plugins/layer/layer.js"></script>
+<script src="~/AdminLTE/comm/comm2.js"></script>
+<script src="~/AdminLTE/comm/_ajax.js"></script>
+<script src="~/AdminLTE/comm/_table.js"></script>
+<script src="~/AdminLTE/comm/_message.js"></script>
+<script src="~/AdminLTE/comm/comm.js"></script>
+<script src="~/AdminLTE/comm/controllist.js"></script>
+<script>
+    $(function () {
+        $('#defaultForm')
+            .bootstrapValidator({
+                message: '验证错误',
+                feedbackIcons: {
+                    valid: 'glyphicon glyphicon-ok',
+                    invalid: 'glyphicon glyphicon-remove',
+                    validating: 'glyphicon glyphicon-refresh'
+                },
+                fields: {//    password
+                    NewPassword: {
+                        message: '密码无效',
+                        validators: {
+                            notEmpty: {
+                                message: '密码不能为空'
+                            },
+                            stringLength: {
+                                min: 6,
+                                max: 30,
+                                message: '密码长度必须在6到30之间'
+                            },
+                            identical: {//相同
+                                field: 'confirmPassword', //需要进行比较的input name值
+                                message: '两次密码不一致'
+                            },
+                            regexp: {
+                                regexp: /^[a-zA-Z0-9_\.]+$/,
+                                message: 'The username can only consist of alphabetical, number, dot and underscore'
+                            }
+                        }
+                    },
+                    confirmPassword: {
+                        message: '密码无效',
+                        validators: {
+                            notEmpty: {
+                                message: '密码不能为空'
+                            },
+                            stringLength: {
+                                min: 6,
+                                max: 30,
+                                message: '密码长度必须在6到30之间'
+                            },
+                            identical: {//相同
+                                field: 'NewPassword',
+                                message: '两次密码不一致'
+                            },
+                            regexp: {//匹配规则
+                                regexp: /^[a-zA-Z0-9_\.]+$/,
+                                message: 'The username can only consist of alphabetical, number, dot and underscore'
+                            }
+                        }
+                    }
+                }
+            }).on('success.form.bv', function (e) {//点击提交之后
+                // Prevent form submission
+                e.preventDefault();
+
+                // Get the form instance
+                var $form = $(e.target);
+
+                // Get the BootstrapValidator instance
+                var bv = $form.data('bootstrapValidator');
+                $("#defaultForm").data('bootstrapValidator').resetForm();
+                // Use Ajax to submit form data 提交至form标签中的action，result自定义
+                $.post($form.attr('action'), $form.serialize(), function (result) {
+                    if (result.Success) {
+                        var path = '@Url.Content("~/")';
+                        msg.info(result.Msg);
+                        setTimeout(function () {
+                            location.replace(path + "Account/LoginOutView");
+                        }, 2000);
+                    }
+                    else {
+                        msg.info(result.Msg);
+                    }
+                });
+            });
+    });
+</script>

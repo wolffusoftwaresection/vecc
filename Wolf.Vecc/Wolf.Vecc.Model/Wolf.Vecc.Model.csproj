@@ -58,6 +58,7 @@
     <Compile Include="ViewModel\CalculationModel.cs" />
     <Compile Include="ViewModel\LayOutUserModel.cs" />
     <Compile Include="ViewModel\RegisterViewModel.cs" />
+    <Compile Include="ViewModel\UpdatePwModel.cs" />
     <Compile Include="ViewModel\UserApprovalViewModel.cs" />
     <Compile Include="ViewModel\UserViewModel.cs" />
   </ItemGroup>
