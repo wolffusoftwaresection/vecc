@@ -1,13 +1,25 @@
 ﻿<div class="content" id="pageSection" style="background: white; min-height: 10px;">
     <div class="row">
-        <div class="col-lg-12">
-            @*<label class="type" for="exampleInputPassword2">审批类型:</label>
-                <select onchange="selShow();" id="select1" name="select" class="selectpicker show-tick form-control" data-actions-box="true">
-                    <option value="0">数据审批</option>
-                    <option value="1">人员审批</option>
-                </select>*@
+        <div class="col-lg-6">
             <button type="button" class="btn btn-default btn-flat" data-toggle="collapse" data-parent="#accordion" href="#collapseToolSearch">筛选项</button>
             <button type="button" id="addUser" class="btn btn-dropbox btn-flat" onclick="addUser();">新增</button>
+        </div>
+        <div class="col-lg-6">
+            <div class="form-group form-inline">
+                <div class="col-sm-7">
+
+                </div>
+                <div class="col-sm-2">
+                    <label>审批类型</label>
+                </div>
+                <div class="col-sm-3">
+                    @*onselect="showViewData();"*@
+                    <select id="approvaType" name="approvaType" class="selectpicker show-tick form-control" data-actions-box="true">
+                        <option value="0">数据审批</option>
+                        <option value="1">人员审批</option>
+                    </select>
+                </div>
+            </div>
         </div>
         <div class="col-lg-12">
             <div id="collapseToolSearch" class="panel-collapse collapse">
@@ -47,11 +59,12 @@
         </div>
     </div>
 </div>
-<div class="box-body" style="padding-left:15px;">
-    <table id="tb_UserApproval" class="table-bordered" style="font-size:12px"></table>
-    <table id="tb_DataApproval" class="table-no-bordered" style="font-size:12px"></table>
+<div class="box-body" style="padding-left:15px;" id="userApproval">
+    <table id="tb_UserApproval" class="table-bordered" style="font-size:12px;"></table>
 </div>
-
+<div class="box-body" style="padding-left:15px;display:none;" id="dataApproval">
+    <table id="tb_DataApproval" class="table-bordered" style="font-size:12px;display:none;"></table>
+</div>
 
 @*<div style="text-align:right;padding: 5px;" class="form-inline">
         <div class="form-group">
@@ -82,9 +95,28 @@
         <table id="tb_DataApproval" class="table-no-bordered" ></table>
     </div>*@
 <script>
+    var fal = false;
     $(function () {
         initUserApproval();
+        $('#approvaType').change(function () {
+            $("#username").val("");
+            if ($(this).children('option:selected').val() == 0) {
+                $("#userApproval").show();
+                $("#dataApproval").hide();
+            } else {
+                $("#userApproval").hide();
+                $("#dataApproval").show();
+                if (!fal) { //第一次加载tb_DataApproval
+                    initDataApproval();
+                    fal = true;
+                }
+            }
+        });
     });
+
+    function initDataApproval() {
+        alert("记载data");
+    }
 
     function initUserApproval() {
         $("#tb_UserApproval").bootstrapTable({
@@ -310,4 +342,10 @@
             }
         });
     }
+
+
+    //function showViewData() {
+    //    $("#approvaType");
+    //    alert();
+    //}
 </script>

@@ -181,6 +181,7 @@
     <Compile Include="Controllers\CometController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\IndexController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Filters\ExceptionFilter.cs" />
     <Compile Include="Filters\UserTrackerLogAttribute.cs" />
     <Compile Include="Global.asax.cs">
@@ -1721,6 +1722,7 @@
     <Folder Include="UpLoadFiles\" />
     <Folder Include="Views\ApprovalUserAsync\" />
     <Folder Include="Views\Comet\" />
+    <Folder Include="Views\User\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

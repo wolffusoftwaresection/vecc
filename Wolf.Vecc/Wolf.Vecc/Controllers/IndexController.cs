@@ -50,7 +50,7 @@ namespace Wolf.Vecc.Controllers
                     return RedirectToAction("OtherIndex", "Index");
                 }
             }
-            return RedirectToAction("Account", "Login");
+            return RedirectToAction("Login", "Account");
         }
     }
 }
