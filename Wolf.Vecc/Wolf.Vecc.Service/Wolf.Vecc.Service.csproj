@@ -43,6 +43,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -55,6 +56,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReadFileService\ReadRstService.cs" />
     <Compile Include="SysService\AccountService.cs" />
     <Compile Include="SysService\SysApprovalUserService.cs" />
     <Compile Include="SysService\SysPemsTaskService.cs" />
@@ -62,12 +64,17 @@
     <Compile Include="SysService\SysTaskResultService.cs" />
     <Compile Include="SysService\SysTaskService.cs" />
     <Compile Include="SysService\SysUserService.cs" />
+    <Compile Include="VeccReportService\ReportService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Wolf.Vecc.Comm\Wolf.Vecc.Comm.csproj">
+      <Project>{9FB7F216-385A-4113-B098-B7C6AD481736}</Project>
+      <Name>Wolf.Vecc.Comm</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Wolf.Vecc.Core\Wolf.Vecc.Core.csproj">
       <Project>{1B0C8013-E5E1-4EB5-AC8E-B8DE5EAF742D}</Project>
       <Name>Wolf.Vecc.Core</Name>
@@ -85,5 +92,6 @@
       <Name>Wolf.Vecc.Model</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

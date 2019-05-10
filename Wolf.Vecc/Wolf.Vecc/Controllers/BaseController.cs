@@ -7,6 +7,7 @@ using System.Net.Http;
 using System.Web;
 using System.Web.Mvc;
 using Wolf.Vecc.Comm.ExceptionExtent;
+using Wolf.Vecc.Comm.Helpers;
 using Wolf.Vecc.Comm.NlogExtent;
 using Wolf.Vecc.Core.AutofacManager;
 using Wolf.Vecc.Data.AuthCore;
@@ -19,6 +20,7 @@ namespace Wolf.Vecc.Controllers
     {
         protected string _errorMsg = string.Empty;
         protected static string str = "";
+        protected readonly string Result_Root_Url = GlobalConfigHelper.GetResultFileRootUrl();
         public readonly IDbServiceReposity _dbServiceReposity = ContainerManager.Resolve<IDbServiceReposity>();
         public BaseController() { }
 

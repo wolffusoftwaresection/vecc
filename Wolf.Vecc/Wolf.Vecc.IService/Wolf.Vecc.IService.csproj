@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IReadFileService\IReadRstService.cs" />
     <Compile Include="ISysService\IAccountService.cs" />
     <Compile Include="ISysService\ISysApprovalUserService.cs" />
     <Compile Include="ISysService\ISysPemsTaskService.cs" />
@@ -48,6 +49,7 @@
     <Compile Include="ISysService\ISysTaskResultService.cs" />
     <Compile Include="ISysService\ISysTaskService.cs" />
     <Compile Include="ISysService\ISysUserService.cs" />
+    <Compile Include="IVeccReportService\IReportService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

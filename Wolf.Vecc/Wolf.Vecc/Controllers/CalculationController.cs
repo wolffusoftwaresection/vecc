@@ -5,7 +5,9 @@ using System.Transactions;
 using System.Web;
 using System.Web.Mvc;
 using Wolf.Vecc.Comm.Helpers;
+using Wolf.Vecc.IService.IReadFileService;
 using Wolf.Vecc.IService.ISysService;
+using Wolf.Vecc.Model.ResultModel;
 using Wolf.Vecc.Model.SysModel;
 using Wolf.Vecc.Model.ViewModel;
 
@@ -15,10 +17,14 @@ namespace Wolf.Vecc.Controllers
     {
         private readonly ISysTaskService _sysTaskService;
         private readonly ISysPemsTaskService _sysPemsTaskService;
-        public CalculationController(ISysTaskService sysTaskService, ISysPemsTaskService sysPemsTaskService)
+        private readonly ISysTaskResultService _sysTaskResultService;
+        private readonly IReadRstService _readRstService;
+        public CalculationController(ISysTaskService sysTaskService, ISysPemsTaskService sysPemsTaskService, IReadRstService readRstService, ISysTaskResultService sysTaskResultService)
         {
             _sysTaskService = sysTaskService;
             _sysPemsTaskService = sysPemsTaskService;
+            _readRstService = readRstService;
+            _sysTaskResultService = sysTaskResultService;
         }
         // GET: Calculation
         public ActionResult Index()
@@ -27,10 +33,32 @@ namespace Wolf.Vecc.Controllers
             return View();
         }
 
+        public ActionResult PemsCalculationResultsView(string taskId)
+        {
+            return View();
+        }
+
         public ActionResult PemsCalculationResults(string taskId)
         {
-            var id = taskId;
-            return View();
+            var data = _readRstService.ReadTestInfo(Server.MapPath(Result_Root_Url), "b88859c7-dee8-4ec0-bcd5-90c9fa6a71e7");//测试
+            var _json = JsonHelper.SerializeDictionaryToJsonString(data);
+            var pemsTask = _sysPemsTaskService.GetSysPemsTaskByTaskId("4c668a4b-dcfd-4ac8-94ff-8512e5fb4c0f");
+            var taskResult = _sysTaskResultService.GetTaskResultByTaskId("4c668a4b-dcfd-4ac8-94ff-8512e5fb4c0f");
+
+            var tasks = new TaskResultModel
+            {
+                RouteDescription = taskResult.RouteDescription,
+                TaskId = pemsTask.TaskId.ToString(),
+                TestDate = taskResult.TestDate,
+                PlaceTest = taskResult.PlaceTest,
+                TestPerson = taskResult.TestPerson,
+                TestTime = taskResult.TestTime,
+                VehicleType = pemsTask.VehicleType,
+                VehicleModel = pemsTask.VehicleModel
+            };
+
+            ViewBag.Result = _json;
+            return View(tasks);
         }
 
         public ActionResult ImportRarData(string id, string vehicleModel, string pemsFactory, string vehicleType, string whtcPower,

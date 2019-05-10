@@ -1,0 +1,255 @@
+﻿@{ Layout = null;}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ReportUserMonthRegisterView</title>
+    <link rel="stylesheet" href="~/AdminLTE/bootstrap/css/bootstrap.min.css">
+    <script src="~/AdminLTE/js/jquery-3.3.1.min.js"></script>
+    <script src="~/AdminLTE/highcharts.js"></script>
+    <script src="~/AdminLTE/highcharts-3d.js"></script>
+    <script src="~/AdminLTE/Exporting.js"></script>
+    <script src="~/AdminLTE/highcharts-zh_CN.js"></script>
+    <script src="~/AdminLTE/bootstrap-datetimepicker.min.js"></script>
+</head>
+<body scroll="no">
+    <div style="text-align: center;">
+        <div class="row">
+            <div class="col-md-6 top-buffer">
+                <div class="form-group">
+                    <div class="col-sm-5">
+                        <input class="form-control yearpicker" type="year" value="" id="datetimepicker">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box service-box">
+                    <div class="form-horizontal">
+                        <div class="box-body">
+                            <div class="row top-buffer">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <div style="height:100%;width:95%;" id="container"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script type="text/javascript">
+    $(function () {
+        $('#datetimepicker').datetimepicker({
+            language: 'zh-CN',
+            format: 'yyyy',
+            weekStart: 1,
+            todayBtn: 1,
+            autoclose: 1,
+            todayHighlight: 1,
+            startView: 4, //这里就设置了默认视图为年视图
+            minView: 4, //设置最小视图为年视图
+            forceParse: 0,
+        });
+        $("#datetimepicker").datetimepicker("setDate", new Date());
+        $('#datetimepicker').datetimepicker().on('changeDate', function (ev) {
+            getForm(ev.date.getFullYear());
+        });
+        getForm(new Date().getFullYear());
+        function pieClick(parm, pointVal) {
+            if (pointVal == 0) {
+                return;
+            }
+            var arr = [];
+            $.ajax({
+                type: "POST",
+                url: "/VeccReport/ReportUserMonthRegisterInfo",
+                data: { year: parm },
+                dataType: "json",
+                success: function (data) {
+                    if (data.data.Pending != null) {
+                        arr.push(["待审核", parseInt(data.data.Pending)]);
+                    }
+                    else {
+                        arr.push(["待审核", 0.0]);
+                    }
+                    if (data.data.Fail != null) {
+                        arr.push(["未通过", parseInt(data.data.Fail)]);
+                    } else {
+                        arr.push(["未通过", 0.0]);
+                    }
+                    if (data.data.Passed != null) {
+                        arr.push(["已审核", parseInt(data.data.Passed)]);
+                    } else {
+                        arr.push(["已审核", 0.0]);
+                    }
+                    chart1.series[0].setData(arr);
+                }
+            });
+            var chart1 = Highcharts.chart('container', {
+                chart: {
+                    type: 'pie',
+                    plotBackgroundColor: null,
+                    plotBorderWidth: null,
+                    plotShadow: false,
+                    options3d: {
+                        enabled: true,
+                        alpha: 45,
+                        beta: 0
+                    }
+                },
+                title: {
+                    text: parm + "审核数据统计"
+                }, subtitle: {
+                    text: '数据来源: Vecc后台数据分析'
+                },
+                tooltip: {
+                    pointFormat: '{series.name}: <b>{point.percentage:.0f}%</b>'
+                },
+                plotOptions: {
+                    pie: {
+                        allowPointSelect: true,
+                        cursor: 'pointer',
+                        depth: 35,
+                        dataLabels: {
+                            enabled: true,
+                            showInLegend: true,
+                            format: '{point.name}',
+                            formatter: function () {
+                                if (this.percentage > 0)
+                                    return '<b>' + this.point.name + '</b>: ' + this.percentage + ' %'; //这里进行判断（看这里）
+                            },
+                            color: 'white',
+                            style: {
+                                font: '13px Trebuchet MS, Verdana, sans-serif'
+                            }
+                        }
+                    }
+                },
+                series: [{
+                    type: 'pie',
+                    name: '审核占比',
+                    colorByPoint: true,
+                    data: []
+                }], exporting: {
+                    enabled: true
+                }, //隐藏导出图片
+                credits: {
+                    enabled: false
+                },
+                legend: {
+                    backgroundColor: '#FFFFFF'
+                }
+            });
+        }
+        var chart = Highcharts.chart('container', {
+            chart: {
+                type: 'column',
+                options3d: {
+                    enabled: true,
+                    alpha: 5,
+                    beta: 0,
+                    depth: 20,
+                    viewDistance: 100,      // 视图距离，它对于计算角度影响在柱图和散列图非常重要。此值不能用于3D的饼图
+                    frame: {                // Frame框架，3D图包含柱的面板，我们以X ,Y，Z的坐标系来理解，X轴与 Z轴所形成
+                        // 的面为bottom，Y轴与Z轴所形成的面为side，X轴与Y轴所形成的面为back，bottom、
+                        // side、back的属性一样，其中size为感官理解的厚度，color为面板颜色
+                        bottom: {
+                            size: 10
+                        },
+                        side: {
+                            size: 1,
+                            color: 'transparent'
+                        },
+                        back: {
+                            size: 1,
+                            color: 'transparent'
+                        }
+                    }
+                }
+            },
+            title: {
+                text: '用户每月注册数量统计'
+            },
+            subtitle: {
+                text: '数据来源: Vecc后台数据分析'
+            },
+            xAxis: {
+                categories: [
+                ],
+                crosshair: true
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: '数量'
+                }
+            },
+            tooltip: {
+                headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                    '<td style="padding:0"><b>{point.y:.0f} 个</b></td></tr>',
+                footerFormat: '</table>',
+                shared: true,
+                useHTML: true
+            },
+            plotOptions: {
+                column: {
+                    borderWidth: 0
+                },series: {
+                    cursor: 'pointer',
+                    events: {
+                        click: function (e) {
+                            pieClick(e.point.category, this.data[event.point.x].y);
+                        }
+                    }
+                }
+            },
+            series: [{
+                name: '注册人员数量',
+            }],
+            exporting: {
+                enabled: true
+            }, //隐藏导出图片
+            credits: {
+                enabled: false
+            }
+        });
+
+        function getForm(years) {
+            $.ajax({
+                type: "POST",
+                url: "/VeccReport/ReportUserMonthRegister",
+                data: { year: years },
+                dataType: "json",
+                success: function (data) {
+                    var _value = new Array(12);
+                    _value[0] = data.data["Jan"] == null ? 0 : parseInt(data.data["Jan"]);
+                    _value[1] = data.data["Feb"] == null ? 0 : parseInt(data.data["Feb"]);
+                    _value[2] = data.data["Mar"] == null ? 0 : parseInt(data.data["Mar"]);
+                    _value[3] = data.data["Apr"] == null ? 0 : parseInt(data.data["Apr"]);
+                    _value[4] = data.data["May"] == null ? 0 : parseInt(data.data["May"]);
+                    _value[5] = data.data["Jun"] == null ? 0 : parseInt(data.data["Jun"]);
+                    _value[6] = data.data["Jul"] == null ? 0 : parseInt(data.data["Jul"]);
+                    _value[7] = data.data["Aug"] == null ? 0 : parseInt(data.data["Aug"]);
+                    _value[8] = data.data["Sept"] == null ? 0 : parseInt(data.data["Sept"]);
+                    _value[9] = data.data["Oct"] == null ? 0 : parseInt(data.data["Oct"]);
+                    _value[10] = data.data["Nov"] == null ? 0 : parseInt(data.data["Nov"]);
+                    _value[11] = data.data["Dec"] == null ? 0 : parseInt(data.data["Dec"]);
+                    var _date = new Array(years + "-01", years + "-02", years + "-03", years + "-04", years + "-05", years + "-06", years + "-07", years + "-08", years + "-09", years + "-10", years + "-11", years +"-12");
+                    //for (var i = 0; i < data.data.length; i++) {
+                    //    _date[i] = data.data[i].Date;
+                    //    _value[i] = data.data[i].RegisterCount;
+                    //}
+                    chart.series[0].setData(_value);
+                    chart.xAxis[0].setCategories(_date);
+                }
+            });
+        }
+    }); 
+</script>

@@ -12,6 +12,8 @@ namespace Wolf.Vecc.Model.ResultModel
 
         public string VehicleType { get;set;}
 
+        public string VehicleModel { get; set; }
+
         public string TestDate { get; set; }
 
         public string TestTime { get; set; }

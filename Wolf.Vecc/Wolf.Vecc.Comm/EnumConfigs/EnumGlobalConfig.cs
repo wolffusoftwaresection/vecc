@@ -16,6 +16,8 @@ namespace Wolf.Vecc.Comm.EnumConfigs
         [Description("文件上传路径")]
         FileUrl,
         [Description("后端计算地址")]
-        PostUrl
+        PostUrl,
+        [Description("计算结果文件路径")]
+        ResultFileRootUrl
     }
 }

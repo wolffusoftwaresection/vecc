@@ -1,7 +1,7 @@
 ﻿@{
     Layout = null;
 }
-
+@model Wolf.Vecc.Model.ResultModel.TaskResultModel
 <!doctype html>
 <html>
 <head>
@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
     <link href="~/AdminLTE/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
     <link href="~/pemsreport/css/pemsreport.css" rel="stylesheet" type="text/css" />
-    <script src="~/AdminLTE/jquery-1.8.2.min.js"></script>
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
     <style type="text/css">
         /*
          * 说明：
@@ -20,9 +20,11 @@
         html {
             height: 100%
         }
+
         body {
             height: 720px;
         }
+
         ul,
         li,
         a,
@@ -57,9 +59,17 @@
     </style>
 </head>
 <body>
+    <input type="hidden" id="ResultData" value="@ViewBag.Result" />
+    <input type="hidden" id="TaskId" value="@Model.TaskId" />
+    <input type="hidden" id="VehicleType" value="@Model.VehicleType" />
+    <input type="hidden" id="TestDate" value="@Model.TestDate" />
+    <input type="hidden" id="TestPerson" value="@Model.TestPerson" />
+    <input type="hidden" id="TestTime" value="@Model.TestTime" />
+    <input type="hidden" id="PlaceTest" value="@Model.PlaceTest" />
+    <input type="hidden" id="RouteDescription" value="@Model.RouteDescription" />
     <div id="wrap">
         <div id="main">
-            <ul id="pageUl" type="circle" class="hidden-print">
+            @*<ul id="pageUl" type="circle" class="hidden-print">
                 <li id="pageUlLi1" class="pageUlLi" style="color:rgba(255,30,72,1.00);">&nbsp;1</li>
                 <li id="pageUlLi2" class="pageUlLi">&nbsp;2</li>
                 <li id="pageUlLi3" class="pageUlLi">&nbsp;3</li>
@@ -68,7 +78,7 @@
                 <li id="pageUlLi6" class="pageUlLi">&nbsp;6</li>
                 <li id="pageUlLi7" class="pageUlLi">&nbsp;7</li>
                 <li id="pageUlLi8" class="pageUlLi">&nbsp;8</li>
-            </ul>
+            </ul>*@
             <!--P1-->
             <div id="page1" class="page">
                 <!--title-->
@@ -89,74 +99,75 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-md-1 text-left">试验日期:</div>
-                            <div class="col-md-1 text-left font-color">11/23/2018</div>
+                            <div class="col-md-1 text-left font-color" id="Date_test"></div>
                             <div class="col-md-2">
                                 <div class="row col-md-8 text-left ">试验时间:</div>
-                                <div class="row col-md-4 text-left font-color">09:18:08.34</div>
+                                <div class="row col-md-4 text-left font-color" id="time_test"></div>
                             </div>
                             <div class="col-md-2">
                                 <div class="row col-md-8 text-left col-md-offset-1">测试人员:</div>
-                                <div class="row  text-left font-color">王启武</div>
+                                <div class="row  text-left font-color" id="Tester"></div>
                             </div>
                             <div class="col-md-2">
                                 <div class="row col-md-8 text-left col-md-offset-2">试验地点:</div>
-                                <div class="row col-md-5 text-left font-color ">重庆</div>
+                                <div class="row col-md-5 text-left font-color" id="place_test"></div>
                             </div>
                             <div class="col-md-2 text-right">PEMS设备型号:</div>
-                            <div class="col-md-1 text-left font-color">SENSORS</div>
+                            <div class="col-md-1 text-left font-color" id="PEMS_manufacturer"></div>
                         </div>
                         <div class="row">
                             <div class="col-md-1 text-left">整车型号:</div>
-                            <div class="col-md-1 text-left font-color">JAC</div>
+                            <div class="col-md-1 text-left font-color" id="Vehicle_model">@Model.VehicleModel</div>
                             <div class="col-md-2">
                                 <div class="row col-md-8 text-left ">整车类型:</div>
-                                <div class="row col-md-4 text-left font-color">N2,M2,M3</div>
+                                <div class="row col-md-4 text-left font-color" id="Vehicle_class">@Model.VehicleType</div>
                             </div>
                             <div class="col-md-1 text-left"></div>
                             <div class="col-md-1 text-left font-color"></div>
                             <div class="col-md-4">
                                 <div class="row col-md-4 text-left col-md-offset-1">路线描述:</div>
-                                <div class="row col-md-8 text-left font-color">重检院-堰塘湾-G319</div>
+                                <div class="row col-md-8 text-left font-color" id="route_test"></div>
                             </div>
                         </div>
                         <div class="row">
                             <div class=" col-md-2">
                                 <div class="row col-md-10 text-left">整备质量(KG):</div>
-                                <div class="row col-md-2 text-left font-color">3300</div>
+                                <div class="row col-md-2 text-left font-color" id="mass_curb"></div>
                             </div>
                             <div class=" col-md-2">
                                 <div class="row col-md-12 text-left">最大设计质量(KG):</div>
-                                <div class="row col-md-2 text-left font-color">7790</div>
+                                <div class="row col-md-2 text-left font-color" id="mass_max"></div>
                             </div>
                             <div class=" col-md-2">
                                 <div class="row col-md-10 text-left col-md-offset-1">整车载荷(%)：</div>
-                                <div class="row col-md-2 text-left font-color">12</div>
+                                <div class="row col-md-2 text-left font-color" id="r_payload"></div>
                             </div>
                         </div>
                         <div class="row">
                             <div class=" col-md-2">
                                 <div class="row col-md-10 text-left">最高海拔(M):</div>
-                                <div class="row col-md-2 text-left font-color">33.7</div>
+                                <div class="row col-md-2 text-left font-color" id="Alt_max"></div>
                             </div>
                             <div class=" col-md-2">
                                 <div class="row col-md-12 text-left ">平均大气温度(℃):</div>
-                                <div class="row col-md-2 text-left font-color">12.3</div>
+                                <div class="row col-md-2 text-left font-color" id="T_air_avg"></div>
                             </div>
-                            <div class=" col-md-2"><div class="row col-md-offset-12 text-left col-md-offset-2">平均大气压力(kPa)：</div></div>
-                            <div class="row col-md-1 text-left font-color">102.4</div>
                         </div>
                         <div class="row result">
                             <div class=" col-md-2">
                                 <div class="row col-md-8 text-left">海拔结果:</div>
-                                <img src="~/pemsreport/image/pass.png " class="pass img-responsive center-block">
+                                <img id="hbfail" src="~/pemsreport/image/fail.png" class="pass img-responsive center-block" style="display:none;" />
+                                <img id="hbpass" src="~/pemsreport/image/pass.png" class="pass img-responsive center-block"/>
                             </div>
                             <div class=" col-md-2">
                                 <div class="row col-md-8 text-left ">工况结果:</div>
-                                <img src="~/pemsreport/image/pass.png " class="pass img-responsive center-block">
+                                <img id="gkfail" src="~/pemsreport/image/fail.png" class="pass img-responsive center-block" style="display:none;"/>
+                                <img id="gkpass" src="~/pemsreport/image/pass.png" class="pass img-responsive center-block"/>
                             </div>
                             <div class=" col-md-2">
                                 <div class="row col-md-8 text-left col-md-offset-1">排放结果：</div>
-                                <img src="~/pemsreport/image/fail.png " class="pass img-responsive center-block">
+                                <img id="pffail" src="~/pemsreport/image/fail.png" class="pass img-responsive center-block" style="display:none;"/>
+                                <img id="pfpass" src="~/pemsreport/image/pass.png" class="pass img-responsive center-block"/>
                             </div>
                         </div>
                     </div>
@@ -167,7 +178,7 @@
                         <div class="col-md-3 row"><img class="titlebg img-responsive" src="~/pemsreport/image/2.png" style="margin-top: 10px;margin-bottom: 10px"><!--<p class="title ">(二)&nbsp;工况结果</p>--></div>
                     </div>
                     <div class="container">
-                        <div class="chart col-md-5"><img class="img-responsive" src="~/pemsreport/image/a.png"></div>
+                        <div class="chart col-md-5"><div id="cityTimePic" class="img-responsive"></div></div>
                         <div class="chart col-md-5 col-md-offset-1"><img class="img-responsive" src="~/pemsreport/image/b.png"></div>
                     </div>
                     <div class="container">
@@ -299,6 +310,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-md-12">
+
                                         </div>
                                     </div>
                                 </div>
@@ -852,111 +864,175 @@
         </div>
     </div>
 </body>
+</html>
+<script src="~/AdminLTE/highcharts.js"></script>
+<script src="~/AdminLTE/highcharts-3d.js"></script>
+<script src="~/AdminLTE/export-data.js"></script>
+<script src="~/AdminLTE/Exporting.js"></script>
+<script src="~/Scripts/veccjs/veccShowPic.js"></script>
 <script type="text/javascript">
     //改变窗口大小时调整图片大小
-    window.onload = resizeImages;
-    window.onresize = resizeImages;
+    //window.onload = resizeImages;
+    //window.onresize = resizeImages;
+    $(function () {
+        if ($("#ResultData").val() != "") {
+            var json = JSON.parse($("#ResultData").val());
+            for (var k in json) {
+                if (k == "Date_test" || k == "time_test" || k == "Tester"
+                    || k == "place_test" || k == "route_test") {
+                    $("#" + k).text(json[k]);
+                }
+                else {
+                    //$("#" + k).text(json[k]);
+                    //如果name是以下几个值 判断value如果是fail 显示正确图片 否则为错误图片
+                    if (k == "Alt_res_PF" || k == "Trips_res_PF" || k == "Emission_res_PF") {
+                        if (json[k].toLowerCase == "fail") {
+                            //隐藏正确图片 显示错误图片
+                            if (k == "Alt_res_PF") { //如果是海拔fail
+                                $("#hbfail").show();
+                                $("#hbpass").hide();
+                            } else if (k == "Trips_res_PF") {
+                                $("#gkfail").show();
+                                $("#gkpass").hide();
+                            } else {
+                                $("#pffail").show();
+                                $("#pfpass").hide();
+                            }
+                        } else {
+                            //隐藏错误图片 显示正确图片
+                            if (k == "Alt_res_PF") { //如果是海拔fail
+                                $("#hbfail").hide();
+                                $("#hbpass").show();
+                            } else if (k == "Trips_res_PF") {
+                                $("#gkfail").hide();
+                                $("#gkpass").show();
+                            } else {
+                                $("#pffail").hide();
+                                $("#pfpass").show();
+                            }
+                        }
+                    }
+                    //获取城市郊区和工况的时间比例
+                    else if (k == "V_avg_u" || k == "" || k == "" || k == "" || k == "") {
 
-    function resizeImages() {
-        $(function (e) {
-            var screenWeight = document.documentElement.clientWidth;
-            var screenHeight = document.documentElement.clientHeight;
-            $("[name=pageImg]").css("width", screenWeight).css("height", screenHeight);
-            $("#pageUl").css("bottom", screenHeight >> 1);
-        });
-    }
-
-    var index = 1;
-    var curIndex = 1;
-    var wrap = document.getElementById("wrap");
-    var main = document.getElementById("main");
-    var hei = document.body.clientHeight;
-    wrap.style.height = hei + "px";
-    var obj = document.getElementsByTagName("div");
-    for (var i = 0; i < obj.length; i++) {
-        if (obj[i].className == 'page') {
-            obj[i].style.height = hei + "px";
-        }
-    }
-    var pageNum = document.querySelectorAll(".page").length;
-    //如果不加时间控制，滚动会过度灵敏，一次翻好几屏
-    var startTime = 0, //翻屏起始时间
-        endTime = 0,
-        now = 0;
-    //浏览器兼容
-    if ((navigator.userAgent.toLowerCase().indexOf("firefox") != -1)) {
-        document.addEventListener("DOMMouseScroll", scrollFun, false);
-    } else if (document.addEventListener) {
-        document.addEventListener("mousewheel", scrollFun, false);
-    } else if (document.attachEvent) {
-        document.attachEvent("onmousewheel", scrollFun);
-    } else {
-        document.onmousewheel = scrollFun;
-    }
-
-    //滚动事件处理函数
-    function scrollFun(event) {
-        startTime = new Date().getTime();
-        var delta = event.detail || (-event.wheelDelta);
-        //mousewheel事件中的 “event.wheelDelta” 属性值：返回的如果是正值说明滚轮是向上滚动
-        //DOMMouseScroll事件中的 “event.detail” 属性值：返回的如果是负值说明滚轮是向上滚动
-        if ((endTime - startTime) < -1000) {
-            if (delta > 0 && parseInt(main.offsetTop) > -(hei * (pageNum - 1))) {
-                //向下滚动
-                index++;
-                toPage(index);
+                    }
+                }
+            }//循环赋值以后如果以下还是为空
+            if ($("#Date_test").text() == "") {
+                $("#Date_test").text($("#TestDate").val());
+            } if ($("#time_test").text() == "") {
+                $("#time_test").text($("#TestTime").val());
+            } if ($("#Tester").text() == "") {
+                $("#Tester").text($("#TestPerson").val());
+            } if ($("#place_test").text() == "") {
+                $("#place_test").text($("#PlaceTest").val());
+            } if ($("#route_test").text() == "") {
+                $("#route_test").text($("#RouteDescription").val());
             }
-            if (delta < 0 && parseInt(main.offsetTop) < 0) {
-                //向上滚动
-                index--;
-                toPage(index);
-            }
-            endTime = new Date().getTime();
-        } else {
-            event.preventDefault();
         }
-    }
+   
+    });
 
-    function toPage(index) {
-        //jquery实现动画效果
-        if(index!=curIndex){
-            var delta=index - curIndex;
-            now = now - delta * hei;
-            $("#main").animate({
-                top: (now + 'px')
-            }, 1000);
-            curIndex = index;
-            //更改列表的选中项
-            $(".pageUlLi").css("color", "gray");
-            $("#pageUlLi" + index).css("color", "rgba(255,30,72,1.00)");
-        }
-    }
+    //function resizeImages() {
+    //    $(function (e) {
+    //        var screenWeight = document.documentElement.clientWidth;
+    //        var screenHeight = document.documentElement.clientHeight;
+    //        $("[name=pageImg]").css("width", screenWeight).css("height", screenHeight);
+    //        $("#pageUl").css("bottom", screenHeight >> 1);
+    //    });
+    //}
 
-    //鼠标悬停翻页
-    document.getElementById("pageUlLi1").onmouseover = function () {
-        toPage(1);
-    }
-    document.getElementById("pageUlLi2").onmouseover = function () {
-        toPage(2);
-    }
-    document.getElementById("pageUlLi3").onmouseover = function () {
-        toPage(3);
-    }
-    document.getElementById("pageUlLi4").onmouseover = function () {
-        toPage(4);
-    }
-    document.getElementById("pageUlLi5").onmouseover = function () {
-        toPage(5);
-    }
-	 document.getElementById("pageUlLi6").onmouseover = function () {
-        toPage(6);
-    }
-    document.getElementById("pageUlLi7").onmouseover = function () {
-        toPage(7);
-    }
-    document.getElementById("pageUlLi8").onmouseover = function () {
-        toPage(8);
-    }
+    //var index = 1;
+    //var curIndex = 1;
+    //var wrap = document.getElementById("wrap");
+    //var main = document.getElementById("main");
+    //var hei = document.body.clientHeight;
+    //wrap.style.height = hei + "px";
+    //var obj = document.getElementsByTagName("div");
+    //for (var i = 0; i < obj.length; i++) {
+    //    if (obj[i].className == 'page') {
+    //        obj[i].style.height = hei + "px";
+    //    }
+    //}
+    //var pageNum = document.querySelectorAll(".page").length;
+    ////如果不加时间控制，滚动会过度灵敏，一次翻好几屏
+    //var startTime = 0, //翻屏起始时间
+    //    endTime = 0,
+    //    now = 0;
+    ////浏览器兼容
+    //if ((navigator.userAgent.toLowerCase().indexOf("firefox") != -1)) {
+    //    document.addEventListener("DOMMouseScroll", scrollFun, false);
+    //} else if (document.addEventListener) {
+    //    document.addEventListener("mousewheel", scrollFun, false);
+    //} else if (document.attachEvent) {
+    //    document.attachEvent("onmousewheel", scrollFun);
+    //} else {
+    //    document.onmousewheel = scrollFun;
+    //}
+
+    ////滚动事件处理函数
+    //function scrollFun(event) {
+    //    startTime = new Date().getTime();
+    //    var delta = event.detail || (-event.wheelDelta);
+    //    //mousewheel事件中的 “event.wheelDelta” 属性值：返回的如果是正值说明滚轮是向上滚动
+    //    //DOMMouseScroll事件中的 “event.detail” 属性值：返回的如果是负值说明滚轮是向上滚动
+    //    if ((endTime - startTime) < -1000) {
+    //        if (delta > 0 && parseInt(main.offsetTop) > -(hei * (pageNum - 1))) {
+    //            //向下滚动
+    //            index++;
+    //            toPage(index);
+    //        }
+    //        if (delta < 0 && parseInt(main.offsetTop) < 0) {
+    //            //向上滚动
+    //            index--;
+    //            toPage(index);
+    //        }
+    //        endTime = new Date().getTime();
+    //    } else {
+    //        event.preventDefault();
+    //    }
+    //}
+
+    //function toPage(index) {
+    //    //jquery实现动画效果
+    //    if (index != curIndex) {
+    //        var delta = index - curIndex;
+    //        now = now - delta * hei;
+    //        $("#main").animate({
+    //            top: (now + 'px')
+    //        }, 1000);
+    //        curIndex = index;
+    //        //更改列表的选中项
+    //        $(".pageUlLi").css("color", "gray");
+    //        $("#pageUlLi" + index).css("color", "rgba(255,30,72,1.00)");
+    //    }
+    //}
+
+    ////鼠标悬停翻页
+    //document.getElementById("pageUlLi1").onmouseover = function () {
+    //    toPage(1);
+    //}
+    //document.getElementById("pageUlLi2").onmouseover = function () {
+    //    toPage(2);
+    //}
+    //document.getElementById("pageUlLi3").onmouseover = function () {
+    //    toPage(3);
+    //}
+    //document.getElementById("pageUlLi4").onmouseover = function () {
+    //    toPage(4);
+    //}
+    //document.getElementById("pageUlLi5").onmouseover = function () {
+    //    toPage(5);
+    //}
+    //document.getElementById("pageUlLi6").onmouseover = function () {
+    //    toPage(6);
+    //}
+    //document.getElementById("pageUlLi7").onmouseover = function () {
+    //    toPage(7);
+    //}
+    //document.getElementById("pageUlLi8").onmouseover = function () {
+    //    toPage(8);
+    //}
 </script>
-</html>
+
 
