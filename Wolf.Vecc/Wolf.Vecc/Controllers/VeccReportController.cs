@@ -30,6 +30,15 @@ namespace Wolf.Vecc.Controllers
             return View();
         }
 
+        /// <summary>
+        /// 计算成功率
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult CalculatingSuccessRateView()
+        {
+            return View();
+        }
+
         public JsonResult ReportUserMonthRegister(string year)
         {
             return Json(new { data = _reportService.GetReportUserMonthRegister(year) }, JsonRequestBehavior.AllowGet);

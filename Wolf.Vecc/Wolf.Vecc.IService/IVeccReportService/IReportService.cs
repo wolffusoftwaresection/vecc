@@ -20,5 +20,12 @@ namespace Wolf.Vecc.IService.IVeccReportService
         /// </summary>
         /// <param name="year"></param>
         ReportUserMonthRegisterInfo ReportUserMonthRegisterInfo(string year);
+
+        /// <summary>
+        /// 每年每个月的用户计算成功率 曲线图
+        /// </summary>
+        /// <param name="year"></param>
+        /// <returns></returns>
+        CalculatingSuccessRate CalculatingSuccessRateView(string year);
     }
 }

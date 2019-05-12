@@ -17,6 +17,11 @@ namespace Wolf.Vecc.Service.VeccReportService
             _dbServiceReposity = dbServiceReposity;
         }
 
+        public CalculatingSuccessRate CalculatingSuccessRateView(string year)
+        {
+            return null;// _dbServiceReposity
+        }
+
         public TempUserMonthRegister GetReportUserMonthRegister(string year)
         {
             string sql = @"select 

@@ -29,6 +29,12 @@ namespace Wolf.Vecc.Model.ReportModel
         public string Passed { get; set; }
     }
 
+    public class CalculatingSuccessRate
+    {
+        public string Month { get; set; }
+        public string Rate { get; set; }
+    }
+
     public class TempUserMonthRegister
     {
         public string Jan { get; set; }

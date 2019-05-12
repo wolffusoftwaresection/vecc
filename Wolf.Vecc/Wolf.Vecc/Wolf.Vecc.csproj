@@ -391,6 +391,9 @@
     <Content Include="AdminLTE\Highcharts-v5.0.11.js" />
     <Content Include="AdminLTE\highcharts-zh_CN.js" />
     <Content Include="AdminLTE\highcharts.js" />
+    <Content Include="AdminLTE\img\001.png" />
+    <Content Include="AdminLTE\img\002.png" />
+    <Content Include="AdminLTE\img\003.png" />
     <Content Include="AdminLTE\img\loading-sm.gif" />
     <Content Include="AdminLTE\img\loading.gif" />
     <Content Include="AdminLTE\jquery-1.8.2.min.js" />
@@ -1832,6 +1835,7 @@
     <Content Include="Views\Calculation\PemsCalculationResultsView.cshtml" />
     <Content Include="Views\VeccReport\Index.cshtml" />
     <Content Include="Views\VeccReport\ReportUserMonthRegisterView.cshtml" />
+    <Content Include="Views\VeccReport\CalculatingSuccessRateView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AdminLTE\bootstrap\js\ie\" />

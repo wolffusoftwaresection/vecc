@@ -35,7 +35,25 @@ namespace Wolf.Vecc.Controllers
 
         public ActionResult PemsCalculationResultsView(string taskId)
         {
-            return View();
+            var data = _readRstService.ReadTestInfo(Server.MapPath(Result_Root_Url), "b88859c7-dee8-4ec0-bcd5-90c9fa6a71e7");//测试
+            var _json = JsonHelper.SerializeDictionaryToJsonString(data);
+            var pemsTask = _sysPemsTaskService.GetSysPemsTaskByTaskId("4c668a4b-dcfd-4ac8-94ff-8512e5fb4c0f");
+            var taskResult = _sysTaskResultService.GetTaskResultByTaskId("4c668a4b-dcfd-4ac8-94ff-8512e5fb4c0f");
+
+            var tasks = new TaskResultModel
+            {
+                RouteDescription = taskResult.RouteDescription,
+                TaskId = pemsTask.TaskId.ToString(),
+                TestDate = taskResult.TestDate,
+                PlaceTest = taskResult.PlaceTest,
+                TestPerson = taskResult.TestPerson,
+                TestTime = taskResult.TestTime,
+                VehicleType = pemsTask.VehicleType,
+                VehicleModel = pemsTask.VehicleModel
+            };
+
+            ViewBag.Result = _json;
+            return View(tasks);
         }
 
         public ActionResult PemsCalculationResults(string taskId)
