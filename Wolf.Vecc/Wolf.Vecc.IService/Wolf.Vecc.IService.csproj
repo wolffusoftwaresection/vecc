@@ -43,7 +43,9 @@
   <ItemGroup>
     <Compile Include="IReadFileService\IReadRstService.cs" />
     <Compile Include="ISysService\IAccountService.cs" />
+    <Compile Include="ISysService\ISysApprovalDataService.cs" />
     <Compile Include="ISysService\ISysApprovalUserService.cs" />
+    <Compile Include="ISysService\ISysDataService.cs" />
     <Compile Include="ISysService\ISysPemsTaskService.cs" />
     <Compile Include="ISysService\ISysRoleService.cs" />
     <Compile Include="ISysService\ISysTaskResultService.cs" />

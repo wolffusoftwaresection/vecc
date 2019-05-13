@@ -8,7 +8,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>用户计算成功率</title>
+    <title>用户计算数据量</title>
     <link rel="stylesheet" href="~/AdminLTE/bootstrap/css/bootstrap.min.css">
     <script src="~/AdminLTE/js/jquery-3.3.1.min.js"></script>
     <script src="~/AdminLTE/highcharts.js"></script>
@@ -68,7 +68,7 @@
         getForm(new Date().getFullYear());
         var chart = Highcharts.chart('container', {
             chart: {
-                type: 'column',
+                type: 'line',
                 options3d: {
                     enabled: true,
                     alpha: 5,
@@ -93,7 +93,7 @@
                 }
             },
             title: {
-                text: '用户每月计算成功率统计'
+                text: '用户每月计算数量统计'
             },
             subtitle: {
                 text: '数据来源: Vecc后台数据分析'
@@ -106,7 +106,7 @@
             yAxis: {
                 min: 0,
                 title: {
-                    text: '成功率'
+                    text: '计算数量'
                 }
             },
             tooltip: {
@@ -121,16 +121,11 @@
                 column: {
                     borderWidth: 0
                 }, series: {
-                    cursor: 'pointer',
-                    events: {
-                        click: function (e) {
-                            pieClick(e.point.category, this.data[event.point.x].y);
-                        }
-                    }
+                    cursor: 'pointer'
                 }
             },
             series: [{
-                name: '注册人员数量',
+                name: '上传计算数量',
             }],
             exporting: {
                 enabled: true
@@ -143,7 +138,7 @@
         function getForm(years) {
             $.ajax({
                 type: "POST",
-                url: "/VeccReport/ReportUserMonthRegister",
+                url: "/VeccReport/ReportUserCalculatingSuccessNumber",
                 data: { year: years },
                 dataType: "json",
                 success: function (data) {

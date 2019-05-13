@@ -48,5 +48,10 @@ namespace Wolf.Vecc.Controllers
         {
             return Json(new { data = _reportService.ReportUserMonthRegisterInfo(year) }, JsonRequestBehavior.AllowGet);
         }
+
+        public JsonResult ReportUserCalculatingSuccessNumber(string year)
+        {
+            return Json(new { data = _reportService.CalculatingSuccessNumberView(year)}, JsonRequestBehavior.AllowGet);
+        }
     }
 }

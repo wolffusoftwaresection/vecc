@@ -49,7 +49,8 @@ namespace Wolf.Vecc.Controllers
                 TestPerson = taskResult.TestPerson,
                 TestTime = taskResult.TestTime,
                 VehicleType = pemsTask.VehicleType,
-                VehicleModel = pemsTask.VehicleModel
+                VehicleModel = pemsTask.VehicleModel,
+                WhtcPower = pemsTask.WhtcPower.ToString()
             };
 
             ViewBag.Result = _json;
@@ -72,7 +73,8 @@ namespace Wolf.Vecc.Controllers
                 TestPerson = taskResult.TestPerson,
                 TestTime = taskResult.TestTime,
                 VehicleType = pemsTask.VehicleType,
-                VehicleModel = pemsTask.VehicleModel
+                VehicleModel = pemsTask.VehicleModel,
+                WhtcPower = pemsTask.WhtcPower.ToString()
             };
 
             ViewBag.Result = _json;

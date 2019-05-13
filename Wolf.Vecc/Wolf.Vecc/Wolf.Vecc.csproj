@@ -237,6 +237,7 @@
     <Content Include="AdminLTE\comm\_table.js" />
     <Content Include="AdminLTE\Cookie.js" />
     <Content Include="AdminLTE\css\all.css" />
+    <Content Include="AdminLTE\css\awesome-bootstrap-checkbox.css" />
     <Content Include="AdminLTE\css\fileinput-rtl.css" />
     <Content Include="AdminLTE\css\fileinput-rtl.min.css" />
     <Content Include="AdminLTE\css\fileinput.css" />
@@ -396,6 +397,7 @@
     <Content Include="AdminLTE\img\003.png" />
     <Content Include="AdminLTE\img\loading-sm.gif" />
     <Content Include="AdminLTE\img\loading.gif" />
+    <Content Include="AdminLTE\img\sprite.png" />
     <Content Include="AdminLTE\jquery-1.8.2.min.js" />
     <Content Include="AdminLTE\jquery-ui.min.js" />
     <Content Include="AdminLTE\js\fileinput.js" />
@@ -1836,6 +1838,7 @@
     <Content Include="Views\VeccReport\Index.cshtml" />
     <Content Include="Views\VeccReport\ReportUserMonthRegisterView.cshtml" />
     <Content Include="Views\VeccReport\CalculatingSuccessRateView.cshtml" />
+    <Content Include="Views\Approval\RefuseData.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AdminLTE\bootstrap\js\ie\" />

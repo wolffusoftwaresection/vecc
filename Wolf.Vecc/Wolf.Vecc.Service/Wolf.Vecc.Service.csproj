@@ -58,7 +58,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReadFileService\ReadRstService.cs" />
     <Compile Include="SysService\AccountService.cs" />
+    <Compile Include="SysService\SysApprovalDataService.cs" />
     <Compile Include="SysService\SysApprovalUserService.cs" />
+    <Compile Include="SysService\SysDataService.cs" />
     <Compile Include="SysService\SysPemsTaskService.cs" />
     <Compile Include="SysService\SysRoleService.cs" />
     <Compile Include="SysService\SysTaskResultService.cs" />

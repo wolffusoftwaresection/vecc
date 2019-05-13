@@ -17,9 +17,24 @@ namespace Wolf.Vecc.Service.VeccReportService
             _dbServiceReposity = dbServiceReposity;
         }
 
-        public CalculatingSuccessRate CalculatingSuccessRateView(string year)
+        public TempUserMonthRegister CalculatingSuccessNumberView(string year)
         {
-            return null;// _dbServiceReposity
+            string sql = @"select 
+                            sum(case month(systask.create_time) when '1' then 1 else 0 end) as 'Jan',
+                            sum(case month(systask.create_time) when '2' then 1 else 0 end) as 'Feb',
+                            sum(case month(systask.create_time) when '3' then 1 else 0 end) as 'Mar',
+                            sum(case month(systask.create_time) when '4' then 1 else 0 end) as 'Apr',
+                            sum(case month(systask.create_time) when '5' then 1 else 0 end) as 'May',
+                            sum(case month(systask.create_time) when '6' then 1 else 0 end) as 'Jun',
+                            sum(case month(systask.create_time) when '7' then 1 else 0 end) as 'Jul',
+                            sum(case month(systask.create_time) when '8' then 1 else 0 end) as 'Aug',
+                            sum(case month(systask.create_time) when '9' then 1 else 0 end) as 'Sept',
+                            sum(case month(systask.create_time) when '10' then 1 else 0 end) as 'Oct',
+                            sum(case month(systask.create_time) when '11' then 1 else 0 end) as 'Nov',
+                            sum(case month(systask.create_time) when '12' then 1 else 0 end) as 'Dec'
+                        from sys_task systask where 
+                        date_format(systask.create_time, '%Y') = '{0}'";
+            return _dbServiceReposity.Query<TempUserMonthRegister>(string.Format(sql, year), new System.Data.SqlClient.SqlParameter[0]).FirstOrDefault();
         }
 
         public TempUserMonthRegister GetReportUserMonthRegister(string year)

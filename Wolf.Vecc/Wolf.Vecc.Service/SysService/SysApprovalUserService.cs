@@ -16,6 +16,7 @@ namespace Wolf.Vecc.Service.SysService
         {
             _dbServiceReposity = dbServiceReposity;
         }
+
         public int Insert(SysApprovaUser sysApprovaUser)
         {
             return _dbServiceReposity.Add(sysApprovaUser);

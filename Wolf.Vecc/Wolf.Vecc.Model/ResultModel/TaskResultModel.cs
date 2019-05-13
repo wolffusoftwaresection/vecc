@@ -23,5 +23,7 @@ namespace Wolf.Vecc.Model.ResultModel
         public string PlaceTest { get; set; }
 
         public string RouteDescription { get; set; }
+
+        public string WhtcPower { get; set; }
     }
 }

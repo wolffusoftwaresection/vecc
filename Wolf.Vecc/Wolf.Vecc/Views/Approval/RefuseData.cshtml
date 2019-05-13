@@ -1,0 +1,91 @@
+﻿@{
+    Layout = null;
+}
+<link href="~/AdminLTE/bootstrap/css/font-awesome.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="~/AdminLTE/bootstrap/css/bootstrap.min.css">
+
+<!-- DataTables -->
+<link rel="stylesheet" href="~/AdminLTE/plugins/bootstraptable/dist/bootstrap-table.css">
+<!-- Theme style -->
+<link rel="stylesheet" href="~/AdminLTE/dist/css/AdminLTE.min.css">
+<link rel="stylesheet" href="~/AdminLTE/bootstrap/css/bootstrap-switch.css">
+<link href="~/AdminLTE/dist/css/bootstrapValidator.min.css" rel="stylesheet" />
+
+<!-- global stylesheets -->
+<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+<link rel="stylesheet" href="~/AdminLTE/dist/css//bootstrap.min.css">
+<link rel="stylesheet" href="~/AdminLTE/dist/font-awesome-4.7.0/css/font-awesome.min.css">
+@*<link rel="stylesheet" href="~/AdminLTE/dist/css/font-icon-style.css">*@
+<link rel="stylesheet" href="~/AdminLTE/dist/css/style.default.css" id="theme-stylesheet">
+
+
+<!-- AdminLTE Skins. Choose a skin from the css/skins
+     folder instead of downloading all of them to reduce the load. -->
+<!--  <link rel="stylesheet" href="~/AdminLTE/dist/css/skins/_all-skins.min.css">-->
+<!-- iCheck -->
+@*<link rel="stylesheet" href="~/AdminLTE/plugins/iCheck/flat/blue.css">*@
+<!-- bootstrap wysihtml5 - text editor -->
+@*<link rel="stylesheet" href="~/AdminLTE/plugins/summernote-master/dist/summernote.css">*@
+<!-- Morris chart -->
+<link rel="stylesheet" href="~/AdminLTE/plugins/morris/morris.css">
+<!-- jvectormap -->
+<link href="~/AdminLTE/plugins/bootstraptable/dist/bootstrap-table.css" rel="stylesheet" />
+<link rel="stylesheet" href="~/AdminLTE/plugins/jvectormap/jquery-jvectormap-1.2.2.css">
+<!-- Date Picker -->
+<link rel="stylesheet" href="~/AdminLTE/plugins/datepicker/datepicker3.css">
+<link rel="stylesheet" href="~/AdminLTE/plugins/timepicker/bootstrap-timepicker.min.css">
+<link href="~/AdminLTE/bootstrap/css/font-awesome.min.css" rel="stylesheet" />
+<!-- iCheck for checkboxes and radio inputs -->
+@*<link rel="stylesheet" href="~/AdminLTE/plugins/iCheck/all.css">*@
+<!-- Daterange picker -->
+<link rel="stylesheet" href="~/AdminLTE/plugins/daterangepicker/daterangepicker.css">
+@*<link rel="stylesheet" href="~/AdminLTE/plugins/datetimepicker/bootstrap-datetimepicker.min.css">*@
+<!-- bootstrap wysihtml5 - text editor -->
+<link rel="stylesheet" href="~/AdminLTE/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+@*<link rel="stylesheet" href="~/AdminLTE/plugins/datatables/dataTables.bootstrap.css">*@
+
+<link rel="stylesheet" href="~/AdminLTE/plugins/ionslider/ion.rangeSlider.css">
+<!-- ion slider Nice -->
+<link rel="stylesheet" href="~/AdminLTE/plugins/ionslider/ion.rangeSlider.skinNice.css">
+<link rel="stylesheet" href="~/AdminLTE/dist/css/index.css">
+
+<link href="~/AdminLTE/SweetAlert/dist/sweetalert2.css" rel="stylesheet" />
+<script src="~/AdminLTE/plugins/jQuery/jquery-2.2.3.min.js"></script>
+<div class="content tsmodal-content" style="background: white">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box service-box">
+                <div class="form-horizontal">
+                    <div class="box-body">
+                        <input type="hidden" id="Id" value="@ViewBag.Id" />
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label">备注</label>
+                                    <div class="col-sm-8">
+                                        <textarea class="form-control" rows="3" id="remark"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function DoRefuseData() {
+        var id = $("#Id").val();
+        var _remark = $("#remark").val();
+        $.ajax({
+            url: '/Approval/DoRefuseData',
+            type: 'POST',
+            async: false,
+            data: { Id: id, remark: _remark },
+            success: function (data) {
+                parent.$("#tb_DataApproval").bootstrapTable("refresh");
+            }
+        });
+    }
+</script>

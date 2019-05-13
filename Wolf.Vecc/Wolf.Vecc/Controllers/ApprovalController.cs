@@ -18,11 +18,15 @@ namespace Wolf.Vecc.Controllers
     public class ApprovalController : BaseController
     {
         private readonly ISysUserService _userService;
+        private readonly ISysDataService _dataService;
         private readonly ISysApprovalUserService _approvalUserService;
-        public ApprovalController(ISysUserService userService, ISysApprovalUserService approvalUserService)
+        private readonly ISysApprovalDataService _approvalDataService;
+        public ApprovalController(ISysUserService userService, ISysApprovalUserService approvalUserService, ISysDataService dataService, ISysApprovalDataService sysApprovalDataService)
         {
             _userService = userService;
             _approvalUserService = approvalUserService;
+            _approvalDataService = sysApprovalDataService;
+            _dataService = dataService;
         }
 
         // GET: Approval
@@ -40,8 +44,32 @@ namespace Wolf.Vecc.Controllers
             return Json(new { total = count, rows = modelPage }, JsonRequestBehavior.AllowGet);
         }
 
+        public JsonResult DataApprovalList(DataApprovalViewModel dataApprovalViewModel)
+        {
+            var userList = _dataService.GetSysDataList(dataApprovalViewModel);
+
+            var list = from l in userList
+                       join u in _userService.All()
+                       on l.UserId equals u.Id
+                       select new 
+                       {
+                           l.Id,
+                           l.IsPublic,
+                           l.UploadDate,
+                           l.DataName,
+                           l.DataStatus,
+                           l.DataUrl,
+                           u.UserName
+                       };
+
+            var count = list.Count();
+            var modelPage = list.OrderByDescending(o => o.Id)
+                .ToPagedList(dataApprovalViewModel.PageIndex, dataApprovalViewModel.PageSize);
+            return Json(new { total = count, rows = modelPage }, JsonRequestBehavior.AllowGet);
+        }
+
         /// <summary>
-        /// 同意
+        /// 用户同意
         /// </summary>
         /// <returns></returns>
         [HttpPost]
@@ -67,6 +95,44 @@ namespace Wolf.Vecc.Controllers
                     if (_userService.Update(user) > 0)
                     {
                         result = _approvalUserService.Insert(sysApprovaUser) > 0;
+                    }
+                }
+                transaction.Complete();
+            }
+            if (result)
+            {
+                return Success();
+            }
+            return Failure();
+        }
+
+        /// <summary>
+        /// 数据同意
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        public JsonResult AgreeData(int Id)
+        {
+            //更新用户状态为通过审批并记录审批信息表
+            SysApprovaData sysApprovaData = new SysApprovaData
+            {
+                ApprovalDate = DateTime.Now,
+                IsDel = 0,
+                AccountStatus = 3,
+                ApprovalRemark = "",
+                DataId = Id,
+                VeccUserId = WorkUser.UserId
+            };
+            var result = false;
+            using (TransactionScope transaction = new TransactionScope())
+            {
+                var data = _dataService.GetDataById(Id);
+                if (data != null)
+                {
+                    data.DataStatus = 3;
+                    if (_dataService.Update(data) > 0)
+                    {
+                        result = _approvalDataService.Insert(sysApprovaData) > 0;
                     }
                 }
                 transaction.Complete();
@@ -108,6 +174,23 @@ namespace Wolf.Vecc.Controllers
             return View();
         }
 
+        public ActionResult RefuseData(int Id)
+        {
+            ViewBag.Id = Id;
+            return View();
+        }
+
+        public JsonResult ChangePublic(int Id, int Pub)
+        {
+            var data = _dataService.GetDataById(Id);
+            data.IsPublic = Pub == 0 ? 1 : 0;
+            if (_dataService.Update(data) > 0)
+            {
+                return Success();
+            }
+            return Failure();
+        }
+
         public JsonResult DoRefuseUser(int Id, string remark)
         {
             //更新用户状态为通过审批并记录审批信息表
@@ -130,6 +213,39 @@ namespace Wolf.Vecc.Controllers
                     if (_userService.Update(user) > 0)
                     {
                         result = _approvalUserService.Insert(sysApprovaUser) > 0;
+                    }
+                }
+                transaction.Complete();
+            }
+            if (result)
+            {
+                return Success();
+            }
+            return Failure();
+        }
+
+        public JsonResult DoRefuseData(int Id, string remark)
+        {
+            //更新用户状态为通过审批并记录审批信息表
+            SysApprovaData sysApprovaData = new SysApprovaData
+            {
+                ApprovalDate = DateTime.Now,
+                IsDel = 0,
+                AccountStatus = 2,
+                ApprovalRemark = remark,
+                DataId = Id,
+                VeccUserId = WorkUser.UserId
+            };
+            var result = false;
+            using (TransactionScope transaction = new TransactionScope())
+            {
+                var data = _dataService.GetDataById(Id);
+                if (data != null)
+                {
+                    data.DataStatus = 2;
+                    if (_dataService.Update(data) > 0)
+                    {
+                        result = _approvalDataService.Insert(sysApprovaData) > 0;
                     }
                 }
                 transaction.Complete();
