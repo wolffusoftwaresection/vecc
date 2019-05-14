@@ -13,114 +13,115 @@
         <div class="col-md-12">
             <div class="box service-box">
                 <div class="form-horizontal">
-                        <div class="box-body">
-                            <div class="row top-buffer">
-                                <div class="col-md-6 top-buffer">
-                                    <input type="hidden" id="txtID" value="@ViewBag.Id" />
-                                    <div class="form-group">
-                                        <label class="col-sm-6 control-label"> * 整车型号</label>
-                                        <div class="col-sm-5">
-                                            <input type="text" class="form-control" id="txtVehicleModel" placeholder="整车型号">
-                                        </div>
+                    <div class="box-body">
+                        <div class="row top-buffer">
+                            <div class="col-md-6 top-buffer">
+                                <input type="hidden" id="txtID" value="@ViewBag.Id" />
+                                <div class="form-group">
+                                    <label class="col-sm-6 control-label"> * 整车型号</label>
+                                    <div class="col-sm-5">
+                                        <input type="text" class="form-control" id="txtVehicleModel" placeholder="整车型号">
                                     </div>
                                 </div>
-                                <div class="col-md-6 top-buffer">
-                                    <div class="form-group">
-                                        <label class="col-sm-2 control-label">整备质量</label>
-                                        <div class="col-sm-5">
-                                            <input type="text" class="form-control" id="txtVehicleQuality" placeholder="整备质量">
-                                        </div>
-                                        <div class="pull-left"><b>kg</b></div>
+                            </div>
+                            <div class="col-md-6 top-buffer">
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">整备质量</label>
+                                    <div class="col-sm-5">
+                                        <input type="text" class="form-control" id="txtVehicleQuality" placeholder="整备质量">
+                                    </div>
+                                    <div class="pull-left"><b>kg</b></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 top-buffer">
+                                <div class="form-group">
+                                    <label class="col-sm-6 control-label"> * PEMS厂商</label>
+                                    <div class="col-sm-5">
+                                        <select id="txtPemsFactory" name="txtPemsFactory" class="selectpicker show-tick form-control" data-actions-box="true">
+                                            <option value="SENSORS">SENSORS</option>
+                                            <option value="HORIBA">HORIBA</option>
+                                            <option value="AVL">AVL</option>
+                                            <option value="ECU_BOSCH">ECU_BOSCH</option>
+                                            <option value="ECU_DELPHI">ECU_DELPHI</option>
+                                            <option value="Cali_Pal">Cali_Pal</option>
+                                        </select>
                                     </div>
                                 </div>
-                                <div class="col-md-6 top-buffer">
-                                    <div class="form-group">
-                                        <label class="col-sm-6 control-label"> * PEMS厂商</label>
-                                        <div class="col-sm-5">
-                                            <select id="txtPemsFactory" name="txtPemsFactory" class="selectpicker show-tick form-control" data-actions-box="true">
-                                                <option value="SENSORS">SENSORS</option>
-                                                <option value="HORIBA">HORIBA</option>
-                                                <option value="AVL">AVL</option>
-                                                <option value="ECU_BOSCH">ECU_BOSCH</option>
-                                                <option value="ECU_DELPHI">ECU_DELPHI</option>
-                                                <option value="Cali_Pal">Cali_Pal</option>
-                                            </select>
-                                        </div>
+                            </div>
+                            <div class="col-md-6 top-buffer">
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">整车类别</label>
+                                    <div class="col-sm-5">
+                                        <select id="txtVehicleType" name="txtVehicleType" class="selectpicker show-tick form-control" data-actions-box="true">
+                                            <option value="N1,M1">N1,M1</option>
+                                            <option value="N2,M2,M3">N2,M2,M3</option>
+                                            <option value="N3">N3</option>
+                                            <option value="City_Veh">City_Veh</option>
+                                        </select>
                                     </div>
                                 </div>
-                                <div class="col-md-6 top-buffer">
-                                    <div class="form-group">
-                                        <label class="col-sm-2 control-label">整车类别</label>
-                                        <div class="col-sm-5">
-                                            <select id="txtVehicleType" name="txtVehicleType" class="selectpicker show-tick form-control" data-actions-box="true">
-                                                <option value="N1,M1">N1,M1</option>
-                                                <option value="N2,M2,M3">N2,M2,M3</option>
-                                                <option value="N3">N3</option>
-                                                <option value="City_Veh">City_Veh</option>
-                                            </select>
-                                        </div>
+                            </div>
+                            <div class="col-md-6 top-buffer">
+                                <div class="form-group">
+                                    <label class="col-sm-6 control-label"> * WHTC循环功</label>
+                                    <div class="col-sm-5">
+                                        <input type="text" class="form-control" id="txtWHTCPower" placeholder="WHTC循环功">
+                                    </div>
+                                    <div class="pull-left"><b>kw.h</b></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 top-buffer">
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">最大质量</label>
+                                    <div class="col-sm-5">
+                                        <input type="text" class="form-control" id="txtMaxQuality" placeholder="最大质量">
+                                    </div>
+                                    <div class="pull-left"><b>kg</b></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 top-buffer">
+                                <div class="form-group">
+                                    <label class="col-sm-6 control-label"> * 最大参考扭矩</label>
+                                    <div class="col-sm-5">
+                                        @*@Html.TextBoxFor(m => Model.MaxRefTorque, new { @class = "form-control", @placeholder = "最大参考扭矩" })*@
+                                        <input type="text" class="form-control" id="txtMaxRefTorque" placeholder="最大参考扭矩">
+                                    </div>
+                                    <div class="pull-left"><b>N.m</b></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 top-buffer">
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label">载荷百分比</label>
+                                    <div class="col-sm-5">
+                                        @*@Html.TextBoxFor(m => Model.PercentageLoad, new { @class = "form-control", @placeholder = "载荷百分比" })*@
+                                        <input type="text" class="form-control" id="txtPercentageLoad" placeholder="载荷百分比">
+                                    </div>
+                                    <div class="pull-left"><b>%</b></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 top-buffer">
+                                <div class="form-group">
+                                    <label class="col-sm-6 control-label"> * 最大功率</label>
+                                    <div class="col-sm-5">
+                                        <input type="text" class="form-control" id="txtPowerMax" placeholder="最大功率">
+                                    </div>
+                                    <div class="pull-left"><b>kw</b></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 top-buffer">
+                                <div class="form-group">
+                                    <label class="col-sm-2 control-label  pull-left"> * 周期性再生</label>
+                                    <div class="col-sm-2">
+                                        <label class="radio-inline">
+                                            <input type="radio" value="1" onclick="periodicalclick()" name="periodical">是
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" checked value="0" onclick="periodicalclick()" name="periodical">否
+                                        </label>
                                     </div>
                                 </div>
-                                <div class="col-md-6 top-buffer">
-                                    <div class="form-group">
-                                        <label class="col-sm-6 control-label"> * WHTC循环功</label>
-                                        <div class="col-sm-5">
-                                            <input type="text" class="form-control" id="txtWHTCPower" placeholder="WHTC循环功">
-                                        </div>
-                                        <div class="pull-left"><b>kw.h</b></div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 top-buffer">
-                                    <div class="form-group">
-                                        <label class="col-sm-2 control-label">最大质量</label>
-                                        <div class="col-sm-5">
-                                            <input type="text" class="form-control" id="txtMaxQuality" placeholder="最大质量">
-                                        </div>
-                                        <div class="pull-left"><b>kg</b></div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 top-buffer">
-                                    <div class="form-group">
-                                        <label class="col-sm-6 control-label"> * 最大参考扭矩</label>
-                                        <div class="col-sm-5">
-                                            @*@Html.TextBoxFor(m => Model.MaxRefTorque, new { @class = "form-control", @placeholder = "最大参考扭矩" })*@
-                                            <input type="text" class="form-control" id="txtMaxRefTorque" placeholder="最大参考扭矩">
-                                        </div>
-                                        <div class="pull-left"><b>N.m</b></div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 top-buffer">
-                                    <div class="form-group">
-                                        <label class="col-sm-2 control-label">载荷百分比</label>
-                                        <div class="col-sm-5">
-                                            @*@Html.TextBoxFor(m => Model.PercentageLoad, new { @class = "form-control", @placeholder = "载荷百分比" })*@
-                                            <input type="text" class="form-control" id="txtPercentageLoad" placeholder="载荷百分比">
-                                        </div>
-                                        <div class="pull-left"><b>%</b></div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 top-buffer">
-                                    <div class="form-group">
-                                        <label class="col-sm-6 control-label"> * 最大功率</label>
-                                        <div class="col-sm-5">
-                                            <input type="text" class="form-control" id="txtPowerMax" placeholder="最大功率">
-                                        </div>
-                                        <div class="pull-left"><b>kw</b></div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 top-buffer">
-                                    <div class="form-group">
-                                        <label class="col-sm-2 control-label  pull-left"> * 周期性再生</label>
-                                        <div class="col-sm-2">
-                                            <label class="radio-inline">
-                                                <input type="radio" value="1" onclick="periodicalclick()" name="periodical">是
-                                            </label>
-                                            <label class="radio-inline">
-                                                <input type="radio" checked value="0" onclick="periodicalclick()" name="periodical">否
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
+                            </div>
+                            <div class="col-md-6 top-buffer">
                                 <div class="form-group" id="Nox" style="display:none;">
                                     <label class="col-sm-6 control-label">NOx再生因子</label>
                                     <div class="col-sm-5">
@@ -129,6 +130,7 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
                 </div>
             </div>
             <div class="box service-box">
