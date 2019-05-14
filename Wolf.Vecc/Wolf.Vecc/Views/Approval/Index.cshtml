@@ -1,5 +1,5 @@
 ﻿<link href="~/AdminLTE/css/awesome-bootstrap-checkbox.css" rel="stylesheet" />
-<div class="content" id="pageSection" style="background: white; min-height: 10px;">
+<div class="container" id="pageSection" style="background: white; min-height: 5px;">
     <div class="row">
         <div class="col-lg-6">
             <button type="button" class="btn btn-default btn-flat" data-toggle="collapse" data-parent="#accordion" href="#collapseToolSearch">筛选项</button>
@@ -14,7 +14,6 @@
                     <label>审批类型</label>
                 </div>
                 <div class="col-sm-3">
-                    @*onselect="showViewData();"*@
                     <select id="approvaType" name="approvaType" class="selectpicker show-tick form-control" data-actions-box="true">
                         <option value="0">人员审批</option>
                         <option value="1">数据审批</option>
@@ -28,7 +27,7 @@
                     <form class="">
                         <div class="box-body">
                             <div class="row" id="SearchList">
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <div class="form-group form-inline" style="white-space:nowrap">
                                         <label class="col-sm-1">状态</label>
                                         <div class="col-sm-3">
@@ -41,7 +40,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <div class="form-group form-inline" style="white-space:nowrap">
                                         <label class="col-sm-1">姓名</label>
                                         <div class="col-sm-3">
@@ -49,10 +48,13 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="box-footer pull-right class="col-md-4"" id="userComit">
+                                    <button type="button" class="btn btn-dropbox btn-flat" id="screeningBtn" onclick="screeningSearch()">筛选</button>
+                                </div>
                             </div>
 
                             <div class="row" id="dataSearchList" style="display:none;">
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <div class="form-group form-inline" style="white-space:nowrap">
                                         <label class="col-sm-1">状态</label>
                                         <div class="col-sm-3">
@@ -65,7 +67,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                <div class="col-md-4">
                                     <div class="form-group form-inline" style="white-space:nowrap">
                                         <label class="col-sm-1">文件名</label>
                                         <div class="col-sm-3">
@@ -73,14 +75,13 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="box-footer pull-right col-md-4" id="dataComit" style="display:none;">
+                                    <button type="button" class="btn btn-dropbox btn-flat" id="screeningBtn1" onclick="screeningSearch1()">筛选</button>
+                                </div>
                             </div>
                         </div>
-                        <div class="box-footer pull-right" id="userComit">
-                            <button type="button" class="btn btn-dropbox btn-flat" id="screeningBtn" onclick="screeningSearch()">筛选</button>
-                        </div>
-                        <div class="box-footer pull-right" id="dataComit" style="display:none;">
-                            <button type="button" class="btn btn-dropbox btn-flat" id="screeningBtn1" onclick="screeningSearch1()">筛选</button>
-                        </div>
+
+                       
                     </form>
                 </div>
             </div>
@@ -265,7 +266,7 @@
                             button = '<a class="btn btn-info" href="#" onclick="onAgreeData(' + row.Id + ');"><i class="glyphicon"></i>同意</a><a class="btn btn-danger" href="#" onclick="onRefuseData(' + row.Id + ');"><i class="glyphicon"></i>拒绝</a>';
                         }
                        else {
-                            button = '<a class="btn btn-success" href="#" onclick="DataInFo(' + row.Id + ');"><i class="glyphicon"></i>查看</a><a class="btn btn-danger" href="#" onclick="onDelData(' + row.Id + ',\'' + row.DataName + '\');"><i class="glyphicon"></i>删除</a>';
+                            button = '<a class="btn btn-danger" href="#" onclick="onDelData(' + row.Id + ',\'' + row.DataName + '\');"><i class="glyphicon"></i>删除</a>';
                         }
                         return button;
                     }
@@ -476,7 +477,7 @@
             skin: '',
             area: ['30%', '35%'],
             //maxmin: true,
-            content: ['/Approval/RefuseData?id=' + id, "yes"],
+            content: ['/Approval/RefuseData?id=' + id, "no"],
             yes: function (index, layor) {
                 $(layor).find("iframe")[0].contentWindow.onRefuseData();
                 layer.close(index);
@@ -496,7 +497,7 @@
             skin: '',
             area: ['30%', '35%'],
             //maxmin: true,
-            content: ['/Approval/RefuseUser?id=' + id, "yes"],
+            content: ['/Approval/RefuseUser?id=' + id, "no"],
             yes: function (index, layor) {
                 $(layor).find("iframe")[0].contentWindow.DoRefuseUser();
                 layer.close(index);
@@ -540,7 +541,7 @@
             skin: '',
             area: ['50%', '90%'],
             maxmin: true,
-            content: ['/Approval/AddUser', "yes"],
+            content: ['/Approval/AddUser', "no"],
             yes: function (index, layor) {
                 $(layor).find("iframe")[0].contentWindow.VeccAddUser();
                 //layer.close(index);
@@ -560,7 +561,7 @@
             skin: '',
             area: ['60%', '50%'],
             maxmin: true,
-            content: ['/Approval/UserInFo?Id=' + id, "yes"],
+            content: ['/Approval/UserInFo?Id=' + id, "no"],
             yes: function (index, layor) {
                 layer.close(index);
             },
