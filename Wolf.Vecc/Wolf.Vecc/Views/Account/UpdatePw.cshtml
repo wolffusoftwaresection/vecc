@@ -47,40 +47,58 @@
         </div>
     </header>
     <!-- container -->
-    <div class="container">
+    <div class="container text-center">
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <h3 class="section-title"></h3>
                 <p>
 
                 </p>
                 <form id="defaultForm" role="form" action="/User/UpdatePwModel" method="post" class="form-horizontal">
                     <div class="row form-group">
-                        <div class="col col-md-12">
+                        <div class="col-md-4">
+                        </div>
+                        <div class="col-md-4">
                             <div class="input-group">
                                 <div class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></div>
                                 @Html.PasswordFor(m => Model.OldPassword, new { @class = "form-control", @placeholder = "原始" })
                             </div>
                         </div>
+                        <div class="col-md-4">
+                        </div>
                     </div>
                     <div class="row form-group">
-                        <div class="col col-md-12">
+                        <div class="col-md-4">
+                        </div>
+                        <div class="col-md-4">
                             <div class="input-group">
                                 <div class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></div>
                                 @Html.PasswordFor(m => Model.NewPassword, new { @class = "form-control", @placeholder = "新密码" })
                             </div>
                         </div>
+                        <div class="col-md-4">
+                        </div>
                     </div>
                     <div class="row form-group">
-                        <div class="col col-md-12">
+                        <div class="col-md-4">
+                        </div>
+                        <div class="col-md-4">
                             <div class="input-group">
                                 <div class="input-group-addon"><i class="glyphicon glyphicon-asterisk"></i></div>
                                 <input name="confirmPassword" class="form-control" type="password" placeholder="确认新密码" />
                             </div>
                         </div>
+                        <div class="col-md-4">
+                        </div>
                     </div>
                     <div class="row form-group">
-                        <button class="form-control btn btn-primary" id="submit" type="submit">提&nbsp;&nbsp;交</button>
+                        <div class="col-md-4">
+                        </div>
+                        <div class="col-md-4">
+                            <button class="form-control btn btn-primary col-md-4" id="submit" type="submit">提&nbsp;&nbsp;交</button>
+                        </div>
+                        <div class="col-md-4">
+                        </div>
                     </div>
                 </form>
             </div>

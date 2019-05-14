@@ -1,0 +1,69 @@
+﻿@model Wolf.Vecc.Model.SysModel.SysUsers
+<link href="~/AdminLTE/css/style.css" rel="stylesheet" />
+<div class="row">
+    <!-- Column -->
+    <div class="col-lg-4 col-xlg-3 col-md-5">
+        <div class="card">
+            <div class="card-block">
+                <center class="m-t-30">
+                    <img src="/AdminLTE/dist/img/user.png" class="img-circle" width="150">
+                    <h4 class="card-title m-t-10">@Model.UserName</h4>
+                    <h6 class="card-subtitle">@Model.EnterpriseName</h6>
+                </center>
+            </div>
+        </div>
+    </div>
+    <!-- Column -->
+    <!-- Column -->
+    <div class="col-lg-8 col-xlg-9 col-md-7">
+        <div class="card">
+            <div class="card-block">
+                <form class="form-horizontal form-material">
+                    <div class="form-group">
+                        <label class="col-md-12">用户名</label>
+                        <div class="col-md-6">
+                            <input type="text" value="@Model.UserName" readonly id="UserName" class="form-control form-control-line">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="example-email" class="col-md-12">国家</label>
+                        <div class="col-md-6">
+                            <input type="text" readonly value="@Model.Country" class="form-control form-control-line" id="Country">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-12">手机号</label>
+                        <div class="col-md-6">
+                            <input type="text" readonly value="@Model.Phone" id="Phone" class="form-control form-control-line">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-12">企业名称</label>
+                        <div class="col-md-6">
+                            <input type="text" readonly id="EnterpriseName" value="@Model.EnterpriseName" class="form-control form-control-line">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-12">邮箱</label>
+                        <div class="col-md-6">
+                            <input type="text" readonly id="Email" value="@Model.Email" class="form-control form-control-line">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-12">用户类型</label>
+                        <div class="col-sm-6">
+                            <input type="text" readonly id="UserType" value="@ViewBag.userType" class="form-control form-control-line">
+                        </div>
+                    </div>
+                    @*<div class="form-group">
+                            <div class="col-sm-12">
+                                <button class="btn btn-success">Update Profile</button>
+                            </div>
+                        </div>*@
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Column -->
+</div>
+

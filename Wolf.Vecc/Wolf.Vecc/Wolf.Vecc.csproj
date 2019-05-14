@@ -242,6 +242,7 @@
     <Content Include="AdminLTE\css\fileinput-rtl.min.css" />
     <Content Include="AdminLTE\css\fileinput.css" />
     <Content Include="AdminLTE\css\fileinput.min.css" />
+    <Content Include="AdminLTE\css\style.css" />
     <Content Include="AdminLTE\dateConvert.js" />
     <Content Include="AdminLTE\dist\css\AdminLTE.css" />
     <Content Include="AdminLTE\dist\css\AdminLTE.min.css" />
@@ -1839,6 +1840,7 @@
     <Content Include="Views\VeccReport\ReportUserMonthRegisterView.cshtml" />
     <Content Include="Views\VeccReport\CalculatingSuccessRateView.cshtml" />
     <Content Include="Views\Approval\RefuseData.cshtml" />
+    <Content Include="Views\User\ProfileView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AdminLTE\bootstrap\js\ie\" />
@@ -1848,7 +1850,6 @@
     <Folder Include="UpLoadFiles\" />
     <Folder Include="Views\ApprovalUserAsync\" />
     <Folder Include="Views\Comet\" />
-    <Folder Include="Views\User\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

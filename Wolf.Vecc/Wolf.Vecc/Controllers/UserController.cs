@@ -39,5 +39,15 @@ namespace Wolf.Vecc.Controllers
             return Failure("重置失败!");
         }
 
+        /// <summary>
+        /// 用户个人中心
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult ProfileView()
+        {
+            var user = _sysUserService.GetUserById(WorkUser.UserId);
+            ViewBag.userType = VeccModelHelp.GetUserType(user.UserType);
+            return View(user);
+        }
     }
 }
