@@ -428,28 +428,22 @@ new SelectListItem { Text = "塞尔维亚共和国", Value = "塞尔维亚共和
                                         };
             }
             @Html.DropDownListFor(m => Model.Country, list, new { @class = "form-control" })
-            @*@Html.TextBoxFor(m => Model.Country, new { @class = "form-control" })*@
-            @*<input name="country" class="form-control" type="text">*@
         </div>
         <div class="form-group">
             <label for="phone">手机号：</label>
             @Html.TextBoxFor(m => Model.Phone, new { @class = "form-control" })
-            @*<input name="phone" class="form-control" type="text">*@
         </div>
         <div class="form-group">
             <label for="enterpriseName">企业名称：</label>
             @Html.TextBoxFor(m => Model.EnterpriseName, new { @class = "form-control" })
-            @*<input name="enterpriseName" class="form-control" type="text">*@
         </div>
         <div class="form-group">
             <label for="email">邮箱：</label>
             @Html.TextBoxFor(m => Model.Email, new { @class = "form-control" })
-            @*<input name="email" class="form-control" type="text" />*@
         </div>
         <div class="form-group">
             <label for="password">密码：</label>
             @Html.PasswordFor(m => Model.Password, new { @class = "form-control" })
-            @*<input name="password" class="form-control" type="text" />*@
         </div>
         <div class="form-group">
             <label for="confirmPassword">确认密码：</label>
@@ -590,19 +584,10 @@ new SelectListItem { Text = "塞尔维亚共和国", Value = "塞尔维亚共和
                     }
                 }
             }).on('success.form.bv', function (e, data) {//点击提交之后
-                // Prevent form submission
                 e.preventDefault();
-
-                // Get the form instance
                 var $form = $(e.target);
-
-                // Get the BootstrapValidator instance
                 var bv = $form.data('bootstrapValidator');
-                //$("#defaultForm").data('bootstrapValidator').destroy();
-                //$('#defaultForm').data('bootstrapValidator', null);
                 $("#defaultForm").data('bootstrapValidator').resetForm();//清除当前验证的关键之处
-                //$("#defaultForm").modal("hide");
-                // Use Ajax to submit form data 提交至form标签中的action，result自定义
                 $.post($form.attr('action'), $form.serialize(), function (result) {
                     $('#reset').click();
                     msg.info(result.Success);
@@ -612,6 +597,5 @@ new SelectListItem { Text = "塞尔维亚共和国", Value = "塞尔维亚共和
 
     function VeccAddUser() {
         $('#submit').click();
-        //$('#defaultForm').bootstrapValidator('resetForm');
     }
 </script>

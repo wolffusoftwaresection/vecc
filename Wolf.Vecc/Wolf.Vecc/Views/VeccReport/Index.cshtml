@@ -5,14 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <title>审核数据统计</title>
-    @*<link href="~/Content/css/report.css" rel="stylesheet"/>
-    <link href="~/Content/css/style.default.css" rel="stylesheet"/>
-    <link href="~/Content/css/card.css" rel="stylesheet" />
-    <link href="~/Content/css/style.css" rel="stylesheet" />
-    <link href="~/Content/css/font-awesome.min.css" rel="stylesheet" />
-    <link href="~/Content/css/font-icon-style.css" rel="stylesheet">*@
     <link href="~/assets/css/style.css" rel="stylesheet" />
-   
 </head>
 <body boby >
     <aside id="left-panel" class="left-panel">
@@ -30,59 +23,29 @@
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-area-chart"></i>数据报表</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-map-o"></i><a href="maps-gmap.html">Google Maps</a></li>
-                            <li><i class="menu-icon fa fa-street-view"></i><a href="maps-vector.html">Vector Maps</a></li>
+                            <li><i class="menu-icon fa fa-map-o"></i><a href='@Url.Content("~/VeccReport/ReportDataMonthView")' target="iframe_a">每月审核数据量统计</a></li>
+                            @*<li><i class="menu-icon fa fa-street-view"></i><a href="maps-vector.html">Vector Maps</a></li>*@
                         </ul>
                     </li>
                 </ul>
-            </div><!-- /.navbar-collapse -->
+            </div>
         </nav>
     </aside>
-    @*<div id="right-panel" class="right-panel">*@
     <div id="right-panel" style="margin-top:0px;" class="right-panel">
         <div class="content" style="padding:0px;margin:0,0;">
             <div class="animated fadeIn">
                 <div class="buttons">
-                    <!-- Left Block -->
                     <div class="row" style="margin-right:0px;margin-left:0px;">
                         <div class="col-md-12">
-                            <iframe scrolling="no" src='@Url.Content("~/VeccReport/ReportUserMonthRegisterView")' name="iframe_a" class="" frameborder="0" style="width:100%;height:500px;">
+                            <iframe scrolling="no" src='@Url.Content("~/VeccReport/ReportUserMonthRegisterView")' name="iframe_a" class="" frameborder="0" style="width:100%;height:600px;">
                             </iframe>
                         </div>
-                    </div><!-- .row -->
-                </div> <!-- .buttons -->
-            </div><!-- .animated -->
-        </div><!-- .content -->
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="clearfix" scroll:no;></div>
     </div>
-    <!-- .content -->
-    @*</div>*@
-    @*<div class="bg">
-            <div class="page-content d-flex align-items-stretch">
-                <nav class="side-navbar">
-                    <ul class="list-unstyled">
-                        <li>
-                            <a href="#apps" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>人员报表 </a>
-                            <ul id="apps" class="collapse list-unstyled">
-                                <li><a href="calendar.html">每月用户注册数</a></li>
-                                <li><a href="email.html">Email</a></li>
-                                <li><a href="media.html">Media</a></li>
-                                <li><a href="invoice.html">Invoice</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#forms" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>数据报表 </a>
-                            <ul id="forms" class="collapse list-unstyled">
-                                <li><a href="calendar.html">每月用户注册数</a></li>
-                                <li><a href="email.html">Email</a></li>
-                                <li><a href="media.html">Media</a></li>
-                                <li><a href="invoice.html">Invoice</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </div>*@
     <style type="text/css">
         .tab_tiele {
             font-size: 24px;

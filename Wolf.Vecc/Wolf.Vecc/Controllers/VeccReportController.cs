@@ -31,6 +31,15 @@ namespace Wolf.Vecc.Controllers
         }
 
         /// <summary>
+        /// 每月审核数据量统计
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult ReportDataMonthView()
+        {
+            return View();
+        }
+
+        /// <summary>
         /// 计算成功率
         /// </summary>
         /// <returns></returns>

@@ -3,20 +3,17 @@
 }
 <form id="form1" runat="server">
     <div>
-        <input type="hidden" id="taskId" value="@ViewBag.Id" />
+        <input type="hidden" id="taskId" value="@ViewBag.Id" />   
         <div align="center" id="loadImg">
             <br />
             <br />
             <br />
             <br />
-            <input type="image" src="~/Content/loading.gif" style="height:200px;width:200px;" />
+            <input type="image" src="~/Conten t/loading.gif" style="height:200px;width:200px;" />
             <br />
             <label id="labload"></label>
         </div>
     </div>
-    @*<div style="width: 522px; margin-left: auto; margin-right: auto;">
-            <img src="../Img/p_logo.jpg" width="522" height="183" />
-        </div>*@
 </form>
 <script src="~/AdminLTE/plugins/jQuery/jquery-2.2.3.min.js"></script>
 <script src="~/AdminLTE/plugins/layer/layer.js"></script>
@@ -33,12 +30,12 @@
             if (data.result) {
                 $("#labload").text(data.result);
                 if (data.status) {
-                    if (data.status >= 6) {
+                    if (data.status >= 6) {//计算成功
                         var index = parent.layer.getFrameIndex(window.name); //获取窗口索引
                         //parent.layer.close(index);
                         parent.CalculationResult(taskid, index);
                     }
-                    if (data.status == -23) {
+                    if (data.status == -23) {//计算失败
                         setTimeout(function () {
                             var index = parent.layer.getFrameIndex(window.name);
                             parent.layer.close(index);
