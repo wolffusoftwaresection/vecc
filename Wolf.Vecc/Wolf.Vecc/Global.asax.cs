@@ -34,32 +34,42 @@ namespace Wolf.Vecc
             }
         }
 
-        protected void Application_EndRequest()
-        {
-            Exception lastError = Server.GetLastError();
-            if (lastError != null)
-            {
-                //异常信息
-                string strExceptionMessage = string.Empty;
+        //protected void Application_Error(object sender, EventArgs e)
+        //{
+        //    Exception exception = Server.GetLastError();
+        //    //Server.ClearError();
+        //    //跳转到指定的自定义错误页
+        //    Response.Redirect("/Error/HttpError");
+        //}
 
-                //对HTTP 404做额外处理，其他错误全部当成500服务器错误
-                HttpException httpError = lastError as HttpException;
-                if (httpError != null)
-                {
-                    //获取错误代码
-                    int httpCode = httpError.GetHttpCode();
-                    strExceptionMessage = httpError.Message;
-                    if (httpCode == 400 || httpCode == 404)
-                    {
-                        Response.StatusCode = 404;
-                        //跳转到指定的静态404信息页面，根据需求自己更改URL
-                        //Response.RedirectToRoute("Default", new { controller = "Error", action = "HttpError" });
-                        Response.WriteFile("~/Error/NotFound.html");
-                        Server.ClearError();
-                        return;
-                    }
-                }
-            }
-        }
+        //protected void Application_EndRequest()
+        //{
+        //Exception lastError = Server.GetLastError();
+        //if (lastError != null)
+        //{
+        //异常信息
+        //string strExceptionMessage = string.Empty;
+        // Server.ClearError();
+        //Server.Transfer("~/Error/NotFound.html");
+        //return;
+        //对HTTP 404做额外处理，其他错误全部当成500服务器错误
+        //HttpException httpError = lastError as HttpException;
+        //if (httpError != null)
+        //{
+        //    //获取错误代码
+        //    int httpCode = httpError.GetHttpCode();
+        //    strExceptionMessage = httpError.Message;
+        //    if (httpCode == 400 || httpCode == 404)
+        //    {
+        //        Response.StatusCode = 404;
+        //        //跳转到指定的静态404信息页面，根据需求自己更改URL
+        //        //Response.RedirectToRoute("Default", new { controller = "Error", action = "HttpError" });
+        //        Response.WriteFile("~/Error/NotFound.html");
+        //        Server.ClearError();
+        //        return;
+        //    }
+        //}
+        //}
+        //}
     }
 }

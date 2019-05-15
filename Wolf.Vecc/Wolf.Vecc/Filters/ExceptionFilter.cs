@@ -11,7 +11,7 @@ using Wolf.Vecc.Comm.NlogExtent;
 
 namespace Wolf.Vecc.Filters
 {
-    public class ExceptionFilter : HandleErrorAttribute
+    public class ExceptionFilter : HandleErrorAttribute, IExceptionFilter
     {
         public override void OnException(ExceptionContext filterContext)
         {
@@ -34,10 +34,11 @@ namespace Wolf.Vecc.Filters
             //#endregion
 
             //告诉MVC框架异常被处理
-            //filterContext.HttpContext.Response.Redirect("~/Error/NotFound.html");
-            filterContext.Result = new RedirectToRouteResult("Default", new RouteValueDictionary(new { controller = "Account", action = "Login" }), true);
-            base.OnException(filterContext);
-            
+            filterContext.HttpContext.Response.WriteFile("~/ErrorPage.html");
+            //跳转到自定义的错误页,增强用户体验。
+            //ActionResult result = new ViewResult() { ViewName = "HttpError" };
+            //filterContext.Result = result;
+            //异常处理结束后,一定要将ExceptionHandled设置为true,否则仍然会继续抛出错误。
             filterContext.ExceptionHandled = true;
         }
     }

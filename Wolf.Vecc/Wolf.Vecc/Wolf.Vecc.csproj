@@ -238,6 +238,7 @@
     <Content Include="AdminLTE\Cookie.js" />
     <Content Include="AdminLTE\css\all.css" />
     <Content Include="AdminLTE\css\awesome-bootstrap-checkbox.css" />
+    <Content Include="AdminLTE\css\blue.css" />
     <Content Include="AdminLTE\css\fileinput-rtl.css" />
     <Content Include="AdminLTE\css\fileinput-rtl.min.css" />
     <Content Include="AdminLTE\css\fileinput.css" />
@@ -1660,6 +1661,7 @@
     <Content Include="Content\loading.gif" />
     <Content Include="Content\style.css" />
     <Content Include="Content\TableStyle.css" />
+    <Content Include="ErrorPage.html" />
     <Content Include="Error\NotFound.html" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />

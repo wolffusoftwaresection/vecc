@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace Wolf.Vecc.Controllers
 {
+    [AllowAnonymous]
     public class ErrorController : Controller
     {
         // GET: Error
@@ -19,6 +20,7 @@ namespace Wolf.Vecc.Controllers
         {
             return View("Error");
         }
+
         //[NoOnAction]
         public ActionResult NotFound()
         {
