@@ -135,6 +135,8 @@
 
                 $("#userComit").show();
                 $("#dataComit").hide();
+
+                $("#addUser").show();
             } else {
                 $("#userApproval").hide();
                 $("#dataApproval").show();
@@ -144,6 +146,8 @@
 
                 $("#userComit").hide();
                 $("#dataComit").show();
+
+                $("#addUser").hide();
                 if (!fal) { //第一次加载tb_DataApproval
                     initDataApproval();
                     //$("[name='my-checkbox']").bootstrapSwitch();
