@@ -27,5 +27,19 @@ namespace Wolf.Vecc.IService.IVeccReportService
         /// <param name="year"></param>
         /// <returns></returns>
         TempUserMonthRegister CalculatingSuccessNumberView(string year);
+
+        /// <summary>
+        /// 每月审核数据量统计 柱状图
+        /// </summary>
+        /// <param name="year"></param>
+        /// <returns></returns>
+        TempDataMonthRegister GetReportDataMonthRegister(string year);
+
+        /// <summary>
+        ///  获取某一年某一月的上传数据审批状态结果数量 饼图
+        /// </summary>
+        /// <param name="year"></param>
+        /// <returns></returns>
+        ReportDataMonthUploadInfo ReportDataMonthUploadInfo(string year); 
     }
 }

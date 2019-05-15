@@ -22,6 +22,8 @@ namespace Wolf.Vecc.Model.ReportModel
         public int RegisterCount { get; set; }
     }
 
+    public class ReportDataMonthUploadInfo:ReportUserMonthRegisterInfo{}
+
     public class ReportUserMonthRegisterInfo
     {
         public string Pending { get; set; }
@@ -34,6 +36,8 @@ namespace Wolf.Vecc.Model.ReportModel
         public string Month { get; set; }
         public string Number { get; set; }
     }
+
+    public class TempDataMonthRegister: TempUserMonthRegister{ }
 
     public class TempUserMonthRegister
     {
