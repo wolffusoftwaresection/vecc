@@ -1,4 +1,3 @@
-F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Model\bin\Release\NLog.config
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Model\bin\Release\Wolf.Vecc.Model.dll
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Model\bin\Release\Wolf.Vecc.Model.pdb
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Model\bin\Release\Wolf.Vecc.Core.dll
