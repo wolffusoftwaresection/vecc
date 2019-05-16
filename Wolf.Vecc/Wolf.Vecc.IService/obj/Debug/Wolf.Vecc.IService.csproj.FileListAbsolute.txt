@@ -17,3 +17,4 @@ D:\工作资料\PEMS\VECC Program\Wolf.Vecc\Wolf.Vecc.IService\obj\Debug\Wolf.Ve
 D:\工作资料\PEMS\VECC Program\Wolf.Vecc\Wolf.Vecc.IService\obj\Debug\Wolf.Vecc.IService.csproj.CopyComplete
 D:\工作资料\PEMS\VECC Program\Wolf.Vecc\Wolf.Vecc.IService\obj\Debug\Wolf.Vecc.IService.dll
 D:\工作资料\PEMS\VECC Program\Wolf.Vecc\Wolf.Vecc.IService\obj\Debug\Wolf.Vecc.IService.pdb
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.IService\bin\Debug\NLog.config
