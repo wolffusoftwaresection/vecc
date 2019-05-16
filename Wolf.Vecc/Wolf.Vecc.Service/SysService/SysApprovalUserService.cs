@@ -17,6 +17,16 @@ namespace Wolf.Vecc.Service.SysService
             _dbServiceReposity = dbServiceReposity;
         }
 
+        public int BatchInsert(List<SysApprovaUser> sysApprovaUsers)
+        {
+            return _dbServiceReposity.AddRange(sysApprovaUsers);
+        }
+
+        public SysApprovaUser GetSysApprovaUserByUserId(int userId)
+        {
+            return _dbServiceReposity.Where<SysApprovaUser>(u => u.UserId == userId).OrderByDescending(u => u.ApprovalDate).FirstOrDefault();
+        }
+
         public int Insert(SysApprovaUser sysApprovaUser)
         {
             return _dbServiceReposity.Add(sysApprovaUser);

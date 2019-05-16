@@ -153,5 +153,72 @@ namespace Wolf.Vecc.Data.DataService
         {
             return _dbContext.Database.SqlQuery<T>(sql, paramseters);
         }
+
+        public int AddRange<T>(List<T> list) where T : class
+        {
+            int num = 0;
+            if (list.Count() > 0)
+            {
+                foreach (var item in list)
+                {
+                    PropertyInfo createDate = typeof(T).GetProperty("CreateDate");
+                    PropertyInfo approvalDate = typeof(T).GetProperty("ApprovalDate");
+                    PropertyInfo uploadDate = typeof(T).GetProperty("UploadDate");
+                    PropertyInfo isDeleted = typeof(T).GetProperty("IsDel");
+                    //默认数据
+                    if (createDate != null)
+                    {
+                        createDate.SetValue(item, DateTime.Now);
+                    }
+                    if (approvalDate != null)
+                    {
+                        approvalDate.SetValue(item, DateTime.Now);
+                    }
+                    if (uploadDate != null)
+                    {
+                        uploadDate.SetValue(item, DateTime.Now);
+                    }
+                    if (isDeleted != null)
+                    {
+                        isDeleted.SetValue(item, 0);//添加时默认设置为未删除
+                    }
+                    _dbContext.Set<T>().Add(item);
+                }
+                num = SaveChanges();
+            }
+            return num;
+        }
+
+        public int UpdateRange<T>(IEnumerable<T> enumerable) where T : class
+        {
+            int num = 0;
+            if (enumerable.Count() > 0)
+            {
+                foreach (var item in enumerable)
+                {
+                    num += Update<T>(item);
+                }
+            }
+            return num;
+        }
+
+        public int DeleteRange<T>(List<T> list) where T : class
+        {
+            int num = 0;
+            if (list.Count() > 0)
+            {
+                foreach (var item in list)
+                {
+                    num += Delete<T>(item);
+                }
+            }
+            return num;
+        }
+
+        public int UpdateByExpression<T>(Expression<Func<T, T>> updateExpression, Expression<Func<T, bool>> filterExpression = null) where T : class
+        {
+            var source = filterExpression == null ? _dbContext.Set<T>() : _dbContext.Set<T>().Where(filterExpression);
+            return source.Update(updateExpression);
+        }
     }
 }

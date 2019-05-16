@@ -57,7 +57,7 @@
             <div class="box service-box">
                 <div class="form-horizontal">
                     <div class="box-body">
-                        <input type="hidden" id="Id" value="@ViewBag.Id" />
+                        <input type="hidden" id="Id" value="@ViewBag.Ids" />
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-group">
@@ -75,14 +75,14 @@
     </div>
 </div>
 <script>
-    function onRefuseData1() {
+    function DoRefuseBatchData() {
         var id = $("#Id").val();
         var _remark = $("#remark").val();
         $.ajax({
-            url: '/Approval/DoRefuseData',
+            url: "/Approval/BatchRefuseData",
             type: 'POST',
             async: false,
-            data: { Id: id, remark: _remark },
+            data: { ids: id, remark: _remark },
             success: function (data) {
                 parent.$("#tb_DataApproval").bootstrapTable("refresh");
             }

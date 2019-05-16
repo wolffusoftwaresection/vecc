@@ -17,6 +17,17 @@ namespace Wolf.Vecc.Service.SysService
             _dbServiceReposity = dbServiceReposity;
         }
 
+        public int BatchDelete(string ids)
+        {
+            string sql = @"delete FROM sys_approva_data WHERE date_id in ({0})";
+            return _dbServiceReposity.ExecuteSqlCommand(string.Format(sql, ids), new System.Data.SqlClient.SqlParameter[0]);
+        }
+
+        public int BatchInsert(List<SysApprovaData> sysApprovaDatas)
+        {
+            return _dbServiceReposity.AddRange(sysApprovaDatas);
+        }
+
         public int Insert(SysApprovaData sysApprovaData)
         {
             return _dbServiceReposity.Add(sysApprovaData);

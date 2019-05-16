@@ -44,5 +44,17 @@ namespace Wolf.Vecc.Service.SysService
         {
             return _dbServiceReposity.Update(sysData);
         }
+
+        public int BatchUpdataData(string sysDatas, int state)
+        {
+            string sql = @"UPDATE sys_data SET data_status = {0} WHERE Id in ({1})";
+            return _dbServiceReposity.ExecuteSqlCommand(string.Format(sql, state, sysDatas), new System.Data.SqlClient.SqlParameter[0]);
+        }
+
+        public int BatchDelete(string Ids)
+        {
+            string sql = @"UPDATE sys_data SET IsDel = 1 WHERE Id in ({0})";
+            return _dbServiceReposity.ExecuteSqlCommand(string.Format(sql, Ids), new System.Data.SqlClient.SqlParameter[0]);
+        }
     }
 }

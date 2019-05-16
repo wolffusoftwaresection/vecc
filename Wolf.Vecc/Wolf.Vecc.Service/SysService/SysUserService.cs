@@ -25,6 +25,18 @@ namespace Wolf.Vecc.Service.SysService
             return _dbServiceReposity.All<SysUsers>().Where(d => d.IsDel == 0).ToList();
         }
 
+        public int BatchDelete(string ids)
+        {
+            string sql = @"UPDATE sys_user SET IsDel = 1 WHERE Id in ({0})";
+            return _dbServiceReposity.ExecuteSqlCommand(string.Format(sql, ids), new System.Data.SqlClient.SqlParameter[0]);
+        }
+
+        public int BatchUpdataUser(string sysUsers, int state)
+        {
+            string sql = @"UPDATE sys_user SET account_status = {0} WHERE Id in ({1})";
+            return _dbServiceReposity.ExecuteSqlCommand(string.Format(sql, state, sysUsers), new System.Data.SqlClient.SqlParameter[0]);
+        }
+
         public int GetApprovalNumber()
         {
             return _dbServiceReposity.Where<SysUsers>(d => d.IsDel == 0 && d.AccountStatus == 1).Count();

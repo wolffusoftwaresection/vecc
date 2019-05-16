@@ -17,6 +17,24 @@ namespace Wolf.Vecc.Data.DataService
         int Delete<T>(T t) where T : class;
         #endregion
 
+        #region 批量操作
+        int AddRange<T>(List<T> list) where T : class;
+
+        int UpdateRange<T>(IEnumerable<T> enumerable) where T : class;
+
+        int DeleteRange<T>(List<T> list) where T : class;
+
+        /// <summary>
+        /// 对象update方法只能根据对象id更新;该方法可先以多条件查询后得到的对象集合后更新;不需要对象参数;
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="updateExpression"></param>
+        /// <param name="filterExpression"></param>
+        /// <returns></returns>
+        int UpdateByExpression<T>(Expression<Func<T, T>> updateExpression,
+            Expression<Func<T, bool>> filterExpression = null) where T : class;
+        #endregion
+
         #region where条件操作
         IEnumerable<T> GetWhereSearch<T>(Expression<Func<T, bool>> where) where T : class;
 

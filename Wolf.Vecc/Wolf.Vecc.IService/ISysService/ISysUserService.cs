@@ -27,5 +27,9 @@ namespace Wolf.Vecc.IService.ISysService
         SysUsers GetUserById(int Id);
 
         int GetApprovalNumber();
+
+        int BatchDelete(string ids);
+
+        int BatchUpdataUser(string sysUsers, int state);
     }
 }

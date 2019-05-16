@@ -10,5 +10,9 @@ namespace Wolf.Vecc.IService.ISysService
     public interface ISysApprovalDataService
     {
         int Insert(SysApprovaData sysApprovaData);
+
+        int BatchInsert(List<SysApprovaData> sysApprovaDatas);
+
+        int BatchDelete(string ids);
     }
 }

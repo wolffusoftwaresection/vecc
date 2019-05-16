@@ -136,6 +136,7 @@ namespace Wolf.Vecc.Controllers
                 Salt = salt,
                 AccountStatus = 1,
                 Country = registerModel.Country,
+                CreateDate = DateTime.Now
             };
             if (_accountService.InsertSysUser(sysUsers) > 0)
             {
@@ -160,6 +161,7 @@ namespace Wolf.Vecc.Controllers
                 Salt = salt,
                 AccountStatus = 3,//vecc后台添加的检测机构账号默认通过验证
                 Country = registerModel.Country,
+                CreateDate = DateTime.Now
             };
             if (_accountService.InsertSysUser(sysUsers) > 0)
             {

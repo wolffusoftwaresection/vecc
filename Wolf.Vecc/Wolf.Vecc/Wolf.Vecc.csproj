@@ -1844,6 +1844,8 @@
     <Content Include="Views\Approval\RefuseData.cshtml" />
     <Content Include="Views\User\ProfileView.cshtml" />
     <Content Include="Views\VeccReport\ReportDataMonthView.cshtml" />
+    <Content Include="Views\Approval\RefuseBatchUserView.cshtml" />
+    <Content Include="Views\Approval\RefuseBatchDataView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AdminLTE\bootstrap\js\ie\" />

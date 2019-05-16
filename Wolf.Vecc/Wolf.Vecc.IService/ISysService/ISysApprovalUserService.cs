@@ -10,5 +10,9 @@ namespace Wolf.Vecc.IService.ISysService
     public interface ISysApprovalUserService
     {
         int Insert(SysApprovaUser sysApprovaUser);
+
+        int BatchInsert(List<SysApprovaUser> sysApprovaUsers);
+
+        SysApprovaUser GetSysApprovaUserByUserId(int userId);
     }
 }

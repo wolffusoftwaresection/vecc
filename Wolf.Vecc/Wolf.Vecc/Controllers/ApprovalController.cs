@@ -107,6 +107,206 @@ namespace Wolf.Vecc.Controllers
         }
 
         /// <summary>
+        /// 用户批量拒绝
+        /// </summary>
+        /// <param name="ids"></param>
+        /// <param name="remark"></param>
+        /// <returns></returns>
+        public ActionResult BatchRefuseUser(string ids, string remark)
+        {
+            List<SysApprovaUser> list = new List<SysApprovaUser>();
+            var _ids = ids.Split(',');
+            if (_ids.Length > 0)
+            {
+                for (int i = 0; i < _ids.Length; i++)
+                {
+                    list.Add(new SysApprovaUser
+                    {
+                        ApprovalDate = DateTime.Now,
+                        IsDel = 0,
+                        AccountStatus = 2,
+                        ApprovalRemark = remark,
+                        UserId = int.Parse(_ids[i]),
+                        VeccUserId = WorkUser.UserId
+                    });
+                }
+                //更新用户状态为通过审批并记录审批信息表
+                var result = false;
+                using (TransactionScope transaction = new TransactionScope())
+                {
+                    if (_userService.BatchUpdataUser(ids, 2) > 0)
+                    {
+                        // _approvalDataService.BatchDelete(ids);
+                        result = _approvalUserService.BatchInsert(list) > 0;
+                    }
+                    transaction.Complete();
+                }
+                if (result)
+                {
+                    return Success();
+                }
+                return Failure();
+            }
+            return Failure();
+        }
+
+        /// <summary>
+        /// 数据批量拒绝
+        /// </summary>
+        /// <param name="ids"></param>
+        /// <returns></returns>
+        public ActionResult BatchRefuseData(string ids, string remark)
+        {
+            List<SysApprovaData> list = new List<SysApprovaData>();
+            var _ids = ids.Split(',');
+            if (_ids.Length > 0)
+            {
+                for (int i = 0; i < _ids.Length; i++)
+                {
+                    list.Add(new SysApprovaData
+                    {
+                        ApprovalDate = DateTime.Now,
+                        IsDel = 0,
+                        AccountStatus = 2,
+                        ApprovalRemark = remark,
+                        DataId = int.Parse(_ids[i]),
+                        VeccUserId = WorkUser.UserId
+                    });
+                }
+                //更新用户状态为通过审批并记录审批信息表
+                var result = false;
+                using (TransactionScope transaction = new TransactionScope())
+                {
+                    if (_dataService.BatchUpdataData(ids, 2) > 0)
+                    {
+                       // _approvalDataService.BatchDelete(ids);
+                        result = _approvalDataService.BatchInsert(list) > 0;
+                    }
+                    transaction.Complete();
+                }
+                if (result)
+                {
+                    return Success();
+                }
+                return Failure();
+            }
+            return Failure();
+        }
+
+        /// <summary>
+        /// 用户批量删除
+        /// </summary>
+        /// <param name="ids"></param>
+        /// <returns></returns>
+        public ActionResult BatchDelUser(string ids)
+        {
+            if (_userService.BatchDelete(ids) > 0)
+            {
+                return Success();
+            }
+            return Failure();
+        }
+
+        /// <summary>
+        /// 数据批量删除
+        /// </summary>
+        /// <param name="ids"></param>
+        /// <returns></returns>
+        public ActionResult BatchDelData(string ids)
+        {
+            if (_dataService.BatchDelete(ids) > 0)
+            {
+                return Success();
+            }
+            return Failure();
+        }
+
+        /// <summary>
+        /// 用户批量同意操作
+        /// </summary>
+        /// <param name="ids"></param>
+        /// <returns></returns>
+        public ActionResult BatchAgreeUser(string ids)
+        {
+            List<SysApprovaUser> list = new List<SysApprovaUser>();
+            var _ids = ids.Split(',');
+            if (_ids.Length > 0)
+            {
+                for (int i = 0; i < _ids.Length; i++)
+                {
+                    list.Add(new SysApprovaUser
+                    {
+                        ApprovalDate = DateTime.Now,
+                        IsDel = 0,
+                        AccountStatus = 3,
+                        ApprovalRemark = "",
+                        UserId = int.Parse(_ids[i]),
+                        VeccUserId = WorkUser.UserId
+                    });
+                }
+                //更新用户状态为通过审批并记录审批信息表
+                var result = false;
+                using (TransactionScope transaction = new TransactionScope())
+                {
+                    if (_userService.BatchUpdataUser(ids, 3) > 0)
+                    {
+                        result = _approvalUserService.BatchInsert(list) > 0;
+                    }
+                    transaction.Complete();
+                }
+                if (result)
+                {
+                    return Success();
+                }
+                return Failure();
+            }
+            return Failure();
+        }
+
+        /// <summary>
+        ///数据批量同意操作
+        /// </summary>
+        /// <param name="ids"></param>
+        /// <returns></returns>
+        public ActionResult BatchAgreeData(string ids)
+        {
+            List<SysApprovaData> list = new List<SysApprovaData>();
+            var _ids = ids.Split(',');
+            if (_ids.Length > 0)
+            {
+                for (int i = 0; i < _ids.Length; i++)
+                {
+                    list.Add(new SysApprovaData
+                    {
+                        ApprovalDate = DateTime.Now,
+                        IsDel = 0,
+                        AccountStatus = 3,
+                        ApprovalRemark = "",
+                        DataId = int.Parse(_ids[i]),
+                        VeccUserId = WorkUser.UserId
+                    });
+                }
+                //更新用户状态为通过审批并记录审批信息表
+                var result = false;
+                using (TransactionScope transaction = new TransactionScope())
+                {
+                    if (_dataService.BatchUpdataData(ids, 3) > 0)
+                    {
+                        //_approvalDataService.BatchDelete(ids);
+                        result = _approvalDataService.BatchInsert(list) > 0;
+                    }
+                    transaction.Complete();
+                }
+                if (result)
+                {
+                    return Success();
+                }
+                return Failure();
+            }
+            return Failure();
+        }
+
+        /// <summary>
         /// 数据同意
         /// </summary>
         /// <returns></returns>
@@ -156,6 +356,20 @@ namespace Wolf.Vecc.Controllers
             {
                 user.IsDel = 1;
                 if (_userService.Update(user) > 0)
+                {
+                    return Success();
+                }
+            }
+            return Failure();
+        }
+
+        public JsonResult DeleteData(int Id)
+        {
+            var data = _dataService.GetDataById(Id);
+            if (data != null)
+            {
+                data.IsDel = 1;
+                if (_dataService.Update(data) > 0)
                 {
                     return Success();
                 }
@@ -267,11 +481,28 @@ namespace Wolf.Vecc.Controllers
             var user = _userService.GetUserById(Id);
             ViewBag.userType = VeccModelHelp.GetUserType(user.UserType);
             ViewBag.accountStatus = VeccModelHelp.GetAccountStatus(user.AccountStatus);
+            //如果详情用户未通过获取未通过原因
+            if (user.AccountStatus == 2)
+            {
+                ViewBag.Reason = _approvalUserService.GetSysApprovaUserByUserId(Id).ApprovalRemark;
+            }
             return View(user);
         }
 
         public ActionResult AddUser()
         {
+            return View();
+        }
+
+        public ActionResult RefuseBatchUserView(string id)
+        {
+            ViewBag.Ids = id;
+            return View();
+        }
+
+        public ActionResult RefuseBatchDataView(string id)
+        {
+            ViewBag.Ids = id;
             return View();
         }
     }

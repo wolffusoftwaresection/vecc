@@ -66,7 +66,7 @@
                             <div class="form-group">
                                 <label for="username" class="col-sm-4">用户名：</label>
                                 <div class="col-sm-8">
-                                    @Html.TextBoxFor(m => Model.UserName, new { @class = "form-control" })
+                                    @Html.TextBoxFor(m => Model.UserName, new { @class = "form-control", @readonly = "readonly" })
                                 </div>
                             </div>
                         </div>
@@ -74,7 +74,7 @@
                             <div class="form-group">
                                 <label for="country" class="col-sm-4">国家：</label>
                                 <div class="col-sm-8">
-                                    @Html.TextBoxFor(m => Model.Country, new { @class = "form-control" })
+                                    @Html.TextBoxFor(m => Model.Country, new { @class = "form-control", @readonly = "readonly" })
                                 </div>
                             </div>
                         </div>
@@ -84,7 +84,7 @@
                             <div class="form-group">
                                 <label for="country" class="col-sm-4">手机号：</label>
                                 <div class="col-sm-8">
-                                    @Html.TextBoxFor(m => Model.Phone, new { @class = "form-control" })
+                                    @Html.TextBoxFor(m => Model.Phone, new { @class = "form-control", @readonly = "readonly" })
                                 </div>
                             </div>
                         </div>
@@ -92,7 +92,7 @@
                             <div class="form-group">
                                 <label for="country" class="col-sm-4">企业名称：</label>
                                 <div class="col-sm-8">
-                                    @Html.TextBoxFor(m => Model.EnterpriseName, new { @class = "form-control" })
+                                    @Html.TextBoxFor(m => Model.EnterpriseName, new { @class = "form-control", @readonly = "readonly" })
                                 </div>
                             </div>
                         </div>
@@ -102,7 +102,7 @@
                             <div class="form-group">
                                 <label for="country" class="col-sm-4">邮箱：</label>
                                 <div class="col-sm-8">
-                                    @Html.TextBoxFor(m => Model.Email, new { @class = "form-control" })
+                                    @Html.TextBoxFor(m => Model.Email, new { @class = "form-control", @readonly = "readonly" })
                                 </div>
                             </div>
                         </div>
@@ -110,7 +110,7 @@
                             <div class="form-group">
                                 <label for="country" class="col-sm-4">用户类型：</label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" value=" @ViewBag.userType" />
+                                    <input type="text" class="form-control" value="@ViewBag.userType" readonly />
                                 </div>
                             </div>
                         </div>
@@ -120,7 +120,15 @@
                             <div class="form-group">
                                 <label for="country" class="col-sm-4">账号状态：</label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" value="@ViewBag.accountStatus" />
+                                    <input type="text" class="form-control" value="@ViewBag.accountStatus" readonly />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="country" class="col-sm-4">未通过原因：</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" value="@ViewBag.Reason" readonly />
                                 </div>
                             </div>
                         </div>
