@@ -11,7 +11,7 @@ html, body{
 body{
   /*padding-top: 45px;*/
   font-family: 'Open Sans', sans-serif;
-  background-image: url("../img/dotted.png");
+  /*background-image: url("../img/dotted.png");*/
   overflow-x: hidden;
 }
 h2{
