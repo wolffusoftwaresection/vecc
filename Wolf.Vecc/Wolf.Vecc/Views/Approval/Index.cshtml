@@ -1,18 +1,23 @@
 ﻿<link href="~/AdminLTE/css/awesome-bootstrap-checkbox.css" rel="stylesheet" />
 <div class="container" id="pageSection" style="background: white; min-height: 5px;">
     <div class="row">
-        <div class="col-lg-6">
-            <button type="button" class="btn btn-default btn-flat" data-toggle="collapse" data-parent="#accordion" href="#collapseToolSearch">筛选项</button>
+        <div class="col-lg-6 form-inline">
+            <button type="button" class="bk-margin-10 btn btn-default btn-lg" data-toggle="collapse" data-parent="#accordion" href="#collapseToolSearch">筛选项</button>
+            @*  <button type="button" class="btn btn-default btn-flat" data-toggle="collapse" data-parent="#accordion" href="#collapseToolSearch">筛选项</button>*@
             <div id="UserOption">
-                <button type="button" id="UAgree" class="btn btn-dropbox btn-flat" onclick="UAgree();">同意</button>
-                <button type="button" id="URefuse" class="btn btn-dropbox btn-flat" onclick="URefuse();">拒绝</button>
-                <button type="button" id="UDel" class="btn btn-dropbox btn-flat" onclick="UDel();">删除</button>
-                <button type="button" id="addUser" class="btn btn-dropbox btn-flat" onclick="addUser();">新增</button>
+                @*<button type="button" id="UAgree" class="btn btn-dropbox btn-flat" onclick="UAgree();">同意</button>*@
+                @*<button type="button" id="URefuse" class="btn btn-dropbox btn-flat" onclick="URefuse();">拒绝</button>*@
+                @*<button type="button" id="UDel" class="btn btn-dropbox btn-flat" onclick="UDel();">删除</button>*@
+                <button type="button" id="addUser" onclick="addUser();" class="bk-margin-10 btn btn-success btn-lg">新增</button>
+                <button type="button" id="UAgree" onclick="URefuse();" class="bk-margin-10 btn btn-primary btn-lg">同意</button>
+                <button type="button" id="URefuse" class="bk-margin-10 btn btn-warning btn-lg" onclick="URefuse();">拒绝</button>
+                <button type="button" id="UDel" class="bk-margin-10 btn btn-danger btn-lg" onclick="UDel();">删除</button>
+                @*<button type="button" id="addUser" class="btn btn-dropbox btn-flat" onclick="addUser();">新增</button>*@
             </div>
             <div id="DataOption" style="display:none;">
-                <button type="button" id="UAgree" class="btn btn-dropbox btn-flat" onclick="DAgree();">同意</button>
-                <button type="button" id="URefuse" class="btn btn-dropbox btn-flat" onclick="DRefuse();">拒绝</button>
-                <button type="button" id="UDel" class="btn btn-dropbox btn-flat" onclick="DDel();">删除</button>
+                <button type="button" id="UAgree" class="bk-margin-10 btn btn-primary btn-lg" onclick="DAgree();">同意</button>
+                <button type="button" id="URefuse" class="bk-margin-10 btn btn-warning btn-lg" onclick="DRefuse();">拒绝</button>
+                <button type="button" id="UDel" class="bk-margin-10 btn btn-danger btn-lg" onclick="DDel();">删除</button>
             </div>
         </div>
         <div class="col-lg-6">
@@ -36,7 +41,7 @@
                 <div class="border-dashed">
                     <form class="">
                         <div class="box-body">
-                            <div class="row" id="SearchList">
+                            <div class="row form-inline" id="SearchList">
                                 <div class="col-md-4">
                                     <div class="form-group form-inline" style="white-space:nowrap">
                                         <label class="col-sm-1">状态</label>
@@ -59,10 +64,10 @@
                                     </div>
                                 </div>
                                 <div class="box-footer pull-right class=" col-md-4"" id="userComit">
-                                    <button type="button" class="btn btn-dropbox btn-flat" id="screeningBtn" onclick="screeningSearch()">筛选</button>
+                                    <button type="button" class="bk-margin-10 btn btn-primary" id="screeningBtn" onclick="screeningSearch()">筛选</button>
                                 </div>
                             </div>
-                            <div class="row" id="dataSearchList" style="display:none;">
+                            <div class="row form-inline" id="dataSearchList" style="display:none;">
                                 <div class="col-md-4">
                                     <div class="form-group form-inline" style="white-space:nowrap">
                                         <label class="col-sm-1">状态</label>
@@ -85,7 +90,7 @@
                                     </div>
                                 </div>
                                 <div class="box-footer pull-right col-md-4" id="dataComit" style="display:none;">
-                                    <button type="button" class="btn btn-dropbox btn-flat" id="screeningBtn1" onclick="screeningSearch1()">筛选</button>
+                                    <button type="button" class="bk-margin-10 btn btn-primary" id="screeningBtn1" onclick="screeningSearch1()">筛选</button>
                                 </div>
                             </div>
                         </div>

@@ -5,33 +5,50 @@
     <meta name="viewport" content="width=device-width" />
     <title></title>
     <link rel="stylesheet" href="~/AdminLTE/bootstrap/css/bootstrap.min.css">
+    <link href="~/AdminLTE/css/alertify.css" rel="stylesheet" />
+    <link href="~/AdminLTE/css/theme.css" rel="stylesheet" />
     <script src="~/AdminLTE/js/jquery-3.3.1.min.js"></script>
     <script src="~/AdminLTE/highcharts.js"></script>
     <script src="~/AdminLTE/highcharts-3d.js"></script>
     <script src="~/AdminLTE/Exporting.js"></script>
     <script src="~/AdminLTE/highcharts-zh_CN.js"></script>
-    <script src="~/AdminLTE/bootstrap-datetimepicker.min.js"></script>
+    <script src="~/laydate/laydate.js"></script>
 </head>
-<body scroll="no">
-    <div style="text-align: center;">
-        <div class="row">
-            <div class="col-md-6 top-buffer">
-                <div class="form-group">
-                    <div class="col-sm-5">
-                        <input class="form-control yearpicker" type="year" value="" id="datetimepicker">
+<body>
+    <div class="row-fluid">
+        <div class="widget span8">
+            <div class="widget-header">
+                <i class="icon-credit-card"></i>
+                <div class="widget-buttons">
+                    <input type="text" class="form-control" id="selyears" placeholder="年份选择">
+                    <a href="javascript:void(0)" class="collapse" data-collapsed="false"><i data-title="Collapse" class="icon-chevron-up"></i></a>
+                </div>
+            </div>
+            <div class="widget-body clearfix">
+                <div style="height:100%;width:95%;" id="container"></div>
+            </div>
+        </div>
+    </div>
+    @*<div style="text-align: center;">
+            <div class="row">
+                <div class="col-md-6 top-buffer">
+                    <div class="form-group">
+                        <div class="col-sm-5">
+                            <input class="form-control yearpicker" type="year" value="" id="datetimepicker">
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="row" style="margin-right:0px;margin-left:0px;">
-            <div class="col-md-12">
-                <div class="box service-box">
-                    <div class="form-horizontal">
-                        <div class="box-body">
-                            <div class="row top-buffer">
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <div style="height:100%;width:95%;" id="container"></div>
+            <div class="row" style="margin-right:0px;margin-left:0px;">
+                <div class="col-md-12">
+                    <div class="box service-box">
+                        <div class="form-horizontal">
+                            <div class="box-body">
+                                <div class="row top-buffer">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <div style="height:100%;width:95%;" id="container"></div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -39,26 +56,17 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+        </div>*@
 </body>
 </html>
 <script type="text/javascript">
     $(function () {
-        $('#datetimepicker').datetimepicker({
-            language: 'zh-CN',
-            format: 'yyyy',
-            weekStart: 1,
-            todayBtn: 1,
-            autoclose: 1,
-            todayHighlight: 1,
-            startView: 4, //这里就设置了默认视图为年视图
-            minView: 4, //设置最小视图为年视图
-            forceParse: 0,
-        });
-        $("#datetimepicker").datetimepicker("setDate", new Date());
-        $('#datetimepicker').datetimepicker().on('changeDate', function (ev) {
-            getForm(ev.date.getFullYear());
+        laydate.render({
+            elem: '#selyears',
+            type: 'year',
+            done: function (value, date, endDate) {
+                getForm(value);
+            }
         });
         getForm(new Date().getFullYear());
         function pieClick(parm, pointVal) {

@@ -195,7 +195,6 @@
     <Content Include="AdminLTE\ai.0.15.0-build58334.min.js" />
     <Content Include="AdminLTE\ajaxfileupload.js" />
     <Content Include="AdminLTE\baseE.css" />
-    <Content Include="AdminLTE\bootstrap-datetimepicker.min.js" />
     <Content Include="AdminLTE\bootstrap\css\bootstrap-switch.css" />
     <Content Include="AdminLTE\bootstrap\css\bootstrap-table-locale-all.js" />
     <Content Include="AdminLTE\bootstrap\css\bootstrap-table-locale-all.min.js" />
@@ -236,6 +235,7 @@
     <Content Include="AdminLTE\comm\_message.js" />
     <Content Include="AdminLTE\comm\_table.js" />
     <Content Include="AdminLTE\Cookie.js" />
+    <Content Include="AdminLTE\css\alertify.css" />
     <Content Include="AdminLTE\css\all.css" />
     <Content Include="AdminLTE\css\awesome-bootstrap-checkbox.css" />
     <Content Include="AdminLTE\css\blue.css" />
@@ -244,6 +244,7 @@
     <Content Include="AdminLTE\css\fileinput.css" />
     <Content Include="AdminLTE\css\fileinput.min.css" />
     <Content Include="AdminLTE\css\style.css" />
+    <Content Include="AdminLTE\css\theme.css" />
     <Content Include="AdminLTE\dateConvert.js" />
     <Content Include="AdminLTE\dist\css\AdminLTE.css" />
     <Content Include="AdminLTE\dist\css\AdminLTE.min.css" />
@@ -1667,6 +1668,9 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="laydate\laydate.js" />
+    <Content Include="laydate\theme\default\font\iconfont.svg" />
+    <Content Include="laydate\theme\default\laydate.css" />
     <Content Include="pemsreport\css\pemsreport.css" />
     <Content Include="pemsreport\image\1.png" />
     <Content Include="pemsreport\image\2.png" />
@@ -1788,6 +1792,9 @@
     <Content Include="assets\fonts\themify.woff" />
     <Content Include="assets\scss\style.css.map" />
     <Content Include="assets\scss\style.scss" />
+    <Content Include="laydate\theme\default\font\iconfont.eot" />
+    <Content Include="laydate\theme\default\font\iconfont.ttf" />
+    <Content Include="laydate\theme\default\font\iconfont.woff" />
     <None Include="NLog.xsd">
       <SubType>Designer</SubType>
     </None>

@@ -5,13 +5,13 @@
         var str = "";
         switch (_int) {
             case 1:
-                str = '<span class="label label label-info">待审批</span>';
+                str = '<span class="label label label-info" style="vertical-align: middle;paddind:.2em .5em .2em;">待审批</span>';
                 break;
             case 2:
-                str = '<span class="label label-danger">未通过</span>';
+                str = '<span class="label label-danger" style="vertical-align: middle;paddind:.2em .5em .2em;">未通过</span>';
                 break;
             default:
-                str = '<span class="label label-success">已通过</span>';
+                str = '<span class="label label-success" style="vertical-align: middle;paddind:.2em .5em .2em;">已通过</span>';
         }
         return str;
     },
