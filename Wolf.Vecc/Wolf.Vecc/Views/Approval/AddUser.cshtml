@@ -605,7 +605,8 @@ new SelectListItem { Text = "塞尔维亚共和国", Value = "塞尔维亚共和
                 $.post($form.attr('action'), $form.serialize(), function (result) {
                     $('#reset').click();
                     if (result.Success) {
-                        alert('添加成功！');
+                        //alert('添加成功！');
+                        msg.info('添加成功！');
                         parent.$("#tb_UserApproval").bootstrapTable("refresh");
                     }
                 });
