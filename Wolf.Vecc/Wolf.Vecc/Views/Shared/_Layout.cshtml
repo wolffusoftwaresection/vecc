@@ -171,7 +171,8 @@
             "debug": false,//是否开启debug模式
             "newestOnTop": false,//新消息是否排在最上层
             "progressBar": false,//是否显示进度条
-            "positionClass": "toast-top-full-width",//消息框的显示位置
+            //"positionClass": "toast-top-full-width",//消息框的显示位置
+            "positionClass": "toast-bottom-left",
             "preventDuplicates": false,//是否阻止弹出多个消息框
             "onclick": null,//点击回调函数
             "showDuration": "300",
@@ -199,11 +200,21 @@
                 if (_num != data.d) {
                     $("#doNumber").text(data.d);
                     cookie.setCookie("approvalNumber", data.d);
-                    toastr.warning('有新注册用户等待审批！');
-                    //console.log("您已出发最新一条注册信息");
+                    toastr.info('有新注册用户等待审批！', getNowTime());
                 }
             }
             approvalPolling();
         });
+    }
+
+    function getNowTime() {
+        var date = new Date();
+        var year = date.getFullYear();
+        var month = date.getMonth() + 1;
+        var day = date.getDate();
+        var hour = date.getHours();
+        var minute = date.getMinutes();
+        var second = date.getSeconds();
+        return year + '年' + month + '月' + day + '日 ' + hour + ':' + minute + ':' + second;
     }
 </script>

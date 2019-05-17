@@ -56,12 +56,12 @@
 <div class="container text-left" id="pageSection" style="background: white; min-height: 10px;margin-top: 15px;">
     <form id="defaultForm" role="form" action="/Account/VeccAddUser" method="post" class="col-md-6">
         <div class="form-group">
-            <label for="username">用户名：</label>
+            <label for="username" class="control-label">用户名：</label>
             @*<input name="username" class="form-control " type="text" >*@
             @Html.TextBoxFor(m => Model.UserName, new { @class = "form-control" })
         </div>
         <div class="form-group">
-            <label for="country">国家：</label>
+            <label for="country" class="control-label">国家：</label>
             @{
                 List<SelectListItem> list = new List<SelectListItem>
                                                     {
@@ -430,23 +430,23 @@ new SelectListItem { Text = "塞尔维亚共和国", Value = "塞尔维亚共和
             @Html.DropDownListFor(m => Model.Country, list, new { @class = "form-control" })
         </div>
         <div class="form-group">
-            <label for="phone">手机号：</label>
+            <label for="phone" class="control-label">手机号：</label>
             @Html.TextBoxFor(m => Model.Phone, new { @class = "form-control" })
         </div>
         <div class="form-group">
-            <label for="enterpriseName">企业名称：</label>
+            <label for="enterpriseName" class="control-label">企业名称：</label>
             @Html.TextBoxFor(m => Model.EnterpriseName, new { @class = "form-control" })
         </div>
         <div class="form-group">
-            <label for="email">邮箱：</label>
+            <label for="email" class="control-label">邮箱：</label>
             @Html.TextBoxFor(m => Model.Email, new { @class = "form-control" })
         </div>
         <div class="form-group">
-            <label for="password">密码：</label>
+            <label for="password" class="control-label">密码：</label>
             @Html.PasswordFor(m => Model.Password, new { @class = "form-control" })
         </div>
         <div class="form-group">
-            <label for="confirmPassword">确认密码：</label>
+            <label for="confirmPassword" class="control-label">确认密码：</label>
             <input name="confirmPassword" class="form-control" type="password" />
         </div>
         <div class="form-group" style="display:none;">
@@ -454,7 +454,7 @@ new SelectListItem { Text = "塞尔维亚共和国", Value = "塞尔维亚共和
             <input type="reset" id="reset" value="" />
         </div>
         <div class="form-group" style="display:none;">
-            <label for="UserType">用户类型：</label>
+            <label for="UserType" class="control-label">用户类型：</label>
             <div class="form-inline">
                 <label class="col-sm-2">检测机构</label> @Html.RadioButtonFor(m => Model.UserType, 3, new { @class = "col-sm-1", @checked = true })
             </div>
