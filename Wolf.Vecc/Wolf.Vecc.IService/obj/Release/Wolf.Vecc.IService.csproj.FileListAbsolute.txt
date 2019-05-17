@@ -7,3 +7,4 @@ F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.IService\obj\Release\Wolf.Vecc.IService.csp
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.IService\obj\Release\Wolf.Vecc.IService.csproj.CopyComplete
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.IService\obj\Release\Wolf.Vecc.IService.dll
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.IService\obj\Release\Wolf.Vecc.IService.pdb
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.IService\bin\Release\NLog.config
