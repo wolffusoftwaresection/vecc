@@ -69,6 +69,10 @@ namespace Wolf.Vecc.Service.SysService
             {
                 searchPredicate = searchPredicate.And(d => d.AccountStatus == userApprovalViewModel.State);
             }
+            if (userApprovalViewModel.BeginDate != null && userApprovalViewModel.EndDate != null)
+            {
+                searchPredicate = searchPredicate.And(d => d.CreateDate >= userApprovalViewModel.BeginDate && d.CreateDate <= userApprovalViewModel.EndDate);
+            }
             return _dbServiceReposity.GetWhereSearch(searchPredicate).ToList();
         }
 

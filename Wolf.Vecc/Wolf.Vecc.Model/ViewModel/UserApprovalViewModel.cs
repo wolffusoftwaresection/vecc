@@ -11,6 +11,10 @@ namespace Wolf.Vecc.Model.ViewModel
         public string UserName { get; set; }
 
         public int State { get; set; }
+
+        public DateTime? BeginDate { get; set; }
+
+        public DateTime? EndDate { get; set; }
     }
 
     public class DataApprovalViewModel : PageBaseModel
@@ -18,5 +22,9 @@ namespace Wolf.Vecc.Model.ViewModel
         public int DataState { get; set; }
 
         public string FileName { get; set; }
+
+        public DateTime? BeginDate { get; set; }
+
+        public DateTime? EndDate { get; set; }
     }
 }

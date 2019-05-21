@@ -36,16 +36,16 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-12">
+        <div class="col-md-12">
             <div id="collapseToolSearch" class="panel-collapse collapse">
                 <div class="border-dashed">
                     <form class="">
                         <div class="box-body">
                             <div class="row form-inline" id="SearchList">
-                                <div class="col-md-4">
-                                    <div class="form-group form-inline" style="white-space:nowrap">
-                                        <label class="col-sm-1 font-weight-bold">状态</label>
-                                        <div class="col-sm-3">
+                                <div class="col-md-12">
+                                    <div class="col-md-3">
+                                        <div class="form-group form-inline" style="white-space:nowrap;">
+                                            <label class="font-weight-bold">状态</label>
                                             <select id="state" name="select" class="selectpicker show-tick form-control" data-actions-box="true">
                                                 <option value="0">请选择</option>
                                                 <option value="1">待审核</option>
@@ -54,46 +54,64 @@
                                             </select>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group form-inline" style="white-space:nowrap">
-                                        <label class="col-sm-1 font-weight-bold">姓名</label>
-                                        <div class="col-sm-3">
-                                            <input type="text" class="form-control font-weight-bold" id="username" placeholder="请输入名称">
+                                    <div class="col-md-3">
+                                        <div class="form-group form-inline" style="white-space:nowrap">
+                                            <label class="font-weight-bold">姓名</label>
+                                            <input type="text" class="form-control" id="username" placeholder="请输入名称">
                                         </div>
                                     </div>
-                                </div>
-                                <div class="box-footer pull-right class=" col-md-4"" id="userComit">
-                                    <button type="button" class="bk-margin-10 btn btn-primary" id="screeningBtn" onclick="screeningSearch()">筛选</button>
+                                    <div class="col-md-6">
+                                        <div class="form-group form-inline" style="white-space:nowrap">
+                                            <label class="font-weight-bold">时间</label>
+                                            <div class="">
+                                                <input placeholder="请输入日期" id="start" class="form-control" type="text">
+                                                <span> - </span>
+                                                <input placeholder="请输入日期" id="end" class="form-control" type="text">
+                                                @*<input type="text" class="form-control" id="selyearmonth" placeholder="年月选择">
+                        <a href="javascript:void(0)" class="collapse" data-collapsed="false"><i data-title="Collapse" class="icon-chevron-up"></i></a>*@
+                                            </div>
+                                            <div class="col-md-2" id="userComit">
+                                                <button type="button" class="bk-margin-10 btn btn-primary btn-lg" id="screeningBtn" onclick="screeningSearch()">筛选</button>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="row form-inline" id="dataSearchList" style="display:none;">
-                                <div class="col-md-4">
-                                    <div class="form-group form-inline" style="white-space:nowrap">
-                                        <label class="col-sm-1 font-weight-bold">状态</label>
-                                        <div class="col-sm-3">
-                                            <select id="dataState" name="dataState" class="selectpicker show-tick form-control" data-actions-box="true">
-                                                <option value="0">请选择</option>
-                                                <option value="1">待审核</option>
-                                                <option value="2">未通过</option>
-                                                <option value="3">已通过</option>
-                                            </select>
+                                <div class="col-md-12">
+                                    <div class="col-md-3">
+                                        <div class="form-group form-inline" style="white-space:nowrap">
+                                            <label class="font-weight-bold">状态</label>
+                                                <select id="dataState" name="dataState" class="selectpicker show-tick form-control" data-actions-box="true">
+                                                    <option value="0">请选择</option>
+                                                    <option value="1">待审核</option>
+                                                    <option value="2">未通过</option>
+                                                    <option value="3">已通过</option>
+                                                </select>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group form-inline" style="white-space:nowrap">
-                                        <label class="col-sm-1 font-weight-bold">文件名</label>
-                                        <div class="col-sm-3">
-                                            <input type="text" class="form-control font-weight-bold" id="fileName" placeholder="请输入名称">
+                                    <div class="col-md-3">
+                                        <div class="form-group form-inline" style="white-space:nowrap">
+                                            <label class="font-weight-bold">文件名</label>
+                                                <input type="text" class="form-control" id="fileName" placeholder="请输入名称">
                                         </div>
                                     </div>
-                                </div>
-                                <div class="box-footer pull-right col-md-4" id="dataComit" style="display:none;">
-                                    <button type="button" class="bk-margin-10 btn btn-primary" id="screeningBtn1" onclick="screeningSearch1()">筛选</button>
+                                    <div class="col-md-6">
+                                        <div class="form-group form-inline" style="white-space:nowrap">
+                                            <label class="font-weight-bold">时间</label>
+                                                <input placeholder="请输入日期" id="startd" class="form-control" type="text">
+                                                <span> - </span>
+                                                <input placeholder="请输入日期" id="endd" class="form-control" type="text">
+                                                @*<input type="text" class="form-control" id="dataselyearmonth" placeholder="年月选择">
+                        <a href="javascript:void(0)" class="collapse" data-collapsed="false"><i data-title="Collapse" class="icon-chevron-up"></i></a>*@
+                                            <div class="col-md-2" id="dataComit" style="display:none;">
+                                                <button type="button" class="bk-margin-10 btn btn-primary btn-lg" id="screeningBtn1" onclick="screeningSearch1()">筛选</button>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                         </div>
                     </form>
                 </div>
             </div>
@@ -107,801 +125,843 @@
     <table id="tb_DataApproval" class="table-bordered" style="font-size:12px;"></table>
 </div>
 
-@*<div style="text-align:right;padding: 5px;" class="form-inline">
-        <div class="form-group">
-            <label class="type" for="exampleInputPassword2">审批类型:</label>
-            <select onchange="selShow();" id="select1" name="select" class="selectpicker show-tick form-control" data-actions-box="true">
-                <option value="0">数据审批</option>
-                <option value="1">人员审批</option>
+                        @*<div style="text-align:right;padding: 5px;" class="form-inline">
+                            <div class="form-group">
+                                <label class="type" for="exampleInputPassword2">审批类型:</label>
+                                <select onchange="selShow();" id="select1" name="select" class="selectpicker show-tick form-control" data-actions-box="true">
+                                    <option value="0">数据审批</option>
+                                    <option value="1">人员审批</option>
 
-            </select>
-        </div>
-        <div class="form-group">
-            <label class="" for="exampleInputEmail2">姓名:</label>
-            <input type="text" class="form-control" id="username" placeholder="请输入名称">
-        </div>
-        <div class="form-group">
-            <label class="" for="exampleInputPassword2">状态:</label>
-            <select id="state" name="select" class="selectpicker show-tick form-control" data-actions-box="true">
-                <option value="0">请选择</option>
-                <option value="1">待审核</option>
-                <option value="2">未通过</option>
-                <option value="3">已通过</option>
-            </select>
-        </div>
-        <button type="submit" class="btn btn-group-sm btn-info">查询</button>
-    </div>
-    <div class="box-body">
-        <table id="tb_UserApproval" class="table-no-bordered"></table>
-        <table id="tb_DataApproval" class="table-no-bordered" ></table>
-    </div>*@
-<script src="~/AdminLTE/comm/comm2.js"></script>
-<script src="~/AdminLTE/comm/_ajax.js"></script>
-<script src="~/AdminLTE/comm/_table.js"></script>
-<script src="~/AdminLTE/comm/_message.js"></script>
-<script src="~/AdminLTE/comm/comm.js"></script>
-<script>
-    var fal = false;
-    $(function () {
-        initUserApproval();
-        $('#approvaType').change(function () {
-            $("#username").val("");
-            if ($(this).children('option:selected').val() == 0) {
-                $("#userApproval").show();
-                $("#dataApproval").hide();
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="" for="exampleInputEmail2">姓名:</label>
+                                <input type="text" class="form-control" id="username" placeholder="请输入名称">
+                            </div>
+                            <div class="form-group">
+                                <label class="" for="exampleInputPassword2">状态:</label>
+                                <select id="state" name="select" class="selectpicker show-tick form-control" data-actions-box="true">
+                                    <option value="0">请选择</option>
+                                    <option value="1">待审核</option>
+                                    <option value="2">未通过</option>
+                                    <option value="3">已通过</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-group-sm btn-info">查询</button>
+                        </div>
+                        <div class="box-body">
+                            <table id="tb_UserApproval" class="table-no-bordered"></table>
+                            <table id="tb_DataApproval" class="table-no-bordered" ></table>
+                        </div>*@
+                        <script src="~/AdminLTE/comm/comm2.js"></script>
+                        <script src="~/AdminLTE/comm/_ajax.js"></script>
+                        <script src="~/AdminLTE/comm/_table.js"></script>
+                        <script src="~/AdminLTE/comm/_message.js"></script>
+                        <script src="~/AdminLTE/comm/comm.js"></script>
+                        <script src="~/laydate/laydate.js"></script>
+                        <script>
+                            var fal = false;
+                            var userBeginDate = null;
+                            var dataBeginDate = null;
+                            var userEndDate = null;
+                            var dataEndDate = null;
 
-                $("#dataSearchList").hide();
-                $("#SearchList").show();
+                            $(function () {
+                                laydate.render({
+                                    elem: '#start',
+                                    format: 'yyyy-MM-dd',
+                                    done: function (value, date, endDate) {
+                                        userBeginDate = value;
+                                    }
+                                });
 
-                $("#userComit").show();
-                $("#dataComit").hide();
+                                laydate.render({
+                                    elem: '#end',
+                                    format: 'yyyy-MM-dd',
+                                    done: function (value, date, endDate) {
+                                        userEndDate = value;
+                                    }
+                                });
 
-                $("#UserOption").show();
-                $("#DataOption").hide();
-            } else {
-                $("#userApproval").hide();
-                $("#dataApproval").show();
+                                laydate.render({
+                                    elem: '#startd',
+                                    format: 'yyyy-MM-dd',
+                                    done: function (value, date, endDate) {
+                                        dataBeginDate = value;
+                                    }
+                                });
 
-                $("#dataSearchList").show();
-                $("#SearchList").hide();
+                                laydate.render({
+                                    elem: '#endd',
+                                    format: 'yyyy-MM-dd',
+                                    done: function (value, date, endDate) {
+                                        dataEndDate = value;
+                                    }
+                                });
 
-                $("#userComit").hide();
-                $("#dataComit").show();
+                                initUserApproval();
+                                $('#approvaType').change(function () {
+                                    $("#username").val("");
+                                    if ($(this).children('option:selected').val() == 0) {
+                                        $("#userApproval").show();
+                                        $("#dataApproval").hide();
 
-                $("#UserOption").hide();
-                $("#DataOption").show();
-                if (!fal) { //第一次加载tb_DataApproval
-                    initDataApproval();
-                    //$("[name='my-checkbox']").bootstrapSwitch();
-                    fal = true;
-                }
-            }
-        });
-    });
+                                        $("#dataSearchList").hide();
+                                        $("#SearchList").show();
 
-    function initDataApproval() {
-        $("#tb_DataApproval").bootstrapTable({
-            url: "/Approval/DataApprovalList",         //请求后台的URL（*）
-            method: 'post',                      //请求方式（*）
-            //toolbar: toolbar,                //工具按钮用哪个容器
-            striped: true,                      //是否显示行间隔色
-            cache: false,                       //是否使用缓存，默认为true，所以一般情况下需要设置一下这个属性（*）
-            pagination: true,                   //是否显示分页（*）
-            sortable: false,                     //是否启用排序
-            sortOrder: "asc",                   //排序方式
-            queryParams: function (params) {
-                var temp = {   //这里的键的名字和控制器的变量名必须一致，这边改动，控制器也需要改成一样的
-                    PageSize: params.limit,   //页面显示行数
-                    PageIndex: params.offset / params.limit + 1,//页码*页面显示行数=offset
-                    DataState: $("#dataState").val(),
-                    FileName: $("#fileName").val()
-                };
-                return temp;
-            },//传递参数（*）
-            sidePagination: "server",           //分页方式：client客户端分页，server服务端分页（*）
-            pageNumber: 1,                                              //初始化加载第一页，默认第一页
-            pageSize: 10,                                               //每页的记录行数（*）
-            pageList: [10, 25, 50, 100],
-            search: false,                       //是否显示表格搜索，此搜索是客户端搜索，不会进服务端，所以，个人感觉意义不大
-            strictSearch: false,
-            showColumns: false,                  //是否显示所有的列
-            showRefresh: true,                  //是否显示刷新按钮
-            minimumCountColumns: 2,             //最少允许的列数
-            clickToSelect: true,                //是否启用点击选中行
-            // height: 500,                        //行高，如果没有设置height属性，表格自动根据记录条数觉得表格高度
-            uniqueId: "Id",                     //每一行的唯一标识，一般为主键列
-            //showToggle: true,                    //是否显示详细视图和列表视图的切换按钮
-            //cardView: false,                    //是否显示详细视图
-            columns: [
-                {
-                    //field: "Id",
-                    checkbox: true,
-                    align: 'center',
-                },
-                {
-                    field: 'UserName',
-                    align: 'center',
-                    title: '上传账号',
-                    visible: 1
-                },
-                {
-                    field: 'DataName',
-                    align: 'center',
-                    title: '文件名称',
-                    visible: 1
-                },
-                {
-                    field: 'UploadDate',
-                    align: 'center',
-                    title: '上传时间',
-                    visible: 1,
-                    formatter: function (value, row, index) {
-                        return formatDateBoxFull(value);
-                    }
-                },
-                {
-                    field: 'DataStatus',
-                    align: 'center',
-                    title: '审核状态',
-                    visible: 1,
-                    formatter: function (value) {
-                        return vecc.veccStatusToStr(value);
-                    }
-                },
-                {
-                    field: 'DataUrl',
-                    align: 'center',
-                    title: '下载',
-                    visible: 1,
-                    formatter: function (value, row, index) {
-                        var ck = '<a href="' + value + '"><span class= "glyphicon glyphicon-cloud-download" ></span></a>';
-                        return ck;
-                    }
-                },
-                {
-                    field: 'IsPublic',
-                    align: 'center',
-                    title: '是否公开',
-                    visible: 1,
-                    formatter: function (value, row, index) {
-                        var ck = '<div style="margin-top:0px;margin-bottom:0px;" class="checkbox checkbox-primary" onclick="changeState(' + index + ',' + row.Id + ',' + value + ');"><input type = "checkbox" class="styled styled-primary" aria-label="Single checkbox Two"><label></label></div>';
-                        //'<input type="checkbox" onclick="changeState(' + index + ',' + row.Id + ',' + value + ');">';
-                        if (value == 1) {
-                            ck = '<div style="margin-top:0px;margin-bottom:0px;" class="checkbox checkbox-primary" onclick="changeState(' + index + ',' + row.Id + ',' + value + ');"><input type = "checkbox" class="styled styled-primary" checked aria-label="Single checkbox Two"><label></label></div>'; //'<input type="checkbox" onclick="changeState(' + index + ',' + row.Id + ',' + value + ');" checked>';
-                        }
-                        return ck;
-                    }
-                }
-                //,
-                //{
-                //    field: 'UserType',
-                //    align: 'center',
-                //    title: '用户类型',
-                //    visible: 1,
-                //    formatter: function (value) {
-                //        return vecc.veccUserTypeToStr(value);
-                //    }
-                //}
-                ,
-                {
-                    field: 'operate',
-                    align: 'center',
-                    title: '操作',
-                    visible: 1,
-                    formatter: function (value, row, index) {
-                        var button = "";
-                        if (row.DataStatus == 1) {
-                            button = '<a class="btn btn-info" href="#" onclick="onAgreeData(' + row.Id + ');"><i class="glyphicon"></i>同意</a><a class="btn btn-danger" href="#" onclick="onRefuseData(' + row.Id + ');"><i class="glyphicon"></i>拒绝</a>';
-                        }
-                        else {
-                            button = '<a class="btn btn-danger" href="#" onclick="onDelData(' + row.Id + ',\'' + row.DataName + '\');"><i class="glyphicon"></i>删除</a>';
-                        }
-                        return button;
-                    }
-                }
-            ],
-            onPageChange: function (number, size) {
+                                        $("#userComit").show();
+                                        $("#dataComit").hide();
 
-            },
-            onClickRow: function (row, element, field) {
+                                        $("#UserOption").show();
+                                        $("#DataOption").hide();
+                                    } else {
+                                        $("#userApproval").hide();
+                                        $("#dataApproval").show();
 
-            },
-            onDblClickRow: function (row, obj) {
+                                        $("#dataSearchList").show();
+                                        $("#SearchList").hide();
 
-            }
-        });
-    }
+                                        $("#userComit").hide();
+                                        $("#dataComit").show();
 
-    //数据批量同意
-    function DAgree() {
-        var _msg = msg;
-        var checkedbox = $("#tb_DataApproval").bootstrapTable('getSelections');
-        //将选中行数据转成jsonStr
-        var jsonStr = JSON.stringify(checkedbox);
-        var jsonObject = jQuery.parseJSON(jsonStr);
-        if (jsonObject.length > 0) {
-             _msg.confirm("是否执行此操作!", function () {
-                var zeo = [];
-                for (var i = 0; i < jsonObject.length; i++) {
-                    var jValue = jsonObject[i]["Id"];//key所对应的value
-                    zeo.push(jValue);
-                }
-                var ids = zeo.join(",");
-                $.ajax({
-                    url: "/Approval/BatchAgreeData",
-                    data: {
-                        Ids: ids
-                    },
-                    type: "POST",
-                    async: false,
-                    success: function (data) {
-                        if (data.Success) {
-                            screeningSearch1();
-                            msg.info("执行完成!");
-                        }
-                    },
-                    error: function (data) {
-                    }
-                });
-            });
-        }
-        else {
-            return msg.info("请选择操作数据!");
-        }
-    }
+                                        $("#UserOption").hide();
+                                        $("#DataOption").show();
+                                        if (!fal) { //第一次加载tb_DataApproval
+                                            initDataApproval();
+                                            //$("[name='my-checkbox']").bootstrapSwitch();
+                                            fal = true;
+                                        }
+                                    }
+                                });
+                            });
 
-    //数据批量拒绝
-    function DRefuse() {
-        var checkedbox = $("#tb_DataApproval").bootstrapTable('getSelections');
-        //将选中行数据转成jsonStr
-        var jsonStr = JSON.stringify(checkedbox);
-        var jsonObject = jQuery.parseJSON(jsonStr);
-        if (jsonObject.length > 0) {
-            var zeo = [];
-            for (var i = 0; i < jsonObject.length; i++) {
-                var jValue = jsonObject[i]["Id"];//key所对应的value
-                zeo.push(jValue);
-            }
-            var ids = zeo.join(",");
-            layer.open({
-                type: 2,
-                title: ['批量拒绝-备注'],
-                shadeClose: false,
-                btn: ['确定', '取消'],
-                skin: '',
-                area: ['30%', '35%'],
-                //maxmin: true,
-                content: ['/Approval/RefuseBatchDataView?id=' + ids, "no"],
-                yes: function (index, layor) {
-                    $(layor).find("iframe")[0].contentWindow.DoRefuseBatchData();
-                    layer.close(index);
-                },
-                no: function (index, layor) {
+                            function initDataApproval() {
+                                $("#tb_DataApproval").bootstrapTable({
+                                    url: "/Approval/DataApprovalList",         //请求后台的URL（*）
+                                    method: 'post',                      //请求方式（*）
+                                    //toolbar: toolbar,                //工具按钮用哪个容器
+                                    striped: true,                      //是否显示行间隔色
+                                    cache: false,                       //是否使用缓存，默认为true，所以一般情况下需要设置一下这个属性（*）
+                                    pagination: true,                   //是否显示分页（*）
+                                    sortable: false,                     //是否启用排序
+                                    sortOrder: "asc",                   //排序方式
+                                    queryParams: function (params) {
+                                        var temp = {   //这里的键的名字和控制器的变量名必须一致，这边改动，控制器也需要改成一样的
+                                            PageSize: params.limit,   //页面显示行数
+                                            PageIndex: params.offset / params.limit + 1,//页码*页面显示行数=offset
+                                            DataState: $("#dataState").val(),
+                                            FileName: $("#fileName").val(),
+                                            BeginDate: dataBeginDate,
+                                            EndDate: dataEndDate
+                                        };
+                                        return temp;
+                                    },//传递参数（*）
+                                    sidePagination: "server",           //分页方式：client客户端分页，server服务端分页（*）
+                                    pageNumber: 1,                                              //初始化加载第一页，默认第一页
+                                    pageSize: 10,                                               //每页的记录行数（*）
+                                    pageList: [10, 25, 50, 100],
+                                    search: false,                       //是否显示表格搜索，此搜索是客户端搜索，不会进服务端，所以，个人感觉意义不大
+                                    strictSearch: false,
+                                    showColumns: false,                  //是否显示所有的列
+                                    showRefresh: true,                  //是否显示刷新按钮
+                                    minimumCountColumns: 2,             //最少允许的列数
+                                    clickToSelect: true,                //是否启用点击选中行
+                                    // height: 500,                        //行高，如果没有设置height属性，表格自动根据记录条数觉得表格高度
+                                    uniqueId: "Id",                     //每一行的唯一标识，一般为主键列
+                                    //showToggle: true,                    //是否显示详细视图和列表视图的切换按钮
+                                    //cardView: false,                    //是否显示详细视图
+                                    columns: [
+                                        {
+                                            //field: "Id",
+                                            checkbox: true,
+                                            align: 'center',
+                                        },
+                                        {
+                                            field: 'UserName',
+                                            align: 'center',
+                                            title: '上传账号',
+                                            visible: 1
+                                        },
+                                        {
+                                            field: 'DataName',
+                                            align: 'center',
+                                            title: '文件名称',
+                                            visible: 1
+                                        },
+                                        {
+                                            field: 'UploadDate',
+                                            align: 'center',
+                                            title: '上传时间',
+                                            visible: 1,
+                                            formatter: function (value, row, index) {
+                                                return formatDateBoxFull(value);
+                                            }
+                                        },
+                                        {
+                                            field: 'DataStatus',
+                                            align: 'center',
+                                            title: '审核状态',
+                                            visible: 1,
+                                            formatter: function (value) {
+                                                return vecc.veccStatusToStr(value);
+                                            }
+                                        },
+                                        {
+                                            field: 'DataUrl',
+                                            align: 'center',
+                                            title: '下载',
+                                            visible: 1,
+                                            formatter: function (value, row, index) {
+                                                var ck = '<a href="' + value + '"><span class= "glyphicon glyphicon-cloud-download" ></span></a>';
+                                                return ck;
+                                            }
+                                        },
+                                        {
+                                            field: 'IsPublic',
+                                            align: 'center',
+                                            title: '是否公开',
+                                            visible: 1,
+                                            formatter: function (value, row, index) {
+                                                var ck = '<div style="margin-top:0px;margin-bottom:0px;" class="checkbox checkbox-primary" onclick="changeState(' + index + ',' + row.Id + ',' + value + ');"><input type = "checkbox" class="styled styled-primary" aria-label="Single checkbox Two"><label></label></div>';
+                                                //'<input type="checkbox" onclick="changeState(' + index + ',' + row.Id + ',' + value + ');">';
+                                                if (value == 1) {
+                                                    ck = '<div style="margin-top:0px;margin-bottom:0px;" class="checkbox checkbox-primary" onclick="changeState(' + index + ',' + row.Id + ',' + value + ');"><input type = "checkbox" class="styled styled-primary" checked aria-label="Single checkbox Two"><label></label></div>'; //'<input type="checkbox" onclick="changeState(' + index + ',' + row.Id + ',' + value + ');" checked>';
+                                                }
+                                                return ck;
+                                            }
+                                        }
+                                        //,
+                                        //{
+                                        //    field: 'UserType',
+                                        //    align: 'center',
+                                        //    title: '用户类型',
+                                        //    visible: 1,
+                                        //    formatter: function (value) {
+                                        //        return vecc.veccUserTypeToStr(value);
+                                        //    }
+                                        //}
+                                        ,
+                                        {
+                                            field: 'operate',
+                                            align: 'center',
+                                            title: '操作',
+                                            visible: 1,
+                                            formatter: function (value, row, index) {
+                                                var button = "";
+                                                if (row.DataStatus == 1) {
+                                                    button = '<a class="btn btn-info" href="#" onclick="onAgreeData(' + row.Id + ');"><i class="glyphicon"></i>同意</a><a class="btn btn-danger" href="#" onclick="onRefuseData(' + row.Id + ');"><i class="glyphicon"></i>拒绝</a>';
+                                                }
+                                                else {
+                                                    button = '<a class="btn btn-danger" href="#" onclick="onDelData(' + row.Id + ',\'' + row.DataName + '\');"><i class="glyphicon"></i>删除</a>';
+                                                }
+                                                return button;
+                                            }
+                                        }
+                                    ],
+                                    onPageChange: function (number, size) {
 
-                }
-            });
-        }
+                                    },
+                                    onClickRow: function (row, element, field) {
 
-        //var _msg = msg;
-        //var checkedbox = $("#tb_DataApproval").bootstrapTable('getSelections');
-        ////将选中行数据转成jsonStr
-        //var jsonStr = JSON.stringify(checkedbox);
-        //var jsonObject = jQuery.parseJSON(jsonStr);
-        //if (jsonObject.length > 0) {
-        //    _msg.confirm("是否执行此操作!", function () {
-        //        var zeo = [];
-        //        for (var i = 0; i < jsonObject.length; i++) {
-        //            var jValue = jsonObject[i]["Id"];//key所对应的value
-        //            zeo.push(jValue);
-        //        }
-        //        var ids = zeo.join(",");
-        //        $.ajax({
-        //            url: "/Approval/BatchRefuseData",
-        //            data: {
-        //                Ids: ids
-        //            },
-        //            type: "POST",
-        //            async: false,
-        //            success: function (data) {
-        //                if (data.Success) {
-        //                    screeningSearch1();
-        //                    msg.info("执行完成!");
-        //                }
-        //            },
-        //            error: function (data) {
-        //            }
-        //        });
-        //    });
-        //}
-        else {
-            return msg.info("请选择操作数据!");
-        }
-    }
+                                    },
+                                    onDblClickRow: function (row, obj) {
 
-    //数据批量删除
-    function DDel() {
-        var _msg = msg;
-        var checkedbox = $("#tb_DataApproval").bootstrapTable('getSelections');
-        //将选中行数据转成jsonStr
-        var jsonStr = JSON.stringify(checkedbox);
-        var jsonObject = jQuery.parseJSON(jsonStr);
-        if (jsonObject.length > 0) {
-            _msg.confirm("是否执行此操作!", function () {
-                var zeo = [];
-                for (var i = 0; i < jsonObject.length; i++) {
-                    var jValue = jsonObject[i]["Id"];//key所对应的value
-                    zeo.push(jValue);
-                }
-                var ids = zeo.join(",");
-                $.ajax({
-                    url: "/Approval/BatchDelData",
-                    data: { 
-                        Ids: ids
-                    },
-                    type: "POST",
-                    async: false,
-                    success: function (data) {
-                        if (data.Success) {
-                            screeningSearch1();
-                            msg.info("执行完成!");
-                        }
-                    },
-                    error: function (data) {
-                    }
-                });
-            });
-        }
-        else {
-            return msg.info("请选择操作数据!");
-        }
-    }
+                                    }
+                                });
+                            }
 
-    function changeState(i, id, pub) {
-        $.ajax({
-            url: "/Approval/ChangePublic",
-            data: {
-                Id: id,
-                Pub: pub
-            },
-            type: "POST",
-            async: false,
-            success: function (data) {
-                if (data.Success) {
-                    //只修改当前行
-                    $('#tb_DataApproval').bootstrapTable("updateRow", { index: i, row: { IsPublic: pub == 0 ? 1 : 0 } });
-                }
-            },
-            error: function (data) {
-            }
-        });
-    }
+                            //数据批量同意
+                            function DAgree() {
+                                var _msg = msg;
+                                var checkedbox = $("#tb_DataApproval").bootstrapTable('getSelections');
+                                //将选中行数据转成jsonStr
+                                var jsonStr = JSON.stringify(checkedbox);
+                                var jsonObject = jQuery.parseJSON(jsonStr);
+                                if (jsonObject.length > 0) {
+                                    _msg.confirm("是否执行此操作!", function () {
+                                        var zeo = [];
+                                        for (var i = 0; i < jsonObject.length; i++) {
+                                            var jValue = jsonObject[i]["Id"];//key所对应的value
+                                            zeo.push(jValue);
+                                        }
+                                        var ids = zeo.join(",");
+                                        $.ajax({
+                                            url: "/Approval/BatchAgreeData",
+                                            data: {
+                                                Ids: ids
+                                            },
+                                            type: "POST",
+                                            async: false,
+                                            success: function (data) {
+                                                if (data.Success) {
+                                                    screeningSearch1();
+                                                    msg.info("执行完成!");
+                                                }
+                                            },
+                                            error: function (data) {
+                                            }
+                                        });
+                                    });
+                                }
+                                else {
+                                    return msg.info("请选择操作数据!");
+                                }
+                            }
 
-    function onRefuseData(id) {
-        layer.open({
-            type: 2,
-            title: ['拒绝-备注'],
-            shadeClose: false,
-            btn: ['确定', '取消'],
-            skin: '',
-            area: ['30%', '35%'],
-            //maxmin: true,
-            content: ['/Approval/RefuseData?id=' + id, "no"],
-            yes: function (index, layor) {
-                $(layor).find("iframe")[0].contentWindow.onRefuseData1();
-                layer.close(index);
-            },
-            no: function (index, layor) {
-            }
-        });
-    }
+                            //数据批量拒绝
+                            function DRefuse() {
+                                var checkedbox = $("#tb_DataApproval").bootstrapTable('getSelections');
+                                //将选中行数据转成jsonStr
+                                var jsonStr = JSON.stringify(checkedbox);
+                                var jsonObject = jQuery.parseJSON(jsonStr);
+                                if (jsonObject.length > 0) {
+                                    var zeo = [];
+                                    for (var i = 0; i < jsonObject.length; i++) {
+                                        var jValue = jsonObject[i]["Id"];//key所对应的value
+                                        zeo.push(jValue);
+                                    }
+                                    var ids = zeo.join(",");
+                                    layer.open({
+                                        type: 2,
+                                        title: ['批量拒绝-备注'],
+                                        shadeClose: false,
+                                        btn: ['确定', '取消'],
+                                        skin: '',
+                                        area: ['30%', '35%'],
+                                        //maxmin: true,
+                                        content: ['/Approval/RefuseBatchDataView?id=' + ids, "no"],
+                                        yes: function (index, layor) {
+                                            $(layor).find("iframe")[0].contentWindow.DoRefuseBatchData();
+                                            layer.close(index);
+                                        },
+                                        no: function (index, layor) {
 
-    function initUserApproval() {
-        $("#tb_UserApproval").bootstrapTable({
-            url: "/Approval/UserApprovalList",         //请求后台的URL（*）
-            method: 'post',                      //请求方式（*）
-            //toolbar: toolbar,                //工具按钮用哪个容器
-            striped: true,                      //是否显示行间隔色
-            cache: false,                       //是否使用缓存，默认为true，所以一般情况下需要设置一下这个属性（*）
-            pagination: true,                   //是否显示分页（*）
-            sortable: false,                     //是否启用排序
-            sortOrder: "asc",                   //排序方式
-            queryParams: function (params) {
-                var temp = {   //这里的键的名字和控制器的变量名必须一致，这边改动，控制器也需要改成一样的
-                    PageSize: params.limit,   //页面显示行数
-                    PageIndex: params.offset / params.limit + 1,//页码*页面显示行数=offset
-                    UserName: $("#username").val(),
-                    State: $("#state").val()
-                };
-                return temp;
-            },//传递参数（*）
-            sidePagination: "server",           //分页方式：client客户端分页，server服务端分页（*）
-            pageNumber: 1,                                              //初始化加载第一页，默认第一页
-            pageSize: 10,                                               //每页的记录行数（*）
-            pageList: [10, 25, 50, 100],
-            search: false,                       //是否显示表格搜索，此搜索是客户端搜索，不会进服务端，所以，个人感觉意义不大
-            strictSearch: false,
-            showColumns: false,                  //是否显示所有的列
-            showRefresh: true,                  //是否显示刷新按钮
-            minimumCountColumns: 2,             //最少允许的列数
-            clickToSelect: true,                //是否启用点击选中行
-            // height: 500,                        //行高，如果没有设置height属性，表格自动根据记录条数觉得表格高度
-            uniqueId: "Id",                     //每一行的唯一标识，一般为主键列
-            //showToggle: true,                    //是否显示详细视图和列表视图的切换按钮
-            //cardView: false,                    //是否显示详细视图
-            columns: [
-                {
-                    checkbox: true,
-                    align: 'center',
-                },
-                {
-                    field: 'UserName',
-                    align: 'center',
-                    title: '申请账号',
-                    visible: 1
-                },
-                {
-                    field: 'Email',
-                    align: 'center',
-                    title: '邮箱',
-                    visible: 1
-                },
-                {
-                    field: 'EnterpriseName',
-                    align: 'center',
-                    title: '所属企业',
-                    visible: 1
-                },
-                {
-                    field: 'Phone',
-                    align: 'center',
-                    title: '手机号',
-                    visible: 1
-                }, {
-                    field: 'Country',
-                    align: 'center',
-                    title: '国家',
-                    visible: 1
-                },
-                {
-                    field: 'UserType',
-                    align: 'center',
-                    title: '用户类型',
-                    visible: 1,
-                    formatter: function (value) {
-                        return vecc.veccUserTypeToStr(value);
-                    }
-                }, {
-                    field: 'AccountStatus',
-                    align: 'center',
-                    title: '账号状态',
-                    visible: 1,
-                    formatter: function (value) {
-                        return vecc.veccStatusToStr(value);
-                    }
-                },
-                {
-                    field: 'CreateDate',
-                    align: 'center',
-                    title: '发起时间',
-                    visible: 1,
-                    formatter: function (value, row, index) {
-                        return formatDateBoxFull(value);
-                    }
-                },
-                {
-                    field: 'operate',
-                    align: 'center',
-                    title: '操作',
-                    visible: 1,
-                    formatter: function (value, row, index) {
-                        var button = "";
-                        if (row.AccountStatus == 1) {
-                            button = '<a class="btn btn-info" href="#" onclick="onAgree(' + row.Id + ');"><i class="glyphicon"></i>同意</a><a class="btn btn-danger" href="#" onclick="onRefuseUser(' + row.Id + ');"><i class="glyphicon"></i>拒绝</a>';
-                        }
-                        else {
-                            button = '<a class="btn btn-success" href="#" onclick="UserInFo(' + row.Id + ');"><i class="glyphicon"></i>查看</a><a class="btn btn-danger" href="#" onclick="onDel(' + row.Id + ',\'' + row.UserName + '\');"><i class="glyphicon"></i>删除</a>';
-                        }
-                        return button;
-                    }
-                }
-            ],
-            onPageChange: function (number, size) {
+                                        }
+                                    });
+                                }
 
-            },
-            onClickRow: function (row, element, field) {
+                                //var _msg = msg;
+                                //var checkedbox = $("#tb_DataApproval").bootstrapTable('getSelections');
+                                ////将选中行数据转成jsonStr
+                                //var jsonStr = JSON.stringify(checkedbox);
+                                //var jsonObject = jQuery.parseJSON(jsonStr);
+                                //if (jsonObject.length > 0) {
+                                //    _msg.confirm("是否执行此操作!", function () {
+                                //        var zeo = [];
+                                //        for (var i = 0; i < jsonObject.length; i++) {
+                                //            var jValue = jsonObject[i]["Id"];//key所对应的value
+                                //            zeo.push(jValue);
+                                //        }
+                                //        var ids = zeo.join(",");
+                                //        $.ajax({
+                                //            url: "/Approval/BatchRefuseData",
+                                //            data: {
+                                //                Ids: ids
+                                //            },
+                                //            type: "POST",
+                                //            async: false,
+                                //            success: function (data) {
+                                //                if (data.Success) {
+                                //                    screeningSearch1();
+                                //                    msg.info("执行完成!");
+                                //                }
+                                //            },
+                                //            error: function (data) {
+                                //            }
+                                //        });
+                                //    });
+                                //}
+                                else {
+                                    return msg.info("请选择操作数据!");
+                                }
+                            }
 
-            },
-            onDblClickRow: function (row, obj) {
+                            //数据批量删除
+                            function DDel() {
+                                var _msg = msg;
+                                var checkedbox = $("#tb_DataApproval").bootstrapTable('getSelections');
+                                //将选中行数据转成jsonStr
+                                var jsonStr = JSON.stringify(checkedbox);
+                                var jsonObject = jQuery.parseJSON(jsonStr);
+                                if (jsonObject.length > 0) {
+                                    _msg.confirm("是否执行此操作!", function () {
+                                        var zeo = [];
+                                        for (var i = 0; i < jsonObject.length; i++) {
+                                            var jValue = jsonObject[i]["Id"];//key所对应的value
+                                            zeo.push(jValue);
+                                        }
+                                        var ids = zeo.join(",");
+                                        $.ajax({
+                                            url: "/Approval/BatchDelData",
+                                            data: {
+                                                Ids: ids
+                                            },
+                                            type: "POST",
+                                            async: false,
+                                            success: function (data) {
+                                                if (data.Success) {
+                                                    screeningSearch1();
+                                                    msg.info("执行完成!");
+                                                }
+                                            },
+                                            error: function (data) {
+                                            }
+                                        });
+                                    });
+                                }
+                                else {
+                                    return msg.info("请选择操作数据!");
+                                }
+                            }
 
-            }
-        });
-    }
+                            function changeState(i, id, pub) {
+                                $.ajax({
+                                    url: "/Approval/ChangePublic",
+                                    data: {
+                                        Id: id,
+                                        Pub: pub
+                                    },
+                                    type: "POST",
+                                    async: false,
+                                    success: function (data) {
+                                        if (data.Success) {
+                                            //只修改当前行
+                                            $('#tb_DataApproval').bootstrapTable("updateRow", { index: i, row: { IsPublic: pub == 0 ? 1 : 0 } });
+                                        }
+                                    },
+                                    error: function (data) {
+                                    }
+                                });
+                            }
 
-    function screeningSearch() {
-        $("#tb_UserApproval").bootstrapTable('refresh');
-    }
+                            function onRefuseData(id) {
+                                layer.open({
+                                    type: 2,
+                                    title: ['拒绝-备注'],
+                                    shadeClose: false,
+                                    btn: ['确定', '取消'],
+                                    skin: '',
+                                    area: ['30%', '35%'],
+                                    //maxmin: true,
+                                    content: ['/Approval/RefuseData?id=' + id, "no"],
+                                    yes: function (index, layor) {
+                                        $(layor).find("iframe")[0].contentWindow.onRefuseData1();
+                                        layer.close(index);
+                                    },
+                                    no: function (index, layor) {
+                                    }
+                                });
+                            }
 
-    function screeningSearch1() {
-        $("#tb_DataApproval").bootstrapTable('refresh');
-    }
+                            function initUserApproval() {
+                                $("#tb_UserApproval").bootstrapTable({
+                                    url: "/Approval/UserApprovalList",         //请求后台的URL（*）
+                                    method: 'post',                      //请求方式（*）
+                                    //toolbar: toolbar,                //工具按钮用哪个容器
+                                    striped: true,                      //是否显示行间隔色
+                                    cache: false,                       //是否使用缓存，默认为true，所以一般情况下需要设置一下这个属性（*）
+                                    pagination: true,                   //是否显示分页（*）
+                                    sortable: false,                     //是否启用排序
+                                    sortOrder: "asc",                   //排序方式
+                                    queryParams: function (params) {
+                                        var temp = {   //这里的键的名字和控制器的变量名必须一致，这边改动，控制器也需要改成一样的
+                                            PageSize: params.limit,   //页面显示行数
+                                            PageIndex: params.offset / params.limit + 1,//页码*页面显示行数=offset
+                                            UserName: $("#username").val(),
+                                            State: $("#state").val(),
+                                            BeginDate: userBeginDate,
+                                            EndDate: userEndDate
+                                        };
+                                        return temp;
+                                    },//传递参数（*）
+                                    sidePagination: "server",           //分页方式：client客户端分页，server服务端分页（*）
+                                    pageNumber: 1,                                              //初始化加载第一页，默认第一页
+                                    pageSize: 10,                                               //每页的记录行数（*）
+                                    pageList: [10, 25, 50, 100],
+                                    search: false,                       //是否显示表格搜索，此搜索是客户端搜索，不会进服务端，所以，个人感觉意义不大
+                                    strictSearch: false,
+                                    showColumns: false,                  //是否显示所有的列
+                                    showRefresh: true,                  //是否显示刷新按钮
+                                    minimumCountColumns: 2,             //最少允许的列数
+                                    clickToSelect: true,                //是否启用点击选中行
+                                    // height: 500,                        //行高，如果没有设置height属性，表格自动根据记录条数觉得表格高度
+                                    uniqueId: "Id",                     //每一行的唯一标识，一般为主键列
+                                    //showToggle: true,                    //是否显示详细视图和列表视图的切换按钮
+                                    //cardView: false,                    //是否显示详细视图
+                                    columns: [
+                                        {
+                                            checkbox: true,
+                                            align: 'center',
+                                        },
+                                        {
+                                            field: 'UserName',
+                                            align: 'center',
+                                            title: '申请账号',
+                                            visible: 1
+                                        },
+                                        {
+                                            field: 'Email',
+                                            align: 'center',
+                                            title: '邮箱',
+                                            visible: 1
+                                        },
+                                        {
+                                            field: 'EnterpriseName',
+                                            align: 'center',
+                                            title: '所属企业',
+                                            visible: 1
+                                        },
+                                        {
+                                            field: 'Phone',
+                                            align: 'center',
+                                            title: '手机号',
+                                            visible: 1
+                                        }, {
+                                            field: 'Country',
+                                            align: 'center',
+                                            title: '国家',
+                                            visible: 1
+                                        },
+                                        {
+                                            field: 'UserType',
+                                            align: 'center',
+                                            title: '用户类型',
+                                            visible: 1,
+                                            formatter: function (value) {
+                                                return vecc.veccUserTypeToStr(value);
+                                            }
+                                        }, {
+                                            field: 'AccountStatus',
+                                            align: 'center',
+                                            title: '账号状态',
+                                            visible: 1,
+                                            formatter: function (value) {
+                                                return vecc.veccStatusToStr(value);
+                                            }
+                                        },
+                                        {
+                                            field: 'CreateDate',
+                                            align: 'center',
+                                            title: '发起时间',
+                                            visible: 1,
+                                            formatter: function (value, row, index) {
+                                                return formatDateBoxFull(value);
+                                            }
+                                        },
+                                        {
+                                            field: 'operate',
+                                            align: 'center',
+                                            title: '操作',
+                                            visible: 1,
+                                            formatter: function (value, row, index) {
+                                                var button = "";
+                                                if (row.AccountStatus == 1) {
+                                                    button = '<a class="btn btn-info" href="#" onclick="onAgree(' + row.Id + ');"><i class="glyphicon"></i>同意</a><a class="btn btn-danger" href="#" onclick="onRefuseUser(' + row.Id + ');"><i class="glyphicon"></i>拒绝</a>';
+                                                }
+                                                else {
+                                                    button = '<a class="btn btn-success" href="#" onclick="UserInFo(' + row.Id + ');"><i class="glyphicon"></i>查看</a><a class="btn btn-danger" href="#" onclick="onDel(' + row.Id + ',\'' + row.UserName + '\');"><i class="glyphicon"></i>删除</a>';
+                                                }
+                                                return button;
+                                            }
+                                        }
+                                    ],
+                                    onPageChange: function (number, size) {
 
-    function UAgree() {
-        var _msg = msg;
-        var checkedbox = $("#tb_UserApproval").bootstrapTable('getSelections');
-        //将选中行数据转成jsonStr
-        var jsonStr = JSON.stringify(checkedbox);
-        var jsonObject = jQuery.parseJSON(jsonStr);
-        if (jsonObject.length > 0) {
-            _msg.confirm("是否执行此操作!", function () {
-                var zeo = [];
-                for (var i = 0; i < jsonObject.length; i++) {
-                    var jValue = jsonObject[i]["Id"];//key所对应的value
-                    zeo.push(jValue);
-                }
-                var ids = zeo.join(",");
-                $.ajax({
-                    url: "/Approval/BatchAgreeUser",
-                    data: {
-                        Ids: ids
-                    },
-                    type: "POST",
-                    async: false,
-                    success: function (data) {
-                        if (data.Success) {
-                            screeningSearch();
-                            msg.info("执行完成!");
-                        }
-                    },
-                    error: function (data) {
-                    }
-                });
-            });
-        }
-        else {
-            return msg.info("请选择操作数据!");
-        }
-    }
+                                    },
+                                    onClickRow: function (row, element, field) {
 
-    function URefuse() {
-        var checkedbox = $("#tb_UserApproval").bootstrapTable('getSelections');
-        //将选中行数据转成jsonStr
-        var jsonStr = JSON.stringify(checkedbox);
-        var jsonObject = jQuery.parseJSON(jsonStr);
-        if (jsonObject.length > 0) {
-            var zeo = [];
-            for (var i = 0; i < jsonObject.length; i++) {
-                var jValue = jsonObject[i]["Id"];//key所对应的value
-                zeo.push(jValue);
-            }
-            var ids = zeo.join(",");
-            layer.open({
-                type: 2,
-                title: ['批量拒绝-备注'],
-                shadeClose: false,
-                btn: ['确定', '取消'],
-                skin: '',
-                area: ['30%', '35%'],
-                //maxmin: true,
-                content: ['/Approval/RefuseBatchUserView?id=' + ids, "no"],
-                yes: function (index, layor) {
-                    $(layor).find("iframe")[0].contentWindow.DoRefuseBatchUser();
-                    layer.close(index);
-                },
-                no: function (index, layor) {
+                                    },
+                                    onDblClickRow: function (row, obj) {
 
-                }
-            });
-        }
-        //var _msg = msg;
-        //var checkedbox = $("#tb_UserApproval").bootstrapTable('getSelections');
-        ////将选中行数据转成jsonStr
-        //var jsonStr = JSON.stringify(checkedbox);
-        //var jsonObject = jQuery.parseJSON(jsonStr);
-        //if (jsonObject.length > 0) {
-        //    _msg.confirm("是否执行此操作!", function () {
-                
-        //        $.ajax({
-        //            url: "/Approval/BatchRefuseUser",
-        //            data: {
-        //                Ids: ids
-        //            },
-        //            type: "POST",
-        //            async: false,
-        //            success: function (data) {
-        //                if (data.Success) {
-        //                    screeningSearch();
-        //                    msg.info("执行完成!");
-        //                }
-        //            },
-        //            error: function (data) {
-        //            }
-        //        });
-        //    });
-        //}
-        else {
-            return msg.info("请选择操作数据!");
-        }
-    }
+                                    }
+                                });
+                            }
 
-    function UDel() {
-        var _msg = msg;
-        var checkedbox = $("#tb_UserApproval").bootstrapTable('getSelections');
-        //将选中行数据转成jsonStr
-        var jsonStr = JSON.stringify(checkedbox);
-        var jsonObject = jQuery.parseJSON(jsonStr);
-        if (jsonObject.length > 0) {
-            _msg.confirm("是否执行此操作!", function () {
-                var zeo = [];
-                for (var i = 0; i < jsonObject.length; i++) {
-                    var jValue = jsonObject[i]["Id"];//key所对应的value
-                    zeo.push(jValue);
-                }
-                var ids = zeo.join(",");
-                $.ajax({
-                    url: "/Approval/BatchDelUser",
-                    data: {
-                        Ids: ids
-                    },
-                    type: "POST",
-                    async: false,
-                    success: function (data) {
-                        if (data.Success) {
-                            screeningSearch();
-                            msg.info("执行完成!");
-                        }
-                    },
-                    error: function (data) {
-                    }
-                });
-            });
-        }
-        else {
-            return msg.info("请选择操作数据!");
-        }
-    }
+                            function screeningSearch() {
+                                $("#tb_UserApproval").bootstrapTable('refresh');
+                            }
 
-    //同意
-    function onAgree(id) {
-        $.ajax({
-            url: "/Approval/AgreeUser",
-            data: {
-                Id: id
-            },
-            type: "POST",
-            async: false,
-            success: function (data) {
-                if (data.Success) {
-                    $("#tb_UserApproval").bootstrapTable("refresh");
-                    //parent.layer.close(thisLayer);
-                }
-            },
-            error: function (data) {
-            }
-        });
-    }
+                            function screeningSearch1() {
+                                $("#tb_DataApproval").bootstrapTable('refresh');
+                            }
 
-    function onAgreeData(id) {
-        $.ajax({
-            url: "/Approval/AgreeData",
-            data: {
-                Id: id
-            },
-            type: "POST",
-            async: false,
-            success: function (data) {
-                if (data.Success) {
-                    $("#tb_DataApproval").bootstrapTable("refresh");
-                }
-            },
-            error: function (data) {
-            }
-        });
-    }
+                            function UAgree() {
+                                var _msg = msg;
+                                var checkedbox = $("#tb_UserApproval").bootstrapTable('getSelections');
+                                //将选中行数据转成jsonStr
+                                var jsonStr = JSON.stringify(checkedbox);
+                                var jsonObject = jQuery.parseJSON(jsonStr);
+                                if (jsonObject.length > 0) {
+                                    _msg.confirm("是否执行此操作!", function () {
+                                        var zeo = [];
+                                        for (var i = 0; i < jsonObject.length; i++) {
+                                            var jValue = jsonObject[i]["Id"];//key所对应的value
+                                            zeo.push(jValue);
+                                        }
+                                        var ids = zeo.join(",");
+                                        $.ajax({
+                                            url: "/Approval/BatchAgreeUser",
+                                            data: {
+                                                Ids: ids
+                                            },
+                                            type: "POST",
+                                            async: false,
+                                            success: function (data) {
+                                                if (data.Success) {
+                                                    screeningSearch();
+                                                    msg.info("执行完成!");
+                                                }
+                                            },
+                                            error: function (data) {
+                                            }
+                                        });
+                                    });
+                                }
+                                else {
+                                    return msg.info("请选择操作数据!");
+                                }
+                            }
 
-    function onRefuseUser(id) {
-        layer.open({
-            type: 2,
-            title: ['拒绝-备注'],
-            shadeClose: false,
-            btn: ['确定', '取消'],
-            skin: '',
-            area: ['30%', '35%'],
-            //maxmin: true,
-            content: ['/Approval/RefuseUser?id=' + id, "no"],
-            yes: function (index, layor) {
-                $(layor).find("iframe")[0].contentWindow.DoRefuseUser();
-                layer.close(index);
-            },
-            no: function (index, layor) {
+                            function URefuse() {
+                                var checkedbox = $("#tb_UserApproval").bootstrapTable('getSelections');
+                                //将选中行数据转成jsonStr
+                                var jsonStr = JSON.stringify(checkedbox);
+                                var jsonObject = jQuery.parseJSON(jsonStr);
+                                if (jsonObject.length > 0) {
+                                    var zeo = [];
+                                    for (var i = 0; i < jsonObject.length; i++) {
+                                        var jValue = jsonObject[i]["Id"];//key所对应的value
+                                        zeo.push(jValue);
+                                    }
+                                    var ids = zeo.join(",");
+                                    layer.open({
+                                        type: 2,
+                                        title: ['批量拒绝-备注'],
+                                        shadeClose: false,
+                                        btn: ['确定', '取消'],
+                                        skin: '',
+                                        area: ['30%', '35%'],
+                                        //maxmin: true,
+                                        content: ['/Approval/RefuseBatchUserView?id=' + ids, "no"],
+                                        yes: function (index, layor) {
+                                            $(layor).find("iframe")[0].contentWindow.DoRefuseBatchUser();
+                                            layer.close(index);
+                                        },
+                                        no: function (index, layor) {
 
-            }
-        });
-    }
+                                        }
+                                    });
+                                }
+                                //var _msg = msg;
+                                //var checkedbox = $("#tb_UserApproval").bootstrapTable('getSelections');
+                                ////将选中行数据转成jsonStr
+                                //var jsonStr = JSON.stringify(checkedbox);
+                                //var jsonObject = jQuery.parseJSON(jsonStr);
+                                //if (jsonObject.length > 0) {
+                                //    _msg.confirm("是否执行此操作!", function () {
 
-    function onDelData(id, username) {
-        var _msg = msg;
-        _msg.confirm("数据: " + username + " 将被删除", function () {
-            $.ajax({
-                url: "/Approval/DeleteData",
-                type: "POST",
-                data: {
-                    Id: id
-                },
-                success: function (data) {
-                    if (data.Success) {
-                        $("#tb_DataApproval").bootstrapTable('refresh');
-                        msg.info("删除成功");
-                    } else {
-                        msg.error("删除失败");
-                    }
-                },
-                error: function (error) {
+                                //        $.ajax({
+                                //            url: "/Approval/BatchRefuseUser",
+                                //            data: {
+                                //                Ids: ids
+                                //            },
+                                //            type: "POST",
+                                //            async: false,
+                                //            success: function (data) {
+                                //                if (data.Success) {
+                                //                    screeningSearch();
+                                //                    msg.info("执行完成!");
+                                //                }
+                                //            },
+                                //            error: function (data) {
+                                //            }
+                                //        });
+                                //    });
+                                //}
+                                else {
+                                    return msg.info("请选择操作数据!");
+                                }
+                            }
 
-                }
-            });
-        });
-    }
+                            function UDel() {
+                                var _msg = msg;
+                                var checkedbox = $("#tb_UserApproval").bootstrapTable('getSelections');
+                                //将选中行数据转成jsonStr
+                                var jsonStr = JSON.stringify(checkedbox);
+                                var jsonObject = jQuery.parseJSON(jsonStr);
+                                if (jsonObject.length > 0) {
+                                    _msg.confirm("是否执行此操作!", function () {
+                                        var zeo = [];
+                                        for (var i = 0; i < jsonObject.length; i++) {
+                                            var jValue = jsonObject[i]["Id"];//key所对应的value
+                                            zeo.push(jValue);
+                                        }
+                                        var ids = zeo.join(",");
+                                        $.ajax({
+                                            url: "/Approval/BatchDelUser",
+                                            data: {
+                                                Ids: ids
+                                            },
+                                            type: "POST",
+                                            async: false,
+                                            success: function (data) {
+                                                if (data.Success) {
+                                                    screeningSearch();
+                                                    msg.info("执行完成!");
+                                                }
+                                            },
+                                            error: function (data) {
+                                            }
+                                        });
+                                    });
+                                }
+                                else {
+                                    return msg.info("请选择操作数据!");
+                                }
+                            }
 
-    function onDel(id, username) {
-        var _msg = msg;
-        _msg.confirm("账号: " + username + " 将被删除", function () {
-            $.ajax({
-                url: "/Approval/DeleteUser",
-                type: "POST",
-                data: {
-                    Id: id
-                },
-                success: function (data) {
-                    if (data.Success) {
-                        $("#tb_UserApproval").bootstrapTable('refresh');
-                        msg.info("删除成功");
-                    } else {
-                        msg.error("删除失败");
-                    }
-                },
-                error: function (error) {
+                            //同意
+                            function onAgree(id) {
+                                $.ajax({
+                                    url: "/Approval/AgreeUser",
+                                    data: {
+                                        Id: id
+                                    },
+                                    type: "POST",
+                                    async: false,
+                                    success: function (data) {
+                                        if (data.Success) {
+                                            $("#tb_UserApproval").bootstrapTable("refresh");
+                                            //parent.layer.close(thisLayer);
+                                        }
+                                    },
+                                    error: function (data) {
+                                    }
+                                });
+                            }
 
-                }
-            });
-        });
-    }
+                            function onAgreeData(id) {
+                                $.ajax({
+                                    url: "/Approval/AgreeData",
+                                    data: {
+                                        Id: id
+                                    },
+                                    type: "POST",
+                                    async: false,
+                                    success: function (data) {
+                                        if (data.Success) {
+                                            $("#tb_DataApproval").bootstrapTable("refresh");
+                                        }
+                                    },
+                                    error: function (data) {
+                                    }
+                                });
+                            }
 
-    function addUser() {
-        layer.open({
-            type: 2,
-            title: ['新增-检测机构'],
-            shadeClose: false,
-            btn: ['确定', '取消'],
-            skin: '',
-            area: ['50%', '95%'],
-            maxmin: true,
-            content: ['/Approval/AddUser', "no"],
-            yes: function (index, layor) {
-                $(layor).find("iframe")[0].contentWindow.VeccAddUser();
-                //layer.close(index);
-            },
-            no: function (index, layor) {
+                            function onRefuseUser(id) {
+                                layer.open({
+                                    type: 2,
+                                    title: ['拒绝-备注'],
+                                    shadeClose: false,
+                                    btn: ['确定', '取消'],
+                                    skin: '',
+                                    area: ['30%', '35%'],
+                                    //maxmin: true,
+                                    content: ['/Approval/RefuseUser?id=' + id, "no"],
+                                    yes: function (index, layor) {
+                                        $(layor).find("iframe")[0].contentWindow.DoRefuseUser();
+                                        layer.close(index);
+                                    },
+                                    no: function (index, layor) {
 
-            }
-        });
-    }
+                                    }
+                                });
+                            }
 
-    function UserInFo(id) {
-        layer.open({
-            type: 2,
-            title: ['查看-用户信息'],
-            shadeClose: false,
-            btn: ['关闭'],
-            skin: '',
-            area: ['60%', '50%'],
-            maxmin: true,
-            content: ['/Approval/UserInFo?Id=' + id, "no"],
-            yes: function (index, layor) {
-                layer.close(index);
-            },
-            no: function (index, layor) {
+                            function onDelData(id, username) {
+                                var _msg = msg;
+                                _msg.confirm("数据: " + username + " 将被删除", function () {
+                                    $.ajax({
+                                        url: "/Approval/DeleteData",
+                                        type: "POST",
+                                        data: {
+                                            Id: id
+                                        },
+                                        success: function (data) {
+                                            if (data.Success) {
+                                                $("#tb_DataApproval").bootstrapTable('refresh');
+                                                msg.info("删除成功");
+                                            } else {
+                                                msg.error("删除失败");
+                                            }
+                                        },
+                                        error: function (error) {
 
-            }
-        });
-    }
-</script>
+                                        }
+                                    });
+                                });
+                            }
+
+                            function onDel(id, username) {
+                                var _msg = msg;
+                                _msg.confirm("账号: " + username + " 将被删除", function () {
+                                    $.ajax({
+                                        url: "/Approval/DeleteUser",
+                                        type: "POST",
+                                        data: {
+                                            Id: id
+                                        },
+                                        success: function (data) {
+                                            if (data.Success) {
+                                                $("#tb_UserApproval").bootstrapTable('refresh');
+                                                msg.info("删除成功");
+                                            } else {
+                                                msg.error("删除失败");
+                                            }
+                                        },
+                                        error: function (error) {
+
+                                        }
+                                    });
+                                });
+                            }
+
+                            function addUser() {
+                                layer.open({
+                                    type: 2,
+                                    title: ['新增-检测机构'],
+                                    shadeClose: false,
+                                    btn: ['确定', '取消'],
+                                    skin: '',
+                                    area: ['50%', '95%'],
+                                    maxmin: true,
+                                    content: ['/Approval/AddUser', "no"],
+                                    yes: function (index, layor) {
+                                        $(layor).find("iframe")[0].contentWindow.VeccAddUser();
+                                        //layer.close(index);
+                                    },
+                                    no: function (index, layor) {
+
+                                    }
+                                });
+                            }
+
+                            function UserInFo(id) {
+                                layer.open({
+                                    type: 2,
+                                    title: ['查看-用户信息'],
+                                    shadeClose: false,
+                                    btn: ['关闭'],
+                                    skin: '',
+                                    area: ['60%', '50%'],
+                                    maxmin: true,
+                                    content: ['/Approval/UserInFo?Id=' + id, "no"],
+                                    yes: function (index, layor) {
+                                        layer.close(index);
+                                    },
+                                    no: function (index, layor) {
+
+                                    }
+                                });
+                            }
+                        </script>

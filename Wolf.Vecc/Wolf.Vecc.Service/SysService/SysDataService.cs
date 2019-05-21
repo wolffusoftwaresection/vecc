@@ -37,6 +37,10 @@ namespace Wolf.Vecc.Service.SysService
             {
                 searchPredicate = searchPredicate.And(d => d.DataStatus == dataApprovalViewModel.DataState);
             }
+            if (dataApprovalViewModel.BeginDate != null && dataApprovalViewModel.EndDate != null)
+            {
+                searchPredicate = searchPredicate.And(d => d.UploadDate >= dataApprovalViewModel.BeginDate && d.UploadDate <= dataApprovalViewModel.EndDate);
+            }
             return _dbServiceReposity.GetWhereSearch(searchPredicate).ToList();
         }
 
