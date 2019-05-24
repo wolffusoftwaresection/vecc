@@ -60,6 +60,7 @@
                 var jsonObj = $.parseJSON(data.replace(/<.*?>/ig, ""));
                 if (jsonObj.Success) {
                     //执行父页面方法
+                    console.log(jsonObj.Data);
                     var index = parent.layer.getFrameIndex(window.name);
                     parent.ReportModelVal(jsonObj.Data, index);
                 }

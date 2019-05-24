@@ -178,7 +178,7 @@ namespace Wolf.Vecc.Controllers
                     string[] arraynamevalue = array[i].Split('=');
                     if (arraynamevalue.Length == 2)
                     {
-                        keyValuePairs.Add(arraynamevalue[0], arraynamevalue[1]);
+                        keyValuePairs.Add(arraynamevalue[0], arraynamevalue[1] == "" ? "—" : arraynamevalue[1]);
                     }
                 }
             }
