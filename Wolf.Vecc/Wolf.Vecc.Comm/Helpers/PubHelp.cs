@@ -81,6 +81,8 @@ namespace Wolf.Vecc.Comm.Helpers
         {
             try
             {
+                LogHelper.LogInfo("--------执行postData---------");
+                LogHelper.LogInfo(theurl);
                 byte[] postData = Encoding.UTF8.GetBytes(postdata);
                 System.Net.HttpWebRequest request = (System.Net.HttpWebRequest)System.Net.WebRequest.Create(theurl); ;
                 request.Method = "POST";

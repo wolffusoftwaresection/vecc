@@ -19,6 +19,11 @@ namespace Wolf.Vecc.Controllers
     {
         private readonly IAccountService _accountService;
         private readonly ISysUserService _sysUserService;
+
+        public AccountController()
+        {
+        }
+
         public AccountController(IAccountService accountService, ISysUserService sysUserService)
         {
             _accountService = accountService;

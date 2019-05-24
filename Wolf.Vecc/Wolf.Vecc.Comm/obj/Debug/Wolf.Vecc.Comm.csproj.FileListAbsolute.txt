@@ -10,3 +10,9 @@ F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Comm\obj\Debug\Wolf.Vecc.Comm.pdb
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Comm\bin\Debug\Newtonsoft.Json.dll
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Comm\bin\Debug\Newtonsoft.Json.xml
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Comm\obj\Debug\Wolf.Vecc.Comm.csprojAssemblyReference.cache
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Comm\bin\Debug\ICSharpCode.SharpZipLib.dll
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Comm\bin\Debug\NPOI.dll
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Comm\bin\Debug\NPOI.OOXML.dll
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Comm\bin\Debug\NPOI.OpenXml4Net.dll
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Comm\bin\Debug\NPOI.OpenXmlFormats.dll
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Comm\bin\Debug\ICSharpCode.SharpZipLib.xml

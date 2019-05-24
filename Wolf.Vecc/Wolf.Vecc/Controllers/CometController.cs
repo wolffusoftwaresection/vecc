@@ -20,6 +20,10 @@ namespace Wolf.Vecc.Controllers
         private readonly string FileUrl = GlobalConfigHelper.GetFileUrl();
         System.Timers.Timer timer;
 
+        public CometController()
+        {
+        }
+
         public CometController(ISysPemsTaskService sysPemsTaskService, ISysTaskService sysTaskService, ISysTaskResultService sysTaskResultService)
         {
             _sysTaskResultService = sysTaskResultService;
@@ -71,7 +75,10 @@ namespace Wolf.Vecc.Controllers
                         JavaScriptSerializer javaScriptSerializer = new JavaScriptSerializer();
                         string send_data = javaScriptSerializer.Serialize(dic_result);
                         string posturl = GlobalConfigHelper.GetPostUrl();
-                        //PubHelp.PostData(posturl, send_data);
+                        //LogHelper.LogInfo(posturl);
+                        PubHelp.PostData(posturl, send_data);
+                        LogHelper.LogInfo("经过PubHelp.PostData");
+                        LogHelper.LogInfo(send_data);
                         _sysTaskService.UpdateSysTaskStatus(task.TaskId, 5);
                         statusstr = "当前状态是：开始计算……";
                     }

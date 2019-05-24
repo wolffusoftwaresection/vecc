@@ -145,3 +145,9 @@ F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Data\bin\Release\System.Memory.xml
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Data\bin\Release\System.Numerics.Vectors.xml
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Data\bin\Release\System.Runtime.CompilerServices.Unsafe.xml
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Data\bin\Release\System.Threading.Tasks.Extensions.xml
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Data\bin\Release\NPOI.dll
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Data\bin\Release\NPOI.OOXML.dll
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Data\bin\Release\ICSharpCode.SharpZipLib.dll
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Data\bin\Release\NPOI.OpenXml4Net.dll
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Data\bin\Release\NPOI.OpenXmlFormats.dll
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Data\bin\Release\ICSharpCode.SharpZipLib.xml

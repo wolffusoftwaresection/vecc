@@ -9,6 +9,7 @@ namespace Wolf.Vecc.Controllers
     [AllowAnonymous]
     public class ErrorController : Controller
     {
+        public ErrorController(){}
         // GET: Error
         // GET: Error
         public ActionResult Index()

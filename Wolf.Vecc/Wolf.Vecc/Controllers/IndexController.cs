@@ -12,6 +12,11 @@ namespace Wolf.Vecc.Controllers
     public class IndexController : BaseController
     {
         private readonly ISysUserService _userService;
+
+        public IndexController()
+        {
+        }
+
         public IndexController(ISysUserService userService)
         {
             _userService = userService;
@@ -42,7 +47,8 @@ namespace Wolf.Vecc.Controllers
             if (WorkUser != null)
             {
                 if (WorkUser.RoleId == 1)
-                {//获取缓存
+                {
+                    //获取缓存
                     return RedirectToAction("VeccIndex", "Index");
                 }
                 else

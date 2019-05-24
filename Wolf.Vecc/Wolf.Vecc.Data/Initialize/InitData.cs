@@ -17,7 +17,7 @@ namespace Wolf.Vecc.Data.Initialize
             //初始化用户数据 没有数据库时执行一次
             string salt;
             var code = UtilityHelper.CreateHashCodePW(GlobalConfigHelper.GetAdminInitialPassword(), out salt);
-            SysUsers user = new SysUsers { UserName = "veccadmin", RoleId = 1, AccountStatus = 3, UserType = 0, CreateDate = DateTime.Now, IsDel = 0, Password = code, Salt = salt };
+            SysUsers user = new SysUsers { UserName = "veccadmin", RoleId = 1, Email="veccadmin@126.com", Country= "中国", AccountStatus = 3, UserType = 0, CreateDate = DateTime.Now, IsDel = 0, Password = code, Salt = salt };
 
             //角色基础数据
             List<SysRole> sysRoles = new List<SysRole> {

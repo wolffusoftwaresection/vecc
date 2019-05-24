@@ -94,3 +94,9 @@ D:\工作资料\PEMS\VECC Program\Wolf.Vecc\Wolf.Vecc.Service\obj\Debug\Wolf.Vec
 D:\工作资料\PEMS\VECC Program\Wolf.Vecc\Wolf.Vecc.Service\obj\Debug\Wolf.Vecc.Service.dll
 D:\工作资料\PEMS\VECC Program\Wolf.Vecc\Wolf.Vecc.Service\obj\Debug\Wolf.Vecc.Service.pdb
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Service\bin\Debug\NLog.config
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Service\bin\Debug\NPOI.dll
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Service\bin\Debug\NPOI.OOXML.dll
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Service\bin\Debug\ICSharpCode.SharpZipLib.dll
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Service\bin\Debug\NPOI.OpenXml4Net.dll
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Service\bin\Debug\NPOI.OpenXmlFormats.dll
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Service\bin\Debug\ICSharpCode.SharpZipLib.xml

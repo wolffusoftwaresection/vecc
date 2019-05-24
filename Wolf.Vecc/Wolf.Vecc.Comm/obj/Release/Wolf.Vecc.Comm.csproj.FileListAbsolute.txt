@@ -10,3 +10,9 @@ F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Comm\obj\Release\Wolf.Vecc.Comm.csproj.Core
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Comm\obj\Release\Wolf.Vecc.Comm.csproj.CopyComplete
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Comm\obj\Release\Wolf.Vecc.Comm.dll
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Comm\obj\Release\Wolf.Vecc.Comm.pdb
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Comm\bin\Release\ICSharpCode.SharpZipLib.dll
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Comm\bin\Release\NPOI.dll
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Comm\bin\Release\NPOI.OOXML.dll
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Comm\bin\Release\NPOI.OpenXml4Net.dll
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Comm\bin\Release\NPOI.OpenXmlFormats.dll
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Comm\bin\Release\ICSharpCode.SharpZipLib.xml

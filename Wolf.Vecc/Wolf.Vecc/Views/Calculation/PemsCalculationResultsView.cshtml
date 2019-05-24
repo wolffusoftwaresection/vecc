@@ -8,10 +8,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Style-Type" content="text/css" />
     <meta name="generator" content="Aspose.Words for .NET 15.1.0.0" />
-    <title>报告编号：</title>
+    <title>检测报告</title>
 </head>
-
-
 <body>
     <div style="width:414.3pt;margin: 0 auto;">
         <input type="hidden" id="ResultData" value="@ViewBag.Result" />
@@ -26,8 +24,9 @@
 
         <!--p1-->
 
-        <p style="margin:0pt; orphans:0; text-align:justify; widows:0">
-            <span style="font-family:宋体; font-size:10.5pt">&#xa0;</span>
+        <p style="margin:0pt; orphans:0; text-align:right; widows:0">
+            <button type='button' id="inputExcel" onclick='ExeclView()' class='btn btn-dropbox btn-flat'>模板导入</button>
+            @*<span style="font-family:宋体; font-size:10.5pt">导入</span>*@
         </p>
 
         <p style="margin:0pt; orphans:0; text-align:justify; widows:0">
@@ -1147,7 +1146,7 @@
                 </tr>
 
                 <tr style="height:18.85pt">
-                    <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:41.85pt"><p style="margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt" id="NO_wWDs"></span></p></td> 
+                    <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:41.85pt"><p style="margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt" id="NO_wWDs"></span></p></td>
                     <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:41.85pt"><p style="margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt" id="NO_valid_wWDs"></span></p></td>
                     <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:41.85pt"><p style="margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt" id="p_valid_wWDs"></span></p></td>
                     <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:41.85pt"><p style="margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt">&#xa0;</span></p></td>
@@ -1433,6 +1432,12 @@
 </body>
 </html>
 <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script src="~/AdminLTE/plugins/layer/layer.js"></script>
+<script src="~/AdminLTE/comm/comm2.js"></script>
+<script src="~/AdminLTE/comm/_ajax.js"></script>
+<script src="~/AdminLTE/comm/_table.js"></script>
+<script src="~/AdminLTE/comm/_message.js"></script>
+<script src="~/AdminLTE/comm/comm.js"></script>
 <script type="text/javascript">
     $(function () {
         if ($("#ResultData").val() != "") {
@@ -1466,4 +1471,17 @@
             $("#work_ref2").text(json["work_ref"] == null ? $("#WhtcPower").val() : json["work_ref"]);
         }
     });
+
+    function ExeclView() {
+        layer.open({
+            type: 2,
+            title: ['用户导入'],
+            shadeClose: true,
+            btn: [],
+            skin: 'layerlarge',
+            area: ['55%', '55%'],
+            maxmin: true,
+            content: ['/Calculation/ImportExcelView', "yes"]
+        });
+    }
 </script>

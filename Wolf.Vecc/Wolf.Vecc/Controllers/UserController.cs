@@ -14,6 +14,12 @@ namespace Wolf.Vecc.Controllers
     {
         // GET: User
         private readonly ISysUserService _sysUserService;
+
+        public UserController()
+        {
+             
+        }
+
         public UserController(ISysUserService sysUserService)
         {
             _sysUserService = sysUserService;

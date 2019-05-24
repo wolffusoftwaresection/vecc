@@ -21,6 +21,11 @@ namespace Wolf.Vecc.Controllers
         private readonly ISysDataService _dataService;
         private readonly ISysApprovalUserService _approvalUserService;
         private readonly ISysApprovalDataService _approvalDataService;
+
+        public ApprovalController()
+        {
+        }
+
         public ApprovalController(ISysUserService userService, ISysApprovalUserService approvalUserService, ISysDataService dataService, ISysApprovalDataService sysApprovalDataService)
         {
             _userService = userService;

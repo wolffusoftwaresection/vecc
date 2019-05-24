@@ -12,6 +12,10 @@ namespace Wolf.Vecc.Controllers
     {
         private readonly IReportService _reportService;
 
+        public VeccReportController()
+        {
+        }
+
         public VeccReportController(IReportService reportService)
         {
             _reportService = reportService;

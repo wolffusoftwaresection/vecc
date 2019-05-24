@@ -25,6 +25,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -34,6 +35,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -43,6 +45,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Autofac, Version=4.9.2.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
@@ -90,6 +93,7 @@
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Drawing.Design" />
     <Reference Include="System.IO.Compression" />
@@ -102,12 +106,9 @@
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
-    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Routing" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
@@ -151,6 +152,7 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="Webdiyer.MvcPager, Version=3.0.2015.802, Culture=neutral, PublicKeyToken=f6872c5a09aed72c, processorArchitecture=MSIL">
       <HintPath>..\packages\Webdiyer.MvcPager.3.0.1.1\lib\Webdiyer.MvcPager.dll</HintPath>
     </Reference>
@@ -294,6 +296,10 @@
     <Content Include="AdminLTE\dist\css\style.css" />
     <Content Include="AdminLTE\dist\css\style.default.css" />
     <Content Include="AdminLTE\dist\css\style2.css" />
+    <Content Include="AdminLTE\dist\font-awesome-4.7.0\css\font-awesome.css" />
+    <Content Include="AdminLTE\dist\font-awesome-4.7.0\css\font-awesome.min.css" />
+    <Content Include="AdminLTE\dist\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="AdminLTE\dist\font-awesome-4.7.0\HELP-US-OUT.txt" />
     <Content Include="AdminLTE\dist\img\accountsetting%401x.png" />
     <Content Include="AdminLTE\dist\img\accountsetting%403x.png" />
     <Content Include="AdminLTE\dist\img\avatar-1.jpg" />
@@ -1709,6 +1715,7 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="NLog.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="AdminLTE\bootstrap\css\bootstrap-theme.css.map" />
     <Content Include="AdminLTE\bootstrap\css\bootstrap.min.css.map" />
@@ -1795,6 +1802,39 @@
     <Content Include="laydate\theme\default\font\iconfont.eot" />
     <Content Include="laydate\theme\default\font\iconfont.ttf" />
     <Content Include="laydate\theme\default\font\iconfont.woff" />
+    <Content Include="AdminLTE\dist\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="AdminLTE\dist\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="AdminLTE\dist\font-awesome-4.7.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="AdminLTE\dist\font-awesome-4.7.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="AdminLTE\dist\font-awesome-4.7.0\fonts\FontAwesome.otf" />
+    <Content Include="AdminLTE\dist\font-awesome-4.7.0\less\animated.less" />
+    <Content Include="AdminLTE\dist\font-awesome-4.7.0\less\bordered-pulled.less" />
+    <Content Include="AdminLTE\dist\font-awesome-4.7.0\less\core.less" />
+    <Content Include="AdminLTE\dist\font-awesome-4.7.0\less\fixed-width.less" />
+    <Content Include="AdminLTE\dist\font-awesome-4.7.0\less\font-awesome.less" />
+    <Content Include="AdminLTE\dist\font-awesome-4.7.0\less\icons.less" />
+    <Content Include="AdminLTE\dist\font-awesome-4.7.0\less\larger.less" />
+    <Content Include="AdminLTE\dist\font-awesome-4.7.0\less\list.less" />
+    <Content Include="AdminLTE\dist\font-awesome-4.7.0\less\mixins.less" />
+    <Content Include="AdminLTE\dist\font-awesome-4.7.0\less\path.less" />
+    <Content Include="AdminLTE\dist\font-awesome-4.7.0\less\rotated-flipped.less" />
+    <Content Include="AdminLTE\dist\font-awesome-4.7.0\less\screen-reader.less" />
+    <Content Include="AdminLTE\dist\font-awesome-4.7.0\less\stacked.less" />
+    <Content Include="AdminLTE\dist\font-awesome-4.7.0\less\variables.less" />
+    <Content Include="AdminLTE\dist\font-awesome-4.7.0\scss\font-awesome.scss" />
+    <Content Include="AdminLTE\dist\font-awesome-4.7.0\scss\_animated.scss" />
+    <Content Include="AdminLTE\dist\font-awesome-4.7.0\scss\_bordered-pulled.scss" />
+    <Content Include="AdminLTE\dist\font-awesome-4.7.0\scss\_core.scss" />
+    <Content Include="AdminLTE\dist\font-awesome-4.7.0\scss\_fixed-width.scss" />
+    <Content Include="AdminLTE\dist\font-awesome-4.7.0\scss\_icons.scss" />
+    <Content Include="AdminLTE\dist\font-awesome-4.7.0\scss\_larger.scss" />
+    <Content Include="AdminLTE\dist\font-awesome-4.7.0\scss\_list.scss" />
+    <Content Include="AdminLTE\dist\font-awesome-4.7.0\scss\_mixins.scss" />
+    <Content Include="AdminLTE\dist\font-awesome-4.7.0\scss\_path.scss" />
+    <Content Include="AdminLTE\dist\font-awesome-4.7.0\scss\_rotated-flipped.scss" />
+    <Content Include="AdminLTE\dist\font-awesome-4.7.0\scss\_screen-reader.scss" />
+    <Content Include="AdminLTE\dist\font-awesome-4.7.0\scss\_stacked.scss" />
+    <Content Include="AdminLTE\dist\font-awesome-4.7.0\scss\_variables.scss" />
     <None Include="NLog.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -1853,6 +1893,7 @@
     <Content Include="Views\VeccReport\ReportDataMonthView.cshtml" />
     <Content Include="Views\Approval\RefuseBatchUserView.cshtml" />
     <Content Include="Views\Approval\RefuseBatchDataView.cshtml" />
+    <Content Include="Views\Calculation\ImportExcelView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AdminLTE\bootstrap\js\ie\" />
@@ -1872,7 +1913,9 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>

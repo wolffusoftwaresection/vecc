@@ -10,6 +10,10 @@ namespace Wolf.Vecc.Controllers
     public class ApprovalUserAsyncController : AsyncController
     {
         private readonly ISysUserService _sysUserService;
+        public ApprovalUserAsyncController()
+        {
+             
+        }
         public ApprovalUserAsyncController(ISysUserService sysUserService)
         {
             _sysUserService = sysUserService;

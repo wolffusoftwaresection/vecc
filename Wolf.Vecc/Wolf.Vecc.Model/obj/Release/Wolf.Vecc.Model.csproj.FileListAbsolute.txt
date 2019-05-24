@@ -17,3 +17,9 @@ F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Model\obj\Release\Wolf.Vecc.Model.csproj.Co
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Model\obj\Release\Wolf.Vecc.Model.dll
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Model\obj\Release\Wolf.Vecc.Model.pdb
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Model\bin\Release\NLog.config
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Model\bin\Release\NPOI.dll
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Model\bin\Release\NPOI.OOXML.dll
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Model\bin\Release\ICSharpCode.SharpZipLib.dll
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Model\bin\Release\NPOI.OpenXml4Net.dll
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Model\bin\Release\NPOI.OpenXmlFormats.dll
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Model\bin\Release\ICSharpCode.SharpZipLib.xml
