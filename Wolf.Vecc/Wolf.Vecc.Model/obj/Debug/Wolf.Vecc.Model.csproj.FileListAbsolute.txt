@@ -35,7 +35,6 @@ D:\工作资料\PEMS\VECC Program\Wolf.Vecc\Wolf.Vecc.Model\obj\Debug\Wolf.Vecc.
 D:\工作资料\PEMS\VECC Program\Wolf.Vecc\Wolf.Vecc.Model\obj\Debug\Wolf.Vecc.Model.csproj.CopyComplete
 D:\工作资料\PEMS\VECC Program\Wolf.Vecc\Wolf.Vecc.Model\obj\Debug\Wolf.Vecc.Model.dll
 D:\工作资料\PEMS\VECC Program\Wolf.Vecc\Wolf.Vecc.Model\obj\Debug\Wolf.Vecc.Model.pdb
-F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Model\bin\Debug\NLog.config
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Model\bin\Debug\NPOI.dll
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Model\bin\Debug\NPOI.OOXML.dll
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Model\bin\Debug\ICSharpCode.SharpZipLib.dll

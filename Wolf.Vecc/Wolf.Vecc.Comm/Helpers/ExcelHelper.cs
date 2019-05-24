@@ -176,6 +176,7 @@ namespace Wolf.Vecc.Comm.Helpers
                 return -1;
             }
         }
+
         /// <summary>
         /// 将excel中的数据导入到DataTable中
         /// </summary>
@@ -263,276 +264,6 @@ namespace Wolf.Vecc.Comm.Helpers
             }
         }
 
-        public MemoryStream CreatUserExcelTemplate(string[] head, string[] data, DataTable model = null)
-        {
-            //创建工作簿
-            HSSFWorkbook wk = new HSSFWorkbook();
-
-            ICellStyle styleCell = wk.CreateCellStyle();
-            styleCell.Alignment = HorizontalAlignment.Center;
-            IFont font = wk.CreateFont();
-            font.Boldweight = (short)FontBoldWeight.Bold;
-            styleCell.SetFont(font);
-
-            ICellStyle styleCell2 = wk.CreateCellStyle();
-            styleCell2.Alignment = HorizontalAlignment.Center;
-            IFont font2 = wk.CreateFont();
-            font2.Boldweight = (short)FontBoldWeight.Bold;
-            font2.Color = (short)FontColor.Red;
-            styleCell2.SetFont(font2);
-
-            if (model != null)
-            {
-                ISheet sheet = wk.CreateSheet("职员信息");
-                //创建行和单元格
-                IRow row = sheet.CreateRow(0);
-                //创建单元格
-                ICell cell;
-                row = sheet.CreateRow(0);
-                cell = row.CreateCell(0);
-                cell.CellStyle = styleCell;
-                cell.SetCellValue("员工状态");
-                cell = row.CreateCell(1);
-                cell.CellStyle = styleCell;
-                cell.SetCellValue("序号");
-                cell = row.CreateCell(2);
-                cell.CellStyle = styleCell;
-                cell.SetCellValue("工号");
-                cell = row.CreateCell(3);
-                cell.CellStyle = styleCell;
-                cell.SetCellValue("姓名");
-                cell = row.CreateCell(4);
-                cell.CellStyle = styleCell;
-                cell.SetCellValue("性别");
-                cell = row.CreateCell(5);
-                cell.CellStyle = styleCell;
-                cell.SetCellValue("出生年月");
-                cell = row.CreateCell(6);
-                cell.CellStyle = styleCell;
-                cell.SetCellValue("民族");
-                cell = row.CreateCell(7);
-                cell.CellStyle = styleCell;
-                cell.SetCellValue("籍贯");
-                cell = row.CreateCell(8);
-                cell.CellStyle = styleCell;
-                cell.SetCellValue("身份证");
-                cell = row.CreateCell(9);
-                cell.CellStyle = styleCell;
-                cell.SetCellValue("身份证到期日期");
-                cell = row.CreateCell(10);
-                cell.CellStyle = styleCell;
-                cell.SetCellValue("年龄");
-                cell = row.CreateCell(11);
-                cell.CellStyle = styleCell;
-                cell.SetCellValue("婚姻状况");
-                cell = row.CreateCell(12);
-                cell.CellStyle = styleCell;
-                cell.SetCellValue("毕业院校");
-                cell = row.CreateCell(13);
-                cell.CellStyle = styleCell;
-                cell.SetCellValue("专业");
-                cell = row.CreateCell(14);
-                cell.CellStyle = styleCell;
-                cell.SetCellValue("学历");
-                cell = row.CreateCell(15);
-                cell.CellStyle = styleCell;
-                cell.SetCellValue("学位");
-                cell = row.CreateCell(16);
-                cell.CellStyle = styleCell;
-                cell.SetCellValue("家庭地址");
-                cell = row.CreateCell(17);
-                cell.CellStyle = styleCell;
-                cell.SetCellValue("通信地址");
-                cell = row.CreateCell(18);
-                cell.CellStyle = styleCell;
-                cell.SetCellValue("户籍地址");
-                cell = row.CreateCell(19);
-                cell.CellStyle = styleCell;
-                cell.SetCellValue("户口性质");
-                cell = row.CreateCell(20);
-                cell.CellStyle = styleCell;
-                cell.SetCellValue("联系电话");
-                cell = row.CreateCell(21);
-                cell.CellStyle = styleCell;
-                cell.SetCellValue("政治面貌");
-                cell = row.CreateCell(22);
-                cell.CellStyle = styleCell;
-                cell.SetCellValue("系统状态");
-                cell = row.CreateCell(23);
-                cell.CellStyle = styleCell;
-                cell.SetCellValue("系统编号");
-                cell = row.CreateCell(24);
-                cell.CellStyle = styleCell;
-                cell.SetCellValue("进公司日期");
-                cell = row.CreateCell(25);
-                cell.CellStyle = styleCell;
-                cell.SetCellValue("到岗日期");
-                cell = row.CreateCell(26);
-                cell.CellStyle = styleCell;
-                cell.SetCellValue("离职日期");
-                cell = row.CreateCell(27);
-                cell.CellStyle = styleCell;
-                cell.SetCellValue("离职原因");
-                cell = row.CreateCell(28);
-                cell.CellStyle = styleCell;
-                cell.SetCellValue("具体原因");
-                cell = row.CreateCell(29);
-                cell.CellStyle = styleCell;
-                cell.SetCellValue("公司工龄");
-                cell = row.CreateCell(30);
-                cell.CellStyle = styleCell;
-                cell.SetCellValue("合同类型");
-                cell = row.CreateCell(31);
-                cell.CellStyle = styleCell;
-                cell.SetCellValue("合同期限");
-                cell = row.CreateCell(32);
-                cell.CellStyle = styleCell;
-                cell.SetCellValue("合同起始日期");
-                cell = row.CreateCell(33);
-                cell.CellStyle = styleCell;
-                cell.SetCellValue("合同终止日期");
-                cell = row.CreateCell(34);
-                cell.CellStyle = styleCell;
-                cell.SetCellValue("合同试用期");
-                cell = row.CreateCell(35);
-                cell.CellStyle = styleCell;
-                cell.SetCellValue("试用期考核结果");
-                cell = row.CreateCell(36);
-                cell.CellStyle = styleCell;
-                cell.SetCellValue("转正日期");
-                cell = row.CreateCell(37);
-                cell.CellStyle = styleCell;
-                cell.SetCellValue("用工性质");
-                cell = row.CreateCell(38);
-                cell.CellStyle = styleCell;
-                cell.SetCellValue("所属公司");
-                cell = row.CreateCell(39);
-                cell.CellStyle = styleCell;
-                cell.SetCellValue("部门名称");
-                cell = row.CreateCell(40);
-                cell.CellStyle = styleCell;
-                cell.SetCellValue("工段");
-                cell = row.CreateCell(41);
-                cell.CellStyle = styleCell;
-                cell.SetCellValue("班组");
-                cell = row.CreateCell(42);
-                cell.CellStyle = styleCell;
-                cell.SetCellValue("现任岗位名称");
-                cell = row.CreateCell(43);
-                cell.CellStyle = styleCell;
-                cell.SetCellValue("对应组织架构岗位");
-                cell = row.CreateCell(44);
-                cell.CellStyle = styleCell;
-                cell.SetCellValue("岗位类别");
-                cell = row.CreateCell(45);
-                cell.CellStyle = styleCell;
-                cell.SetCellValue("岗位等级");
-                for (int i = 0; i < model.Rows.Count; i++)
-                {
-                    //创建行和单元格
-                    row = sheet.CreateRow(i + 1);
-                    cell = row.CreateCell(0);
-                    cell.SetCellValue(model.Rows[i]["UserStateStr"].ToString());
-                    cell = row.CreateCell(1);
-                    cell.SetCellValue(model.Rows[i]["UserNumber"].ToString());
-                    cell = row.CreateCell(2);
-                    cell.SetCellValue(model.Rows[i]["UserJobNumber"].ToString());
-                    cell = row.CreateCell(3);
-                    cell.SetCellValue(model.Rows[i]["Name"].ToString());
-                    cell = row.CreateCell(4);
-                    cell.SetCellValue(model.Rows[i]["Gender"].ToString());
-                    cell = row.CreateCell(5);
-                    cell.SetCellValue(model.Rows[i]["Birthday"].ToString());
-                    cell = row.CreateCell(6);
-                    cell.SetCellValue(model.Rows[i]["Family"].ToString());
-                    cell = row.CreateCell(7);
-                    cell.SetCellValue(model.Rows[i]["Province"].ToString());
-                    cell = row.CreateCell(8);
-                    cell.SetCellValue(model.Rows[i]["IDCard"].ToString());
-                    cell = row.CreateCell(9);
-                    cell.SetCellValue(model.Rows[i]["IDCardOverDue"].ToString());
-                    cell = row.CreateCell(10);
-                    cell.SetCellValue(model.Rows[i]["Age"].ToString());
-                    cell = row.CreateCell(11);
-                    cell.SetCellValue(model.Rows[i]["MaritalStatus"].ToString());
-                    cell = row.CreateCell(12);
-                    cell.SetCellValue(model.Rows[i]["School"].ToString());
-                    cell = row.CreateCell(13);
-                    cell.SetCellValue(model.Rows[i]["Major"].ToString());
-                    cell = row.CreateCell(14);
-                    cell.SetCellValue(model.Rows[i]["Education"].ToString());
-                    cell = row.CreateCell(15);
-                    cell.SetCellValue(model.Rows[i]["AcademicDegree"].ToString());
-                    cell = row.CreateCell(16);
-                    cell.SetCellValue(model.Rows[i]["Address"].ToString());
-                    cell = row.CreateCell(17);
-                    cell.SetCellValue(model.Rows[i]["MailingAddress"].ToString());
-                    cell = row.CreateCell(18);
-                    cell.SetCellValue(model.Rows[i]["PermanentAddress"].ToString());
-                    cell = row.CreateCell(19);
-                    cell.SetCellValue(model.Rows[i]["Nature"].ToString());
-                    cell = row.CreateCell(20);
-                    cell.SetCellValue(model.Rows[i]["UserMobile"].ToString());
-                    cell = row.CreateCell(21);
-                    cell.SetCellValue(model.Rows[i]["PoliticalOutlook"].ToString());
-                    cell = row.CreateCell(22);
-                    cell.SetCellValue(model.Rows[i]["SystemState"].ToString());
-                    cell = row.CreateCell(23);
-                    cell.SetCellValue(model.Rows[i]["SystemID"].ToString());
-                    cell = row.CreateCell(24);
-                    cell.SetCellValue(model.Rows[i]["IncorporationDate"].ToString());
-                    cell = row.CreateCell(25);
-                    cell.SetCellValue(model.Rows[i]["ArrivalDate"].ToString());
-                    cell = row.CreateCell(26);
-                    cell.SetCellValue(model.Rows[i]["LeaveDate"].ToString());
-                    cell = row.CreateCell(27);
-                    cell.SetCellValue(model.Rows[i]["LeaveReasons"].ToString());
-                    cell = row.CreateCell(28);
-                    cell.SetCellValue(model.Rows[i]["SpecificReasons"].ToString());
-                    cell = row.CreateCell(29);
-                    cell.SetCellValue(model.Rows[i]["CompanySeniority"].ToString());
-                    cell = row.CreateCell(30);
-                    cell.SetCellValue(model.Rows[i]["ContractType"].ToString());
-                    cell = row.CreateCell(31);
-                    cell.SetCellValue(model.Rows[i]["ContractPeriod"].ToString());
-                    cell = row.CreateCell(32);
-                    cell.SetCellValue(model.Rows[i]["ContractBeginDate"].ToString());
-                    cell = row.CreateCell(33);
-                    cell.SetCellValue(model.Rows[i]["ContractEndDate"].ToString());
-                    cell = row.CreateCell(34);
-                    cell.SetCellValue(model.Rows[i]["ContractTryDate"].ToString());
-                    cell = row.CreateCell(35);
-                    cell.SetCellValue(model.Rows[i]["ContractResult"].ToString());
-                    cell = row.CreateCell(36);
-                    cell.SetCellValue(model.Rows[i]["CompletionDate"].ToString());
-                    cell = row.CreateCell(37);
-                    cell.SetCellValue(model.Rows[i]["EmploymentNature"].ToString());
-                    cell = row.CreateCell(38);
-                    cell.SetCellValue(model.Rows[i]["OwnedCompany"].ToString());
-                    cell = row.CreateCell(39);
-                    cell.SetCellValue(model.Rows[i]["DepartmentName"].ToString());
-                    cell = row.CreateCell(40);
-                    cell.SetCellValue(model.Rows[i]["WorkshopSection"].ToString());
-                    cell = row.CreateCell(41);
-                    cell.SetCellValue(model.Rows[i]["WorkTeam"].ToString());
-                    cell = row.CreateCell(42);
-                    cell.SetCellValue(model.Rows[i]["CurrentPostName"].ToString());
-                    cell = row.CreateCell(43);
-                    cell.SetCellValue(model.Rows[i]["CorrespondingOrganizational"].ToString());
-                    cell = row.CreateCell(44);
-                    cell.SetCellValue(model.Rows[i]["PostCategory"].ToString());
-                    cell = row.CreateCell(45);
-                    cell.SetCellValue(model.Rows[i]["PostLevel"].ToString());
-                }
-                sheet.AutoSizeColumn(0);
-                sheet.AutoSizeColumn(1);
-            }
-            MemoryStream ms = new MemoryStream();
-            wk.Write(ms);
-            wk.Close();
-            return ms;
-        }
-
         /// <summary>
         /// 创建检测报告模板
         /// </summary>
@@ -560,10 +291,9 @@ namespace Wolf.Vecc.Comm.Helpers
             font3.Boldweight = (short)FontBoldWeight.Bold;
             styleCell3.SetFont(font3);
             ICell cell;
-            ISheet sheet1 = wk.CreateSheet("检验报告基本参数");
-
+            //ISheet sheet1 = wk.CreateSheet("检验报告基本参数");
+            ISheet sheet1 = wk.CreateSheet("sheet1"); 
             IRow row = sheet1.CreateRow(0);
-            sheet1.DefaultColumnWidth = 500 * 256;
             cell = row.CreateCell(0);
             cell.CellStyle = styleCell;
             cell.SetCellValue("报告编号");
@@ -624,10 +354,10 @@ namespace Wolf.Vecc.Comm.Helpers
             cell = row.CreateCell(19);
             cell.CellStyle = styleCell;
             cell.SetCellValue("受检单位E_mail");
-            sheet1.DefaultColumnWidth = 500 * 256;
+            sheet1.DefaultColumnWidth = 100 * 256;
 
-            ISheet sheet2 = wk.CreateSheet("检验结论");
-            sheet2.DefaultColumnWidth = 500 * 256;
+            //ISheet sheet2 = wk.CreateSheet("检验结论");
+            ISheet sheet2 = wk.CreateSheet("sheet2");
             row = sheet2.CreateRow(0);
             cell = row.CreateCell(0);
             cell.CellStyle = styleCell2;
@@ -671,10 +401,10 @@ namespace Wolf.Vecc.Comm.Helpers
             cell = row.CreateCell(13);
             cell.CellStyle = styleCell2;
             cell.SetCellValue("主检");
-            sheet2.DefaultColumnWidth = 500 * 256;
+            sheet2.DefaultColumnWidth = 100 * 256;
 
-            ISheet sheet3 = wk.CreateSheet("检验车辆基本参数");
-            sheet3.DefaultColumnWidth = 500 * 256;
+            //ISheet sheet3 = wk.CreateSheet("检验车辆基本参数");
+            ISheet sheet3 = wk.CreateSheet("sheet3");
             row = sheet3.CreateRow(0);
             cell = row.CreateCell(0);
             cell.CellStyle = styleCell3;
@@ -688,7 +418,7 @@ namespace Wolf.Vecc.Comm.Helpers
             cell = row.CreateCell(3);
             cell.CellStyle = styleCell3;
             cell.SetCellValue("编号");
-            sheet3.DefaultColumnWidth = 500 * 256;
+            sheet3.DefaultColumnWidth = 100 * 256;
             //sheet1.AutoSizeColumn(0);
             //sheet1.AutoSizeColumn(1);
             //sheet2.AutoSizeColumn(0);

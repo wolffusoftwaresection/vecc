@@ -49,16 +49,22 @@ namespace Wolf.Vecc.Controllers
         /// <summary>
         /// 检验报告模板下载
         /// </summary>
-        public void CreatCheckExcelTemplate()
+        public void CreatCheckTxtTemplate()
         {
-            ExcelHelper execlHelper = new ExcelHelper();
-            List<ExcelSelectList> selectList = new List<ExcelSelectList>();
-            MemoryStream ms = execlHelper.CreatExcelModelTemplate();
-            Response.AddHeader("Content-Disposition", string.Format("attachment;filename={0}.xls", HttpUtility.UrlEncode("检测报告模板", Encoding.UTF8)));
-            Response.BinaryWrite(ms.ToArray());
+            string fileName = "检测报告模板.txt";//客户端保存的文件名
+            string filePath = Server.MapPath("~/检测报告模板.txt");//路径
+
+            //以字符流的形式下载文件
+            FileStream fs = new FileStream(filePath, FileMode.Open);
+            byte[] bytes = new byte[(int)fs.Length];
+            fs.Read(bytes, 0, bytes.Length);
+            fs.Close();
+            Response.ContentType = "application/octet-stream";
+            //通知浏览器下载文件而不是打开
+            Response.AddHeader("Content-Disposition", "attachment;  filename=" + HttpUtility.UrlEncode(fileName, System.Text.Encoding.UTF8));
+            Response.BinaryWrite(bytes);
+            Response.Flush();
             Response.End();
-            ms.Close();
-            ms.Dispose();
         }
 
         public ActionResult PemsCalculationResultsView(string taskId)
@@ -156,29 +162,28 @@ namespace Wolf.Vecc.Controllers
         }
 
         [HttpPost]
-        public string UploadExcel()
+        public JsonResult UploadExcel()
         {
-            //整个验证是否有错误，没有返回true
-            bool flag = false;
-            //判断表头和模板是否一致，一致true
-            bool headIsRight = false;
-            DataTable newDT = null;
-            int num = Request.Files.Count;
-            if (num > 0)
+            var file = Request.Files[0];
+            byte[] byts = new byte[file.InputStream.Length];
+            file.InputStream.Read(byts, 0, byts.Length);
+            var requestContent = Encoding.Default.GetString(byts);
+            string[] array = requestContent.Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
+            int totalCount = array.Length; // 导入的记录总数 
+            Dictionary<string, string> keyValuePairs = new Dictionary<string, string>();
+            for (int i = 0; i < array.Length; i++)
             {
-                ExcelHelper execlHelper = new ExcelHelper();
-                Stream stream = Request.Files[0].InputStream;
-                //将execl转换成DataTable
-                DataTable dt = execlHelper.ExcelToTable(stream, TableDictionaries.ReportTemplateHeadList, Request.Files[0].FileName, ref headIsRight, "检验报告基本参数");
-                //判断表头和模板是否一致
-                if (headIsRight && dt != null)
+                if (array[i].Trim() != "检验报告基本参数" || array[i].Trim() != "检验结论" || array[i].Trim() != "检验车辆基本参数")
                 {
-                    //合法性验证
-                    newDT = UploadExcelCommon.UploadExcel(dt, null, ref flag);
-                    UploadExcelCommon.dt = newDT;
+                    string[] arraynamevalue = array[i].Split('=');
+                    if (arraynamevalue.Length == 2)
+                    {
+                        keyValuePairs.Add(arraynamevalue[0], arraynamevalue[1]);
+                    }
                 }
             }
-            return JsonConvert.SerializeObject(new { message = "", flag = flag, headIsRight = headIsRight });
+            var data = JsonHelper.SerializeDictionaryToJsonString(keyValuePairs == null ? null : keyValuePairs);
+            return Success(data, "");
         }
 
         public ActionResult ImportExcelView()

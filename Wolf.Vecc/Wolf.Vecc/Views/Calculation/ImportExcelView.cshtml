@@ -57,18 +57,12 @@
             fileElementId: 'file',
             async: false,
             success: function (data) {
-
-                //var dataObj = eval("(" + data + ")");//转换为json对象
-                //if (dataObj.headIsRight == false) {
-                //    msg.error("请选择正确的模板");
-                //} else {
-                //    dataFlagChange();
-                //}
-                //if (dataObj.flag) {
-                //    $("#btnImport").show();
-                //} else {
-                //    $("#btnImport").hide();
-                //}
+                var jsonObj = $.parseJSON(data.replace(/<.*?>/ig, ""));
+                if (jsonObj.Success) {
+                    //执行父页面方法
+                    var index = parent.layer.getFrameIndex(window.name);
+                    parent.ReportModelVal(jsonObj.Data, index);
+                }
             }
         });
     }
