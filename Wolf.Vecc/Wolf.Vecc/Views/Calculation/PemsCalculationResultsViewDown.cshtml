@@ -12,20 +12,8 @@
 </head>
 <body>
     <div style="width:414.3pt;margin: 0 auto;">
-        <input type="hidden" id="ResultData" value="@ViewBag.Result" />
-        <input type="hidden" id="TaskId" value="@Model.TaskId" />
-        <input type="hidden" id="VehicleType" value="@Model.VehicleType" />
-        <input type="hidden" id="TestDate" value="@Model.TestDate" />
-        <input type="hidden" id="TestPerson" value="@Model.TestPerson" />
-        <input type="hidden" id="TestTime" value="@Model.TestTime" />
-        <input type="hidden" id="PlaceTest" value="@Model.PlaceTest" />
-        <input type="hidden" id="RouteDescription" value="@Model.RouteDescription" />
-        <input type="hidden" id="WhtcPower" value="@Model.WhtcPower" />
-
         <!--p1-->
-
         <p style="margin:0pt; orphans:0; text-align:right; widows:0">
-            <button type='button' id="inputExcel" onclick='ExeclView()' class='btn btn-dropbox btn-flat'>模板导入</button>
             @*<button type='button' id="inputExcel" onclick='LoadResultModel()' class='btn btn-dropbox btn-flat'>上传</button>*@
             @*<span style="font-family:宋体; font-size:10.5pt">导入</span>*@
         </p>
@@ -35,11 +23,11 @@
         </p>
 
         <p style="margin:0pt 0pt 0pt 21pt; orphans:0; text-align:justify; widows:0">
-            <span style="font-family:宋体; font-size:10.5pt" id="reportNo"></span>
+            <span style="font-family:宋体; font-size:10.5pt" id="reportNo">报告编号：@Model.loadResultModel.reportNo</span>
         </p>
 
         <p style="margin:0pt 0pt 0pt 21pt; orphans:0; text-align:justify; widows:0">
-            <span style="font-family:宋体; font-size:10.5pt" id="internalNo"></span>
+            <span style="font-family:宋体; font-size:10.5pt" id="internalNo">报告编号：@Model.loadResultModel.internalNo</span>
         </p>
 
         <p style="margin:0pt; orphans:0; text-align:center; widows:0">
@@ -118,7 +106,8 @@
                 </td>
                 <td style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:top; width:283.9pt">
                     <p style="margin:0pt; orphans:0; text-align:justify; widows:0">
-                        <span style="font-family:宋体; font-size:12pt" id="productName"></span>
+                        <span style="font-family:宋体; font-size:12pt" id="productName">@Model.loadResultModel.productName
+                       </span>
                     </p>
                 </td>
             </tr>
@@ -139,7 +128,7 @@
                 </td>
                 <td style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:top; width:283.9pt">
                     <p style="margin:0pt; orphans:0; text-align:justify; widows:0">
-                        <span style="font-family:宋体; font-size:12pt" id="productTrademark"></span>
+                        <span style="font-family:宋体; font-size:12pt" id="productTrademark">@Model.loadResultModel.productTrademark</span>
                     </p>
                 </td>
             </tr>
@@ -160,7 +149,7 @@
                 </td>
                 <td style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:top; width:286.2pt">
                     <p style="margin:0pt; orphans:0; text-align:justify; widows:0">
-                        <span style="font-family:宋体; font-size:12pt" id="productModel"></span>
+                        <span style="font-family:宋体; font-size:12pt" id="productModel">@Model.loadResultModel.productModel</span>
                     </p>
                 </td>
             </tr>
@@ -181,7 +170,7 @@
                 </td>
                 <td style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:top; width:283.9pt">
                     <p style="margin:0pt; orphans:0; text-align:justify; widows:0">
-                        <span style="font-family:宋体; font-size:12pt" id="inspectedUnits"></span>
+                        <span style="font-family:宋体; font-size:12pt" id="inspectedUnits">@Model.loadResultModel.inspectedUnits</span>
                     </p>
                 </td>
             </tr>
@@ -202,7 +191,7 @@
                 </td>
                 <td style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:top; width:283.9pt">
                     <p style="margin:0pt; orphans:0; text-align:justify; widows:0">
-                        <span style="font-family:宋体; font-size:12pt" id="inspectionCategory"></span>
+                        <span style="font-family:宋体; font-size:12pt" id="inspectionCategory">@Model.loadResultModel.inspectionCategory</span>
                     </p>
                 </td>
             </tr>
@@ -224,7 +213,7 @@
                 </td>
                 <td style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:top; width:283.9pt">
                     <p style="margin:0pt; orphans:0; text-align:justify; widows:0">
-                        <span style="font-family:宋体; font-size:12pt" id="dateDelivery"></span>
+                        <span style="font-family:宋体; font-size:12pt" id="dateDelivery">@Model.loadResultModel.dateDelivery</span>
                     </p>
                 </td>
             </tr>
@@ -292,7 +281,7 @@
                 </td>
                 <td style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:top; width:322.2pt">
                     <p style="margin:0pt; orphans:0; text-align:justify; widows:0">
-                        <span style="font-family:'Times New Roman'; font-size:12pt" id="nameInspectionUnit"></span>
+                        <span style="font-family:'Times New Roman'; font-size:12pt" id="nameInspectionUnit">@Model.loadResultModel.nameInspectionUnit</span>
                     </p>
                 </td>
             </tr>
@@ -303,24 +292,24 @@
         <table cellspacing="0" cellpadding="0" style="border-collapse:collapse; margin-left:0pt">
             <tr style="height:15.75pt">
                 <td style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:top; width:25.2pt"><p style="margin:0pt; orphans:0; text-align:justify; widows:0"><span style="font-family:宋体; font-size:12pt">地址：</span></p></td>
-                <td colspan="2" style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:top; width:376.2pt"><p style="margin:0pt; orphans:0; text-align:justify; widows:0"><span style="font-family:'Times New Roman'; font-size:12pt" id="nameInspectionAddress"></span></p></td>
+                <td colspan="2" style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:top; width:376.2pt"><p style="margin:0pt; orphans:0; text-align:justify; widows:0"><span style="font-family:'Times New Roman'; font-size:12pt" id="nameInspectionAddress">@Model.loadResultModel.nameInspectionAddress</span></p></td>
             </tr>
 
             <tr style="height:15.75pt">
                 <td style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:top; width:25.2pt"><p style="margin:0pt; orphans:0; text-align:justify; widows:0"><span style="font-family:宋体; font-size:12pt">电话：</span></p></td>
-                <td colspan="2" style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:top; width:376.2pt"><p style="margin:0pt; orphans:0; text-align:justify; widows:0"><span style="font-family:'Times New Roman'; font-size:12pt" id="nameInspectionPhone"></span></p></td>
+                <td colspan="2" style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:top; width:376.2pt"><p style="margin:0pt; orphans:0; text-align:justify; widows:0"><span style="font-family:'Times New Roman'; font-size:12pt" id="nameInspectionPhone">@Model.loadResultModel.nameInspectionPhone</span></p></td>
             </tr>
             <tr style="height:15.75pt">
                 <td style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:top; width:25.2pt"><p style="margin:0pt; orphans:0; text-align:justify; widows:0"><span style="font-family:宋体; font-size:12pt">传真：</span></p></td>
-                <td colspan="2" style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:top; width:376.2pt"><p style="margin:0pt; orphans:0; text-align:justify; widows:0"><span style="font-family:'Times New Roman'; font-size:12pt" id="nameInspectionFax"></span></p></td>
+                <td colspan="2" style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:top; width:376.2pt"><p style="margin:0pt; orphans:0; text-align:justify; widows:0"><span style="font-family:'Times New Roman'; font-size:12pt" id="nameInspectionFax">@Model.loadResultModel.nameInspectionFax</span></p></td>
             </tr>
             <tr style="height:15.75pt">
                 <td style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:top; width:25.2pt"><p style="margin:0pt; orphans:0; text-align:justify; widows:0"><span style="font-family:宋体; font-size:12pt">邮编：</span></p></td>
-                <td colspan="2" style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:top; width:376.2pt"><p style="margin:0pt; orphans:0; text-align:justify; widows:0"><span style="font-family:'Times New Roman'; font-size:12pt" id="nameInspectionZipCode"></span></p></td>
+                <td colspan="2" style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:top; width:376.2pt"><p style="margin:0pt; orphans:0; text-align:justify; widows:0"><span style="font-family:'Times New Roman'; font-size:12pt" id="nameInspectionZipCode">@Model.loadResultModel.nameInspectionZipCode</span></p></td>
             </tr>
             <tr style="height:15pt">
                 <td colspan="2" style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:top; width:34.2pt"><p style="margin:0pt; orphans:0; text-align:justify; widows:0"><span style="font-family:宋体; font-size:12pt">E_mail</span><span style="font-family:宋体; font-size:12pt">：</span></p></td>
-                <td style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:top; width:367.2pt"><p style="margin:0pt; orphans:0; text-align:justify; widows:0"><span style="font-family:宋体; font-size:12pt" id="nameInspectionEmail"></span></p></td>
+                <td style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:top; width:367.2pt"><p style="margin:0pt; orphans:0; text-align:justify; widows:0"><span style="font-family:宋体; font-size:12pt" id="nameInspectionEmail">@Model.loadResultModel.nameInspectionEmail</span></p></td>
             </tr>
             <tr style="height:0pt"><td style="width:36pt; border:none"></td><td style="width:9pt; border:none"></td><td style="width:378pt; border:none"></td></tr>
         </table>
@@ -334,7 +323,7 @@
         <table cellspacing="0" cellpadding="0" style="border-collapse:collapse; margin-left:0pt">
             <tr style="height:16.45pt">
                 <td style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:top; width:88.2pt"><p style="margin:0pt; orphans:0; text-align:justify; widows:0"><span style="font-family:宋体; font-size:12pt">受检单位名称：</span></p></td>
-                <td style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:top; width:322.2pt"><p style="margin:0pt; orphans:0; text-align:justify; widows:0"><span style="font-family:'Times New Roman'; font-size:12pt" id="nameTestUnit"></span></p></td>
+                <td style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:top; width:322.2pt"><p style="margin:0pt; orphans:0; text-align:justify; widows:0"><span style="font-family:'Times New Roman'; font-size:12pt" id="nameTestUnit">@Model.loadResultModel.nameTestUnit</span></p></td>
             </tr>
         </table>
 
@@ -342,25 +331,25 @@
         <table cellspacing="0" cellpadding="0" style="border-collapse:collapse; margin-left:0pt">
             <tr style="height:15.75pt">
                 <td style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:top; width:25.2pt"><p style="margin:0pt; orphans:0; text-align:justify; widows:0"><span style="font-family:宋体; font-size:12pt">地址：</span></p></td>
-                <td colspan="2" style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:top; width:376.2pt"><p style="margin:0pt; orphans:0; text-align:justify; widows:0"><span style="font-family:'Times New Roman'; font-size:12pt" id="nameTestAddress"></span></p></td>
+                <td colspan="2" style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:top; width:376.2pt"><p style="margin:0pt; orphans:0; text-align:justify; widows:0"><span style="font-family:'Times New Roman'; font-size:12pt" id="nameTestAddress">@Model.loadResultModel.nameTestAddress</span></p></td>
             </tr>
 
             <tr style="height:15.75pt">
                 <td style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:top; width:25.2pt"><p style="margin:0pt; orphans:0; text-align:justify; widows:0"><span style="font-family:宋体; font-size:12pt">电话：</span></p></td>
-                <td colspan="2" style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:top; width:376.2pt"><p style="margin:0pt; orphans:0; text-align:justify; widows:0"><span style="font-family:'Times New Roman'; font-size:12pt" id="nameTestPhone"></span></p></td>
+                <td colspan="2" style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:top; width:376.2pt"><p style="margin:0pt; orphans:0; text-align:justify; widows:0"><span style="font-family:'Times New Roman'; font-size:12pt" id="nameTestPhone">@Model.loadResultModel.nameTestPhone</span></p></td>
             </tr>
 
             <tr style="height:15.75pt">
                 <td style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:top; width:25.2pt"><p style="margin:0pt; orphans:0; text-align:justify; widows:0"><span style="font-family:宋体; font-size:12pt">传真：</span></p></td>
-                <td colspan="2" style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:top; width:376.2pt"><p style="margin:0pt; orphans:0; text-align:justify; widows:0"><span style="font-family:'Times New Roman'; font-size:12pt" id="nameTestFax"></span></p></td>
+                <td colspan="2" style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:top; width:376.2pt"><p style="margin:0pt; orphans:0; text-align:justify; widows:0"><span style="font-family:'Times New Roman'; font-size:12pt" id="nameTestFax">@Model.loadResultModel.nameTestFax</span></p></td>
             </tr>
             <tr style="height:15.75pt">
                 <td style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:top; width:25.2pt"><p style="margin:0pt; orphans:0; text-align:justify; widows:0"><span style="font-family:宋体; font-size:12pt">邮编：</span></p></td>
-                <td colspan="2" style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:top; width:376.2pt"><p style="margin:0pt; orphans:0; text-align:justify; widows:0"><span style="font-family:'Times New Roman'; font-size:12pt" id="nameTestZipCode"></span></p></td>
+                <td colspan="2" style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:top; width:376.2pt"><p style="margin:0pt; orphans:0; text-align:justify; widows:0"><span style="font-family:'Times New Roman'; font-size:12pt" id="nameTestZipCode">@Model.loadResultModel.nameTestZipCode</span></p></td>
             </tr>
             <tr style="height:15pt">
                 <td colspan="2" style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:top; width:34.2pt"><p style="margin:0pt; orphans:0; text-align:justify; widows:0"><span style="font-family:宋体; font-size:12pt">E_mail</span><span style="font-family:宋体; font-size:12pt">：</span></p></td>
-                <td style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:top; width:367.2pt"><p style="margin:0pt; orphans:0; text-align:justify; widows:0"><span style="font-family:宋体; font-size:12pt" id="nameTestEmail"></span></p></td>
+                <td style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:top; width:367.2pt"><p style="margin:0pt; orphans:0; text-align:justify; widows:0"><span style="font-family:宋体; font-size:12pt" id="nameTestEmail">@Model.loadResultModel.nameTestEmail</span></p></td>
             </tr>
             <tr style="height:0pt"><td style="width:36pt; border:none"></td><td style="width:9pt; border:none"></td><td style="width:378pt; border:none"></td></tr>
         </table>
@@ -385,30 +374,30 @@
             <table cellspacing="0" cellpadding="0" style="border-collapse:collapse; margin:0 auto">
                 <tr style="height:29.95pt">
                     <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:63.2pt"><p style="margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt">样品名称</span></p></td>
-                    <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:115.2pt"><p style="margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt" id="sampleName"></span></p></td>
+                    <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:115.2pt"><p style="margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt" id="sampleName">@Model.loadResultModel.sampleName</span></p></td>
                     <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:70.2pt"><p style="margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt">型号</span></p></td>
-                    <td colspan="2" style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:145.5pt"><p style="margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt" id="modelName"></span></p></td>
+                    <td colspan="2" style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:145.5pt"><p style="margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt" id="modelName">@Model.loadResultModel.modelName</span></p></td>
                 </tr>
 
                 <tr style="height:30.8pt">
                     <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:63.2pt"><p style="margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt">商标</span></p></td>
-                    <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:115.2pt"><p style="margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt" id="tradeMark"></span></p></td>
+                    <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:115.2pt"><p style="margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt" id="tradeMark">@Model.loadResultModel.tradeMark</span></p></td>
                     <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:70.2pt"><p style="margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt">受检单位</span></p></td>
-                    <td colspan="2" style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:145.5pt"><p style="margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt" id="nameTest"></span></p></td>
+                    <td colspan="2" style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:145.5pt"><p style="margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt" id="nameTest">@Model.loadResultModel.nameTest</span></p></td>
                 </tr>
 
                 <tr style="height:30.8pt">
                     <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:63.2pt"><p style="margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt">生产单位</span></p></td>
-                    <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:115.2pt"><p style="margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt" id="productionUnit"></span></p></td>
+                    <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:115.2pt"><p style="margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt" id="productionUnit">@Model.loadResultModel.productionUnit</span></p></td>
                     <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:70.2pt"><p style="margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt">生产日期</span></p></td>
-                    <td colspan="2" style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:145.5pt"><p style="margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt" id="dateManufacture"></span></p></td>
+                    <td colspan="2" style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:145.5pt"><p style="margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt" id="dateManufacture">@Model.loadResultModel.dateManufacture</span></p></td>
                 </tr>
 
                 <tr style="height:31.55pt">
                     <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:63.2pt"><p style="margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt">送样者</span></p></td>
-                    <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:115.2pt"><p style="margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt" id="sampleSender"></span></p></td>
+                    <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:115.2pt"><p style="margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt" id="sampleSender">@Model.loadResultModel.sampleSender</span></p></td>
                     <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:70.2pt"><p style="margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt">送样日期</span></p></td>
-                    <td colspan="2" style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:145.5pt"><p style="margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt" id="sampleDeliveryDate"></span></p></td>
+                    <td colspan="2" style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:145.5pt"><p style="margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt" id="sampleDeliveryDate">@Model.loadResultModel.sampleDeliveryDate</span></p></td>
                 </tr>
 
                 <tr style="height:35.15pt">
@@ -416,11 +405,12 @@
                     <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:115.2pt">
                         <p style="margin:0pt; orphans:0; text-align:center; widows:0">
                             <span style="font-family:宋体; font-size:10.5pt" id="quantitySamples">
+                                @Model.loadResultModel.quantitySamples
                             </span>
                         </p>
                     </td>
                     <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:70.2pt"><p style="margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt">检验类别</span></p></td>
-                    <td colspan="2" style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:145.5pt"><p style="margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt" id="inspectionModel1"></span></p></td>
+                    <td colspan="2" style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:145.5pt"><p style="margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt" id="inspectionModel1">@Model.loadResultModel.inspectionModel1</span></p></td>
                 </tr>
 
                 <tr style="height:78.15pt">
@@ -437,12 +427,12 @@
 
                 <tr style="height:24.25pt">
                     <td colspan="3" style="border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; padding-left:5.03pt; padding-right:5.4pt; vertical-align:middle; width:205.2pt"><p style="margin:0pt; orphans:0; text-align:right; widows:0"><span style="font-family:宋体; font-size:10.5pt">签发日期</span></p></td>
-                    <td style="border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; padding-left:5.4pt; padding-right:5.03pt; vertical-align:middle; width:136.5pt"><p style="margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt" id="dateIssuance"></span></p></td>
+                    <td style="border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; padding-left:5.4pt; padding-right:5.03pt; vertical-align:middle; width:136.5pt"><p style="margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt" id="dateIssuance">@Model.loadResultModel.dateIssuance</span></p></td>
                 </tr>
 
                 <tr style="height:71.75pt">
                     <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:63.2pt"><p style="margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt">备注</span></p></td>
-                    <td colspan="4" style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:352.5pt"><p style="margin:0pt; orphans:0; text-align:justify; widows:0"><span style="font-family:宋体; font-size:10.5pt" id="remark"></span></p></td>
+                    <td colspan="4" style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:352.5pt"><p style="margin:0pt; orphans:0; text-align:justify; widows:0"><span style="font-family:宋体; font-size:10.5pt" id="remark">@Model.loadResultModel.remark</span></p></td>
                 </tr>
 
                 <tr style="height:0pt"><td style="width:74pt; border:none"></td><td style="width:126pt; border:none"></td><td style="width:81pt; border:none"></td><td style="width:9pt; border:none"></td><td style="width:147.3pt; border:none"></td></tr>
@@ -456,23 +446,15 @@
         <table cellspacing="0" cellpadding="0" style="border-collapse:collapse; margin-left:0pt">
             <tr>
                 <td style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:top;"><p style="margin:0pt; orphans:0; text-align:justify; widows:0"><span style="font-family:宋体; font-size:10.5pt">批准：</span></p></td>
-                <td style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:top;"><p style="margin:0pt; orphans:0; text-align:justify; widows:0"><span style="font-family:宋体; font-size:10.5pt" id="approval"></span></p></td>
+                <td style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:top;"><p style="margin:0pt; orphans:0; text-align:justify; widows:0"><span style="font-family:宋体; font-size:10.5pt" id="approval">@Model.loadResultModel.approval</span></p></td>
                 <td style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:top;"><p style="margin:0pt; orphans:0; text-align:justify; widows:0"><span style="font-family:宋体; font-size:10.5pt">审核：</span></p></td>
-                <td style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:top;"><p style="margin:0pt; orphans:0; text-align:justify; widows:0"><span style="font-family:宋体; font-size:10.5pt" id="examine"></span></p></td>
+                <td style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:top;"><p style="margin:0pt; orphans:0; text-align:justify; widows:0"><span style="font-family:宋体; font-size:10.5pt" id="examine">@Model.loadResultModel.examine</span></p></td>
                 <td style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:top;"><p style="margin:0pt; orphans:0; text-align:justify; widows:0"><span style="font-family:宋体; font-size:10.5pt">主检：</span></p></td>
-                <td style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:top;"><p style="margin:0pt; orphans:0; text-align:justify; widows:0"><span style="font-family:宋体; font-size:10.5pt" id="chiefInspector"></span></p></td>
+                <td style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:top;"><p style="margin:0pt; orphans:0; text-align:justify; widows:0"><span style="font-family:宋体; font-size:10.5pt" id="chiefInspector">@Model.loadResultModel.chiefInspector</span></p></td>
             </tr>
         </table>
 
         <p style="margin:0pt; orphans:0; text-align:justify; widows:0"><span style="font-family:宋体; font-size:12pt">&#xa0;</span></p>
-
-
-
-
-
-
-
-
         <!--p4-->
 
         <p style="margin:0pt; orphans:0; text-align:justify; widows:0"><br style="page-break-before:always; clear:both" /></p>
@@ -954,9 +936,9 @@
 
                 <tr style="height:19.35pt">
                     <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; vertical-align:middle; width:81.05pt"><p style="margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt">平均排放mg/km</span></p></td>
-                    <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; vertical-align:middle; width:51.65pt"><p style="margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt" id="BSCO_avg"></span></p></td>
-                    <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; vertical-align:middle; width:51.7pt"><p style="margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt" id="BSHC_avg"></span></p></td>
-                    <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; vertical-align:middle; width:51.7pt"><p style="margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt" id="BSNOx_avg"></span></p></td>
+                    <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; vertical-align:middle; width:51.65pt"><p style="margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt" id="BSCO_avg">@Model.calculationResultData.BSCO_avg</span></p></td>
+                    <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; vertical-align:middle; width:51.7pt"><p style="margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt" id="BSHC_avg">@Model.calculationResultData.BSHC_avg</span></p></td>
+                    <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; vertical-align:middle; width:51.7pt"><p style="margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt" id="BSNOx_avg">@Model.calculationResultData.BSNOx_avg</span></p></td>
                     <td style="border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; vertical-align:middle; width:51.7pt"><p style="margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt" id="BSPN_avg"></span></p></td>
                     <td style="border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:41.65pt"><p style="margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt" id="BSCO2_avg"></span></p></td>
                 </tr>
@@ -992,9 +974,9 @@
 
                 <tr style="height:19.35pt">
                     <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; vertical-align:middle; width:81.05pt"><p style="margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt">窗口通过率</span></p></td>
-                    <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; vertical-align:middle; width:51.65pt"><p style="margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt" id="p_BSCO_vWDs"></span></p></td>
+                    <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; vertical-align:middle; width:51.65pt"><p style="margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt" id="p_BSCO_vWDs">@Model.calculationResultData.p_BSCO_vWDs</span></p></td>
                     <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; vertical-align:middle; width:51.7pt"><p style="margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt" id=""></span></p></td>
-                    <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; vertical-align:middle; width:51.7pt"><p style="margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt" id="p_BSNOx_vWDs"></span></p></td>
+                    <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; vertical-align:middle; width:51.7pt"><p style="margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt" id="p_BSNOx_vWDs">@Model.calculationResultData.p_BSNOx_vWDs</span></p></td>
                     <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; vertical-align:middle; width:51.7pt">
                         <p style="margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt" id="p_BSPN_vWDs"></span></p>
                     </td>
@@ -1101,15 +1083,15 @@
                 </tr>
 
                 <tr style="height:19.6pt">
-                    <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:11.76%"><p style="line-height:18pt; margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt" id="Work_times"></span></p></td>
-                    <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:12.28%"><p style="line-height:18pt; margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt" id="odo_trips"></span></p></td>
-                    <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:11.84%"><p style="line-height:18pt; margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt" id="p_odo_u"></span></p></td>
-                    <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:10.94%"><p style="line-height:18pt; margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt" id="p_odo_r"></span></p></td>
-                    <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:10.5%"><p style="line-height:18pt; margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt" id="p_odo_m"></span></p></td>
-                    <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:10.5%"><p style="line-height:18pt; margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt" id="p_odo_acc"></span></p></td>
-                    <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:10.5%"><p style="line-height:18pt; margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt" id="p_odo_dec"></span></p></td>
-                    <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:10.5%"><p style="line-height:18pt; margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt" id="p_odo_cru"></span></p></td>
-                    <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:11.16%"><p style="line-height:18pt; margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt" id="p_odo_idle"></span></p></td>
+                    <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:11.76%"><p style="line-height:18pt; margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt" id="Work_times">@Model.calculationResultData.work_times</span></p></td>
+                    <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:12.28%"><p style="line-height:18pt; margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt" id="odo_trips">@Model.calculationResultData.odo_trips</span></p></td>
+                    <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:11.84%"><p style="line-height:18pt; margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt" id="p_odo_u">@Model.calculationResultData.p_odo_u</span></p></td>
+                    <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:10.94%"><p style="line-height:18pt; margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt" id="p_odo_r">@Model.calculationResultData.p_odo_r</span></p></td>
+                    <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:10.5%"><p style="line-height:18pt; margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt" id="p_odo_m">@Model.calculationResultData.p_odo_m</span></p></td>
+                    <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:10.5%"><p style="line-height:18pt; margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt" id="p_odo_acc">@Model.calculationResultData.p_odo_acc</span></p></td>
+                    <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:10.5%"><p style="line-height:18pt; margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt" id="p_odo_dec">@Model.calculationResultData.p_odo_dec</span></p></td>
+                    <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:10.5%"><p style="line-height:18pt; margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt" id="p_odo_cru">.@Model.calculationResultData.p_odo_cru</span></p></td>
+                    <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:11.16%"><p style="line-height:18pt; margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt" id="p_odo_idle">@Model.calculationResultData.p_odo_idle</span></p></td>
                 </tr>
 
                 <tr style="height:0pt">
@@ -1147,12 +1129,12 @@
                 </tr>
 
                 <tr style="height:18.85pt">
-                    <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:41.85pt"><p style="margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt" id="NO_wWDs"></span></p></td>
-                    <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:41.85pt"><p style="margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt" id="NO_valid_wWDs"></span></p></td>
-                    <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:41.85pt"><p style="margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt" id="p_valid_wWDs"></span></p></td>
+                    <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:41.85pt"><p style="margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt" id="NO_wWDs">@Model.calculationResultData.NO_wWDs</span></p></td>
+                    <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:41.85pt"><p style="margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt" id="NO_valid_wWDs">@Model.calculationResultData.NO_valid_wWDs</span></p></td>
+                    <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:41.85pt"><p style="margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt" id="p_valid_wWDs">@Model.calculationResultData.p_valid_wWDs</span></p></td>
                     <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:41.85pt"><p style="margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt">&#xa0;</span></p></td>
-                    <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:41.85pt"><p style="margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt" id="p_Pow_f"></span></p></td>
-                    <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:41.85pt"><p style="margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt" id="work_ref2"></span></p></td>
+                    <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:41.85pt"><p style="margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt" id="p_Pow_f">@Model.calculationResultData.p_pow_f</span></p></td>
+                    <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:41.85pt"><p style="margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt" id="work_ref2">@Model.calculationResultData.work_ref2</span></p></td>
                     <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:41.85pt"><p style="margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt">&#xa0;</span></p></td>
                     <td style="border-bottom-color:#000000; border-bottom-style:solid; border-bottom-width:0.75pt; border-left-color:#000000; border-left-style:solid; border-left-width:0.75pt; border-right-color:#000000; border-right-style:solid; border-right-width:0.75pt; border-top-color:#000000; border-top-style:solid; border-top-width:0.75pt; padding-left:5.03pt; padding-right:5.03pt; vertical-align:middle; width:41.9pt"><p style="margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt">&#xa0;</span></p></td>
                 </tr>
@@ -1302,7 +1284,7 @@
             <tr style="height:22pt">
 
                 <td colspan="3" style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:middle; width:86.25pt"><p style="margin:0pt; orphans:0; text-align:justify; widows:0"><span style="font-family:'Times New Roman'; font-size:10.5pt">6 </span><span style="font-family:宋体; font-size:10.5pt">环境温度(°C)：</span></p></td>
-                <td colspan="7" style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:middle; width:296.1pt"><p style="margin:0pt; orphans:0; text-align:justify; widows:0"><span style="font-family:'Times New Roman'; font-size:10.5pt" id="T_air_avg">&#xa0;</span></p></td>
+                <td colspan="7" style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:middle; width:296.1pt"><p style="margin:0pt; orphans:0; text-align:justify; widows:0"><span style="font-family:'Times New Roman'; font-size:10.5pt" id="T_air_avg">@Model.calculationResultData.T_air_avg</span></p></td>
             </tr>
 
             <tr style="height:22pt">
@@ -1314,19 +1296,19 @@
             <tr style="height:22pt">
 
                 <td colspan="3" style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:middle; width:86.25pt"><p style="margin:0pt; orphans:0; text-align:justify; widows:0"><span style="font-family:'Times New Roman'; font-size:10.5pt">8 </span><span style="font-family:宋体; font-size:10.5pt">平均海拔（m）：</span></p></td>
-                <td colspan="7" style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:middle; width:296.1pt"><p style="margin:0pt; orphans:0; text-align:justify; widows:0"><span style="font-family:'Times New Roman'; font-size:10.5pt" id="Alt_avg"></span></p></td>
+                <td colspan="7" style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:middle; width:296.1pt"><p style="margin:0pt; orphans:0; text-align:justify; widows:0"><span style="font-family:'Times New Roman'; font-size:10.5pt" id="Alt_avg">@Model.calculationResultData.Alt_avg</span></p></td>
             </tr>
 
             <tr style="height:22pt">
 
                 <td colspan="5" style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:middle; width:86.25pt"><p style="margin:0pt; orphans:0; text-align:justify; widows:0"><span style="font-family:'Times New Roman'; font-size:10.5pt">9</span><span style="font-family:宋体; font-size:10.5pt"> WHTC循环功(kWh)：</span></p></td>
-                <td colspan="7" style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:middle; width:296.1pt"><p style="margin:0pt; orphans:0; text-align:justify; widows:0"><span style="font-family:'Times New Roman'; font-size:10.5pt" id="work_ref"></span></p></td>
+                <td colspan="7" style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:middle; width:296.1pt"><p style="margin:0pt; orphans:0; text-align:justify; widows:0"><span style="font-family:'Times New Roman'; font-size:10.5pt" id="work_ref">@Model.calculationResultData.work_ref</span></p></td>
             </tr>
 
             <tr style="height:22pt">
 
                 <td colspan="3" style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:middle; width:86.25pt"><p style="margin:0pt; orphans:0; text-align:justify; widows:0"><span style=" font-family:'Times New Roman'; font-size:10.5pt">10 </span><span style="font-family:宋体; font-size:10.5pt">试验载荷(%)：</span></p></td>
-                <td colspan="7" style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:middle; width:296.1pt"><p style="margin:0pt; orphans:0; text-align:justify; widows:0"><span style="font-family:'Times New Roman'; font-size:10.5pt" id="r_payload"></span></p></td>
+                <td colspan="7" style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:middle; width:296.1pt"><p style="margin:0pt; orphans:0; text-align:justify; widows:0"><span style="font-family:'Times New Roman'; font-size:10.5pt" id="r_payload">@Model.calculationResultData.r_payload</span></p></td>
             </tr>
 
             <tr style="height:0pt">
@@ -1432,112 +1414,3 @@
     </div>
 </body>
 </html>
-<script src="~/Scripts/jquery-3.3.1.min.js"></script>
-<script src="~/AdminLTE/plugins/layer/layer.js"></script>
-<script src="~/AdminLTE/ajaxfileupload.js"></script>
-<script type="text/javascript">
-    $(function () {
-        if ($("#ResultData").val() != "") {
-            var json = JSON.parse($("#ResultData").val());
-            console.log(json);
-            $("#r_payload").text(json["r_payload"]);
-            $("#T_air_avg").text(json["T_air_avg"]);
-            $("#work_ref").text(json["work_ref"] == null ? $("#WhtcPower").val() : json["work_ref"]);
-            $("#Alt_avg").text(json["Alt_avg"]);
-            $("#Work_times").text(json["Work_times"]);
-            $("#odo_trips").text(json["odo_trips"]);
-            $("#p_odo_u").text(json["p_odo_u"]);
-            $("#p_odo_r").text(json["p_odo_r"]);
-            $("#p_odo_m").text(json["p_odo_m"]);
-            $("#p_odo_acc").text(json["p_odo_acc"]);
-            $("#p_odo_dec").text(json["p_odo_dec"]);
-            $("#p_odo_cru").text(json["p_odo_cru"]);
-            $("#p_odo_idle").text(json["p_odo_idle"]);
-            $("#p_BSCO_vWDs").text(json["p_BSCO_vWDs"]);
-            $("#p_BSNOx_vWDs").text(json["p_BSNOx_vWDs"]);
-            $("#p_BSPN_vWDs").text(json["p_BSPN_vWDs"]);
-            $("#BSCO_avg").text(json["BSCO_avg"]);
-            $("#BSHC_avg").text(json["BSHC_avg"]);
-            $("#BSNOx_avg").text(json["BSNOx_avg"]);
-            $("#BSPN_avg").text(json["BSPN_avg"]);
-            $("#BSCO2_avg").text(json["BSCO2_avg"]);
-            $("#NO_wWDs").text(json["NO_wWDs"]);
-            $("#NO_valid_wWDs").text(json["NO_valid_wWDs"]);
-            $("#p_valid_wWDs").text(json["p_valid_wWDs"]);
-            $("#p_Pow_f").text(json["p_Pow_f"]);
-            $("#work_ref2").text(json["work_ref"] == null ? $("#WhtcPower").val() : json["work_ref"]);
-        }
-    });
-
-    function ReportModelVal(v, index) {
-        var dataObj = eval("(" + v + ")");
-        $("#reportNo").text("报告编号：" + dataObj['报告编号']);
-        $("#internalNo").text("内部编号：" + dataObj['内部编号']);
-        $("#productName").text(dataObj['产品名称']);
-        $("#productTrademark").text(dataObj['产品商标']);
-        $("#productModel").text(dataObj['产品型号']);
-        $("#inspectedUnits").text(dataObj['受检单位']);
-        $("#inspectionCategory").text(dataObj['检验类别']);
-        $("#dateDelivery").text(dataObj['发送日期']);
-        $("#nameInspectionUnit").text(dataObj['检验单位名称']);
-        $("#nameInspectionAddress").text(dataObj['检验单位地址']);
-        $("#nameInspectionPhone").text(dataObj['检验单位电话']);
-        $("#nameInspectionFax").text(dataObj['检验单位传真']);
-        $("#nameInspectionZipCode").text(dataObj['检验单位邮编']);
-        $("#nameInspectionEmail").text(dataObj['检验单位E_mail']);
-        $("#nameTestUnit").text(dataObj['受检单位名称']);
-        $("#nameTestAddress").text(dataObj['受检单位地址']);
-        $("#nameTestPhone").text(dataObj['受检单位电话']);
-        $("#nameTestFax").text(dataObj['受检单位传真']);
-        $("#nameTestZipCode").text(dataObj['受检单位邮编']);
-        $("#nameTestEmail").text(dataObj['受检单位E_mail']);
-        $("#nameTest").text(dataObj['受检单位名称']);
-        $("#sampleName").text(dataObj['样品名称']);
-        $("#modelName").text(dataObj['型号']);
-        $("#tradeMark").text(dataObj['商标']);
-        $("#productionUnit").text(dataObj['生产单位']);
-        $("#dateManufacture").text(dataObj['生产日期']);
-        $("#sampleSender").text(dataObj['送样者']);
-        $("#sampleDeliveryDate").text(dataObj['送样日期']);
-        $("#quantitySamples").text(dataObj['样品数量']);
-        $("#inspectionModel1").text(dataObj['检验类别1']);
-        $("#dateIssuance").text(dataObj['签发日期']);
-        $("#remark").text(dataObj['备注']);
-        $("#approval").text(dataObj['批准']);
-        $("#examine").text(dataObj['审核']);
-        $("#chiefInspector").text(dataObj['主检']);
-        //productionUnit
-
-        //赋值完成关闭导入框
-        layer.close(index);
-    }
-
-    function ExeclView() {
-        var taskid = $("#TaskId").val();
-        layer.open({
-            type: 2,
-            title: ['用户导入'],
-            shadeClose: true,
-            btn: [],
-            skin: 'layerlarge',
-            area: ['55%', '55%'],
-            maxmin: true,
-            content: ['/Calculation/ImportExcelView?taskid=' + taskid, "yes"]
-        });
-    }
-
-    //function LoadResultModel() {
-    //    var taskid = $("#TaskId").val();
-    //    $.ajaxFileUpload({
-    //        url: '/Calculation/LoadResultModel',
-    //        data:{ taskId: taskid },
-    //        secureuri: false,
-    //        dataType: 'JSON',
-    //        fileElementId: 'file',
-    //        async: false,
-    //        success: function (data) {
-                
-    //        }
-    //    });
-    //}
-</script>

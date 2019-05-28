@@ -1909,6 +1909,7 @@
     <Content Include="Views\Approval\RefuseBatchUserView.cshtml" />
     <Content Include="Views\Approval\RefuseBatchDataView.cshtml" />
     <Content Include="Views\Calculation\ImportExcelView.cshtml" />
+    <Content Include="Views\Calculation\PemsCalculationResultsViewDown.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AdminLTE\bootstrap\js\ie\" />
@@ -1916,6 +1917,7 @@
     <Folder Include="Models\" />
     <Folder Include="pemsreport\js\" />
     <Folder Include="UpLoadFiles\" />
+    <Folder Include="UpLoadModelFiles\" />
     <Folder Include="Views\ApprovalUserAsync\" />
     <Folder Include="Views\Comet\" />
   </ItemGroup>

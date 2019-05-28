@@ -19,5 +19,6 @@ namespace Wolf.Vecc.Model.ViewModel
         public string PercentageLoad { get; set; }
         public string MaxPower { get; set; }
         public string Nox { get; set; }
+        public string EmissionStandard { get; set; }
     }
 }

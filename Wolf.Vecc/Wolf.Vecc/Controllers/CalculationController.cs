@@ -33,17 +33,19 @@ namespace Wolf.Vecc.Controllers
         private readonly ISysPemsTaskService _sysPemsTaskService;
         private readonly ISysTaskResultService _sysTaskResultService;
         private readonly IReadRstService _readRstService;
+        private readonly ISysDataService _sysDataService;
 
         public CalculationController()
         {
             
         }
-        public CalculationController(ISysTaskService sysTaskService, ISysPemsTaskService sysPemsTaskService, IReadRstService readRstService, ISysTaskResultService sysTaskResultService)
+        public CalculationController(ISysDataService sysDataService, ISysTaskService sysTaskService, ISysPemsTaskService sysPemsTaskService, IReadRstService readRstService, ISysTaskResultService sysTaskResultService)
         {
             _sysTaskService = sysTaskService;
             _sysPemsTaskService = sysPemsTaskService;
             _readRstService = readRstService;
             _sysTaskResultService = sysTaskResultService;
+            _sysDataService = sysDataService;
         }
         // GET: Calculation
         public ActionResult Index()
@@ -71,6 +73,11 @@ namespace Wolf.Vecc.Controllers
             Response.BinaryWrite(bytes);
             Response.Flush();
             Response.End();
+        }
+
+        public ActionResult PemsCalculationResultsViewDown()
+        {
+            return View();
         }
 
         public ActionResult PemsCalculationResultsView(string taskId)
@@ -103,8 +110,8 @@ namespace Wolf.Vecc.Controllers
             //    loadResultModel = 
             };
             //ViewData["Result"] = _json;
-            TempData["Result"] = _json;
-           // ViewBag.Result = _json;
+            //TempData["Result"] = _json;
+            ViewBag.Result = _json;
             return View(tasks);
 
             //return View();
@@ -135,7 +142,7 @@ namespace Wolf.Vecc.Controllers
         }
 
         public ActionResult ImportRarData(string id, string vehicleModel, string pemsFactory, string vehicleType, string whtcPower,
-            string vehicleQuality, string maxRefTorque, string maxQuality, string percentageLoad, string maxPower, string nox)
+            string vehicleQuality, string maxRefTorque, string maxQuality, string percentageLoad, string maxPower, string nox, string emissionStandard)
         {
             //ViewBag.id = id;
             //ViewBag.vehicleModel = vehicleModel;
@@ -161,7 +168,8 @@ namespace Wolf.Vecc.Controllers
                 VehicleModel = vehicleModel,
                 VehicleQuality = vehicleQuality,
                 VehicleType = vehicleType,
-                WhtcPower = whtcPower
+                WhtcPower = whtcPower,
+                EmissionStandard = emissionStandard
             };
 
             return View(calculationModel);
@@ -294,38 +302,91 @@ namespace Wolf.Vecc.Controllers
             }
             //自定义模板数值
             var _data = JsonHelper.SerializeDictionaryToJsonString(keyValuePairs == null ? null : keyValuePairs);
+            LoadResultModel _loadResultModel = new LoadResultModel
+            {
+                reportNo = keyValuePairs["报告编号"],
+                internalNo = keyValuePairs["内部编号"],
+                productName = keyValuePairs["产品名称"],
+                productTrademark = keyValuePairs["产品商标"],
+                productModel = keyValuePairs["产品型号"],
+                inspectedUnits = keyValuePairs["受检单位"],
+                inspectionCategory = keyValuePairs["检验类别"],
+                dateDelivery = keyValuePairs["产品型号"],
+                nameInspectionUnit = keyValuePairs["检验单位名称"],
+                nameInspectionAddress = keyValuePairs["检验单位地址"],
+                nameInspectionPhone = keyValuePairs["检验单位电话"],
+                nameInspectionFax = keyValuePairs["检验单位传真"],
+                nameInspectionZipCode = keyValuePairs["检验单位邮编"],
+                nameInspectionEmail = keyValuePairs["检验单位E_mail"],
+                nameTestUnit = keyValuePairs["受检单位名称"],
+                nameTestAddress = keyValuePairs["受检单位地址"],
+                nameTestPhone = keyValuePairs["受检单位电话"],
+                nameTestFax = keyValuePairs["受检单位传真"],
+                nameTestZipCode = keyValuePairs["受检单位邮编"],
+                nameTestEmail = keyValuePairs["受检单位E_mail"],
+                nameTest = keyValuePairs["受检单位名称"],
+                sampleName = keyValuePairs["样品名称"],
+                modelName = keyValuePairs["型号"],
+                tradeMark = keyValuePairs["商标"],
+                productionUnit = keyValuePairs["生产单位"],
+                dateManufacture = keyValuePairs["生产日期"],
+                sampleSender = keyValuePairs["送样者"],
+                sampleDeliveryDate = keyValuePairs["送样日期"],
+                quantitySamples = keyValuePairs["样品数量"],
+                inspectionModel1 = keyValuePairs["检验类别1"],
+                dateIssuance = keyValuePairs["签发日期"],
+                remark = keyValuePairs["备注"],
+                approval = keyValuePairs["批准"],
+                examine = keyValuePairs["审核"],
+                chiefInspector = keyValuePairs["主检"]
+            };
             var data = _readRstService.ReadTestInfo(Server.MapPath(Result_Root_Url), "b88859c7-dee8-4ec0-bcd5-90c9fa6a71e7");//测试
             //var _json = JsonHelper.SerializeDictionaryToJsonString(data);
             var pemsTask = _sysPemsTaskService.GetSysPemsTaskByTaskId("4c668a4b-dcfd-4ac8-94ff-8512e5fb4c0f");
             var taskResult = _sysTaskResultService.GetTaskResultByTaskId("4c668a4b-dcfd-4ac8-94ff-8512e5fb4c0f");
             //System.Web.Script.Serialization.JavaScriptSerializer js = new System.Web.Script.Serialization.JavaScriptSerializer();
+            string alt_avg = "";
+            if (data.TryGetValue("Alt_avg", out alt_avg))
+            {
+                alt_avg = data["Alt_avg"];
+            }
+            else { alt_avg = ""; }
+            string _work_ref = "";
+            if (data.TryGetValue("work_ref", out _work_ref))
+            {
+                _work_ref = data["work_ref"];
+            }
+            else { _work_ref = ""; }
+            CalculationResultData _calculationResultData = new CalculationResultData
+            {
+                r_payload = data["r_payload"],
+                T_air_avg = data["T_air_avg"],
+                work_ref = _work_ref == null ? "" : pemsTask.WhtcPower.ToString(),
+                Alt_avg = alt_avg == null ? "" : alt_avg,
+                work_times = data["work_times"],
+                odo_trips = data["odo_trips"],
+                p_odo_u = data["p_odo_u"],
+                p_odo_r = data["p_odo_r"],
+                p_odo_m = data["p_odo_m"],
+                p_odo_acc = data["p_odo_acc"],
+                p_odo_dec = data["p_odo_dec"],
+                p_odo_cru = data["p_odo_cru"],
+                p_odo_idle = data["p_odo_idle"],
+                p_BSCO_vWDs = data["p_BSCO_vWDs"],
+                p_BSNOx_vWDs = data["p_BSNOx_vWDs"],
+                p_BSPN_vWDs = data["p_BSPN_vWDs"],
+                BSCO_avg = data["BSCO_avg"],
+                BSHC_avg = data["BSHC_avg"],
+                BSNOx_avg = data["BSNOx_avg"],
+                BSPN_avg = data["BSPN_avg"],
+                BSCO2_avg = data["BSCO2_avg"],
+                NO_wWDs = data["NO_wWDs"],
+                NO_valid_wWDs = data["NO_valid_wWDs"],
+                p_valid_wWDs = data["p_valid_wWDs"],
+                p_pow_f = data["p_pow_f"],
+                work_ref2 = _work_ref == null ? "" : pemsTask.WhtcPower.ToString(),
+            };
             
-            //$("#r_payload").text(json["r_payload"]);
-            //$("#T_air_avg").text(json["T_air_avg"]);
-            //$("#work_ref").text(json["work_ref"] == null ? $("#WhtcPower").val() : json["work_ref"]);
-            //$("#Alt_avg").text(json["Alt_avg"]);
-            //$("#Work_times").text(json["Work_times"]);
-            //$("#odo_trips").text(json["odo_trips"]);
-            //$("#p_odo_u").text(json["p_odo_u"]);
-            //$("#p_odo_r").text(json["p_odo_r"]);
-            //$("#p_odo_m").text(json["p_odo_m"]);
-            //$("#p_odo_acc").text(json["p_odo_acc"]);
-            //$("#p_odo_dec").text(json["p_odo_dec"]);
-            //$("#p_odo_cru").text(json["p_odo_cru"]);
-            //$("#p_odo_idle").text(json["p_odo_idle"]);
-            //$("#p_BSCO_vWDs").text(json["p_BSCO_vWDs"]);
-            //$("#p_BSNOx_vWDs").text(json["p_BSNOx_vWDs"]);
-            //$("#p_BSPN_vWDs").text(json["p_BSPN_vWDs"]);
-            //$("#BSCO_avg").text(json["BSCO_avg"]);
-            //$("#BSHC_avg").text(json["BSHC_avg"]);
-            //$("#BSNOx_avg").text(json["BSNOx_avg"]);
-            //$("#BSPN_avg").text(json["BSPN_avg"]);
-            //$("#BSCO2_avg").text(json["BSCO2_avg"]);
-            //$("#NO_wWDs").text(json["NO_wWDs"]);
-            //$("#NO_valid_wWDs").text(json["NO_valid_wWDs"]);
-            //$("#p_valid_wWDs").text(json["p_valid_wWDs"]);
-            //$("#p_Pow_f").text(json["p_Pow_f"]);
-            //$("#work_ref2").text(json["work_ref"] == null ? $("#WhtcPower").val() : json["work_ref"]);
             var tasks = new TaskResultModel
             {
                 RouteDescription = taskResult.RouteDescription,
@@ -336,16 +397,32 @@ namespace Wolf.Vecc.Controllers
                 TestTime = taskResult.TestTime,
                 VehicleType = pemsTask.VehicleType,
                 VehicleModel = pemsTask.VehicleModel,
-                WhtcPower = pemsTask.WhtcPower.ToString()//,
-                //calculationResultData = _calculationResultData
+                WhtcPower = pemsTask.WhtcPower.ToString(),
+                calculationResultData = _calculationResultData,
+                loadResultModel = _loadResultModel
             };
-            string htmlText = RenderViewTostring.RenderPartialView(this, "PemsCalculationResultsView", tasks);
+            string htmlText = RenderViewTostring.RenderPartialView(this, "PemsCalculationResultsViewDown", tasks);
 
             Aspose.Words.Document doc = new Aspose.Words.Document();
             DocumentBuilder builder = new DocumentBuilder(doc);
             builder.InsertHtml(htmlText);
-            doc.Save(Server.MapPath("../UpLoadFiles/" + taskid + ".doc"));
-            return Success(_data, "");
+            doc.Save(Server.MapPath("../UpLoadModelFiles/" + taskid + ".doc"));
+            //上传结束 保存上传数据信息包括文件路径
+            var sysData = new SysData
+            {
+                UserId = WorkUser.UserId,
+                DataName = taskid,
+                DataStatus = 1,
+                IsPublic = 0,
+                IsDel = 0,
+                UploadDate = DateTime.Now,
+                DataUrl = "../UpLoadModelFiles/" + taskid + ".doc"
+            };
+            if (_sysDataService.InsertData(sysData) > 0)
+            {
+                return Success(_data, "");
+            }
+            return Failure();
         }
 
         public ActionResult ImportExcelView(string taskid)
@@ -398,7 +475,8 @@ namespace Wolf.Vecc.Controllers
                             VehicleModel = calculationModel.VehicleModel,
                             DataUrl = url.Substring(0, url.LastIndexOf(".")) + ".xls",
                             MaxPower = Convert.ToDouble(calculationModel.MaxPower),
-                            KrNox = calculationModel.Nox
+                            KrNox = calculationModel.Nox,
+                            EmissionStandard = calculationModel.EmissionStandard
                         };
                         if (_sysPemsTaskService.Insert(pemsTask) > 0)
                         {

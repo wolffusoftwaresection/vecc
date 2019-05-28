@@ -65,5 +65,10 @@ namespace Wolf.Vecc.Model.SysModel
         [Column("kr_nox")]
         [StringLength(50)]
         public string KrNox { get; set; }
+
+        [Column("emission_standard")]
+        [Display(Name = "排放标准")]
+        [StringLength(50)]
+        public string EmissionStandard { get; set; }
     }
 }

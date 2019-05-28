@@ -23,5 +23,7 @@ namespace Wolf.Vecc.IService.ISysService
         int BatchUpdataData(string sysDatas, int state);
 
         int BatchDelete(string Ids);
+
+        int InsertData(SysData sysData);
     }
 }

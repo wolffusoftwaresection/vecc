@@ -41,16 +41,16 @@
                                             <option value="SENSORS">SENSORS</option>
                                             <option value="HORIBA">HORIBA</option>
                                             <option value="AVL">AVL</option>
-                                            <option value="ECU_BOSCH">ECU_BOSCH</option>
+                                            @*<option value="ECU_BOSCH">ECU_BOSCH</option>
                                             <option value="ECU_DELPHI">ECU_DELPHI</option>
-                                            <option value="Cali_Pal">Cali_Pal</option>
+                                            <option value="Cali_Pal">Cali_Pal</option>*@
                                         </select>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-6 top-buffer">
                                 <div class="form-group">
-                                    <label class="col-sm-2 control-label">整车类别</label>
+                                    <label class="col-sm-2 control-label"> * 整车类别</label>
                                     <div class="col-sm-5">
                                         <select id="txtVehicleType" name="txtVehicleType" class="selectpicker show-tick form-control" data-actions-box="true">
                                             <option value="N1,M1">N1,M1</option>
@@ -110,8 +110,19 @@
                             </div>
                             <div class="col-md-6 top-buffer">
                                 <div class="form-group">
-                                    <label class="col-sm-2 control-label  pull-left"> * 周期性再生</label>
-                                    <div class="col-sm-2">
+                                    <label class="col-sm-2 control-label"> * 排放标准</label>
+                                    <div class="col-sm-5">
+                                        <select id="txtPemsEmissionStandard" name="txtPemsEmissionStandard" class="selectpicker show-tick form-control" data-actions-box="true">
+                                            <option value="FiveChina">国五</option>
+                                            <option value="SixChina" selected>国六</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 top-buffer">
+                                <div class="form-group">
+                                    <label class="col-sm-6 control-label"> * 周期性再生</label>
+                                    <div class="col-sm-3">
                                         <label class="radio-inline">
                                             <input type="radio" value="1" onclick="periodicalclick()" name="periodical">是
                                         </label>
@@ -121,9 +132,10 @@
                                     </div>
                                 </div>
                             </div>
+                            @*参数导入 保存 打印*@
                             <div class="col-md-6 top-buffer">
                                 <div class="form-group" id="Nox" style="display:none;">
-                                    <label class="col-sm-6 control-label">NOx再生因子</label>
+                                    <label class="col-sm-3 control-label">NOx再生因子</label>
                                     <div class="col-sm-5">
                                         <input type="text" class="form-control" id="txtNOx" placeholder="NOx再生因子">
                                     </div>
@@ -211,7 +223,7 @@
         if (value == "1") {
             kr_nox = document.getElementById("txtNOx").value;
         }
-
+        var emissionStandard = $("#txtPemsEmissionStandard").val();
         layer.open({
             type: 2,
             title: ['导入测试数据'],
@@ -220,7 +232,7 @@
             skin: '',
             area: ['60%', '85%'],
             maxmin: true,
-            content: ["/Calculation/ImportRarData?id=" + id + "&vehicleModel=" + vehicleModel + "&pemsFactory=" + pemsFactory + "&vehicleType=" + vehicleType + "&whtcPower=" + whtcPower + "&vehicleQuality=" + vehicleQuality + "&maxRefTorque=" + maxRefTorque + "&maxQuality=" + maxQuality + "&percentageLoad=" + percentageLoad + "&maxPower=" + maxPower + "&nox=" + kr_nox, "yes"],
+            content: ["/Calculation/ImportRarData?id=" + id + "&vehicleModel=" + vehicleModel + "&pemsFactory=" + pemsFactory + "&vehicleType=" + vehicleType + "&whtcPower=" + whtcPower + "&vehicleQuality=" + vehicleQuality + "&maxRefTorque=" + maxRefTorque + "&maxQuality=" + maxQuality + "&percentageLoad=" + percentageLoad + "&maxPower=" + maxPower + "&nox=" + kr_nox + "&emissionStandard=" + emissionStandard, "yes"],
             yes: function (index, layor) {
                 layer.close(index);
             },

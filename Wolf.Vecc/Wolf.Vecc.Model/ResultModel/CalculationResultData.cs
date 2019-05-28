@@ -8,6 +8,9 @@ namespace Wolf.Vecc.Model.ResultModel
 {
     public class CalculationResultData
     {
+        public string work_ref { get; set; }
+        public string work_ref2 { get; set; }
+        public string Alt_avg { get; set; }
         public string p_odo_cru { get; set; }
         public string NO_abn_CO2 { get; set; }
         public string NO_abn_qvf { get; set; }

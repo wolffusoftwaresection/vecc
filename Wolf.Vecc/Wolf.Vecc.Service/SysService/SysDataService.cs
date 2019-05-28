@@ -60,5 +60,10 @@ namespace Wolf.Vecc.Service.SysService
             string sql = @"UPDATE sys_data SET IsDel = 1 WHERE Id in ({0})";
             return _dbServiceReposity.ExecuteSqlCommand(string.Format(sql, Ids), new System.Data.SqlClient.SqlParameter[0]);
         }
+
+        public int InsertData(SysData sysData)
+        {
+            return _dbServiceReposity.Add(sysData);
+        }
     }
 }
