@@ -16,3 +16,12 @@ F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Comm\bin\Debug\NPOI.OOXML.dll
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Comm\bin\Debug\NPOI.OpenXml4Net.dll
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Comm\bin\Debug\NPOI.OpenXmlFormats.dll
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Comm\bin\Debug\ICSharpCode.SharpZipLib.xml
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Comm\bin\Debug\System.Web.Mvc.dll
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Comm\bin\Debug\System.Web.Razor.dll
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Comm\bin\Debug\System.Web.WebPages.Razor.dll
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Comm\bin\Debug\System.Web.WebPages.dll
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Comm\bin\Debug\Microsoft.Web.Infrastructure.dll
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Comm\bin\Debug\System.Web.WebPages.Deployment.dll
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Comm\bin\Debug\itextsharp.dll
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Comm\bin\Debug\itextsharp.xmlworker.dll
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Comm\bin\Debug\itextsharp.xml

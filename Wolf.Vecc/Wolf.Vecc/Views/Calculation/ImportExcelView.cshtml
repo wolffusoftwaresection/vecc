@@ -10,6 +10,7 @@
     <title>模板导入</title>
 </head>
 <body>
+    <input type="hidden" id="taskid" value="@ViewBag.TaskId" />
     <div class="row" style="margin-top:10px;margin-left:10px">
         <div class="col-sm-3">
             <input type="file" name="file" id="file" />
@@ -50,10 +51,12 @@
     }
 
     function uploadExcel() {
+        var _taskid = $("#taskid").val();
         $.ajaxFileUpload({
             url: '/Calculation/UploadExcel',
             secureuri: false,
             dataType: 'JSON',
+            data: {taskid :_taskid },
             fileElementId: 'file',
             async: false,
             success: function (data) {

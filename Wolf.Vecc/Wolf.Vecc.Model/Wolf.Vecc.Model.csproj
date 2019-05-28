@@ -49,7 +49,9 @@
     <Compile Include="PageBaseModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReportModel\UserApprovalReportModel.cs" />
+    <Compile Include="ResultModel\CalculationResultData.cs" />
     <Compile Include="ResultModel\CheckReportModel.cs" />
+    <Compile Include="ResultModel\LoadResultModel.cs" />
     <Compile Include="ResultModel\TaskResultModel.cs" />
     <Compile Include="ResultModel\TestInfoModel.cs" />
     <Compile Include="SysModel\SysApprovaData.cs" />

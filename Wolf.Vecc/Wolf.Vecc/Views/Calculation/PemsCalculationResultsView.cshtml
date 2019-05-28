@@ -7,12 +7,12 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="Content-Style-Type" content="text/css" />
-    <meta name="generator" content="Aspose.Words for .NET 15.1.0.0" />
+    <meta name="generator" content="" />
     <title>检测报告</title>
 </head>
 <body>
     <div style="width:414.3pt;margin: 0 auto;">
-        <input type="hidden" id="ResultData" value="@ViewBag.Result" />
+        <input type="hidden" id="ResultData" value="@TempData["Result"]" />
         <input type="hidden" id="TaskId" value="@Model.TaskId" />
         <input type="hidden" id="VehicleType" value="@Model.VehicleType" />
         <input type="hidden" id="TestDate" value="@Model.TestDate" />
@@ -26,6 +26,7 @@
 
         <p style="margin:0pt; orphans:0; text-align:right; widows:0">
             <button type='button' id="inputExcel" onclick='ExeclView()' class='btn btn-dropbox btn-flat'>模板导入</button>
+            @*<button type='button' id="inputExcel" onclick='LoadResultModel()' class='btn btn-dropbox btn-flat'>上传</button>*@
             @*<span style="font-family:宋体; font-size:10.5pt">导入</span>*@
         </p>
 
@@ -1433,6 +1434,7 @@
 </html>
 <script src="~/Scripts/jquery-3.3.1.min.js"></script>
 <script src="~/AdminLTE/plugins/layer/layer.js"></script>
+<script src="~/AdminLTE/ajaxfileupload.js"></script>
 <script type="text/javascript">
     $(function () {
         if ($("#ResultData").val() != "") {
@@ -1504,13 +1506,14 @@
         $("#approval").text(dataObj['批准']);
         $("#examine").text(dataObj['审核']);
         $("#chiefInspector").text(dataObj['主检']);
-        productionUnit
+        //productionUnit
 
         //赋值完成关闭导入框
         layer.close(index);
     }
 
     function ExeclView() {
+        var taskid = $("#TaskId").val();
         layer.open({
             type: 2,
             title: ['用户导入'],
@@ -1519,7 +1522,22 @@
             skin: 'layerlarge',
             area: ['55%', '55%'],
             maxmin: true,
-            content: ['/Calculation/ImportExcelView', "yes"]
+            content: ['/Calculation/ImportExcelView?taskid=' + taskid, "yes"]
         });
     }
+
+    //function LoadResultModel() {
+    //    var taskid = $("#TaskId").val();
+    //    $.ajaxFileUpload({
+    //        url: '/Calculation/LoadResultModel',
+    //        data:{ taskId: taskid },
+    //        secureuri: false,
+    //        dataType: 'JSON',
+    //        fileElementId: 'file',
+    //        async: false,
+    //        success: function (data) {
+                
+    //        }
+    //    });
+    //}
 </script>

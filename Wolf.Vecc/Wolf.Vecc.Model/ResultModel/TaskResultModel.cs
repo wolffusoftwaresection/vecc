@@ -25,5 +25,9 @@ namespace Wolf.Vecc.Model.ResultModel
         public string RouteDescription { get; set; }
 
         public string WhtcPower { get; set; }
+
+        public CalculationResultData calculationResultData { get; set; }
+
+        public LoadResultModel loadResultModel { get; set; }
     }
 }

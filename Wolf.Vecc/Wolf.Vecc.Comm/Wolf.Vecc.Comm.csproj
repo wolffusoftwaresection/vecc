@@ -37,6 +37,12 @@
     <Reference Include="ICSharpCode.SharpZipLib, Version=1.0.0.999, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
       <HintPath>..\packages\SharpZipLib.1.0.0\lib\net45\ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.xmlworker, Version=5.5.13.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itextsharp.xmlworker.5.5.13\lib\itextsharp.xmlworker.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -66,6 +72,7 @@
     <Reference Include="System.Transactions" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -82,6 +89,7 @@
     <Compile Include="Excel\ExcelDictionary.cs" />
     <Compile Include="Excel\UploadExcelCommon.cs" />
     <Compile Include="ExceptionExtent\ExceptionExt.cs" />
+    <Compile Include="Helpers\BinaryContentResult.cs" />
     <Compile Include="Helpers\DictionaryExt.cs" />
     <Compile Include="Helpers\EnumExt.cs" />
     <Compile Include="Helpers\ExcelHelper.cs" />
@@ -90,6 +98,8 @@
     <Compile Include="Helpers\LogHelper.cs" />
     <Compile Include="Helpers\PubHelp.cs" />
     <Compile Include="Helpers\RarOperatorExt.cs" />
+    <Compile Include="Helpers\RenderViewTostring.cs" />
+    <Compile Include="Helpers\UnicodeFontFactory.cs" />
     <Compile Include="Helpers\UpFileExt.cs" />
     <Compile Include="Helpers\UtilityHelper.cs" />
     <Compile Include="Helpers\VeccModelHelp.cs" />
