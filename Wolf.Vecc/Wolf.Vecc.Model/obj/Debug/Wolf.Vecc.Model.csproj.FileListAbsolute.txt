@@ -47,5 +47,4 @@ F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Model\bin\Debug\System.Web.WebPages.Razor.d
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Model\bin\Debug\System.Web.WebPages.dll
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Model\bin\Debug\Microsoft.Web.Infrastructure.dll
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Model\bin\Debug\System.Web.WebPages.Deployment.dll
-F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Model\bin\Debug\itextsharp.dll
-F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Model\bin\Debug\itextsharp.xml
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Model\bin\Debug\NLog.config

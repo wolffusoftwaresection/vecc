@@ -16,6 +16,8 @@ namespace Wolf.Vecc.IService.ISysService
         /// <returns></returns>
         List<SysData> GetSysDataList(DataApprovalViewModel dataApprovalViewModel);
 
+        List<SysData> GetSysDataList(FindingsAuditViewModel findingsAuditViewModel);
+
         SysData GetDataById(int Id);
 
         int Update(SysData sysData);

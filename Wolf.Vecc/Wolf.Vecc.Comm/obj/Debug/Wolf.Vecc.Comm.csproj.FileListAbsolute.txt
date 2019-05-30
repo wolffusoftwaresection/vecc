@@ -22,6 +22,4 @@ F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Comm\bin\Debug\System.Web.WebPages.Razor.dl
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Comm\bin\Debug\System.Web.WebPages.dll
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Comm\bin\Debug\Microsoft.Web.Infrastructure.dll
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Comm\bin\Debug\System.Web.WebPages.Deployment.dll
-F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Comm\bin\Debug\itextsharp.dll
-F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Comm\bin\Debug\itextsharp.xmlworker.dll
-F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Comm\bin\Debug\itextsharp.xml
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Comm\obj\Debug\Wolf.Vecc.Comm.csproj.ResolveComReference.cache

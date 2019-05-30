@@ -1,0 +1,213 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout_List.cshtml";
+}
+<div class="container" id="pageSection" style="background: white; min-height: 5px;padding-top:15px;">
+    <div class="row form-inline" id="SearchList">
+        <div class="col-md-12">
+            <div class="col-md-3">
+                <div class="form-group form-inline" style="white-space:nowrap;">
+                    <label class="font-weight-bold">状态</label>
+                    <select id="state" name="select" class="selectpicker show-tick form-control" data-actions-box="true">
+                        <option value="0">请选择</option>
+                        <option value="1">待审核</option>
+                        <option value="2">未通过</option>
+                        <option value="3">已通过</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group form-inline" style="white-space:nowrap">
+                    <label class="font-weight-bold">上传时间</label>
+                    <div class="">
+                        <input placeholder="请输入日期" id="start" class="form-control" type="text">
+                        <span> - </span>
+                        <input placeholder="请输入日期" id="end" class="form-control" type="text">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2" id="userComit">
+                <button type="button" class="bk-margin-10 btn btn-primary btn-lg" id="screeningBtn" onclick="screeningSearch()">筛选</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="box-body" style="padding-left:15px;">
+    <table id="tb_UserFindingsAudit" class="table-bordered" style="font-size:12px;"></table>
+</div>
+@*<script src="~/AdminLTE/plugins/jQuery/jquery-2.2.3.min.js"></script>*@
+<script src="~/laydate/laydate.js"></script>
+<script src="~/AdminLTE/dateConvert.js"></script>
+<script src="~/Scripts/veccjs/veccTool.js"></script>
+<script src="~/Scripts/colResizable-1.6.min.js"></script>
+<script>
+    var fal = false;
+    var dataBeginDate = null;
+    var dataEndDate = null;
+
+    $(function () {
+        laydate.render({
+            elem: '#start',
+            format: 'yyyy-MM-dd',
+            done: function (value, date, endDate) {
+                dataBeginDate = value;
+            }
+        });
+
+        laydate.render({
+            elem: '#end',
+            format: 'yyyy-MM-dd',
+            done: function (value, date, endDate) {
+                dataEndDate = value;
+            }
+        });
+        $("#tb_UserFindingsAudit").colResizable()
+        initFindingsAudit();
+    });
+
+    function initFindingsAudit() {
+        $("#tb_UserFindingsAudit").bootstrapTable({
+            url: "/User/UserFindingsAuditList",         //请求后台的URL（*）
+            method: 'post',                      //请求方式（*）
+            //toolbar: toolbar,                //工具按钮用哪个容器
+            striped: true,                      //是否显示行间隔色
+            cache: false,                       //是否使用缓存，默认为true，所以一般情况下需要设置一下这个属性（*）
+            pagination: true,                   //是否显示分页（*）
+            sortable: false,                     //是否启用排序
+            sortOrder: "asc",                   //排序方式
+            queryParams: function (params) {
+                var temp = {   //这里的键的名字和控制器的变量名必须一致，这边改动，控制器也需要改成一样的
+                    PageSize: params.limit,   //页面显示行数
+                    PageIndex: params.offset / params.limit + 1,//页码*页面显示行数=offset
+                    DataState: $("#state").val(),
+                    BeginDate: dataBeginDate,
+                    EndDate: dataEndDate
+                };
+                return temp;
+            },//传递参数（*）
+            sidePagination: "server",           //分页方式：client客户端分页，server服务端分页（*）
+            pageNumber: 1,                                              //初始化加载第一页，默认第一页
+            pageSize: 10,                                               //每页的记录行数（*）
+            pageList: [10, 25, 50, 100],
+            search: false,                       //是否显示表格搜索，此搜索是客户端搜索，不会进服务端，所以，个人感觉意义不大
+            strictSearch: false,
+            showColumns: false,                  //是否显示所有的列
+            showRefresh: true,                  //是否显示刷新按钮
+            minimumCountColumns: 2,             //最少允许的列数
+            clickToSelect: true,                //是否启用点击选中行
+            // height: 500,                        //行高，如果没有设置height属性，表格自动根据记录条数觉得表格高度
+            uniqueId: "Id",                     //每一行的唯一标识，一般为主键列
+            //showToggle: true,                    //是否显示详细视图和列表视图的切换按钮
+            //cardView: false,                    //是否显示详细视图
+            columns: [
+                {
+                    field: 'DataName',
+                    align: 'center',
+                    title: '文件名称',
+                    visible: 1,
+                    width: '260px'
+                },
+                {
+                    field: 'UploadDate',
+                    align: 'center',
+                    title: '上传时间',
+                    visible: 1,
+                    formatter: function (value, row, index) {
+                        return formatDateBoxFull(value);
+                    }
+                },
+                {
+                    field: 'ApprovalDate',
+                    align: 'center',
+                    title: '审核时间',
+                    visible: 1
+                    //,
+                    //formatter: function (value, row, index) {
+                    //    return formatDateBoxFull(value);
+                    //}
+                }, {
+                    field: 'ApprovalRemark',
+                    align: 'center',
+                    title: '审核说明',
+                    visible: 1,
+                    width: '100px',
+                    cellStyle: formatTableUnit,
+                    formatter: paramsMatter
+                }, {
+                    field: 'DataStatus',
+                    align: 'center',
+                    title: '审核状态',
+                    visible: 1,
+                    formatter: function (value) {
+                        return vecc.veccStatusToStr(value);
+                    }
+                },
+                {
+                    field: 'operate',
+                    align: 'center',
+                    title: '下载报告',
+                    visible: 1,
+                    formatter: function (value, row, index) {
+                        var ck = '<a href="' + row.DataUrl + '"><span class= "glyphicon glyphicon-cloud-download" ></span></a>';
+                        return ck;
+                    }
+                },
+                {
+                    field: 'operate',
+                    align: 'center',
+                    title: '预览报告',
+                    visible: 1,
+                    formatter: function (value, row, index) {
+                        var ck = '<a href="#" onclick="onPreview(' + row.Id + ',\'' + row.DataUrl + '\');"><span class= "glyphicon glyphicon-eye-open" ></span></a>';
+                        return ck;
+                    }
+                }
+            ],
+            onPageChange: function (number, size) {
+
+            },
+            onClickRow: function (row, element, field) {
+
+            },
+            onDblClickRow: function (row, obj) {
+
+            }
+        });
+    }
+
+    function paramsMatter(value, row, index) {
+        var span = document.createElement('span');
+        span.setAttribute('title', row.ApprovalRemark);
+        span.innerHTML = row.ApprovalRemark;
+        return span.outerHTML;
+    }
+
+    function formatTableUnit(value, row, index) {
+        return {
+            css: {
+                "white-space": 'nowrap',
+                "text-overflow": 'ellipsis',
+                "overflow": 'hidden'
+            }
+        }
+    }
+
+    function screeningSearch() {
+        $("#tb_UserFindingsAudit").bootstrapTable('refresh');
+    }
+
+    function onPreview(id, url) {
+        $.ajax({
+            url: "/Approval/Preview?fileName=" + url,
+            type: "POST",
+            dataType: "json",
+            success: function (data) {
+                if (data.Success) {
+                    window.open(data.Data.TempDocHtml);
+                } else { msg.info("生成报告错误!");}
+            },
+            error: function () {
+                msg.info("生成报告错误!");
+            }
+        });
+    }
+</script>

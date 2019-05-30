@@ -1,5 +1,9 @@
-﻿using System;
+﻿using Microsoft.Office.Interop.Excel;
+using Microsoft.Office.Interop.Word;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Transactions;
@@ -487,11 +491,78 @@ namespace Wolf.Vecc.Controllers
             ViewBag.userType = VeccModelHelp.GetUserType(user.UserType);
             ViewBag.accountStatus = VeccModelHelp.GetAccountStatus(user.AccountStatus);
             //如果详情用户未通过获取未通过原因
+            var sysApprovaUser = _approvalUserService.GetSysApprovaUserByUserId(Id);
             if (user.AccountStatus == 2)
             {
-                ViewBag.Reason = _approvalUserService.GetSysApprovaUserByUserId(Id).ApprovalRemark;
+                ViewBag.Reason = sysApprovaUser.ApprovalRemark;
             }
+            ViewBag.ApprovalDate = sysApprovaUser.ApprovalDate;
             return View(user);
+        }
+
+        private bool OfficeDocumentToHtml(string sourceDoc, string saveDoc)
+        {
+            bool result = false;
+            //获取文件扩展名
+            string docExtendName = System.IO.Path.GetExtension(sourceDoc).ToLower();
+            switch (docExtendName)
+            {
+                case ".doc":
+                case ".docx":
+                    Aspose.Words.Document doc = new Aspose.Words.Document(sourceDoc);
+                    doc.Save(saveDoc, Aspose.Words.SaveFormat.Html);
+
+                    result = true;
+                    break;
+                default:
+                    break;
+            }
+
+            return result;
+        }
+
+        [HttpPost]
+        public JsonResult Preview(string fileName)
+        {
+            string saveDoc = "";
+            bool result = false;
+            saveDoc = System.Web.HttpContext.Current.Server.MapPath("/UpLoadModelFiles/ViewFiles/onlineview.html");
+            result = OfficeDocumentToHtml(System.Web.HttpContext.Current.Server.MapPath(fileName), saveDoc);
+            if (result)
+            {
+                return Success(new { TempDocHtml = "../../UpLoadModelFiles/ViewFiles/onlineview.html" }, "");
+            }
+
+            return Failure();
+        }
+
+        /// <summary>
+        /// 数据审核信息
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <returns></returns>
+        public ActionResult DataInFo(int Id)
+        {
+            var data = _dataService.GetDataById(Id);
+            var user = _userService.GetUserById(data.UserId);
+            DataInfoModel dataInFo = new DataInfoModel
+            {
+                UserName = user.UserName,
+                UserType = VeccModelHelp.GetUserType(user.UserType),
+                UserEmail = user.Email,
+                UserPhone = user.Phone,
+                EnterpriseName = user.EnterpriseName,
+                AccountStatus = VeccModelHelp.GetAccountStatus(data.DataStatus),
+                UpLoadDate = data.UploadDate
+            };
+            var approvalData = _approvalDataService.GetSysApprovaDataByDataId(Id);
+            dataInFo.AccountData = approvalData.ApprovalDate;
+            //如果详情用户未通过获取未通过原因
+            if (data.DataStatus == 2)
+            {
+                dataInFo.Reason = approvalData.ApprovalRemark;
+            }
+            return View(dataInFo);
         }
 
         public ActionResult AddUser()

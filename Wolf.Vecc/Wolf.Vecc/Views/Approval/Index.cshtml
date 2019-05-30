@@ -306,16 +306,7 @@
                                                 return vecc.veccStatusToStr(value);
                                             }
                                         },
-                                        {
-                                            field: 'DataUrl',
-                                            align: 'center',
-                                            title: '下载',
-                                            visible: 1,
-                                            formatter: function (value, row, index) {
-                                                var ck = '<a href="' + value + '"><span class= "glyphicon glyphicon-cloud-download" ></span></a>';
-                                                return ck;
-                                            }
-                                        },
+                                       
                                         {
                                             field: 'IsPublic',
                                             align: 'center',
@@ -329,17 +320,27 @@
                                                 }
                                                 return ck;
                                             }
+                                        }, {
+                                            field: 'DataUrl',
+                                            align: 'center',
+                                            title: '下载',
+                                            visible: 1,
+                                            formatter: function (value, row, index) {
+                                                var ck = '<a href="' + value + '"><span class= "glyphicon glyphicon-cloud-download" ></span></a>';
+                                                return ck;
+                                            }
                                         }
-                                        //,
-                                        //{
-                                        //    field: 'UserType',
-                                        //    align: 'center',
-                                        //    title: '用户类型',
-                                        //    visible: 1,
-                                        //    formatter: function (value) {
-                                        //        return vecc.veccUserTypeToStr(value);
-                                        //    }
-                                        //}
+                                        ,
+                                        {
+                                            field: 'operate',
+                                            align: 'center',
+                                            title: '预览报告',
+                                            visible: 1,
+                                            formatter: function (value, row, index) {
+                                                var ck = '<a href="#" onclick="onPreview(' + row.Id + ',\'' + row.DataUrl + '\');"><span class= "glyphicon glyphicon-eye-open" ></span></a>';
+                                                return ck;
+                                            }
+                                        }
                                         ,
                                         {
                                             field: 'operate',
@@ -352,7 +353,7 @@
                                                     button = '<a class="btn btn-info" href="#" onclick="onAgreeData(' + row.Id + ');"><i class="glyphicon"></i>同意</a><a class="btn btn-danger" href="#" onclick="onRefuseData(' + row.Id + ');"><i class="glyphicon"></i>拒绝</a>';
                                                 }
                                                 else {
-                                                    button = '<a class="btn btn-danger" href="#" onclick="onDelData(' + row.Id + ',\'' + row.DataName + '\');"><i class="glyphicon"></i>删除</a>';
+                                                    button = '<a class="btn btn-success" href="#" onclick="DataInFo(' + row.Id + ');"><i class="glyphicon"></i>查看</a><a class="btn btn-danger" href="#" onclick="onDelData(' + row.Id + ',\'' + row.DataName + '\');"><i class="glyphicon"></i>删除</a>';
                                                 }
                                                 return button;
                                             }
@@ -949,7 +950,7 @@
                             function UserInFo(id) {
                                 layer.open({
                                     type: 2,
-                                    title: ['查看-用户信息'],
+                                    title: ['查看-用户审核信息'],
                                     shadeClose: false,
                                     btn: ['关闭'],
                                     skin: '',
@@ -961,6 +962,41 @@
                                     },
                                     no: function (index, layor) {
 
+                                    }
+                                });
+                            }
+
+                            function DataInFo(id) {
+                                layer.open({
+                                    type: 2,
+                                    title: ['查看-数据审核信息'],
+                                    shadeClose: false,
+                                    btn: ['关闭'],
+                                    skin: '',
+                                    area: ['60%', '50%'],
+                                    maxmin: true,
+                                    content: ['/Approval/DataInFo?Id=' + id, "no"],
+                                    yes: function (index, layor) {
+                                        layer.close(index);
+                                    },
+                                    no: function (index, layor) {
+
+                                    }
+                                });
+                            }
+
+                            function onPreview(id, url) {
+                                $.ajax({
+                                    url: "/Approval/Preview?fileName=" + url,
+                                    type: "POST",
+                                    dataType: "json",
+                                    success: function (data) {
+                                        if (data.Success) {
+                                            window.open(data.Data.TempDocHtml);
+                                        } else { msg.info("生成报告错误!"); }
+                                    },
+                                    error: function () {
+                                        msg.info("生成报告错误!");
                                     }
                                 });
                             }

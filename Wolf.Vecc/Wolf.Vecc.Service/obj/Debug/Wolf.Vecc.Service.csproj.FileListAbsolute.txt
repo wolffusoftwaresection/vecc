@@ -100,5 +100,3 @@ F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Service\bin\Debug\ICSharpCode.SharpZipLib.d
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Service\bin\Debug\NPOI.OpenXml4Net.dll
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Service\bin\Debug\NPOI.OpenXmlFormats.dll
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Service\bin\Debug\ICSharpCode.SharpZipLib.xml
-F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Service\bin\Debug\itextsharp.dll
-F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Service\bin\Debug\itextsharp.xml

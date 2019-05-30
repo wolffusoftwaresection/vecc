@@ -54,6 +54,7 @@
     <Compile Include="ResultModel\LoadResultModel.cs" />
     <Compile Include="ResultModel\TaskResultModel.cs" />
     <Compile Include="ResultModel\TestInfoModel.cs" />
+    <Compile Include="ResultModel\UserFindingsAuditModel.cs" />
     <Compile Include="SysModel\SysApprovaData.cs" />
     <Compile Include="SysModel\SysApprovaUser.cs" />
     <Compile Include="SysModel\SysData.cs" />
@@ -65,6 +66,7 @@
     <Compile Include="SysModel\SysTaskResult.cs" />
     <Compile Include="SysModel\SysUsers.cs" />
     <Compile Include="ViewModel\CalculationModel.cs" />
+    <Compile Include="ViewModel\DataInfoModel.cs" />
     <Compile Include="ViewModel\LayOutUserModel.cs" />
     <Compile Include="ViewModel\RegisterViewModel.cs" />
     <Compile Include="ViewModel\UpdatePwModel.cs" />

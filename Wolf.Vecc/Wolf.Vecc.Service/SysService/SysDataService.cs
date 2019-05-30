@@ -65,5 +65,21 @@ namespace Wolf.Vecc.Service.SysService
         {
             return _dbServiceReposity.Add(sysData);
         }
+
+        public List<SysData> GetSysDataList(FindingsAuditViewModel findingsAuditViewModel)
+        {
+            Expression<Func<SysData, bool>> searchPredicate = PredicateExtensions.True<SysData>();
+            searchPredicate = searchPredicate.And(d => d.IsDel == 0);
+           
+            if (findingsAuditViewModel.DataState > 0)
+            {
+                searchPredicate = searchPredicate.And(d => d.DataStatus == findingsAuditViewModel.DataState);
+            }
+            if (findingsAuditViewModel.BeginDate != null && findingsAuditViewModel.EndDate != null)
+            {
+                searchPredicate = searchPredicate.And(d => d.UploadDate >= findingsAuditViewModel.BeginDate && d.UploadDate <= findingsAuditViewModel.EndDate);
+            }
+            return _dbServiceReposity.GetWhereSearch(searchPredicate).ToList();
+        }
     }
 }

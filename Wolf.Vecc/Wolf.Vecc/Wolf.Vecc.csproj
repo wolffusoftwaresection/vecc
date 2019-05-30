@@ -73,12 +73,6 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="itextsharp, Version=5.5.13.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
-      <HintPath>..\packages\iTextSharp.5.5.13\lib\itextsharp.dll</HintPath>
-    </Reference>
-    <Reference Include="itextsharp.xmlworker, Version=5.5.13.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
-      <HintPath>..\packages\itextsharp.xmlworker.5.5.13\lib\itextsharp.xmlworker.dll</HintPath>
-    </Reference>
     <Reference Include="LinqKit, Version=1.1.16.0, Culture=neutral, PublicKeyToken=bc217f8844052a91, processorArchitecture=MSIL">
       <HintPath>..\packages\LinqKit.1.1.16\lib\net45\LinqKit.dll</HintPath>
     </Reference>
@@ -1849,6 +1843,7 @@
     <Content Include="AdminLTE\dist\font-awesome-4.7.0\scss\_screen-reader.scss" />
     <Content Include="AdminLTE\dist\font-awesome-4.7.0\scss\_stacked.scss" />
     <Content Include="AdminLTE\dist\font-awesome-4.7.0\scss\_variables.scss" />
+    <Content Include="Scripts\colResizable-1.6.min.js" />
     <Content Include="检测报告模板.txt" />
     <None Include="NLog.xsd">
       <SubType>Designer</SubType>
@@ -1910,6 +1905,9 @@
     <Content Include="Views\Approval\RefuseBatchDataView.cshtml" />
     <Content Include="Views\Calculation\ImportExcelView.cshtml" />
     <Content Include="Views\Calculation\PemsCalculationResultsViewDown.cshtml" />
+    <Content Include="Views\User\UserFindingsAuditView.cshtml" />
+    <Content Include="Views\Approval\DataInFo.cshtml" />
+    <Content Include="Views\Shared\_Layout_List.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AdminLTE\bootstrap\js\ie\" />
@@ -1917,7 +1915,7 @@
     <Folder Include="Models\" />
     <Folder Include="pemsreport\js\" />
     <Folder Include="UpLoadFiles\" />
-    <Folder Include="UpLoadModelFiles\" />
+    <Folder Include="UpLoadModelFiles\ViewFiles\" />
     <Folder Include="Views\ApprovalUserAsync\" />
     <Folder Include="Views\Comet\" />
   </ItemGroup>
@@ -1961,6 +1959,44 @@
       <Project>{19356ca3-dd0e-43b8-af40-b99b9ce2c969}</Project>
       <Name>Wolf.Vecc.Service</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>7</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>8</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Word">
+      <Guid>{00020905-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>8</VersionMajor>
+      <VersionMinor>6</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

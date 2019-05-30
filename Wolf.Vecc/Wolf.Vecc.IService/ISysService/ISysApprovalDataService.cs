@@ -14,5 +14,9 @@ namespace Wolf.Vecc.IService.ISysService
         int BatchInsert(List<SysApprovaData> sysApprovaDatas);
 
         int BatchDelete(string ids);
+
+        List<SysApprovaData> All();
+
+        SysApprovaData GetSysApprovaDataByDataId(int id);
     }
 }

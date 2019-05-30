@@ -1,7 +1,8 @@
-﻿@{
+﻿
+@{
     Layout = null;
 }
-@model Wolf.Vecc.Model.SysModel.SysUsers
+@model Wolf.Vecc.Model.ViewModel.DataInfoModel
 <link href="~/AdminLTE/bootstrap/css/font-awesome.min.css" rel="stylesheet" />
 <link rel="stylesheet" href="~/AdminLTE/bootstrap/css/bootstrap.min.css">
 
@@ -59,32 +60,12 @@
         <div class="col-lg-12">
             <div class="marginbottom-10">
                 <div class="form-horizontal">
-                    @Html.HiddenFor(model => model.Id)
-                    @Html.HiddenFor(model => model.CreateDate)
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="username" class="col-sm-4">用户名：</label>
+                                <label for="username" class="col-sm-4">用户名称：</label>
                                 <div class="col-sm-8">
                                     @Html.TextBoxFor(m => Model.UserName, new { @class = "form-control", @readonly = "readonly" })
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="country" class="col-sm-4">国家：</label>
-                                <div class="col-sm-8">
-                                    @Html.TextBoxFor(m => Model.Country, new { @class = "form-control", @readonly = "readonly" })
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="country" class="col-sm-4">手机号：</label>
-                                <div class="col-sm-8">
-                                    @Html.TextBoxFor(m => Model.Phone, new { @class = "form-control", @readonly = "readonly" })
                                 </div>
                             </div>
                         </div>
@@ -100,17 +81,17 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="country" class="col-sm-4">邮箱：</label>
+                                <label for="country" class="col-sm-4">手机号：</label>
                                 <div class="col-sm-8">
-                                    @Html.TextBoxFor(m => Model.Email, new { @class = "form-control", @readonly = "readonly" })
+                                    @Html.TextBoxFor(m => Model.UserPhone, new { @class = "form-control", @readonly = "readonly" })
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="country" class="col-sm-4">用户类型：</label>
+                                <label for="country" class="col-sm-4">用户邮箱：</label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" value="@ViewBag.userType" readonly />
+                                    @Html.TextBoxFor(m => Model.UserEmail, new { @class = "form-control", @readonly = "readonly" })
                                 </div>
                             </div>
                         </div>
@@ -118,17 +99,17 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="country" class="col-sm-4">账号状态：</label>
+                                <label for="country" class="col-sm-4">用户类型：</label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" value="@ViewBag.accountStatus" readonly />
+                                    @Html.TextBoxFor(m => Model.UserType, new { @class = "form-control", @readonly = "readonly" })
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="country" class="col-sm-4">未通过原因：</label>
+                                <label for="country" class="col-sm-4">审核状态：</label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" value="@ViewBag.Reason" readonly />
+                                    @Html.TextBoxFor(m => Model.AccountStatus, new { @class = "form-control", @readonly = "readonly" })
                                 </div>
                             </div>
                         </div>
@@ -138,13 +119,31 @@
                             <div class="form-group">
                                 <label for="country" class="col-sm-4">审核时间：</label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" value="@ViewBag.ApprovalDate" readonly />
+                                    @Html.TextBoxFor(m => Model.AccountData, new { @class = "form-control", @readonly = "readonly" })
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                
+                                <label for="country" class="col-sm-4">上传时间：</label>
+                                <div class="col-sm-8">
+                                    @Html.TextBoxFor(m => Model.UpLoadDate, new { @class = "form-control", @readonly = "readonly" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="country" class="col-sm-4">审核说明：</label>
+                                <div class="col-sm-8">
+                                    @Html.TextBoxFor(m => Model.Reason, new { @class = "form-control", @readonly = "readonly" })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+
                             </div>
                         </div>
                     </div>

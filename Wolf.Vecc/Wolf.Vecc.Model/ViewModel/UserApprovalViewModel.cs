@@ -27,4 +27,13 @@ namespace Wolf.Vecc.Model.ViewModel
 
         public DateTime? EndDate { get; set; }
     }
+
+    public class FindingsAuditViewModel : PageBaseModel
+    {
+        public int DataState { get; set; }
+
+        public DateTime? BeginDate { get; set; }
+
+        public DateTime? EndDate { get; set; }
+    }
 }
