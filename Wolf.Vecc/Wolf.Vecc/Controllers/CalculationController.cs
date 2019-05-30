@@ -240,6 +240,31 @@ namespace Wolf.Vecc.Controllers
             return View();
         }
 
+        public ActionResult SaveToLocal(string taskid, string taskDate)
+        {
+            string filePath = Server.MapPath("~") + "/UpLoadModelFiles/" + taskid + ".doc";
+            FileStream fs = new FileStream(filePath, FileMode.Open);
+            byte[] bytes = new byte[(int)fs.Length];
+            fs.Read(bytes, 0, bytes.Length);
+            fs.Close();
+            Response.Charset = "UTF-8";
+            Response.ContentEncoding = System.Text.Encoding.GetEncoding("UTF-8");
+            Response.ContentType = "application/octet-stream";
+
+            Response.AddHeader("Content-Disposition", "attachment; filename=" + Server.UrlEncode(taskDate+".doc"));
+            Response.BinaryWrite(bytes);
+            Response.Flush();
+            Response.End();
+            return new EmptyResult();
+        }
+
+        //public FileStreamResult SaveToLocal(string taskid, string taskDate)
+        //{
+        //    string fileName = taskDate + ".doc";//客户端保存的文件名 
+        //    string filePath = Server.MapPath("~") + "/UpLoadModelFiles/" + taskid + ".doc";
+        //    return File(new FileStream(filePath, FileMode.Open), "text/plain", fileName);
+        //}
+
         [HttpPost]
         public JsonResult UploadExcel(string taskid)
         {
@@ -265,6 +290,11 @@ namespace Wolf.Vecc.Controllers
             var _data = JsonHelper.SerializeDictionaryToJsonString(keyValuePairs == null ? null : keyValuePairs);
             LoadResultModel _loadResultModel = new LoadResultModel
             {
+                //检验车辆基本参数
+                //VIN号=
+                //行驶里程(km)=
+                //轮胎数量(个)=
+                //编号=
                 reportNo = keyValuePairs["报告编号"],
                 internalNo = keyValuePairs["内部编号"],
                 productName = keyValuePairs["产品名称"],
@@ -272,7 +302,7 @@ namespace Wolf.Vecc.Controllers
                 productModel = keyValuePairs["产品型号"],
                 inspectedUnits = keyValuePairs["受检单位"],
                 inspectionCategory = keyValuePairs["检验类别"],
-                dateDelivery = keyValuePairs["产品型号"],
+                dateDelivery = keyValuePairs["发送日期"],
                 nameInspectionUnit = keyValuePairs["检验单位名称"],
                 nameInspectionAddress = keyValuePairs["检验单位地址"],
                 nameInspectionPhone = keyValuePairs["检验单位电话"],
@@ -389,7 +419,7 @@ namespace Wolf.Vecc.Controllers
         public ActionResult ImportExcelView(string taskid)
         {
             ViewBag.TaskId = taskid;
-            UploadExcelCommon.dt = new DataTable();
+            //UploadExcelCommon.dt = new DataTable();
             return View();
         }
 

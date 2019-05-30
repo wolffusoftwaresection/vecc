@@ -25,7 +25,8 @@
         <!--p1-->
 
         <p style="margin:0pt; orphans:0; text-align:right; widows:0">
-            <button type='button' id="inputExcel" onclick='ExeclView()' class='btn btn-dropbox btn-flat'>模板导入</button>
+            <button type='button' id="inputExcel" onclick='ExeclView()' class='btn btn-dropbox btn-flat'>参数导入</button>
+            <a href="/Calculation/SaveToLocal?taskid=@Model.TaskId&taskDate=@Model.TestDate">保存</a>
             @*<button type='button' id="inputExcel" onclick='LoadResultModel()' class='btn btn-dropbox btn-flat'>上传</button>*@
             @*<span style="font-family:宋体; font-size:10.5pt">导入</span>*@
         </p>
@@ -231,8 +232,6 @@
         </table>
 
         <img src="~/AdminLTE/img/001.png" width="289" height="1" alt="" style="-aw-left-pos:216pt; -aw-rel-hpos:page; -aw-rel-vpos:paragraph; -aw-top-pos:0.25pt; -aw-wrap-type:none; margin-left:125.62pt; margin-top:-0.12pt; position:absolute; z-index:14" />
-
-
         <p style="margin:0pt; orphans:0; text-align:justify; widows:0"><span style="font-family:宋体; font-size:10.5pt">&#xa0;</span></p>
 
         <p style="margin:0pt; orphans:0; text-align:justify; widows:0"><span style="font-family:宋体; font-size:10.5pt">&#xa0;</span></p>
@@ -287,7 +286,9 @@
             <tr style="height:17.05pt">
                 <td style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:top; width:88.2pt">
                     <p style="margin:0pt; orphans:0; text-align:justify; widows:0">
-                        <span style="font-family:宋体; font-size:12pt">检验单位名称：</span>
+                        <span style="font-family:宋体; font-size:12pt">
+                            检验单位名称：
+                        </span>
                     </p>
                 </td>
                 <td style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:top; width:322.2pt">
@@ -371,8 +372,10 @@
 
         <table cellspacing="0" cellpadding="0" style="border-collapse:collapse; margin-left:0pt">
             <tr>
-                <td style="vertical-align:top; width:76.6pt"><p style="margin:0pt; orphans:0; text-align:right; widows:0"><span style="font-family:宋体; font-size:10.5pt">检验单位名称：</span></p></td>
-                <td style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:top; width:223.2pt"><p style="margin:0pt; orphans:0; text-align:justify; widows:0"><span style="font-family:'Times New Roman'; font-size:10.5pt">&#xa0;</span></p></td>
+                <td style="vertical-align:top; width:76.6pt"><p style="margin:0pt; orphans:0; text-align:right; widows:0"><span style="font-family:宋体; font-size:10.5pt">
+    检验单位名称：
+</span></p></td>
+                <td style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:top; width:223.2pt"><p style="margin:0pt; orphans:0; text-align:justify; widows:0"><span style="font-family:'Times New Roman'; font-size:10.5pt" id="nameInspectionUnit2"></span></p></td>
                 <td style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:top; width:52.2pt"><p style="margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:'Times New Roman'; font-size:10.5pt">&#xa0;</span></p></td>
                 <td style="vertical-align:top; width:47.9pt"><p style="margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt">第</span><span style="font-family:宋体; font-size:10.5pt">   </span><span style="font-family:宋体; font-size:10.5pt">页</span></p></td>
             </tr>
@@ -449,8 +452,6 @@
             </table>
 
         </div>
-
-
         <p style="margin:0pt; orphans:0; text-align:justify; widows:0"><span style="font-family:宋体; font-size:10.5pt">&#xa0;</span></p>
 
         <table cellspacing="0" cellpadding="0" style="border-collapse:collapse; margin-left:0pt">
@@ -463,30 +464,17 @@
                 <td style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:top;"><p style="margin:0pt; orphans:0; text-align:justify; widows:0"><span style="font-family:宋体; font-size:10.5pt" id="chiefInspector"></span></p></td>
             </tr>
         </table>
-
         <p style="margin:0pt; orphans:0; text-align:justify; widows:0"><span style="font-family:宋体; font-size:12pt">&#xa0;</span></p>
-
-
-
-
-
-
-
-
         <!--p4-->
-
         <p style="margin:0pt; orphans:0; text-align:justify; widows:0"><br style="page-break-before:always; clear:both" /></p>
-
         <!--<p style="margin:0pt; orphans:0; text-align:justify; text-indent:21pt; widows:0"><span style="font-family:宋体; font-size:10.5pt">报告编号：</span></p>-->
-
-
         <p style="margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:16pt; font-weight:bold">检</span><span style="font-family:宋体; font-size:16pt; font-weight:bold">   </span><span style="font-family:宋体; font-size:16pt; font-weight:bold">验</span><span style="font-family:宋体; font-size:16pt; font-weight:bold">   </span><span style="font-family:宋体; font-size:16pt; font-weight:bold">报</span><span style="font-family:宋体; font-size:16pt; font-weight:bold">   </span><span style="font-family:宋体; font-size:16pt; font-weight:bold">告</span></p>
-
-
         <table cellspacing="0" cellpadding="0" style="border-collapse:collapse; margin-left:0pt">
             <tr>
-                <td style="vertical-align:top; width:76.6pt"><p style="margin:0pt; orphans:0; text-align:right; widows:0"><span style="font-family:宋体; font-size:10.5pt">检验单位名称：</span></p></td>
-                <td style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:top; width:223.2pt"><p style="margin:0pt; orphans:0; text-align:justify; widows:0"><span style="font-family:'Times New Roman'; font-size:10.5pt">&#xa0;</span></p></td>
+                <td style="vertical-align:top; width:76.6pt"><p style="margin:0pt; orphans:0; text-align:right; widows:0"><span style="font-family:宋体; font-size:10.5pt">
+    检验单位名称：
+</span></p></td>
+                <td style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:top; width:223.2pt"><p style="margin:0pt; orphans:0; text-align:justify; widows:0"><span style="font-family:'Times New Roman'; font-size:10.5pt" id="nameInspectionUnit3"></span></p></td>
                 <td style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:top; width:52.2pt"><p style="margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:'Times New Roman'; font-size:10.5pt">&#xa0;</span></p></td>
                 <td style="vertical-align:top; width:47.9pt"><p style="margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt">第</span><span style="font-family:宋体; font-size:10.5pt">   </span><span style="font-family:宋体; font-size:10.5pt">页</span></p></td>
             </tr>
@@ -696,13 +684,6 @@
             </table>
         </div>
         <p style="margin:0pt; orphans:0; text-align:justify; widows:0"><br style="page-break-before:always; clear:both" /></p>
-
-
-
-
-
-
-
         <!--p5-->
 
         <p style="margin:0pt; orphans:0; text-align:justify; widows:0"><br style="page-break-before:always; clear:both" /></p>
@@ -716,7 +697,7 @@
         <table cellspacing="0" cellpadding="0" style="border-collapse:collapse; margin-left:0pt">
             <tr>
                 <td style="vertical-align:top; width:76.6pt"><p style="margin:0pt; orphans:0; text-align:right; widows:0"><span style="font-family:宋体; font-size:10.5pt">检验单位名称：</span></p></td>
-                <td style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:top; width:223.2pt"><p style="margin:0pt; orphans:0; text-align:justify; widows:0"><span style="font-family:'Times New Roman'; font-size:10.5pt">&#xa0;</span></p></td>
+                <td style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:top; width:223.2pt"><p style="margin:0pt; orphans:0; text-align:justify; widows:0"><span style="font-family:'Times New Roman'; font-size:10.5pt" id="nameInspectionUnit7"></span></p></td>
                 <td style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:top; width:52.2pt"><p style="margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:'Times New Roman'; font-size:10.5pt">&#xa0;</span></p></td>
                 <td style="vertical-align:top; width:47.9pt"><p style="margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt">第</span><span style="font-family:宋体; font-size:10.5pt">   </span><span style="font-family:宋体; font-size:10.5pt">页</span></p></td>
             </tr>
@@ -902,7 +883,7 @@
         <table cellspacing="0" cellpadding="0" style="border-collapse:collapse; margin-left:0pt">
             <tr>
                 <td style="vertical-align:top; width:76.6pt"><p style="margin:0pt; orphans:0; text-align:right; widows:0"><span style="font-family:宋体; font-size:10.5pt">检验单位名称：</span></p></td>
-                <td style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:top; width:223.2pt"><p style="margin:0pt; orphans:0; text-align:justify; widows:0"><span style="font-family:'Times New Roman'; font-size:10.5pt">&#xa0;</span></p></td>
+                <td style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:top; width:223.2pt"><p style="margin:0pt; orphans:0; text-align:justify; widows:0"><span style="font-family:'Times New Roman'; font-size:10.5pt" id="nameInspectionUnit1"></span></p></td>
                 <td style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:top; width:52.2pt"><p style="margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:'Times New Roman'; font-size:10.5pt">&#xa0;</span></p></td>
                 <td style="vertical-align:top; width:47.9pt"><p style="margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt">第</span><span style="font-family:宋体; font-size:10.5pt">   </span><span style="font-family:宋体; font-size:10.5pt">页</span></p></td>
             </tr>
@@ -1066,8 +1047,10 @@
 
         <table cellspacing="0" cellpadding="0" style="border-collapse:collapse; margin-left:0pt">
             <tr>
-                <td style="vertical-align:top; width:76.6pt"><p style="margin:0pt; orphans:0; text-align:right; widows:0"><span style="font-family:宋体; font-size:10.5pt">检验单位名称：</span></p></td>
-                <td style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:top; width:223.2pt"><p style="margin:0pt; orphans:0; text-align:justify; widows:0"><span style="font-family:'Times New Roman'; font-size:10.5pt">&#xa0;</span></p></td>
+                <td style="vertical-align:top; width:76.6pt"><p style="margin:0pt; orphans:0; text-align:right; widows:0"><span style="font-family:宋体; font-size:10.5pt">
+    检验单位名称：
+</span></p></td>
+                <td style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:top; width:223.2pt"><p style="margin:0pt; orphans:0; text-align:justify; widows:0"><span style="font-family:'Times New Roman'; font-size:10.5pt"  id="nameInspectionUnit4"></span></p></td>
                 <td style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:top; width:52.2pt"><p style="margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:'Times New Roman'; font-size:10.5pt">&#xa0;</span></p></td>
                 <td style="vertical-align:top; width:47.9pt"><p style="margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt">第</span><span style="font-family:宋体; font-size:10.5pt">   </span><span style="font-family:宋体; font-size:10.5pt">页</span></p></td>
             </tr>
@@ -1185,20 +1168,6 @@
         </div>
         <p style="margin:0pt; orphans:0; text-align:justify; widows:0"><span style="font-family:'Times New Roman'; font-size:10.5pt">&#xa0;</span></p>
         <p style="margin:0pt; orphans:0; text-align:justify; widows:0"><span style="font-family:'Times New Roman'; font-size:10.5pt">&#xa0;</span></p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         <!--p8-->
 
         <p style="margin:0pt; orphans:0; text-align:justify; widows:0"><br style="page-break-before:always; clear:both" /></p>
@@ -1211,8 +1180,10 @@
 
         <table cellspacing="0" cellpadding="0" style="border-collapse:collapse; margin-left:0pt">
             <tr>
-                <td style="vertical-align:top; width:76.6pt"><p style="margin:0pt; orphans:0; text-align:right; widows:0"><span style="font-family:宋体; font-size:10.5pt">检验单位名称：</span></p></td>
-                <td style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:top; width:223.2pt"><p style="margin:0pt; orphans:0; text-align:justify; widows:0"><span style="font-family:'Times New Roman'; font-size:10.5pt">&#xa0;</span></p></td>
+                <td style="vertical-align:top; width:76.6pt"><p style="margin:0pt; orphans:0; text-align:right; widows:0"><span style="font-family:宋体; font-size:10.5pt">
+    检验单位名称：
+</span></p></td>
+                <td style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:top; width:223.2pt"><p style="margin:0pt; orphans:0; text-align:justify; widows:0"><span style="font-family:'Times New Roman'; font-size:10.5pt" id="nameInspectionUnit5"></span></p></td>
                 <td style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:top; width:52.2pt"><p style="margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:'Times New Roman'; font-size:10.5pt">&#xa0;</span></p></td>
                 <td style="vertical-align:top; width:47.9pt"><p style="margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt">第</span><span style="font-family:宋体; font-size:10.5pt">   </span><span style="font-family:宋体; font-size:10.5pt">页</span></p></td>
             </tr>
@@ -1419,8 +1390,10 @@
         <p style="margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:16pt; font-weight:bold">检</span><span style="font-family:宋体; font-size:16pt; font-weight:bold">   </span><span style="font-family:宋体; font-size:16pt; font-weight:bold">验</span><span style="font-family:宋体; font-size:16pt; font-weight:bold">   </span><span style="font-family:宋体; font-size:16pt; font-weight:bold">报</span><span style="font-family:宋体; font-size:16pt; font-weight:bold">   </span><span style="font-family:宋体; font-size:16pt; font-weight:bold">告</span></p>
         <table cellspacing="0" cellpadding="0" style="border-collapse:collapse; margin-left:0pt">
             <tr>
-                <td style="vertical-align:top; width:76.6pt"><p style="margin:0pt; orphans:0; text-align:right; widows:0"><span style="font-family:宋体; font-size:10.5pt">检验单位名称：</span></p></td>
-                <td style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:top; width:223.2pt"><p style="margin:0pt; orphans:0; text-align:justify; widows:0"><span style="font-family:'Times New Roman'; font-size:10.5pt">&#xa0;</span></p></td>
+                <td style="vertical-align:top; width:76.6pt"><p style="margin:0pt; orphans:0; text-align:right; widows:0"><span style="font-family:宋体; font-size:10.5pt">
+    检验单位名称：
+</span></p></td>
+                <td style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:top; width:223.2pt"><p style="margin:0pt; orphans:0; text-align:justify; widows:0"><span style="font-family:'Times New Roman'; font-size:10.5pt" id="nameInspectionUnit6"></span></p></td>
                 <td style="padding-left:5.4pt; padding-right:5.4pt; vertical-align:top; width:52.2pt"><p style="margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:'Times New Roman'; font-size:10.5pt">&#xa0;</span></p></td>
                 <td style="vertical-align:top; width:47.9pt"><p style="margin:0pt; orphans:0; text-align:center; widows:0"><span style="font-family:宋体; font-size:10.5pt">第</span><span style="font-family:宋体; font-size:10.5pt">   </span><span style="font-family:宋体; font-size:10.5pt">页</span></p></td>
             </tr>
@@ -1479,6 +1452,13 @@
         $("#inspectedUnits").text(dataObj['受检单位']);
         $("#inspectionCategory").text(dataObj['检验类别']);
         $("#dateDelivery").text(dataObj['发送日期']);
+        $("#nameInspectionUnit1").text(dataObj['检验单位名称']);
+        $("#nameInspectionUnit2").text(dataObj['检验单位名称']);
+        $("#nameInspectionUnit3").text(dataObj['检验单位名称']);
+        $("#nameInspectionUnit4").text(dataObj['检验单位名称']);
+        $("#nameInspectionUnit5").text(dataObj['检验单位名称']);
+        $("#nameInspectionUnit6").text(dataObj['检验单位名称']);
+        $("#nameInspectionUnit7").text(dataObj['检验单位名称']);
         $("#nameInspectionUnit").text(dataObj['检验单位名称']);
         $("#nameInspectionAddress").text(dataObj['检验单位地址']);
         $("#nameInspectionPhone").text(dataObj['检验单位电话']);
@@ -1525,6 +1505,26 @@
             content: ['/Calculation/ImportExcelView?taskid=' + taskid, "yes"]
         });
     }
+
+    //function SaveToLocal() {
+    //    var _taskid = $("#TaskId").val();
+    //    var _taskDate = $("#TestDate").val();
+    //    $.ajax({
+    //        url: "/Calculation/SaveToLocal",
+    //        data: {
+    //            taskid: _taskid,
+    //            taskDate :_taskDate
+    //        },
+    //        type: "POST",
+    //        dataType: "json",
+    //        success: function (data) {
+               
+    //        },
+    //        error: function () {
+                
+    //        }
+    //    });
+    //}
 
     //function LoadResultModel() {
     //    var taskid = $("#TaskId").val();
