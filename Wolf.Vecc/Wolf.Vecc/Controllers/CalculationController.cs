@@ -258,13 +258,6 @@ namespace Wolf.Vecc.Controllers
             return new EmptyResult();
         }
 
-        //public FileStreamResult SaveToLocal(string taskid, string taskDate)
-        //{
-        //    string fileName = taskDate + ".doc";//客户端保存的文件名 
-        //    string filePath = Server.MapPath("~") + "/UpLoadModelFiles/" + taskid + ".doc";
-        //    return File(new FileStream(filePath, FileMode.Open), "text/plain", fileName);
-        //}
-
         [HttpPost]
         public JsonResult UploadExcel(string taskid)
         {
