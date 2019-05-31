@@ -1,73 +1,171 @@
 ﻿@{
     Layout = null;
 }
-
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>模板导入</title>
-</head>
-<body>
-    <input type="hidden" id="taskid" value="@ViewBag.TaskId" />
-    <div class="row" style="margin-top:10px;margin-left:10px">
-        <div class="col-sm-3">
-            <input type="file" name="file" id="file" />
-        </div>
-        <div class="col-sm-1">
-            <button type='button' id="btnUpload" onclick="uploadExcel();" class='btn btn-dropbox btn-flat'>上传</button>
-        </div>
-        <div class="col-sm-1">
-            <button type='button' id="btnImport" onclick="importExcel();" class='btn btn-dropbox btn-flat' style="display:none">导入</button>
-        </div>
-    </div>
-</body>
-</html>
-<script src="~/Scripts/jquery-3.3.1.min.js"></script>
-<script src="~/AdminLTE/ajaxfileupload.js"></script>
-<script type="text/javascript">
-    function importExcel() {
-        $.ajax({
-            url: "/Calculation/ImportExcel",
-            type: "POST",
-            data: {},
-            success: function (data) {
-                var dataObj = eval("(" + data + ")");//转换为json对象
-                if (dataObj.flag) {
-                    msg.info("导入成功");
-                    window.parent.$("#tb_User").bootstrapTable("refresh");
-                    var index = parent.layer.getFrameIndex(window.name); //获取窗口索引
-                    parent.layer.close(index);
-
-                } else {
-                    msg.error("导入失败,请检查Excel数据格式");
-                }
-            },
-            error: function (error) {
-
-            }
-        });
+<link href="~/AdminLTE/css/Bootstrap4.css" rel="stylesheet" />
+<link rel="stylesheet" href="~/AdminLTE/dist/css/AdminLTE.min.css">
+<link rel="stylesheet" href="~/AdminLTE/dist/css/index.css">
+<style>
+    .file {
+        position: relative;
+        display: inline-block;
+        background: #D0EEFF;
+        border: 1px solid #99D3F5;
+        border-radius: 4px;
+        padding: 4px 12px;
+        overflow: hidden;
+        color: #1E88C7;
+        text-decoration: none;
+        text-indent: 0;
+        line-height: 20px;
     }
 
+        .file input {
+            position: absolute;
+            font-size: 100px;
+            right: 0;
+            top: 0;
+            opacity: 0;
+        }
+
+        .file:hover {
+            background: #AADFFD;
+            border-color: #78C3F3;
+            color: #004974;
+            text-decoration: none;
+        }
+
+    /*web background*/
+    .container {
+        display: table;
+        height: 100%;
+    }
+
+    .row {
+        display: table-cell;
+        vertical-align: middle;
+    }
+    /* centered columns styles */
+    .row-centered {
+        text-align: center;
+    }
+
+    .col-centered {
+        display: inline-block;
+        float: none;
+        text-align: left;
+        margin-right: -4px;
+    }
+</style>
+<body>
+    <input type="hidden" id="taskid" value="@ViewBag.TaskId" />
+    <div class="container">
+        <div class="row">
+            <div class="form-inline input-group well" style="padding-left:90px;"> 
+                <a href="javascript:;" class="file">
+                    选择文件
+                    <input type="file" name="file" id="file">
+                </a>
+                <button type='button' id="btnUpload" onclick="uploadExcel();" class='bk-margin-6 btn btn-success'>上传</button>
+            </div>
+        </div>
+    </div>
+        @*<div class="container">
+                <div class="row row-centered">
+                    <div class="wellcol-md-12 col-centered">
+                        <div class="input-group input-group-md">
+                            <a href="javascript:;" class="file">
+                                选择文件
+                                <input type="file" name="file" id="file">
+                            </a>
+                            <button type='button' id="btnUpload" onclick="uploadExcel();" class='bk-margin-6 btn btn-success'>上传</button>
+                        </div>
+                    </div>
+                </div>
+            </div>*@
+
+        @*<div class="row" style="text-align:center;">
+            <div class="col-sm-3">
+                <a href="javascript:;" class="file">
+                    选择文件
+                    <input type="file" name="file" id="file">
+                </a>
+            </div>
+            <div class="col-sm-1">
+                <button type='button' id="btnUpload" onclick="uploadExcel();" class='btn btn-dropbox btn-flat'>上传</button>
+            </div>*@
+        @*<div class="col-sm-1">
+                    <button type='button' id="btnImport" onclick="importExcel();" class='btn btn-dropbox btn-flat' style="display:none">导入</button>
+                </div>
+            </div>*@
+</body>
+
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script src="~/AdminLTE/ajaxfileupload.js"></script>
+<script src="~/AdminLTE/plugins/layer/layer.js"></script>
+<script src="~/AdminLTE/comm/_ajax.js"></script>
+<script src="~/AdminLTE/comm/_table.js"></script>
+<script src="~/AdminLTE/comm/_message.js"></script>
+<script src="~/AdminLTE/comm/comm.js"></script>
+<script type="text/javascript">
+    //function importExcel() {
+    //    $.ajax({
+    //        url: "/Calculation/ImportExcel",
+    //        type: "POST",
+    //        data: {},
+    //        success: function (data) {
+    //            var dataObj = eval("(" + data + ")");//转换为json对象
+    //            if (dataObj.flag) {
+    //                msg.info("导入成功");
+    //                window.parent.$("#tb_User").bootstrapTable("refresh");
+    //                var index = parent.layer.getFrameIndex(window.name); //获取窗口索引
+    //                parent.layer.close(index);
+
+    //            } else {
+    //                msg.error("导入失败,请检查Excel数据格式");
+    //            }
+    //        },
+    //        error: function (error) {
+
+    //        }
+    //    });
+    //}
+
     function uploadExcel() {
-        var _taskid = $("#taskid").val();
-        $.ajaxFileUpload({
-            url: '/Calculation/UploadExcel',
-            secureuri: false,
-            dataType: 'JSON',
-            data: {taskid :_taskid },
-            fileElementId: 'file',
-            async: false,
-            success: function (data) {
-                var jsonObj = $.parseJSON(data.replace(/<.*?>/ig, ""));
-                if (jsonObj.Success) {
-                    //执行父页面方法
-                    console.log(jsonObj.Data);
-                    var index = parent.layer.getFrameIndex(window.name);
-                    parent.ReportModelVal(jsonObj.Data, index);
-                }
+        var index = parent.layer.getFrameIndex(window.name); //获取窗口索引
+        if (document.getElementById("file").value == null || document.getElementById("file").value == "") {
+            msg.info("请选择上传文件");
+            window.parent.$("#saveToLocal").hide();
+        } else {
+            var AllImgExt = ".txt";
+            var file = document.getElementById("file").value;
+            var extName = file.substring(file.lastIndexOf(".")).toLowerCase();//（把路径中的所有字母全部转换为小写）
+            if (AllImgExt != extName) {
+                ErrMsg = "该文件类型不允许上传。请上传 " + AllImgExt + " 类型的文件，当前文件类型为" + extName;
+                msg.info(ErrMsg);
+                window.parent.$("#saveToLocal").hide();
             }
-        });
+            else {
+                var _taskid = $("#taskid").val();
+                $.ajaxFileUpload({
+                    url: '/Calculation/UploadExcel',
+                    secureuri: false,
+                    dataType: 'text/html',
+                    data: { taskid: _taskid },
+                    fileElementId: 'file',
+                    async: false,
+                    success: function (data) {
+                        var jsonObj = $.parseJSON(data.replace(/<.*?>/ig, ""));
+                        if (jsonObj.Success) {
+                            //执行父页面方法
+                            //msg.info("导入成功");
+                            parent.ReportModelVal(jsonObj.Data);
+                            parent.layer.close(index);
+                        } else {
+                            window.parent.$("#saveToLocal").hide();
+                        }
+                    }
+                });
+            }
+        }
     }
 </script>

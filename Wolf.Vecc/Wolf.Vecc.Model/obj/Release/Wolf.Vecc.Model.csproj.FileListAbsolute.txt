@@ -23,3 +23,9 @@ F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Model\bin\Release\ICSharpCode.SharpZipLib.d
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Model\bin\Release\NPOI.OpenXml4Net.dll
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Model\bin\Release\NPOI.OpenXmlFormats.dll
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Model\bin\Release\ICSharpCode.SharpZipLib.xml
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Model\bin\Release\System.Web.Mvc.dll
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Model\bin\Release\System.Web.Razor.dll
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Model\bin\Release\System.Web.WebPages.Razor.dll
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Model\bin\Release\System.Web.WebPages.dll
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Model\bin\Release\Microsoft.Web.Infrastructure.dll
+F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Model\bin\Release\System.Web.WebPages.Deployment.dll
