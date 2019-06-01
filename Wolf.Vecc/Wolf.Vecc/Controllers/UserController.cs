@@ -85,7 +85,7 @@ namespace Wolf.Vecc.Controllers
                            DataUrl = r.DataUrl,
                            Id = r.Id,
                            UploadDate = r.UploadDate,
-                           ApprovalDate = crr == null ? "" : crr.ApprovalDate.ToString(),
+                           ApprovalDate = crr == null ? "" : crr.ApprovalDate.ToString("yyyy-MM-dd hh:mm:ss"),
                            ApprovalRemark = crr == null ? "":crr.ApprovalRemark
                        };
 
