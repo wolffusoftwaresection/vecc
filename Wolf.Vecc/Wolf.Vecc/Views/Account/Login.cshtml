@@ -13,7 +13,6 @@
 <link href="~/AdminLTE/dist/css/bootstrapValidator.min.css" rel="stylesheet" />
 
 <!-- global stylesheets -->
-<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
 <link rel="stylesheet" href="~/AdminLTE/dist/css//bootstrap.min.css">
 <link rel="stylesheet" href="~/AdminLTE/dist/font-awesome-4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="~/AdminLTE/dist/css/font-icon-style.css">
@@ -193,10 +192,10 @@
                             </div>
                             <div class="form-group" style="position:relative;">
                                 <div class="form-inline margintop-10" style="white-space:nowrap">
-                                    <div class="form-control col-md-6 text-left">
+                                    <div class="form-control col-md-6 text-left" style="border:0px;">
                                         @Html.ActionLink("没有账号?注册一个", "RegisterEngineer", "Account", new { @class = "help" })
                                     </div>
-                                    <div class="form-control col-md-6 text-right">
+                                    <div class="form-control col-md-6 text-right" style="border:0px;">
                                         @Html.ActionLink("忘记密码", "UpdatePw", "Account", new { @class = "help" })
                                     </div>
                                     @*<a target="_blank" class="col-md-6 text-left">没有账号？注册一个</a>
