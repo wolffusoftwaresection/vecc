@@ -102,7 +102,7 @@ namespace Wolf.Vecc.Controllers
                 VehicleType = pemsTask.VehicleType,
                 VehicleModel = pemsTask.VehicleModel,
                 WhtcPower = pemsTask.WhtcPower.ToString()
-            //    calculationResultData = _calculationResultData,579130
+            //    calculationResultData = _calculationResultData
             //    loadResultModel = 
             };
             //ViewData["Result"] = _json;
@@ -279,10 +279,8 @@ namespace Wolf.Vecc.Controllers
                     }
                 }
             }
-            LogHelper.LogInfo("---------1111111111--------------");
             //自定义模板数值
             var _data = JsonHelper.SerializeDictionaryToJsonString(keyValuePairs == null ? null : keyValuePairs);
-            LogHelper.LogInfo("---------2222222222--------------");
             LoadResultModel _loadResultModel = new LoadResultModel
             {
                 //检验车辆基本参数
@@ -326,14 +324,10 @@ namespace Wolf.Vecc.Controllers
                 examine = keyValuePairs["审核"],
                 chiefInspector = keyValuePairs["主检"]
             };
-            LogHelper.LogInfo("---------4444444444--------------");
             var data = _readRstService.ReadTestInfo(Server.MapPath(Result_Root_Url), taskid);//测试
-            LogHelper.LogInfo("---------5555555555--------------");
             //var _json = JsonHelper.SerializeDictionaryToJsonString(data);
             var pemsTask = _sysPemsTaskService.GetSysPemsTaskByTaskId(taskid);
-            LogHelper.LogInfo("---------6666666666--------------");
             var taskResult = _sysTaskResultService.GetTaskResultByTaskId(taskid);
-            LogHelper.LogInfo("---------7777777777--------------");
             //System.Web.Script.Serialization.JavaScriptSerializer js = new System.Web.Script.Serialization.JavaScriptSerializer();
             string alt_avg = "";
             if (data.TryGetValue("Alt_avg", out alt_avg))
@@ -341,14 +335,12 @@ namespace Wolf.Vecc.Controllers
                 alt_avg = data["Alt_avg"];
             }
             else { alt_avg = ""; }
-            LogHelper.LogInfo("alt_avg:" + alt_avg);
             string _work_ref = "";
             if (data.TryGetValue("work_ref", out _work_ref))
             {
                 _work_ref = data["work_ref"];
             }
             else { _work_ref = ""; }
-            LogHelper.LogInfo("_work_ref:" + _work_ref);
             string p_BSNOx_vWDs = "";
             if (data.TryGetValue("p_BSNOx_vWDs", out p_BSNOx_vWDs))
             {
@@ -416,14 +408,12 @@ namespace Wolf.Vecc.Controllers
                 p_pow_f = data["p_pow_f"];
             }
             else { p_pow_f = ""; }
-            LogHelper.LogInfo("p_pow_f:" + p_pow_f);
             string p_BSCO_vWDs = "";
             if (data.TryGetValue("p_BSCO_vWDs", out p_BSCO_vWDs))
             {
                 p_BSCO_vWDs = data["p_BSCO_vWDs"];
             }
             else { p_BSCO_vWDs = ""; }
-
             CalculationResultData _calculationResultData = new CalculationResultData
             {
                 r_payload = data["r_payload"] == null ? "" : data["r_payload"],
@@ -454,8 +444,6 @@ namespace Wolf.Vecc.Controllers
                 work_ref2 = _work_ref == null ? "" : pemsTask.WhtcPower.ToString(),
             };
 
-            LogHelper.LogInfo("---------88888888888--------------");
-
             var tasks = new TaskResultModel
             {
                 RouteDescription = taskResult.RouteDescription,
@@ -471,7 +459,6 @@ namespace Wolf.Vecc.Controllers
                 loadResultModel = _loadResultModel
             };
             string htmlText = RenderViewTostring.RenderPartialView(this, "PemsCalculationResultsViewDown", tasks);
-            LogHelper.LogInfo(htmlText);
             Aspose.Words.Document doc = new Aspose.Words.Document();
             DocumentBuilder builder = new DocumentBuilder(doc);
             builder.InsertHtml(htmlText);
@@ -487,7 +474,6 @@ namespace Wolf.Vecc.Controllers
                 UploadDate = DateTime.Now,
                 DataUrl = "../UpLoadModelFiles/" + taskid + ".doc"
             };
-            LogHelper.LogInfo("---------99999999999999-------------");
             if (_sysDataService.InsertData(sysData) > 0)
             {
                 return Success(_data, "");
