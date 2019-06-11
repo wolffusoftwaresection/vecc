@@ -15,7 +15,6 @@ F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Service\bin\Release\Autofac.dll
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Service\bin\Release\System.Web.Mvc.dll
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Service\bin\Release\EntityFramework.Extended.dll
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Service\bin\Release\System.Web.WebPages.dll
-F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Service\bin\Release\NLog.dll
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Service\bin\Release\Newtonsoft.Json.dll
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Service\bin\Release\System.Web.Razor.dll
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Service\bin\Release\System.Web.WebPages.Razor.dll
@@ -35,7 +34,6 @@ F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Service\bin\Release\Autofac.pdb
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Service\bin\Release\Autofac.xml
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Service\bin\Release\EntityFramework.Extended.xml
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Service\bin\Release\EntityFramework.Extended.dll.config
-F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Service\bin\Release\NLog.xml
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Service\bin\Release\Newtonsoft.Json.xml
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Service\bin\Release\zh-Hans\EntityFramework.resources.dll
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Service\bin\Release\zh-Hans\EntityFramework.SqlServer.resources.dll

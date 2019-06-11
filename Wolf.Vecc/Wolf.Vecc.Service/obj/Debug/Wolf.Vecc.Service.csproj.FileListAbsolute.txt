@@ -25,10 +25,8 @@ F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Service\bin\Debug\System.Web.WebPages.dll
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Service\bin\Debug\Microsoft.Web.Infrastructure.dll
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Service\bin\Debug\System.Web.WebPages.Deployment.dll
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Service\bin\Debug\Wolf.Vecc.Comm.dll
-F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Service\bin\Debug\NLog.dll
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Service\bin\Debug\Newtonsoft.Json.dll
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Service\bin\Debug\Wolf.Vecc.Comm.pdb
-F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Service\bin\Debug\NLog.xml
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Service\bin\Debug\Newtonsoft.Json.xml
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Service\bin\Debug\Wolf.Vecc.Service.dll.config
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Service\bin\Debug\Webdiyer.MvcPager.dll

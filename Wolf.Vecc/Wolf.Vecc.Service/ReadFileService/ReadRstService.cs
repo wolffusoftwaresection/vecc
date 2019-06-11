@@ -17,6 +17,7 @@ namespace Wolf.Vecc.Service.ReadFileService
         {
             string line = "";
             string url = string.Format(Result_Root_Url, taskId);
+            LogHelper.LogInfo(url);
             StreamReader file = new StreamReader(url, Encoding.Default);
             Dictionary<string, string> keyValuePairs = new Dictionary<string, string>();
             while ((line = file.ReadLine()) != null)
@@ -27,9 +28,15 @@ namespace Wolf.Vecc.Service.ReadFileService
                     if (arraynamevalue.Length == 2)
                     {
                         keyValuePairs.Add(arraynamevalue[0], arraynamevalue[1]);
+                        LogHelper.LogInfo(arraynamevalue[0].ToString() + ":" + arraynamevalue[1].ToString());
                     }
                 }
             }
+            if (keyValuePairs == null)
+            {
+                LogHelper.LogInfo("空");
+            }
+            
             return keyValuePairs == null ? null : keyValuePairs;
         }
         //public TestInfoModel ReadTestInfo(string taskId)

@@ -5,7 +5,6 @@ F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Comm\bin\Release\Newtonsoft.Json.dll
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Comm\bin\Release\NLog.dll
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Comm\bin\Release\Newtonsoft.Json.xml
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Comm\bin\Release\NLog.xml
-F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Comm\obj\Release\Wolf.Vecc.Comm.csprojAssemblyReference.cache
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Comm\obj\Release\Wolf.Vecc.Comm.csproj.CoreCompileInputs.cache
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Comm\obj\Release\Wolf.Vecc.Comm.csproj.CopyComplete
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Comm\obj\Release\Wolf.Vecc.Comm.dll

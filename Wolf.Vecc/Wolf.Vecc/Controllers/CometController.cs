@@ -76,7 +76,7 @@ namespace Wolf.Vecc.Controllers
                         string send_data = javaScriptSerializer.Serialize(dic_result);
                         string posturl = GlobalConfigHelper.GetPostUrl();
                         LogHelper.LogInfo(posturl);
-                        //PubHelp.PostData(posturl, send_data);
+                        PubHelp.PostData(posturl, send_data);
                         LogHelper.LogInfo("经过PubHelp.PostData");
                         LogHelper.LogInfo(send_data);
                         _sysTaskService.UpdateSysTaskStatus(task.TaskId, 5);

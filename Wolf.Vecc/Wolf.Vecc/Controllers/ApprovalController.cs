@@ -496,7 +496,7 @@ namespace Wolf.Vecc.Controllers
             {
                 ViewBag.Reason = sysApprovaUser.ApprovalRemark;
             }
-            ViewBag.ApprovalDate = sysApprovaUser.ApprovalDate;
+            ViewBag.ApprovalDate = sysApprovaUser == null ? user.CreateDate : sysApprovaUser.ApprovalDate;
             return View(user);
         }
 
