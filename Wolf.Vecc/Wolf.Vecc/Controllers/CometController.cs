@@ -71,6 +71,8 @@ namespace Wolf.Vecc.Controllers
                         dic_result.Add("task_id", task.TaskId.ToString());
                         dic_result.Add("report_url", "");
                         dic_result.Add("kr_nox", pemsTask.KrNox);
+                        dic_result.Add("version", int.Parse(pemsTask.EmissionStandard));
+                        dic_result.Add("reversed", pemsTask.Reversed);
 
                         JavaScriptSerializer javaScriptSerializer = new JavaScriptSerializer();
                         string send_data = javaScriptSerializer.Serialize(dic_result);

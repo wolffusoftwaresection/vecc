@@ -42,8 +42,8 @@
                                             <option value="HORIBA">HORIBA</option>
                                             <option value="AVL">AVL</option>
                                             @*<option value="ECU_BOSCH">ECU_BOSCH</option>
-                                            <option value="ECU_DELPHI">ECU_DELPHI</option>
-                                            <option value="Cali_Pal">Cali_Pal</option>*@
+                        <option value="ECU_DELPHI">ECU_DELPHI</option>
+                        <option value="Cali_Pal">Cali_Pal</option>*@
                                         </select>
                                     </div>
                                 </div>
@@ -113,12 +113,27 @@
                                     <label class="col-sm-2 control-label"> * 排放标准</label>
                                     <div class="col-sm-5">
                                         <select id="txtPemsEmissionStandard" name="txtPemsEmissionStandard" class="selectpicker show-tick form-control" data-actions-box="true">
-                                            <option value="FiveChina">国五</option>
-                                            <option value="SixChina" selected>国六</option>
+                                            <option value="5">国五</option>
+                                            <option value="6" selected>国六</option>
                                         </select>
                                     </div>
                                 </div>
                             </div>
+
+                            <div class="col-md-6 top-buffer">
+                                <div class="form-group">
+                                    <label class="col-sm-6 control-label"> * 计算方式</label>
+                                    <div class="col-sm-3">
+                                        <label class="radio-inline">
+                                            <input type="radio" value="true" name="reversed">后往前
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" value="false" checked name="reversed">前往后
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
                             <div class="col-md-6 top-buffer">
                                 <div class="form-group">
                                     <label class="col-sm-6 control-label"> * 周期性再生</label>
@@ -221,7 +236,8 @@
         if (value == "1") {
             kr_nox = document.getElementById("txtNOx").value;
         }
-        var emissionStandard = $("#txtPemsEmissionStandard").val();
+        var version = $("#txtPemsEmissionStandard").val();
+        var reversed = $('input:radio[name="reversed"]:checked').val();
         layer.open({
             type: 2,
             title: ['导入测试数据'],
@@ -230,7 +246,7 @@
             skin: '',
             area: ['60%', '85%'],
             maxmin: true,
-            content: ["/Calculation/ImportRarData?id=" + id + "&vehicleModel=" + vehicleModel + "&pemsFactory=" + pemsFactory + "&vehicleType=" + vehicleType + "&whtcPower=" + whtcPower + "&vehicleQuality=" + vehicleQuality + "&maxRefTorque=" + maxRefTorque + "&maxQuality=" + maxQuality + "&percentageLoad=" + percentageLoad + "&maxPower=" + maxPower + "&nox=" + kr_nox + "&emissionStandard=" + emissionStandard, "yes"],
+            content: ["/Calculation/ImportRarData?id=" + id + "&vehicleModel=" + vehicleModel + "&pemsFactory=" + pemsFactory + "&vehicleType=" + vehicleType + "&whtcPower=" + whtcPower + "&vehicleQuality=" + vehicleQuality + "&maxRefTorque=" + maxRefTorque + "&maxQuality=" + maxQuality + "&percentageLoad=" + percentageLoad + "&maxPower=" + maxPower + "&nox=" + kr_nox + "&reversed=" + reversed + "&version=" + version, "yes"],
             yes: function (index, layor) {
                 layer.close(index);
             },

@@ -20,5 +20,6 @@ namespace Wolf.Vecc.Model.ViewModel
         public string MaxPower { get; set; }
         public string Nox { get; set; }
         public string EmissionStandard { get; set; }
+        public string Reversed { get; set; }
     }
 }

@@ -146,17 +146,18 @@
                         var ck = '<a href="' + row.DataUrl + '"><span class= "glyphicon glyphicon-cloud-download" ></span></a>';
                         return ck;
                     }
-                },
-                {
-                    field: 'operate',
-                    align: 'center',
-                    title: '预览报告',
-                    visible: 1,
-                    formatter: function (value, row, index) {
-                        var ck = '<a href="#" onclick="onPreview(' + row.Id + ',\'' + row.DataUrl + '\');"><span class= "glyphicon glyphicon-eye-open" ></span></a>';
-                        return ck;
-                    }
                 }
+                //,
+                //{
+                //    field: 'operate',
+                //    align: 'center',
+                //    title: '预览报告',
+                //    visible: 1,
+                //    formatter: function (value, row, index) {
+                //        var ck = '<a href="#" onclick="onPreview(' + row.Id + ',\'' + row.DataUrl + '\');"><span class= "glyphicon glyphicon-eye-open" ></span></a>';
+                //        return ck;
+                //    }
+                //}
             ],
             onPageChange: function (number, size) {
 

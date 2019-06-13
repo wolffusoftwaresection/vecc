@@ -70,5 +70,10 @@ namespace Wolf.Vecc.Model.SysModel
         [Display(Name = "排放标准")]
         [StringLength(50)]
         public string EmissionStandard { get; set; }
+
+        [Column("reversed")]
+        [Display(Name = "前往后算还是后往前算 true：后往前 false：前往后")]
+        [StringLength(50)]
+        public string Reversed { get; set; }
     }
 }

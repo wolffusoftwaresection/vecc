@@ -40,6 +40,7 @@
             @Html.HiddenFor(m => Model.VehicleType)
             @Html.HiddenFor(m => Model.WhtcPower)
             @Html.HiddenFor(m => Model.EmissionStandard)
+            @Html.HiddenFor(m => Model.Reversed)
             <div class="form-group">
                 <div class="file-loading">
                     <input id="uploadRar" data-show-preview="true" name="FilesInput" type="file" accept=".rar,.zip,.7z" />
@@ -72,7 +73,8 @@
                     PercentageLoad: $("#PercentageLoad").val(),
                     MaxPower: $("#MaxPower").val(),
                     Nox: $("#Nox").val(),
-                    EmissionStandard: $("#EmissionStandard").val()
+                    EmissionStandard: $("#EmissionStandard").val(),
+                    Reversed: $("#Reversed").val()
                 }
                 return calculationModel;
             }

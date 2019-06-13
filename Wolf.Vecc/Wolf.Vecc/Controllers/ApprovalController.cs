@@ -505,13 +505,13 @@ namespace Wolf.Vecc.Controllers
             bool result = false;
             //获取文件扩展名
             string docExtendName = System.IO.Path.GetExtension(sourceDoc).ToLower();
+            LogHelper.LogInfo(docExtendName);
             switch (docExtendName)
             {
                 case ".doc":
                 case ".docx":
                     Aspose.Words.Document doc = new Aspose.Words.Document(sourceDoc);
                     doc.Save(saveDoc, Aspose.Words.SaveFormat.Html);
-
                     result = true;
                     break;
                 default:
@@ -527,6 +527,8 @@ namespace Wolf.Vecc.Controllers
             string saveDoc = "";
             bool result = false;
             saveDoc = System.Web.HttpContext.Current.Server.MapPath("/UpLoadModelFiles/ViewFiles/onlineview.html");
+            //LogHelper.LogInfo(saveDoc);
+            //LogHelper.LogInfo(System.Web.HttpContext.Current.Server.MapPath(fileName));
             result = OfficeDocumentToHtml(System.Web.HttpContext.Current.Server.MapPath(fileName), saveDoc);
             if (result)
             {

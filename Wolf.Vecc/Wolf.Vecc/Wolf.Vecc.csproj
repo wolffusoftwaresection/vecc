@@ -1844,6 +1844,7 @@
     <Content Include="AdminLTE\dist\font-awesome-4.7.0\scss\_stacked.scss" />
     <Content Include="AdminLTE\dist\font-awesome-4.7.0\scss\_variables.scss" />
     <Content Include="Scripts\colResizable-1.6.min.js" />
+    <Content Include="test.html" />
     <Content Include="检测报告模板.txt" />
     <None Include="NLog.xsd">
       <SubType>Designer</SubType>
@@ -1908,6 +1909,7 @@
     <Content Include="Views\User\UserFindingsAuditView.cshtml" />
     <Content Include="Views\Approval\DataInFo.cshtml" />
     <Content Include="Views\Shared\_Layout_List.cshtml" />
+    <Content Include="Views\Calculation\ViewTest.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AdminLTE\bootstrap\js\ie\" />

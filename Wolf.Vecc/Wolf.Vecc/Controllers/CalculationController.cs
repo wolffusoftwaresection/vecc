@@ -56,6 +56,12 @@ namespace Wolf.Vecc.Controllers
         /// </summary>
         public void CreatCheckTxtTemplate()
         {
+            string htmlText1 = RenderViewTostring.RenderPartialView(this, "ViewTest", null);
+            Aspose.Words.Document doc1 = new Aspose.Words.Document();
+            DocumentBuilder builder1 = new DocumentBuilder(doc1);
+            builder1.InsertHtml(htmlText1);
+            doc1.Save(Server.MapPath("../UpLoadModelFiles/11111.doc"));
+
             string fileName = "检测报告模板.txt";//客户端保存的文件名
             string filePath = Server.MapPath("~/检测报告模板.txt");//路径
 
@@ -138,7 +144,7 @@ namespace Wolf.Vecc.Controllers
         }
 
         public ActionResult ImportRarData(string id, string vehicleModel, string pemsFactory, string vehicleType, string whtcPower,
-            string vehicleQuality, string maxRefTorque, string maxQuality, string percentageLoad, string maxPower, string nox, string emissionStandard)
+            string vehicleQuality, string maxRefTorque, string maxQuality, string percentageLoad, string maxPower, string nox, string reversed,string version)
         {
             //ViewBag.id = id;
             //ViewBag.vehicleModel = vehicleModel;
@@ -165,7 +171,8 @@ namespace Wolf.Vecc.Controllers
                 VehicleQuality = vehicleQuality,
                 VehicleType = vehicleType,
                 WhtcPower = whtcPower,
-                EmissionStandard = emissionStandard
+                EmissionStandard = version,
+                Reversed = reversed
             };
 
             return View(calculationModel);
@@ -239,9 +246,10 @@ namespace Wolf.Vecc.Controllers
             return View();
         }
 
-        public ActionResult SaveToLocal(string taskid, string taskDate)
+        public ActionResult SaveToLocal(string taskid)
         {
             string filePath = Server.MapPath("~") + "/UpLoadModelFiles/" + taskid + ".doc";
+            //string filePath ="../UpLoadModelFiles/" + taskid + ".doc";
             FileStream fs = new FileStream(filePath, FileMode.Open);
             byte[] bytes = new byte[(int)fs.Length];
             fs.Read(bytes, 0, bytes.Length);
@@ -250,7 +258,7 @@ namespace Wolf.Vecc.Controllers
             Response.ContentEncoding = System.Text.Encoding.GetEncoding("UTF-8");
             Response.ContentType = "application/octet-stream";
 
-            Response.AddHeader("Content-Disposition", "attachment; filename=" + Server.UrlEncode(taskDate+".doc"));
+            Response.AddHeader("Content-Disposition", "attachment; filename=" + Server.UrlEncode(taskid+ ".doc"));
             Response.BinaryWrite(bytes);
             Response.Flush();
             Response.End();
@@ -463,6 +471,7 @@ namespace Wolf.Vecc.Controllers
             DocumentBuilder builder = new DocumentBuilder(doc);
             builder.InsertHtml(htmlText);
             doc.Save(Server.MapPath("../UpLoadModelFiles/" + taskid + ".doc"));
+
             //上传结束 保存上传数据信息包括文件路径
             var sysData = new SysData
             {
@@ -532,7 +541,8 @@ namespace Wolf.Vecc.Controllers
                             DataUrl = url.Substring(0, url.LastIndexOf(".")) + ".xls",
                             MaxPower = Convert.ToDouble(calculationModel.MaxPower),
                             KrNox = calculationModel.Nox,
-                            EmissionStandard = calculationModel.EmissionStandard
+                            EmissionStandard = calculationModel.EmissionStandard,
+                            Reversed = calculationModel.Reversed
                         };
                         if (_sysPemsTaskService.Insert(pemsTask) > 0)
                         {
