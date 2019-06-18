@@ -56,15 +56,16 @@ namespace Wolf.Vecc.Controllers
         /// </summary>
         public void CreatCheckTxtTemplate()
         {
-            string htmlText1 = RenderViewTostring.RenderPartialView(this, "ViewTest", null);
-            Aspose.Words.Document doc1 = new Aspose.Words.Document();
-            DocumentBuilder builder1 = new DocumentBuilder(doc1);
-            builder1.InsertHtml(htmlText1);
-            doc1.Save(Server.MapPath("../UpLoadModelFiles/11111.doc"));
+            //string htmlText1 = RenderViewTostring.RenderPartialView(this, "ViewTest", null);
+            //Aspose.Words.Document doc1 = new Aspose.Words.Document();
+            //DocumentBuilder builder1 = new DocumentBuilder(doc1);
+            //builder1.InsertHtml(htmlText1);
+            //doc1.Save(Server.MapPath("../UpLoadModelFiles/11111.doc"));
 
             string fileName = "检测报告模板.txt";//客户端保存的文件名
+            
             string filePath = Server.MapPath("~/检测报告模板.txt");//路径
-
+            LogHelper.LogInfo(filePath);
             //以字符流的形式下载文件
             FileStream fs = new FileStream(filePath, FileMode.Open);
             byte[] bytes = new byte[(int)fs.Length];

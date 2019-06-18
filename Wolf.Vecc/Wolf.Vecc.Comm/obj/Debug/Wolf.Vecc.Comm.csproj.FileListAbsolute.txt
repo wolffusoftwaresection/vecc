@@ -22,4 +22,3 @@ F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Comm\bin\Debug\System.Web.WebPages.dll
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Comm\bin\Debug\Microsoft.Web.Infrastructure.dll
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Comm\bin\Debug\System.Web.WebPages.Deployment.dll
 F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Comm\obj\Debug\Wolf.Vecc.Comm.csproj.ResolveComReference.cache
-F:\wolfSoft\VECC\Wolf.Vecc\Wolf.Vecc.Comm\obj\Debug\Wolf.Vecc.Comm.csprojAssemblyReference.cache

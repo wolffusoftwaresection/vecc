@@ -144,9 +144,9 @@
 
         <img src="~/AdminLTE/dist/img/bg@1x.png" id="login-img" class="login-img" />
     </div>
-    <div class="col-md-3 title-index">PEMS云计算</div>
+    @*<div class="col-md-3 title-index">PEMS云计算</div>*@
+    <div class="col-md-3 title-index"><img class="img-responsive center-block" src="~/AdminLTE/img/vecc-white-big.png" /></div>
     <div class=" col-md-1 col-md-offset-10 header-index">
-
         <img class="img-responsive center-block" src="~/AdminLTE/dist/img/danji.png" />
     </div>
 
@@ -161,15 +161,12 @@
         <div class="login-right">
             <div class="table-cell">
                 <div class="container-fluid">
-
                     <div class="login-box-body">
-                        @using (Ajax.BeginForm("SignIn", "Account", new AjaxOptions { OnSuccess = "LoginSuccess", OnBegin = "ajax.loading", OnComplete = "ajax.loadingClose", OnFailure = "msg.info(data);" }, new { @class = "" }))
-                        {
-                            @*@Html.AntiForgeryToken()login-tslogo*@
-
-                            <div class="col-md-6" style="font-size:24px;color:black;font-weight:bold;margin-bottom:20px;white-space:nowrap;">用户登录</div>
+                        <div class="col-md-12 form-group">
+                            <img style="" class="img-responsive center-block" src="~/AdminLTE/img/cali-logo.png" />
+                        </div>
+                             @using (Ajax.BeginForm("SignIn", "Account", new AjaxOptions { OnSuccess = "LoginSuccess", OnBegin = "ajax.loading", OnComplete = "ajax.loadingClose", OnFailure = "msg.info(data);" }, new { @class = "" })) { @*@Html.AntiForgeryToken()login-tslogo*@   <div class="col-md-6" style="font-size:24px;color:black;font-weight:bold;margin-bottom:20px;white-space:nowrap;">用户登录</div>
                             <div class="clearfix"></div>
-
 
                             <div class="form-group" style="margin-bottom:10px;">
                                 <i class="fa fa-user fa-fw"></i>
@@ -199,13 +196,13 @@
                                         @Html.ActionLink("忘记密码", "UpdatePw", "Account", new { @class = "help" })
                                     </div>
                                     @*<a target="_blank" class="col-md-6 text-left">没有账号？注册一个</a>
-                                    <a class="help col-md-6 text-right" target="_blank">忘记密码</a>*@
+                                        <a class="help col-md-6 text-right" target="_blank">忘记密码</a>*@
                                 </div>
                             </div>
                             @Html.ValidationSummary("", new { @class = "text-danger" })
                         }
                     </div>
-                </div>
+                    </div>
             </div>
         </div>
     </div>

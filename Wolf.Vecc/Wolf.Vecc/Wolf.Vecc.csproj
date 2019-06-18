@@ -252,6 +252,8 @@
     <Content Include="AdminLTE\css\fileinput-rtl.min.css" />
     <Content Include="AdminLTE\css\fileinput.css" />
     <Content Include="AdminLTE\css\fileinput.min.css" />
+    <Content Include="AdminLTE\css\foot.css" />
+    <Content Include="AdminLTE\css\foot1.css" />
     <Content Include="AdminLTE\css\style.css" />
     <Content Include="AdminLTE\css\theme.css" />
     <Content Include="AdminLTE\dateConvert.js" />
@@ -411,9 +413,14 @@
     <Content Include="AdminLTE\img\001.png" />
     <Content Include="AdminLTE\img\002.png" />
     <Content Include="AdminLTE\img\003.png" />
+    <Content Include="AdminLTE\img\cali-logo-white.png" />
+    <Content Include="AdminLTE\img\cali-logo.png" />
+    <Content Include="AdminLTE\img\foot-left.png" />
     <Content Include="AdminLTE\img\loading-sm.gif" />
     <Content Include="AdminLTE\img\loading.gif" />
     <Content Include="AdminLTE\img\sprite.png" />
+    <Content Include="AdminLTE\img\vecc-little.png" />
+    <Content Include="AdminLTE\img\vecc-white-big.png" />
     <Content Include="AdminLTE\jquery-1.8.2.min.js" />
     <Content Include="AdminLTE\jquery-ui.min.js" />
     <Content Include="AdminLTE\js\fileinput.js" />
