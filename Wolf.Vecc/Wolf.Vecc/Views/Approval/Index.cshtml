@@ -331,17 +331,17 @@
                                             }
                                         }
                                         ,
-                                        //{
-                                        //    field: 'operate',
-                                        //    align: 'center',
-                                        //    title: '预览报告',
-                                        //    visible: 1,
-                                        //    formatter: function (value, row, index) {
-                                        //        var ck = '<a href="#" onclick="onPreview(' + row.Id + ',\'' + row.DataUrl + '\');"><span class= "glyphicon glyphicon-eye-open" ></span></a>';
-                                        //        return ck;
-                                        //    }
-                                        //}
-                                        //,
+                                        {
+                                            field: 'operate',
+                                            align: 'center',
+                                            title: '预览报告',
+                                            visible: 1,
+                                            formatter: function (value, row, index) {
+                                                var ck = '<a href="#" onclick="onPreview(' + row.Id + ',\'' + row.DataUrl + '\');"><span class= "glyphicon glyphicon-eye-open" ></span></a>';
+                                                return ck;
+                                            }
+                                        }
+                                        ,
                                         {
                                             field: 'operate',
                                             align: 'center',
@@ -992,7 +992,13 @@
                                     dataType: "json",
                                     success: function (data) {
                                         if (data.Success) {
-                                            window.open(data.Data.TempDocHtml);
+                                            var iWidth = 720;                          //弹出窗口的宽度; 
+                                            var iHeight = 600;                         //弹出窗口的高度; 
+                                            //获得窗口的垂直位置 
+                                            var iTop = (window.screen.availHeight - 30 - iHeight) / 2;
+                                            //获得窗口的水平位置 
+                                            var iLeft = (window.screen.availWidth - 10 - iWidth) / 2;
+                                            window.open(data.Data.TempDocHtml, "预览", 'height=' + iHeight + ',,innerHeight=' + iHeight + ',width=' + iWidth + ',innerWidth=' + iWidth + ',top=' + iTop + ',left=' + iLeft + ',toolbar=no,menubar=no,scrollbars=yes,resizable=yes,location=no,status=no'); 
                                         } else { msg.info("生成报告错误!"); }
                                     },
                                     error: function () {
